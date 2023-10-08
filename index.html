@@ -1,37 +1,110 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
 <head>
-  <title>Ma première page avec du style</title>
-  <link href="style.css" rel="stylesheet">
+    <title>Mathématiques & cie</title>                                                                                          <!-- Titre de l'onglet-->
+    <link href="style.css" rel="stylesheet">                                                                                    <!-- Lien vers le CSS associé -->
+    <script src="scripts.js"></script>                                                                                          <!-- Lien vers le JavaScript associé -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans"
+        rel="stylesheet"
+        type="text/css" />                                                                                                      <!-- Chargement d'une police d'écriture -->
+    <link rel="icon" href="./images/icones/favicon.png">                                                                        <!-- Chargement de l'icône d'onglet -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    <style>
+
+        #le-div {
+        
+        line-height: 3;
+        
+        }
+        
+        </style>                                                                                                                   <!-- Chargement du code LaTeX -->
 </head>
 
-<body>
 
+
+<body background="./images/fonds/hexagonal.png" bgproperties="fixed">
 
 <!-- Contenu principal -->
-<h1> BEHAGUE Quentin - Etudiant en CPGE MPI* </h1>
-<nav>
+<div class="entete"> <h1> <div class="effetneon">
+    <span>BEHAGUE Quentin - Etudiant en CPGE MPI* </span></div></h1></div>
+    <nav>
+    <!-- Menu de navigation du site -->
+    <ul>
+        <li class="deroulant"><a href="#">Exercices corrigés &ensp;</a>
+        <ul class="sous">
+            <li><a href="#">Algèbre linéaire</a></li>
+            <li><a href="#">Notion de norme</a></li>
+            <li><a href="#">Suites et série entières</a></li>
+            <li><a href="#">Réduction</a></li>
+        </ul>
+        <li class="deroulant"><a href="#">Programmes &ensp;</a>
+            <ul class="sous">
+                <li><a href="#">Jeux d'échec</a></li>
+                <li><a href="#">Puissance 4</a></li>
+            </ul>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">A propos</a></li>
+    </ul>
+    </nav>
 
-  <!-- Menu de navigation du site -->
-  <ul>
-    <li class="deroulant"><a href="#">Exercices corrigés &ensp;</a>
-      <ul class="sous">
-        <li><a href="#">Algèbre linéaire</a></li>
-        <li><a href="#">Notion de norme</a></li>
-        <li><a href="#">Suites et série entières</a></li>
-        <li><a href="#">Réduction</a></li>
-      </ul>
-    <li><a href="#">Contact</a></li>
-    <li><a href="#">A propos</a></li>
-  </ul>
-</nav>
+<div class="container">
+    <div class="rightside">
+        <aside>
+            <img class="pheonix" src="./images/PhoenixTransparent.png"> 
+        </aside>
+    </div>
+    <div class="content">
+        <div class="text">
+        <h2>Mathématiques, informatique, et bien plus encore ...</h2>
+            <p> Bienvenue sur le site du Taupin dédié à l'apprentissage des mathématiques et de la programmation informatique ! 
+            Que vous soyez étudiant ou simplement passionné par l'un de ces domaines, vous êtes au bon endroit pour trouver des ressources précieuses ! <br>
+        <h3> A l'attention du lecteur :</h3>
+            <p>Vous trouverez sur ce site une proposition de correction pour un grand nombre d'exercices fournit durant l'année scolaire 2023-2024. <br>
+            Les énoncés de ces exercices proviennent des épreuves orales des concours d'intégration des grandes écoles. <br> 
+            Les énoncés originaux sont disponibles à l'adresse suivante : <a href="https://beos.prepas.org/" >https://beos.prepas.org/</a>.<br>
+            Il est possible que certaines corrections contiennent, c'est pourquoi il est demandé à l'étudiant qui traitera les présents exercices d'adopter une démarche de recherche et de mobiliser ses connaissances avant d'accéder aux corrigés proposés.
+            <B> La meilleure façon de comprendre un exercice, c'est de tenter de le résoudre par soi-même.</B> </p>
+        <h3> Exercice de la semaine : </h3>
+        <p style="border: 1px solid white; padding: 10px;" > Soit \( E =\mathcal{C}^{1}([0,1],\mathbb{R}) \).
+	    On pose pour tout \( f\in E :\) 
+        \[ \|f\|_{1} = \displaystyle\int_{0}^{1} \left|f(x)\right|\mathrm{d}x\]
+        \[ N_{1}(f) = \|f \|_{1} + \|f' \|_{1}\]
+        \[ N_{2}(f) = |f(0)| + \|f' \|_{1}\]
+	    On admet que \(N_{1}\) et \(N_{2}\) sont des normes. Montrer que \(N_{1}\) et \(N_{2}\) sont équivalentes. </p>
 
-<div class="conteneur">
-  <p>Du contenu sous le menu</p>
+        <button class="bouton"> Indication </button>
+        <button class="bouton"> Corrigé </button>
+        <p>blablabla</p>
+        </div>
+    </div>
 </div>
-<p> Ceci est un paragraphe contenant un bouton.
-</button class = "bouton-exerice"> Ceci est un bouton </button>
-<p>
+
+<footer>
+    <div class=”contenu-footer”>
+        <div class=”bloc footer-services”>
+          <h3>Mes services</h3>
+          <ul class=”liste-services”>
+            <li>Dispense de cours de mathématique à domicile (Premier et second cycle du secondaire)</li>
+            <li>Cours d'initiation à la CPGE</a></li>
+            <li>Apprentissage des langages de programmation Python, C et Ocaml.</li>
+          </ul>
+        </div>
+
+      <div class=”bloc footer-informations”>
+        <a href=”#”><h3>A propos</h3></a>
+      </div>
+
+      <div class=”bloc footer-contact”>
+        <h3>Me contacter :</h3>
+        <p>06 46 15 00 15</p>
+        <p>quentinbehague59560@gmail.com</p>
+      </div>
+</div>
+</footer>
+
 
 </body>
 </html>

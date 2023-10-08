@@ -1,16 +1,15 @@
+/* ----------------- Menu déroulant : ----------------- */
 
-
-/*Reset CSS*/
-*{
-    margin: 0px;
-    padding: 0px;
-    font-family: Avenir, sans-serif;
+p, li {
+    font-size: 14px;
+    line-height: 1;
+    /*letter-spacing: 1px;*/
 }
 
 nav{
     width: 100%;
     margin: 0 auto;
-    background-color: white;
+    background-color: rgb(29, 38, 47);
     position: sticky;
     top: 0px;
 }
@@ -21,7 +20,7 @@ nav ul{
 
 nav ul li{
     float: left;
-    width: 25%;
+    width: 20%;
     text-align: center;
     position: relative;
 }
@@ -35,7 +34,7 @@ nav ul::after{
 nav a{
     display: block;
     text-decoration: none;
-    color: black;
+    color :#ffffff;
     border-bottom: 2px solid transparent;
     padding: 10px 0px;
 }
@@ -48,46 +47,103 @@ nav a:hover{
 .sous{
     display: none;
     box-shadow: 0px 1px 2px #CCC;
-    background-color: white;
+    background-color: rgb(29, 38, 47);
     position: absolute;
     width: 100%;
     z-index: 1000;
 }
+
 nav > ul li:hover .sous{
     display: block;
 }
+
 .sous li{
     float: none;
     width: 100%;
     text-align: left;
 }
+
 .sous a{
     padding: 10px;
     border-bottom: none;
 }
+
 .sous a:hover{
     border-bottom: none;
     background-color: RGBa(200,200,200,0.1);
 }
+
 .deroulant > a::after{
     content:" ▼";
     font-size: 12px;
 }
 
-.conteneur{
-    margin: 50px 20px;
-    height: 1500px;
+
+
+/* ----------------- Organisation de la page : ----------------- */
+html {
+    font-size: 10px;                                /* Taille de police */
+    font-family: "Open Sans", sans-serif;           /* Police d'écriture */
+    color: #ffffff;
+    background-color:rgb(0, 0, 0);
+}
+
+body{ 
+
+    padding: 0px;
+    margin-top: 0px;    
+}
+
+.entete{
+    margin: 0px;
+    margin-top: 1.5%;
+    height:3vw;
+    background:rgba(29, 38, 47, 0.648);
+}
+
+.container {
+    margin : 3%;
+	overflow: auto;
+}
+
+.rightside {
+	width: 40%;
+	float: right;
+}
+
+.content {
+    border-radius: 40px;
+    background-color : rgba(0, 2, 11, 0.5);
+	overflow: hidden;
+}
+
+.text {
+    margin : 3%;
+}
+/* ----------------- Objets constituant la page : ----------------- */
+
+h1 {
+    font-family : cursive ;
+    font-size: 2vw;
+    text-align: center;
+}
+
+h2 {
+    font-family :'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serifs;
+    font-size: 35px;
+    text-align: left;
 }
 
 .bouton{
-    display: block;
-    background-color: #719fee;
+    margin-left: 8px;
+    display:inline-block;
+    background-color: #737f94;
     border-radius: 10px;
-    border: 4px double #1f69ec;
-    color: #ffffff;
+    border: 2px solid #152643;
+    color: #ffffffc3;
     text-align: center;
-    font-size: 20px;
-    padding: 10px;
+    font-size: 16px;
+    padding: 5px;
     width: 200px;
     cursor: pointer;
     -webkit-transition: all 0.5s;
@@ -95,13 +151,96 @@ nav > ul li:hover .sous{
     -o-transition: all 0.5s;
     transition: all 0.5s;
 }
-.bouton:hover{
-    background-color: #ffffff;
-    border: 2px solid #1f69ec;
-    box-shadow: 10px 5px 5px #719fee;
-    color: #1f69ec;
-    text-align: center;
-    font-size: 22px;
+
+h3 {
+    font-family : 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 25px;
+    text-align: left;
 }
 
+p{
+    font-size: 17px;
+    line-height: 1.5;
+}
 
+.bouton:hover{
+    background-color: #ffffffc3;
+    border: 2px solid  #152643;
+    box-shadow: 10px 5px 5px #b6a314;
+    color: #49358a;
+    text-align: center;
+    font-size: 16px;
+}
+
+.pheonix{
+    width : 100%;
+}
+
+/* ----------------- Pied de page : ----------------- */
+
+footer {
+    flex-shrink: 0;
+    border-top: 1px dashed #000;
+    width: 100%;
+    background: #ffff;
+    color: #333;
+  }
+  
+  .contenu-footer {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 20px;
+    padding: 50px 0 100px;
+  }
+  
+  .bloc {
+    width: 25%;
+    margin: 0 30px;
+  }
+  
+  /* contact */
+  .footer-services h3,
+  .footer-informations h3,
+  .footer-contact h3 {
+    font-size: 25px;
+    padding-bottom: 20px;
+  }
+  
+  .footer-contact p {
+    padding: 5px 0;
+  }
+  
+  /* Services */
+  
+  .liste-services,
+  .liste-information {
+    list-style-type: none;
+  }
+  
+  .liste-services li {
+    padding: 2px 0;
+  }
+  
+  .liste-services a {
+    text-decoration: none;
+    color: #333;
+  }
+  .liste-services a:hover {
+    color: rgb(3, 3, 3);
+  }
+
+/* ----------------- Effet Neon : ----------------- */
+
+  .effetneon {
+    text-align: center;
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 22px rgb(230, 223, 18),
+        0 0 40px rgb(230, 223, 18),
+        0 0 70px rgb(230, 223, 18);
+}
