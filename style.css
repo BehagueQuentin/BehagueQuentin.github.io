@@ -31,6 +31,19 @@ nav ul li{
     width: 5%;
 }
 
+.slider-container {
+    font-size: 10vw;
+}
+
+.shuffleButton {
+    font-size: 2vw;
+    margin: auto;
+    align-items: center;
+    margin: 5px;
+    padding: 8px;
+    
+}
+
 nav ul::after{
     content: "";
     display: table;

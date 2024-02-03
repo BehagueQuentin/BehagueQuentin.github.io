@@ -249,3 +249,47 @@ function createResizableDodecahedron(dodecahedronSize, faceColor, idContainer) {
     };
     animate();
 }
+
+function createResizableIcosahedron(icosahedronSize, faceColor, idContainer) {
+    // Initialisation de la scène, de la caméra et du rendu
+    const containerWidth = 200;
+    const containerHeight = 200;
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, containerWidth / containerHeight, 0.1, 1000);
+    let renderer = new THREE.WebGLRenderer({ alpha: true });
+    renderer.setSize(containerWidth, containerHeight);
+    document.getElementById(idContainer).appendChild(renderer.domElement);
+
+    window.addEventListener('resize', () => {
+        renderer.setSize(window.innerWidth / screen.width * containerWidth, window.innerWidth / screen.width * containerWidth);
+    });
+
+    const faceMaterial = new THREE.MeshBasicMaterial({ color: faceColor });
+
+    const edgeMaterial = new THREE.LineBasicMaterial({ color: 0xffffff });
+
+    const icosahedronGeometry = new THREE.IcosahedronGeometry(icosahedronSize); // Utilisation de la géométrie d'icosaèdre
+    const icosahedron = new THREE.Mesh(icosahedronGeometry, faceMaterial);
+    scene.add(icosahedron);
+
+    const edges = new THREE.EdgesGeometry(icosahedronGeometry);
+    const edgeLines = new THREE.LineSegments(edges, edgeMaterial);
+    icosahedron.add(edgeLines);
+
+    icosahedronGeometry.vertices.forEach(vertex => {
+        const vertexSphere = new THREE.Mesh(new THREE.SphereGeometry(0.05), edgeMaterial);
+        vertexSphere.position.copy(vertex);
+        icosahedron.add(vertexSphere);
+    });
+
+    camera.position.z = 3;
+    const animate = () => {
+        icosahedron.rotation.x += 0.01;
+        icosahedron.rotation.y += 0.01;
+        const interval = 1000 / fps;
+        setTimeout(animate, interval);
+        renderer.render(scene, camera);
+    };
+    animate();
+}
+
