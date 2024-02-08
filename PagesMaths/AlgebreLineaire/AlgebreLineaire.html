@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Algèbre linéaire</title>
+    <link href="../stylePageMaths.css" rel="stylesheet">                                                                                                                                                                              
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"/>                                                                                                      
+    <link rel="icon" href="./../../Images/Icones/favicon.png">                                                                        
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>                                                                                                                  
+</head>
+
+<ul class="background">
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+</ul>
+
+
+<body background="./../../Images/Fonds/hexagonal.png" bgproperties="fixed">
+    <br>
+
+    
+    <div class="entete" style="position: relative;"><div class="effetneon"><span><h1>BEHAGUE Quentin - Etudiant en CPGE MPI*</h1> </span></div></div>
+
+    <!-- Menu de navigation du site -->
+    <span class="menu-de-navigation" id="menu">
+    <nav style="z-index: 10;">
+        <ul>
+            <li class ="home_button"><a href="../../index.html"><img src="./../../Images/NeonHouse.png" class="pic_menu_home"></a></li>
+            <li class="deroulant"><a href="#">Exercices corrigés &ensp;</a>
+                <ul class="sous" style="height: 300px; overflow-y: scroll;">
+                    <li><a href="../AlgebreLineaire/AlgebreLineaire.html">Algèbre linéaire</a></li>
+                    <li><a href="../Norme/Norme.html">Notion de norme</a></li>
+                    <li><a href="../SeriesEntieres/SeriesEntieres.html">Suites et séries entières</a></li>
+                    <li><a href="../Reduction/Reduction.html">Réduction</a></li>
+                    <li><a href="../Topologie/Topologie.html">Topologie</a></li>
+                    <li><a href="../EquationsDifferentielles/EquationsDifferentielles.html">Équations Différentielles</a></li>
+                    <li><a href="../CalculDifferentiel/CalculDifferentiel.html">Réduction</a></li>
+                    <li><a href="../EspacesEuclidiens/EspacesEuclidiens.html">Espaces euclidiens</a></li>
+                    <li><a href="../EspacesProbabilises/EspacesProbabilises.html">Espaces probabilisés</a></li>
+                    <li><a href="../StructureAlgebrique/StructureAlgebrique.html">Structures Algébriques</a></li>
+                    <li><a href="../FonctionsVectorielles/FonctionsVectorielles.html">Fonctions à valeurs vectorielles</a></li>
+                    <li><a href="../IntegralesParametres/IntegralesParametres.html">Intégrales à Paramétres</a></li>
+                    <li><a href="../SuitesSeriesFonction/SuitesSeriesFonction.html">Suites et séries de fonctions</a></li>
+                    <li><a href="../SuitesSeriesSommabilite/SuitesSeriesSommabilite.html">Suites, Séries et Sommabilité</a></li>
+    
+    
+                </ul>
+            <li class="deroulant"><a href="#">Programmes &ensp;</a>
+                <ul class="sous">
+                    <li><a href="../../Programmes/Syracuse.html">Suite de Syracuse</a></li>
+                    <li><a href="../../Programmes/Puzzle.html">Puzzle</a></li>
+                    <li><a href="#">Jeux d'échec</a></li>
+                    <li><a href="#">Puissance 4</a></li>
+                </ul>
+            <li><a href="#">Téléchargements</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">A propos</a></li>
+        </ul>
+    </nav>
+    </span>
+    <main style="z-index: 0; position: relative;">
+            <div class="container">
+                    <div class="container-title" style="width:50%; background-color: rgba(0, 2, 11, 0.5); border-radius: 2vw;">
+                        <h2  style="margin:1vw; text-align: center;">
+                            <span class="fading">Exercices :</span>
+                            <span class="fading">Algèbre</span>
+                            <span class="fading">Linéaire</span>
+                        </h2>
+                    </div>
+            </div>
+            <div class="flexbox-container" style="font-size: 13px;">
+                <div class="flexbox-item flexbox-item-center-little-height" onclick="changePage()">
+                    <div class = "marge1">
+                    <h4>Exercice n°1  :</h4>
+                    Soient \(u\) et \(v\) deux endomorphismes d'un espace vectoriel E. Montrer que :
+                    \[u\circ v = 0 \Longleftrightarrow Im(v)\subset Ker(u)\]
+                    </div>
+                </div>
+
+
+
+
+                <div class="flexbox-item flexbox-item-top-medium-height">
+                    <div class = "marge1">
+                    <h4>Exercice n°2  :</h4>
+                    Soit \(E\) un espace vectoriel de dimension finie et \(f,g\in\mathcal L(E)\). Montrer que :
+                    \[\operatorname{rg}(f+g)=\operatorname{rg}f+\operatorname{rg}g\ \Longleftrightarrow \begin{cases}\operatorname{Im}f\cap \operatorname{Im}g=\{0\}\\ \operatorname{Ker}f+\operatorname{Ker}g=E\end{cases}\]
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="flexbox-item flexbox-item-center-medium-height" style="flex: 4;">
+                    <div class = "marge1">
+                    <h4>Exercice n°3  :</h4>
+                    Soit \(E\) un \(\mathbb{K}\)-espace vectoriel de dimension finie.
+                    <ol>
+                        <li class = "lic1"> Soit \(p\) un projecteur (\(p\) linéaire et \(p^2 = p\)). Montrer que \(Ker(p) \oplus Im(p) = E\) et que \(p\) est la projection sur \(Im(p)\) de direction \(Ker(p)\).</li>
+                        <br>
+                        <li class = "lic1">  Soit \(f\in \mathcal{L}(E)\). Montrer qu'il existe \(g\in \mathcal{L}(E)\) tel que \(g \circ f=0\) et \(f+g\in \mathrm{GL}(E)\) si et seulement si \(E=\operatorname{Ker}f\oplus \operatorname{Im}f\).</li>
+                    </ol>
+                    </div>
+                </div>
+
+
+
+                <div class="flexbox-item flexbox-item-top-medium-height" style="flex: 10;">
+                    <div class = "marge1">
+                    <h4>Exercice n°4  :</h4>
+                    Soit \(n \in \mathbb{N}^*\) et \((a_k)_{1\leq k\leq n}\) une suite de réels deux à deux distincts.
+                    <ol>
+                        <li class = "lic1"> Montrer que la famille de fonctions \((f_k)_{1\leq k\leq n}\), définie par \(f_k(x) = |x - a_k|\) pour \(k \in [\![1, n]\!]\) et \(x \in \mathbb R\), forme une famille libre.</li>
+                        <li class = "lic1"> Pour \(k \in [\![1, n]\!]\), on considère le polynôme :
+                            \[\displaystyle P_k = \prod_{\underset{i \neq k}{i\in[\![1,n]\!]}}(X - ai)\]
+                             Montrer que la famille \((P_k)_{1\leq k\leq n}\) est libre.</li>
+                    </ol>
+                </div>
+                </div>
+                
+
+                
+                <div class="flexbox-item flexbox-item-large-center" style="overflow-y: scroll;">
+                    <div class = "marge1">
+                    <h4>Exercice n°5  :</h4>
+                    Soit \(E\) un \(\mathbb{K}\)-espace vectoriel de dimension finie \(n \in \mathbb{N}^*\). Soit \(u \in \mathcal{L}(E)\).<br>	
+                    <ol>	    
+                        <li class = "lic1"> Montrer que si \(u\) est nilpotent alors \(u^n = 0\).</li>
+                        <li class = "lic1"> On suppose \(n \geq 2\), où \(n\) est tel que \(u^n = 0\) et \(u^{n-1} \neq 0\).</li>
+                        <ol>    
+                            <li class = "lic1"> Montrer qu'il existe une base \(e\) de \(E\) telle que la matrice A de \(u\) dans la base \(e\) est de la forme :
+                            \[\begin{pmatrix} 0 & 0 & \cdots & 0 \\ 1 & 0 & \cdots & 0 \\ \vdots & \ddots & \ddots & \vdots \\ 0 & \cdots & 1 & 0 \end{pmatrix}\]</li>
+                            <li class = "lic1"> Résoudre \(X^2 = A, X \in \mathcal{M}_n\mathbb(K)\).</li>
+                        </ol>
+                	</ol>
+                    </div>
+                </div>
+                <div class="flexbox-item flexbox-item-center-little-height">
+                    <div class = "marge1">
+                    <h4>Exercice n°6  :</h4>
+                    Soit \(p\) une projection de \(E\), où \(E\) est un \(\mathbb K\)-espace vectoriel.
+                    <ol>    
+                        <li class = "lic1"> Montrer que \(E = Ker(p) \oplus Im(p)\).</li>
+                        <br>
+                        <li class = "lic1"> Soit \(s\) une symétrie. Montrer à l'aide de la question précédente que \(E = Ker(s - Id) \oplus Ker(s + Id)\).</li>
+                        <br>
+                    </ol>
+                </div>
+                </div>
+                <div class="flexbox-item flexbox-item-center-medium-height">
+                    <div class = "marge1">
+                    <h4>Exercice n°7  :</h4>
+                    Soit \(E\) un espace vectoriel réel et \(f\) une forme linéaire sur \(E\), ie \(f \in L(E, \mathbb R)\), supposée non nolle. Montrer que le noyau de \(f\) est un hyperplan de \(E\) (c'est-à-dire qu'il possède un supplémentaire de dimension 1), dans les deux cas suivants :
+                    <ol>
+                         <li class = "lic1">Si \(E\) est de dimension finie.</li><br> 
+                           <li class = "lic1"> Dans le cas général.</li>
+                    </ol>
+                    </div>
+                </div>
+                <div class="flexbox-item">
+                    <h4>Exercice n°8  :</h4>
+
+                </div>
+                <div class="flexbox-item">
+                    <h4>Exercice n°9  :</h4>
+
+                </div>
+            </div>
+        
+    </main>
+
+
+    <script>
+        function afficher_texte(id){
+            var span = document.getElementById(id);
+            if(span.style.display == "none") {
+            span.style.display = "inline";
+            } else {
+            span.style.display = "none";
+            }
+        }
+
+        function changePage(){
+            window.location.href = ".\nouvelle_page.html"
+        }
+    </script>
+</body>
+</html>

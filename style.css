@@ -102,7 +102,7 @@ html {
     font-size: 10px;                                
     font-family: "Open Sans", sans-serif;           
     color: #ffffff;
-    background-color:rgb(0, 0, 0);
+    background-color: #191B28;
 }
 
 body{ 
@@ -154,6 +154,20 @@ h2 {
 h3 {
     font-family : 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 25px;
+    text-align: left;
+}
+
+h4 {
+    line-height: 1px;
+    font-family : cursive ;
+    font-size: 30px;
+    text-align: left;
+}
+
+h5 {
+    line-height: 1px;
+    font-family : cursive ;
+    font-size: 22px;
     text-align: left;
 }
 

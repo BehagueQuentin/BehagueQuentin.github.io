@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Générateur de Puzzle</title>
     <style>
+        #marge1 {
+            margin-left : 3vw;
+            margin-right: 10vw;
+        }
+        #marge2 {
+            margin-left : 1vw;
+            margin-right: 1vw;
+        }
         #canvas-container {
             text-align: center;
             margin-top: 20px;
@@ -18,6 +26,7 @@
             margin-top: 10px;
             text-align: center;
         }
+        
     </style>
     <link href="../style.css" rel="stylesheet">                                                                                    <!-- Lien vers le CSS associé -->
     <script src="../scripts.js"></script>                                                                                          <!-- Lien vers le JavaScript associé -->
@@ -42,12 +51,13 @@
         <li class="deroulant"><a href="#">Exercices corrigés &ensp;</a>
         <ul class="sous">
             <li><a href="../PagesMaths/AL/AlgebreLineaire.html">Algèbre linéaire</a></li>
-            <li><a href="../PagesMaths/Normes/NotionDeNorme">Notion de norme</a></li>
+            <li><a href="../PagesMaths/Normes/Norme.html">Notion de norme</a></li>
             <li><a href="../PagesMaths/SuitesSeries/SuitesEtSeriesEntiere">Suites et séries entières</a></li>
             <li><a href="../PagesMaths/Redox/Reduction.html">Réduction</a></li>
         </ul>
         <li class="deroulant"><a href="#">Programmes &ensp;</a>
             <ul class="sous">
+                <li><a href="./Syracuse.html">Suite de Syracuse</a></li>
                 <li><a href="./Puzzle.html">Puzzle</a></li>
                 <li><a href="#">Jeux d'échec</a></li>
                 <li><a href="#">Puissance 4</a></li>
@@ -62,37 +72,69 @@
 
 
 <body background="../Images/Fonds/hexagonal.png" bgproperties="fixed">
+    
+    <div id ="marge1">
+        <div class="content">
+            <div class="text" >
+            <h4>Puzzle</h4>
+                <div style="float:left;width:90%;">
+                    <p> 
+                        
+                        Le programme ci-dessous provient de mon sujet de TIPE (thème Jeux et Sports).<br> Les curseurs permettent de sélectionner la taille du puzzle et le nombre de couleurs à employer.
+                        Une fois la taille séléctionnée, on peut mélanger les pièces et tenter de résoudre le puzzle.<br>
+                        On échange les positions de deux pièces en cliquant sur les deux pièces concernées.<br> Pour effectuer une rotation, il faut sélectionnner une pièce puis appuyer sur la touche "r" du clavier.<br>
+                        Pour relancer une nouvelle partie, rafraichissez la page.
+                        <br>
+                    <p> 
+                </div>
+            </div>
+            </div>
+            <br><br>
+        </div>
+
+
+
+
     <div class="text">
-    <div class="content">
-    
-        <div class="text"><p>
-        Le programme ci-dessous provient de mon sujet de TIPE (thème Jeux et Sports).<br> Les curseurs permettent de sélectionner la taille du puzzle et le nombre de couleurs à employer.
-        Une fois la taille séléctionnée, on peut mélanger les pièces et tenter de résoudre le puzzle.<br>
-        On échange les positions de deux pièces en cliquant sur les deux pièces concernées.<br> Pour effectuer une rotation, il faut sélectionnner une pièce puis appuyer sur la touche "r" du clavier.<br>
-        Pour relancer une nouvelle partie, rafraichissez la page.</p>
-    </div>
-    
-    </div>
+
     <div id="slider-container">
         <p>
-        <div id="selected-value-width">Largeur du puzzle : <span id="sliderValueWidth">2</span></div>
+        <div id="selected-value-width" style="font-size : 1vw;">Largeur du puzzle : <span id="sliderValueWidth">2</span></div>
         <label for="numberSliderWidth"></label>
         <input type="range" id="numberSliderWidth" min="1" max="20" value="2" step="1">
         
-        <div id="selected-value-height">Hauteur du puzzle : <span id="sliderValueHeight">2</span></div>
+        <div id="selected-value-height" style="font-size : 1vw;">Hauteur du puzzle : <span id="sliderValueHeight">2</span></div>
         <label for="numberSliderHeight"> </label>
         <input type="range" id="numberSliderHeight" min="1" max="20" value="2" step="1">
         
-        <div id="selected-color-list-size">Nombre de couleurs utilisés: <span id="colorListSizeValue">2</span></div>
+        <div id="selected-color-list-size" style="font-size : 1vw;">Nombre de couleurs utilisés: <span id="colorListSizeValue">2</span></div>
         <label for="colorListSize"></label>
         <input type="range" id="colorListSize" min="2" max="20" value="2" step="1">
         <br>
         <div id = "shuffle-buttons">
-            <button id="shuffleButton">Mélanger</button>
+            <button id="shuffleButton" style="background-color: #3bcac5; 
+            color: white; 
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            transition: background-color 0.3s;">Mélanger</button>
             
-            <button id="shuffleRotateButton" class="shuffle-button">Mélanger (uniquement les rotations)</button>
+            <button id="shuffleRotateButton" class="shuffle-button" style="background-color: #3bcac5; 
+            color: white; 
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; /* Curseur pointeur au survol */
+            transition: background-color 0.3s;">Mélanger (uniquement les rotations)</button>
             
-            <button id="shufflePlacementButton" class="shuffle-button">Mélanger (uniquement les positions)</button>
+            <button id="shufflePlacementButton" class="shuffle-button" style="background-color: #3bcac5; /* Couleur de fond */
+            color: white; /* Couleur du texte */
+            padding: 10px 20px; /* Espacement du texte à l'intérieur du bouton */
+            border: none; /* Supprimer la bordure */
+            border-radius: 5px; /* Ajouter des coins arrondis */
+            cursor: pointer; /* Curseur pointeur au survol */
+            transition: background-color 0.3s;">Mélanger (uniquement les positions)</button>
             </p>
     </div>
     </div>
