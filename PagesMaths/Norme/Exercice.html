@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+<head><title>Notion de Norme</title><link href="../stylePageMaths.css" rel="stylesheet"><link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"/><link rel="icon" href="./../../Images/Icones/favicon.png"><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> <script src = "../changePageMath.js"></script></head>
+
+<body background="../../Images/Fonds/hexagonal.png" bgproperties="fixed"><br>
+    <div class="entete" style="position: relative;"><div class="effetneon"><span><h1>BEHAGUE Quentin - Etudiant en CPGE MPI*</h1> </span></div></div>
+    <span class="menu-de-navigation" id="menu">
+    <nav style="z-index: 10;">
+    <ul>
+        <li class ="home_button"><a href="../../index.html"><img src="./../../Images/NeonHouse.png" class="pic_menu_home"></a></li>
+        <li class="deroulant"><a href="#">Exercices corrigés &ensp;</a>
+    <ul class="sous" style="height: 300px; overflow-y: scroll;">
+        <li><a href="../AlgebreLineaire/AlgebreLineaire.html">Algèbre linéaire</a></li>
+                    <li><a href="../Norme/Norme.html">Notion de norme</a></li>
+                    <li><a href="../SuitesSeriesSommabilite/SuitesSeriesSommabilite.html">Suites, Séries et Sommabilité</a></li>
+                    <li><a href="../Reduction/Reduction.html">Réduction</a></li>
+                    <li><a href="../FonctionsVectorielles/FonctionsVectorielles.html">Fonctions à valeurs vectorielles</a></li>
+                    <li><a href="../EspacesProbabilises/EspacesProbabilises.html">Espaces probabilisés</a></li>
+                    <li><a href="../SuitesSeriesFonction/SuitesSeriesFonction.html">Suites et séries de fonctions</a></li>
+                    <li><a href="../EquationsDifferentielles/EquationsDifferentielles.html">Équations différentielles</a></li>
+                    <li><a href="../CalculDifferentiel/CalculDifferentiel.html">Calcul différentiel</a></li>
+                    <li><a href="../IntegralesParametres/IntegralesParametres.html">Intégrales à Paramétres</a></li>
+                    <li><a href="../EspacesEuclidiens/EspacesEuclidiens.html">Espaces euclidiens</a></li>
+                    <li><a href="../Integration/Integration.html">Intégration</a></li>
+                    <li><a href="../SeriesEntieres/SeriesEntieres.html">Suites et séries entières</a></li>
+                    <li><a href="../Topologie/Topologie.html">Topologie</a></li>
+                    <li><a href="../VariablesAleatoires/VariablesAleatoires.html">Variables aléatoires</a></li>
+                    <li><a href="../StructureAlgebrique/StructureAlgebrique.html">Structures algébriques</a></li>
+    </ul>
+    <li class="deroulant"><a href="#">Programmes &ensp;</a>
+    <ul class="sous">
+        <li><a href="../../Programmes/Syracuse.html">Suite de Syracuse</a></li>
+        <li><a href="../../Programmes/Puzzle.html">Puzzle</a></li>
+        <li><a href="https://github.com/BehagueQuentin/Jeu-Echecs">Jeux d'échec</a></li>
+    </ul>
+        <li ><a href="../../Téléchargement/Téléchargement.html">Téléchargements</a></li>
+        <li class="deroulant"><a href="#">Contact &ensp;</a>
+            <ul class="sous">
+            <li><a>06 46 15 00 15</a></li>
+            <li><a>quentinbehague59560@gmail.com</a></li>
+            <li><a href="https://github.com/BehagueQuentin">Mon github</a>
+        </ul>
+        </li>
+        <li><a href="../../Apropos/Apropos.html">A propos</a></li>
+    </ul></nav></span>
+<style>
+    
+
+</style>
+</head>
+<body style="min-height: 50vw;">
+<div class="container-ex0">
+    <div class="exercise-container" id="exerciseContainer">
+        <div class="exercise" id="exercise1"><h3>Exercice n°1 :</h3><div>
+            <ol>
+                <li class = "lic2"> Donner les normes \(\| \cdot \|_1\) et \(\| \cdot \|_{\infty}\) sur \(E\).</li><br>
+                <li class = "lic2"> Justifier oralement, en ne donnant que les arguments importants, que \(\Vert \cdot \Vert_1\) est une norme.</li><br>
+                <li class = "lic2"> Montrer que si \(\left( f_n \right)_{n \in \mathbb{N}} \in E^{\mathbb{N}}\) converge au sens de \(\Vert \cdot \Vert_{\infty}\), alors elle converge au sens de \(\Vert \cdot \Vert_1\). </li><br>
+                <li class = "lic2"> Les normes \(\Vert \cdot \Vert_1\) et \(\Vert \cdot \Vert_{\infty}\) sont-elles équivalentes ? </li>
+            </ol><br><HR>
+            <button class="bouton" onclick="afficher_texte('Corrigé1')"> Corrigé </button><HR>
+            <span id="Indication1" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé1" style="display:none;"><p>
+                <ol><br>
+                    <li class = "lic2">Les normes demandées sont données par :<br>
+                    \[\boxed{\|f\|_\infty=\sup_{t\in [a,b]}|f(t)|, \ \|f\|_1=\int_a^b |f(t)|dt.}\]<br>
+                    <li class = "lic2"> Il faut simplement vérifier que \(\|f\|_1\) est une forme absolument homogène, définie positive, vérifiant la première inégalité triangulaire.<br>
+                    \[\boxed{ \|\cdot\|_1 \textrm{ est une norme }}\]</li> <br>
+                    <li class = "lic2"> Si \(\|f\|_\infty\) existe et est finie, alors :<br>
+                    \[\int_a^b |f(t)|dt \leq \int_a^b \|f\|_{\infty}dt = (b-a)\|f\|_{\infty} \] <br>
+                    donc elle converge pour \(\|\cdot\|_1\). Ainsi :<br>
+                    \[\boxed{\textrm{Si \(f\) converge pour \(\|\cdot\|_{\infty}\) alors \(f\) converge pour \(\|\cdot\|_1\)}} \]</li> <br>
+                    <li class = "lic2"> Prendre la suite de fonction :<br>
+                    \[\boxed{ \left(f_n : x \longmapsto \left(\frac{x-a}{b-a}\right)^n\right)_{n\in\mathbb{N}}}\]<br>
+                    En effet, on montre facilement que la norme infinie vaut \(1\) et la norme un tend vers 0.</li> <br>
+                </ol><br>
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise2"><h3>Exercice n°2 :</h3><div>
+            Soit \(\|\cdot\|_{\infty}\) la norme de la convergence uniforme et \(E=\{f \in\mathcal{C}^1([0,1]) | f(0)=0\}\).<br>
+                    On considère \(n\) et \(N\) définies sur \(E\) par :
+                    \[\forall f \in E,\ n(f) = \lvert\lvert f+f'\rvert\rvert_{\infty}\ \textrm{et} \ N(f)=\lvert\lvert f\rvert\rvert_{\infty} + \lvert\lvert f'\rvert\rvert_{\infty} \]
+                    <ol>
+                        <li class = "lic2">Montrer que \(n\) et \(N\) sont des normes.</li><br>
+                        <li class = "lic2">Montrer qu'elles sont équivalentes. On pourra remarquer que \(f(x)= \int_{0}^{x} f'(t) \, \mathrm{d}t \) et que pour \(g(t)=\mathrm e^tf(t)\), on a \(f'(t)=\mathrm e^{-t}(g'(t)-g(t))\).</li>
+                    </ol>
+            <HR><button class="bouton" onclick="afficher_texte('Corrigé2')"> Corrigé </button><HR>
+
+            <span id="Indication2" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé2" style="display:none;"><p>
+                <ol><br>
+                    <li class = "lic2"> Les formes données sont bien des normes, une petite subtilité lors de la démonstration de la définie positivité, il faut remarquer :<br>
+                    \[\|f + f'\|_\infty = 0 \Longrightarrow f + f' = 0 \]<br>
+                    Car \(\|\cdot\|_\infty\) est une norme.<br>
+                    Donc, il existe \(A\) tel que :<br>
+                    \[ f = Ae^{-x} \textrm{   et   } f(0) = 0 \Longrightarrow f = 0 \]<br>
+                    Pour la seconde norme, une inégalité triangulaire permet de se ramener au cas précédent.<br>
+                    \[\boxed{\textrm{ \(n\) et \(N\) sont des normes}}\]</li> <br>
+                    <li class = "lic2">Par inégalité triangulaire, on a pour tout \(f\) :<br>
+                    \[ n(f) \leq 1\times N(f)\]<br>
+                    Pour l'autre inégalité, remarquons que :<br>
+                    \[f(x)=f(0)+\int_0^x f'(t)dt = \int_0^x f'(t)dt \]<br>
+                    Ainsi, en passant au sup, il vient que :<br>
+                    \[\|f\|_\infty \leq \|f'\|_\infty\]<br>
+                    Ainsi, il suffit de montrer que \(\|f\|_\infty \leq N(f)\)<br>
+                    \[f(x) = e^{-x}\int_0^x (f(t)e^{t})'dt =e^{-x}\int_0^x (f(t) + f'(t))e^{t}dt \]<br>
+                    En passant à la valeur absolue, on obtient :<br>
+                    \[|f(x)| \leq |e^{-x}|\int_0^x |f(t) + f'(t)||e^{t}|dt\leq |e^{-x}|\int_0^x \|f + f\|_\infty|e^{t}|dt \leq \|f + f\|_\infty e^{-x}(e^{-x} - e)\]<br>
+                    En passant au sup : <br>
+                    \[\underline{\|f\|_\infty \leq n(f)}\]<br>
+                    Ainsi :<br>
+                    \[|f'(x)| \leq |f(x) + f'(x)| - |f(x)|\leq 2n(f)\]<br>
+                    Enfin, on a les inégalités suivantes qui justifient l'équivalence des normes :<br>
+                    \[\boxed{n(f) \leq N(f) \leq 3n(f)}\]</li><br>
+                </ol><br>
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise3"><h3>Exercice n°3 :</h3><div>
+            Soit \(E={{C}^{0}}\left( \left[ 0,1 \right],\mathbb{R} \right)\) et \(f\in E\). On note :
+                    \[N(f)=\sup \left\{ \left| \int_{0}^{1}f(t)t^{n}dt \right|;n\in \mathbb{N} \right\}\] 
+                    Montrer que \(N\) est une norme sur \(E\).<br>
+            <br><hr>
+            <button class="bouton" onclick="afficher_texte('Corrigé3')"> Corrigé </button><HR>
+
+            <span id="Indication3" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé3" style="display:none;"><p>
+            <ul><br>
+                <li class = "lic2"> \(N(f)\) est une forme</li><br>
+                <li class = "lic2"> Soit \(\lambda \in \mathbb{R} :\| \lambda f\|_{\varphi} = |\lambda| \| f\|_{\varphi}\)</li> <br>
+                <li class = "lic2"> De même, on utilise successivement l'inégalité triangulaire, puis le fait que le sup d'une somme est inférieur à la somme des sups... On a, pour tout \(f,g \in E, \| f + g \|_{\varphi} \leq \| f\|_{\varphi} + \|g\|_{\varphi}\)</li> <br>
+                <li class = "lic2"> La positivité est triviale, intéressons-nous enfin au caractère définit de cette forme. (C'est là qu'est toute la difficulté de l'exercice, c'est en fait un théorème des moments déguisé en exercice n°de norme).<br>
+                Puisque tout polynôme est combinaison linéaire de monômes, on a pour tout polynôme P :<br>
+                \[\int^b_a P(t)f(t)dt = 0\]<br>
+                D'après le théorème de Weierstrass, il existe une suite de polynômes \((P_n)_{n\in \mathbb{N}}\) qui converge uniformément vers \(f\) sur \([a, b]\). <br>
+                On a alors pour tout \(n\in \mathbb{N}\):<br>
+                \[ 0 \leq \int^b_a (f (x))^2dx = \int^b_a \left(f (x) - P_n(x)\right) f (x) dx \leq (b - a)\|f - Pn\|^{[a,b]}_{\infty}\|f\|^{[a,b]}_{\infty}\]<br>
+                <br>
+                Comme la suite \(\left(\|f - Pn\|^{[a,b]}_{\infty}\right)_{n\in \mathbb{N}}\) tend vers 0, on déduit que l'intégrale initiale tend vers \(0\). Or l'intégrale d'une fonction positive continue sur un intervalle n'est nulle qui si la fonction est nulle, d'où :<br>
+                \[f = 0\]<br>
+                Enfin, nous avons :<br>
+                \[ \boxed{N(f)=\sup \left\{ \left| \int_{0}^{1}f(t)t^{n}dt \right|;n\in \mathbb{N} \right\} \textrm{  est une norme sur \(E\)}}\]</li> <br>
+                <br>
+            </ul>
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise4"><h3>Exercice n°4 :</h3><div>
+            <ol>
+                <li class = "lic2"> Démontrer la deuxième inégalité triangulaire pour une norme dans un espace vectoriel normé.</li><br>
+                <li class = "lic2"> En déduire que :
+                    \[\left\| \cdot \right\|:\begin{matrix}
+                    E\to \mathbb{R}  \\
+                    \overrightarrow{x}\to \left\| \overrightarrow{x} \right\|  \\
+                \end{matrix}\]
+                 est 1-lipschitzienne.</li>
+            </ol>
+                <br><hr>
+            <button class="bouton" onclick="afficher_texte('Corrigé4')"> Corrigé </button><HR>
+
+            <span id="Indication4" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé4" style="display:none;"><p>
+                Pour la première question, il suffit d'appliquer la première inégalité triangulaire à \(\vec x\) et \(\vec y - \vec x\).<br> Pour la seconde question, une fonction \(f\) 1-lipschitzienne vérifie, pour tout \((x,y) \in E\) :<br>
+                \[|f(x)-f(y)|\leq \|x-y\|\]<br>
+                En l'occurrence, on doit avoir :<br>
+                \[| \|x\| - \|y\||\leq \|x-y\|\]<br>
+                Ce qu'on démontre à la question précédente.<br>
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise5"><h3>Exercice n°5 :</h3><div>
+            <ol>
+                <li class = "lic2"> Existe-t-il une norme N sur \(E={{M}_{n}}(\mathbb{R})\) telle que pour toutes matrices A et B de E, on ait \(N\left( AB \right)=N(A).N(B)\) ?</li><br>
+                <li class = "lic2"> Même question avec \(N\left( AB \right) \leq N(A).N(B)\)</li>
+            </ol>
+            <br><hr>
+            <button class="bouton" onclick="afficher_texte('Corrigé5')"> Corrigé </button><HR>
+
+            <span id="Indication5" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé5" style="display:none;"><p>
+                <ol><br>
+                    <li class = "lic2"> Toutes les hypothèses sont faciles à vérifier et laissées au lecteur</li><br>
+                    <li class = "lic2"> Pour la première inégalité, il suffit d'appliquer le théorème fondamental du calcul intégral. Soit \(x\in [0,1] :\)<br>
+                    \[ |f(x)| \leq \left| f(0) + \int_0^x f'(t) dt \right| \leq |f(0)| + \int_0^x |f'(t)|dt\]<br>
+                    Or, \(|f'|\) étant une fonction positive, et \(x\) étant compris dans \([0, 1]\), on a :<br>
+                    \[ |f(x)| \leq |f(0)| + \int_0^x |f'(t)| dt \leq |f(0)| + \int_0^1 |f'(t)| dt  = N_2 (f) \]<br>
+                    Ainsi, on a bien :<br>
+                    \[ N_1(f) \leq 2N_2(f)\]<br>
+                    Démontrons la seconde inégalité, on a tout d'abord :<br>
+                    \[\|f'\|_{1} \leq N_1(f)\]<br>
+                    Supposons dans un premier temps que \(f\) s'annule en  \(\alpha \in [0, 1]\), alors :<br>
+                    \[|f(0)| = |f(0) - f(\alpha)| = \left|\int^{\alpha}_0 f'(t)dt\right| \leq \int_0^{\alpha} |f'(t)| dt \leq \int_0^{1} |f'(t)| dt = \|f'\|_1 \leq N_1(f)\]<br>
+                    Supposons maintenant que \(f\) ne s'annule pas, alors \(f\) est de signe constant, supposons donc \(f\) de signe notons \(M = f(\beta)\) son minimum sur \([0,1]\). On a :<br>
+                    \[|f(0)| = |f(0) + f(\beta) - f(\beta)| = \left| M - \int_0^{\beta} f'(t)dt \right| \leq |M| + \int_0^1 |f'(t)|dt = |M| + \|f'\|_1\]<br>
+                    Or :<br>
+                    \[\|f\|_1 = \int_0^1 |f(t)|dt \geq \int^1_0 |M|dt = M \]<br>
+                    D'où :<br>
+                    \[N_2(f) \leq 2N_1(f)\]<br>
+                <br>
+                    Enfin :<br>
+                    \[\boxed{\textrm{Les normes \(N_1\) et \(N_2\) sont équivalentes.}}\]</li><br>
+                    <br>
+                </ol><br>
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise6"><h3>Exercice n°6 :</h3><div>
+            Soit \(E =\mathcal{C}^{1}([0,1],\mathbb{R})\).<br>
+                    On pose pour tout \(f\in E\) : \(\|f\|_{1} = \displaystyle\int_{0}^{1} \left|f(x)\right| \, \mathrm{d}x\) et: \(N_{1}(f) = \|f \|_{1} + \|f' \|_{1}\) et \(N_{2}(f) = |f(0)| + \|f' \|_{1}\).
+                    <ol>
+                        <li class = "lic2"> Montrer que \(N_{1}\) et \(N_{2}\) sont des normes.</li><br>
+                        <li class = "lic2"> \(N_{1}\) et \(N_{2}\) sont-elles équivalentes ?</li>
+                    </ol>
+            <br><hr>
+            <button class="bouton" onclick="afficher_texte('Corrigé6')"> Corrigé </button><HR>
+
+            <span id="Indication6" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé6" style="display:none;"><p>
+                
+
+<ol><br>
+    <li class = "lic2"> Toutes les hypothèses sont faciles à vérifier et laissées au lecteur. </li><br>
+    <li class = "lic2"> Pour la première inégalité, il suffit d'appliquer le théorème fondamental du calcul intégral. Soit \(x\in [0,1] :\)<br>
+    \[ |f(x)| \leq \left| f(0) + \int_0^x f'(t) dt \right| \leq |f(0)| + \int_0^x |f'(t)|dt\]<br>
+    Or, \(|f'|\) étant une fonction positive, et \(x\) étant compris dans \([0, 1]\), on a :<br>
+    \[ |f(x)| \leq |f(0)| + \int_0^x |f'(t)| dt \leq |f(0)| + \int_0^1 |f'(t)| dt  = N_2 (f) \]<br>
+    Ainsi, on a bien :<br>
+    \[ N_1(f) \leq 2N_2(f)\]<br>
+    Démontrons la seconde inégalité, on a tout d'abord :<br>
+    \[\|f'\|_{1} \leq N_1(f)\]<br>
+    Supposons dans un premier temps que \(f\) s'annule en  \(\alpha \in [0, 1]\), alors :<br>
+    \[|f(0)| = |f(0) - f(\alpha)| = \left|\int^{\alpha}_0 f'(t)dt\right| \leq \int_0^{\alpha} |f'(t)| dt \leq \int_0^{1} |f'(t)| dt = \|f'\|_1 \leq N_1(f)\]<br>
+    Supposons maintenant que \(f\) ne s'annule pas, alors \(f\) est de signe constant, supposons donc \(f\) de signe notons \(M = f(\beta)\) son minimum sur \([0,1]\). On a :<br>
+    \[|f(0)| = |f(0) + f(\beta) - f(\beta)| = \left| M - \int_0^{\beta} f'(t)dt \right| \leq |M| + \int_0^1 |f'(t)|dt = |M| + \|f'\|_1\]<br>
+    Or :<br>
+    \[\|f\|_1 = \int_0^1 |f(t)|dt \geq \int^1_0 |M|dt = M \]<br>
+    D'où :<br>
+    \[N_2(f) \leq 2N_1(f)\]<br>
+<br>
+    Enfin :<br>
+    \[\boxed{\textrm{Les normes \(N_1\) et \(N_2\) sont équivalentes.}}\]</li><br>
+</ol><br>
+
+ 
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise7"><h3>Exercice n°7 :</h3><div>
+            Pour \(\lambda \in \mathbb(C)\), on note \(e_{\lambda} : x \longmapsto e^{\lambda x}\). On note \(F\) le sous-espace de \(\mathbb{C}^{\mathbb{R}}\) engendré par \((e_{\lambda})_{\lambda \in \mathbb{C}}\). Montrer qu'en posant, pour \(f \in F\),
+                        \[N(f) = \sum_{n = 0}^{+\infty} \frac{|f^{(n)}(0)|}{n!}\]
+                        On définit une norme sur \(F\). <br>
+                <br><hr>
+            <button class="bouton" onclick="afficher_texte('Corrigé7')"> Corrigé </button><HR>
+
+            <span id="Indication7" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé7" style="display:none;"><p>
+                
+<br>
+Nous avons \( F = Vect\left(x\longmapsto e^{\lambda x} | \lambda \in \mathbb{C} \right)\)<br>
+<ul><br>
+    <li class = "lic2"> \(N(f)\) est bien définie. Soit \(f\in F\), il existe \(\mu_1, ..., \mu_p\) et \(\lambda_1, ..., \lambda_p\) tel que, pour tout \(x\) : \[f(x) = \sum_{k= 1}^p \mu_k e^{\lambda_k x} \]<br>
+    Donc, pour tout \(n\in \mathbb{N}\) :<br>
+    \[ f^{(n)}(x) = \sum_{k= 1}^p \mu_k \lambda_k^n e^{\lambda_k x} \]<br>
+    \[\Longrightarrow f^{(n)}(0) = \sum_{k= 1}^p \mu_k \lambda_k^n\]<br>
+    Ainsi :<br>
+    \[N(f) = \sum_{n = 0}^{+\infty} \frac{|f^{(n)}(0)|}{n!} \leq \sum_{k= 1}^p |\mu_k| \sum_{n = 0}^{+\infty} \frac{|\lambda_k|^n}{n!} =  \sum_{k= 1}^p |\mu_k| e^{|\lambda_k|}\]</li><br>
+    <li class = "lic2"> L'inégalité triangulaire, l'absolue homogénéité ainsi que la positivité sont immédiates.</li><br>
+    <li class = "lic2"> Intéressons-nous au caractère définit :<br>
+    \[N(f) = 0 \Longrightarrow \sum_{n = 0}^{+\infty} \frac{|f^{(n)}(0)|}{n!} = 0 \Longrightarrow \forall n \in \mathbb{N},  f^{(n)}(0) = 0 \]<br>
+    \[\Longrightarrow \forall n \in \mathbb{N},  \sum_{k= 1}^p \mu_k \lambda_k^n = 0\]<br>
+    Or, en prenant uniquement les égalités pour \(n\in [\![0;p -1]\!] \) ceci revient à résoudre le système suivant d'inconnu \(\mu_1, ..., \mu_p\) :<br>
+    \[ \left(<br>
+\begin{array}{cccc}
+1&1&\dots&1 \\
+\lambda_1&\lambda_2&\dots&\lambda_n \\
+\lambda_1^2&\lambda_2^2&\dots&\lambda_n^2 \\
+\vdots&\vdots&\vdots&\vdots \\
+\lambda_1^{n-1}&\lambda_2^{n-1}&\dots&\lambda_n^{n-1}
+\end{array}\right)\times\left(\begin{array}{c}\mu_1 \\ \mu_2 \\ \mu_3 \\ \vdots \\ \mu_4 \end{array}\right) = 0\]<br>
+Or ce système est de Cramer et son déterminant est un Vandermonde non nul car les \(\lambda_1, ..., \lambda_p\) sont distincts deux à deux.<br>
+Le système n'admet ainsi qu'une seule solution. On a ainsi \(f = 0\).<br>
+On peut donc conclure :<br>
+\[\boxed{N(f) = \sum_{n = 0}^{+\infty} \frac{|f^{(n)}(0)|}{n!} \textrm{ définit bien une norme sur F.}}\]</li><br>
+</ul><br>
+
+ 
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise8"><h3>Exercice n°8 :</h3><div>
+            <ol>
+                <li class = "lic2"> Montrer que deux normes sont égales si et seulement si elles possèdent la même boule unité. </li><br>
+                <li class = "lic2"> Par ailleurs, quelle influence a l'équivalence de deux normes pour leurs boules de centre O ? </li>
+            </ol>
+                <br><hr>
+            <button class="bouton" onclick="afficher_texte('Corrigé8')"> Corrigé </button><HR>
+
+            <span id="Indication8" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé8" style="display:none;"><p>
+<ol>
+    <li class = "lic2"> Dans un sens, si les normes sont égales, elles ont la même boule unité.<br>Réciproquement, supposons que \(\|\cdot\|_1 \textrm{ et } \|\cdot\|_2 \) aient la même boule unité, alors :<br>
+    \[\{y\in E:\ \|y\|_1 \leq 1\} = \{y\in E:\ \|y\|_2 \leq 1\}\]<br>
+    En particulier pour tout \(\vec{x} \in E\backslash \{0\}\), on a :<br>
+    \[ \left\| \frac{\vec{x}}{\|\vec{x}\|_1}\right\|_1 \in B_F (0, 1) \Longrightarrow \left\| \frac{\vec{x}}{\|\vec{x}\|_1}\right\|_1 = \left\| \frac{\vec{x}}{\|\vec{x}\|_1}\right\|_2\]<br>
+    \[\Longrightarrow \frac{1}{\|\vec{x}\|_1} \times \left\| \vec{x}\right\|_1 = \frac{1}{\|\vec{x}\|_1}  \times \left\| \vec{x}\right\|_2 \Longrightarrow  \left\| \vec{x}\right\|_1 =  \left\| \vec{x}\right\|_2 \]<br>
+    De même cette égalité est vraie pour \(0\) car toute norme est nulle en \(0\). Ainsi :<br>
+    \[\boxed{\textrm{Deux normes sont égales si et seulement si elles possèdent la même boule unité.}}\]</li><br>
+    <li class = "lic2"> Si deux normes sont équivalentes, cela signifie que toute boule de centre O et de rayon non nulle d'une des normes peut être encadrée au sens de l'inclusion par deux boules de l'autre norme.</li> <br>
+    <br>
+</ol><br>
+
+ 
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise9"><h3>Exercice n°9 :</h3><div>
+            <ol>
+                <li class = "lic2"> Montrer qu'il existe un réel a, tel que : \(\forall M,N\in E\), \({{\left\| M.N \right\|}_{\infty }}\le a.{{\left\| M \right\|}_{\infty }}.{{\left\| N \right\|}_{\infty }}\).</li><br>
+                <li class = "lic2"> En déduire que pour tout norme \(\left\| . \right\|\) sur E, in existe un réel b tel que : \(\forall M,N\in E\), \(\left\| M.N \right\|\le b.\left\| M \right\|.\left\| N \right\|\).</li><br>
+                <li class = "lic2"> Montrer l'existence de l'exponentielle d'une matrice.</li>
+            </ol>
+            <br><hr>
+            <button class="bouton" onclick="afficher_texte('Corrigé9')"> Corrigé </button><HR>
+
+            <span id="Indication9" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé9" style="display:none;"><p>
+                <br>
+<ol><br>
+    <li class = "lic2"> Ce réel existe et vaut \(n\), la démonstration est faite dans l'exercice n°5.</li> <br>
+    <li class = "lic2"> \({M}_{n}\left( \mathbb{R} \right)\) est un espace de dimension finie, toutes les normes de \({M}_{n}\left( \mathbb{R} \right)\) sont donc équivalentes. En particulier, toute norme \(\|\cdot\|\) est équivalente à \(\|\cdot\|_{\infty}\). On en déduit l'existence de \(\alpha \in \mathbb{R}^*_+\) tel que pour tout \(M \in {M}_{n}\left( \mathbb{R} \right)\) :<br>
+    \[\| M\|_{\infty} \leq \alpha\|M\| \Longrightarrow \|MN\|_{\infty} \leq n\| M\|_{\infty}\| N\|_{\infty} \leq n\alpha^2\| M\|\| M\|\]</li> <br>
+    <li class = "lic2"> D'après la question 1, on peut faire le choix d'une norme sous multiplicative, ainsi, pour tout \(N\) :<br>
+    \[\left\|\sum_{n = 0}^{+\infty} \frac{M^n}{n!} \right\| \leq \sum_{n = 0}^{+\infty} \frac{\|M\|^n}{n!} \leq e^{\|M\|}\]<br>
+    Ainsi, par critère de comparaison des séries à termes positifs, \(\exp(M)\) converge en norme donc converge.<br>
+    \[\boxed{\textrm{L'exponentielle d'une matrice est bien définie}}\]</li> <br>
+    <br>
+</ol><br>
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise10"><h3>Exercice n°10 :</h3><div>
+            <ol>
+                <li class = "lic2"> Montrer qu'il existe \(\alpha >0\) tel que : \[\forall P\in {{\mathbb{R}}_{n}}\left[ X \right], \sum\limits_{k=0}^{n}{\left| P(k) \right|\le \alpha .\int\limits_{-1}^{1}{\sqrt{1-{{X}^{2}}}.\left| P(X) \right|.dX}}\]</li><br>
+                <li class = "lic2"> Si \(r\) est un entier naturel, montrer qu'il existe \(\alpha >0\) tel que :\[\forall P\in {{\mathbb{R}}_{n}}\left[ X \right],\sum\limits_{k=0}^{r}{\left| P(k) \right|\le \alpha .\int\limits_{-1}^{1}{\sqrt{1-{{X}^{2}}}.\left| P(X) \right|.dX}}\]</li>
+            </ol>
+                <br><hr>
+            <button class="bouton" onclick="afficher_texte('Corrigé10')"> Corrigé </button><HR>
+
+            <span id="Indication10" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé10" style="display:none;"><p>
+                <br>
+<ol><br>
+    <li class = "lic2"> Il suffit de montrer que les applications :<br>
+\[n : \;\left| \begin{array}[c]{} {\mathbb{R}_n[X]} \longrightarrow {\mathbb{R}} \\ {P} \longmapsto {\sum\limits_{k=0}^{r}{\left| P(k) \right|}}\end{array}\right. \;\;\textrm{     et     }\;\; N :\; \left| \begin{array}[c]{}{\mathbb{R}_n[X]}\longrightarrow{\mathbb{R}} \\ {P}\longmapsto {\int\limits_{-1}^{1}{\sqrt{1-{{X}^{2}}}.\left| P(X) \right|.dX}}\end{array}\right.\]<br>
+définissent bien des normes. Cette question est classique et ne présente pour seule difficulté que la démonstration du caractère définit.<br><br>
+Pour \(n\), il suffit de remarquer que si \(P\) annule la norme, il admet au moins \(n+1\) racines, dans ce cas c'est le polynôme nul car il est de degré au plus \(n\).<br> <br>
+Pour \(N\), il faut remarquer que \(\sqrt{1-{{X}^{2}}}\) est une quantité positive pour \(X\in [-1, 1]\). \(N(P)\) est donc l'intégrale d'une fonction positive et continue, si elle est nulle, \(P\) est nul sur \(]-1, 1[\) donc sur \([-1;1]\) par continuité.<br><br>
+Ces deux applications sont donc des normes sur un espace de dimension finie, elles sont par conséquent équivalentes, on en déduit l'existence de \(\alpha\).</li><br>
+<li class = "lic2"> On procède comme à la question précédente pour les cas où \(r > n\). Dans le cas \( r < n \). On se ramène trivialement à la question précédente.</li><br>
+</ol><br>
+
+ 
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise11"><h3>Exercice n°11 :</h3><div>
+            Soit \(E\) un \(\mathbb K\)-espace vectoriel normé. On dit d'une suite \(\left( {{u}_{n}} \right)\in {{E}^{\mathbb{N}}}\) qu'elle est de Cauchy si : \(\forall \varepsilon >0,\exists {{n}_{0}}\in \mathbb{N}\) tel que : \[\forall n,p\ge {{n}_{0}},\left| {{u}_{n}}-{{u}_{p}} \right|\le \varepsilon \]<br>
+                    <ol>
+                        <li class = "lic2"> Montrer qu'une suite convergente est de Cauchy.</li><br>
+                        <li class = "lic2"> Montrer que si \(E= \Bbb K =\mathbb{Q}\), il existe des suites de Cauchy non convergentes.</li><br>
+                        <li class = "lic2"> Montrer que si \(E= \Bbb K =\mathbb{R}\), toute suite de Cauchy est convergente.</li><br>
+                        <li class = "lic2"> Montrer que l'image d'une suite de Cauchy par une application uniformément continue est une suite de Cauchy.</li><br>
+                        <li class = "lic2"> Que dire si l'application est juste supposée continue ?</li>
+                    </ol>
+                <br><hr>
+            <button class="bouton" onclick="afficher_texte('Corrigé11')"> Corrigé </button><HR>
+
+            <span id="Indication11" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé11" style="display:none;"><p>
+                <br>
+<ol><br>
+    <li class = "lic2"> Soit une suite \((u_n)\) convergente vers une limite \(l\) alors :<br>
+    \[ \forall \varepsilon > 0, \exists n_0 \in \mathbb{N}, \forall n > n_0, |u_n - l | \leq \varepsilon \]<br>
+    Fixons un \( \varepsilon\) quelconque, soit \(n_0\) qui vérifie la propriété ci-dessus, alors, soit maintenant \(n\) et \(p\) strictement supérieurs à \(n_0\). On a les inégalités :<br>
+    \[ |u_n - u_p| = |(u_n - l) - (u_p - l)| \leq |u_n - l| + | u_p - l| \leq 2\varepsilon\]<br>
+    En posant \(\varepsilon' = 0.5\varepsilon\) on retrouve l'expression vérifiée par une suite de Cauchy.<br>
+    \[\boxed{\textrm{Une suite convergente est de Cauchy.}}\]</li><br>
+    <li class = "lic2"> Il suffit de prendre la suite des sommes partielles de l'exponentielle en 1. Cette suite converge vers \(e\) qui n'est pas rationnel, donc ne converge pas dans \(\mathbb{Q}\), mais il est assez facile de montrer qu'elle vérifie le critère de Cauchy.</li><br>
+    <li class = "lic2"> Soit \((u_n)\) une suite de Cauchy. Pour tout \(n \in \mathbb{N}\) on pose :<br>
+    \[ A_n = \{u_k | k \geq n\}\]<br>
+    Alors, on a les inclusions suivantes :<br>
+    \[A_0 \supset A_1 \supset \cdots \supset A_n \supset A_{n+1} \supset \cdots \]<br>
+    De plus, chaque \(A_n\) est une partie bornée de \(\mathbb{R}\) car une suite de Cauchy est bornée.<br><br>
+    On pose :<br>
+    \[\alpha_n = \inf A_n \textrm{  et  } \beta_n = \sup A_n.\]<br>
+    Alors \((\alpha_n)\) est une suite croissante et \((\beta_n)\) une suite décroissante.<br><br>
+    Soit \(\varepsilon > 0\) et \(N \in \mathbb{N}\) tel que :<br>
+    \[u_n < u_m + \varepsilon\] <br>
+    pour tout \(m, n \geq N\). On a donc que \(\beta_N \leq u_m + \epsilon \) pour tout \(m \geq N\). <br>
+    Or, \(\beta_N - \varepsilon\) est un minorant de \(A_N\) et donc \(\beta_N - \epsilon \leq \alpha_N\).<br> On en déduit que<br>
+    \(\beta_N - \alpha_N \leq \varepsilon\) et comme \((\beta_n)\) est décroissante et \((\alpha_n)\) est croissante, on en déduit<br>
+    que \(\beta_n - \alpha_n \leq \varepsilon\) pour tout \(n\geq N\). Ainsi : \(\)\lim_{n\longrightarrow + \infty}(\beta_n - \alpha_n) =<br>
+    0\(\)<br>
+    Les suites \((\alpha_n)_{n\in \mathbb{N}}\) et<br>
+    \((\beta_n)_{n\in \mathbb{N}}\) sont donc adjacentes. Soit \(l\) leur limite commune. <br>
+    Par encadrement :<br>
+    \[\boxed{\lim_{n\longrightarrow +\infty} u_n = l}\].</li><br>
+    <li class = "lic2"> La définition d'une fonction uniformément continue \(f\) est la suivante :<br>
+    \[\underline{\forall \varepsilon >0,\ \exists \delta>0,\ \forall (x,y)\in I^2,\ |x-y|<\delta\implies |f(x)-f(y)|<\varepsilon}\]<br>
+    Fixons \(\varepsilon > 0\) et soit \(\delta > 0\), tel que pour tout  \((x,y)\in I^2,\ |x-y|<\delta\implies |f(x)-f(y)|<\varepsilon\)<br>
+    Par définition d'une suite de Cauchy, il existe \(n_0\) tel que pour tout  \(p, n \geq n_0\), \[|u_n - u_p| \leq \delta.\]<br>
+    Donc, il existe \(n_0\) tel que pour tout  \(p, n \geq n_0\) on ait :<br>
+    \[|f(u_n) - f(u_p)| \leq \varepsilon\]</li><br>
+    Ainsi :<br>
+    \[\boxed{(f(u_n))_{n\in \mathbb{N}} \textrm{ est de Cauchy} }\]<br>
+    <li class = "lic2"> Tout d'abord, on remarque qu'on ne peut pas trouver de contre-exemple qui soit une suite réelle, car d'après la question 3, elle converge, or, l'image d'une suite convergente par une application continue converge, mais une suite converge est de Cauchy.<br>
+    L'indicatrice des rationnels est continue, mais pas Cauchy-continue.</li>
+</ol><br>
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise12"><h3>Exercice n°12 :</h3><div>
+            Soit \(\left( {{u}_{n}} \right)\in {{\mathbb{R}}^{\mathbb{N}}}\) une suite telle que \(\underset{n\to +\infty }{\mathop{Lim}}\,\left( {{u}_{n+1}}-{{u}_{n}} \right)=0\). Montrer que l'ensemble des valeurs d'adhérence de cette suite est un intervalle. <br>
+                        Donner un exemple non trivial d'une telle suite.
+                <br><hr>
+            <button class="bouton" onclick="afficher_texte('Corrigé12')"> Corrigé </button><HR>
+
+            <span id="Indication12" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé12" style="display:none;"><p>
+                <br>
+Supposons dans un premier temps que la suite n'admette aucune ou une unique valeur d'adhérence, alors, le résultat est vrai.<br><br>
+Supposons donc maintenant que la suite \((u_n)\) admette au moins deux valeurs d'adhérence \(l_1\) et \(l_2\). Alors, montrons que si \(x\in [l_1, l_2]\) alors c'est aussi une valeur d'adhérence.<br><br>
+Fixons \(\epsilon >0 :\)<br>
+<ul><br>
+    <li class = "lic2"> Il existe \(N_1\) tel que pour tout \(n>N_1, |u_{n+1} - u_n| \leq \varepsilon\).</li><br>
+    <li class = "lic2"> Il existe \(N_2 \geq N_1\) tel que pour tout \(n>N_2, |l_1 - u_n| \leq \varepsilon\).</li><br>
+    <li class = "lic2"> Il existe \(N_2 \geq N_1\) tel que pour tout \(n>N_3, |l_2 - u_n| \leq \varepsilon\).</li><br>
+</ul><br>
+<p>On peut alors montrer qu'il existe deux indices \(k_1, k_2\) tels que \(u_{k_1} \leq x\) et \(u_{k_2} \geq x\). On peut donc en trouver deux consécutifs, et il existe donc \(k\geq N_3\) tel que \(u_k \leq x\) et \(u_{k+1} \geq x\).<br><br>
+Supposons par l'absurde que ni \(u_k\) ni \(u_{k+1}\) ne soit dans l'intervalle \([x + \varepsilon; x - \varepsilon]\) alors on peut montrer que : \[|u_{k+1 - u_k}| \geq 2\varepsilon\]<br>
+Ce qui est absurde d'après la première assertion. Ainsi, \(x\) est une valeur d'adhérence.<br>
+Enfin :<br>
+\[\boxed{\textrm{L'ensemble des valeurs d'adhérence d'une telle suite est un intervalle.}}\]<br>
+Il suffit de construire une telle suite à l'aide des termes de la série harmonique, on prend :<br>
+\[u_0 = 1, \;\;
+u_1 = 1 + 1/2, \;\; \cdots, \;\; u_k = 1 + 1/2 + \cdots\]
+Jusqu'à ce que le terme \(u_k\) soit supérieur à \(2\),  on retranche ensuite les termes suivants jusqu'à ce que la somme soit inférieure à \(-3\) puis on poursuit ce procédé de construction. La suite obtenue admet \(\mathbb{R}\) pour l'ensemble de ses valeurs d'adhérences.<br>
+</p>
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise13"><h3>Exercice n°13 :</h3><div>
+            Sur \(\mathbb{R}^2\), montrer que \(\|(x,y) \|= \sup_{t\in \mathbb{R}}\frac{|x+yt|}{1+t^2} \) définit une norme. Commencer par calculer \(\|(1,1)\|\). Comparer explicitement cette norme avec les normes usuelles.
+                <br><hr>
+            <button class="bouton" onclick="afficher_texte('Corrigé13')"> Corrigé </button><HR>
+
+            <span id="Indication13" style="display:none; text-align: left;"><p>
+                
+<br>
+Cet exercice n°se fait très simplement en montrant dans un premier temps que l'application est bien une norme, la seule difficulté réside en la démonstration de l'existence de ce sup.<br><br>
+Il faut pour cela faire une étude de la fonction :<br>
+\[ f_{x,y} : \begin{array}[c]{} \mathbb{R} \longrightarrow \mathbb{R} \\ {t} \longmapsto {\frac{x+yt}{1+t^2}} \end{array} \]<br>
+Cette fonction est dérivable sur \(\mathbb{R}\) et l'étude de sa dérivée revient à celle d'un polynôme du second degré de discriminant \(\Delta = 4(x^2 + y^2)\). De plus on remarque que :<br>
+\[\lim_{t \longrightarrow +\infty} f_{a,b}(t) = \lim_{t \longrightarrow -\infty} f_{a,b}(t) = 0\]<br>
+D'où l'existence. Pour \(\| (1,1)\|\) il suffit de faire comme précédemment.<br>
+
+            <HR></p></span>
+            <span id = "Corrigé13" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise14"><h3>Exercice n°14 :</h3><div>
+            On admet que sur \({{\mathbb{R}}^{n}}\), \({{\left\| \left( {{x}_{1}},{{x}_{2}},...,{{x}_{n}} \right) \right\|}_{p}}={{\left( \sum\limits_{i=1}^{n}{{{\left| {{x}_{i}} \right|}^{p}}} \right)}^{\frac{1}{p}}}\) définit une norme. <br>
+            Montrer que \(\underset{p\to +\infty }{\mathop{Lim}}\,{{\left\| \left( {{x}_{1}},{{x}_{2}},...,{{x}_{n}} \right) \right\|}_{p}}={{\left\| \left( {{x}_{1}},{{x}_{2}},...,{{x}_{n}} \right) \right\|}_{\infty }}\).
+                    
+                <br><hr>
+            <button class="bouton" onclick="afficher_texte('Corrigé14')"> Corrigé </button><HR>
+
+            <span id="Indication14" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé14" style="display:none;"><p>
+                <br>
+Notons \(k\) tel que \(|x_k| = \left\| \left( {{x}_{1}},{{x}_{2}},...,{{x}_{n}} \right) \right\|_{\infty }\).<br>
+En procédant ainsi, il devient facile de trouver l'encadrement suivant :<br>
+\[\left\| \left( {{x}_{1}},{{x}_{2}},...,{{x}_{n}} \right) \right\|_{\infty }^p \leq \left\| \left( {{x}_{1}},{{x}_{2}},...,{{x}_{n}} \right) \right\|_{p}^p \leq n \left\| \left( {{x}_{1}},{{x}_{2}},...,{{x}_{n}} \right) \right\|_{\infty }^p\]<br>
+On trouve le résultat voulu en montrant que : \[\lim_{p \longrightarrow + \infty} n^{1/p}  = 1\]<br>
+On a bien :<br>
+\[\boxed{\underset{p\to +\infty }{\mathop{Lim}}\,{{\left\| \left( {{x}_{1}},{{x}_{2}},...,{{x}_{n}} \right) \right\|}_{p}}={{\left\| \left( {{x}_{1}},{{x}_{2}},...,{{x}_{n}} \right) \right\|}_{\infty }}}\]<br>
+
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise15"><h3>Exercice n°15 :</h3><div>
+            Soit \(E = \mathbb{R}_n[X]\) et \(a_0 \lt a_1 \lt \cdots \lt a_n\) des réels, soit \((P_k) \in (\mathbb{R}_n[X])^{\mathbb{N}}\). <br> Montrer que \(\|P_k\|^{[0;1]}_{\infty} \longrightarrow 0\) si et seulement si \(P_k(a_i) \longrightarrow 0\)<br>
+
+            <br><hr>
+            <button class="bouton" onclick="afficher_texte('Corrigé15')"> Corrigé </button><HR>
+
+            <span id="Indication15" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé15" style="display:none;"><p>
+                Le sens direct est trivial. Pour le sens indirect, l'astuce est de remarquer qu'on se trouve en dimension finie, donc que les normes sont équivalentes, or l'application :<br>
+                \[
+                \begin{array}{l|rcl} N: & \mathbb{R}_n[X] & \longrightarrow & \mathbb{R} \\ & P & \longmapsto & \sum_{i = 0}^n P(a_i) \end{array}\]<br>
+                est une norme. On conclut par encadrement.<br>
+
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise16"><h3>Exercice n°16 :</h3><div>
+            Démontrer qu'il existe des normes sur \({{\mathbb{R}}^{\mathbb{N}}}\).
+                <br><hr>
+            <button class="bouton" onclick="afficher_texte('Corrigé16')"> Corrigé </button><HR>
+
+            <span id="Indication16" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé16" style="display:none;"><p>
+                En admettant l'axiome du choix, on peut en déduire l'existence d'une base de l'espace \({{\mathbb{R}}^{\mathbb{N}}}\). Il est alors possible de prendre pour norme de \((u_n)\) le sup des coefficients de la décomposition de \((u_n)\) dans cette base. On prend le sup d'une quantité indénombrable d'éléments, mais si par l'absurde ce sup n'existait pas, alors on ne pourrait pas exprimer \((u_n)\). Ainsi, si l'axiome du choix est admis :<br>
+\[\boxed{\textrm{Il existe des normes sur \({\mathbb{R}}^{\mathbb{N}}\)}}\]<br>
+
+ 
+            </p></span>
+        </div></div>
+    </div><br>
+    <div class="arrow arrow-left" onclick="prevExercise(16)">&lt;</div>
+    <div class="arrow arrow-right" onclick="nextExercise(16)">&gt;</div>
+    <script>
+    window.onload = function() {
+        var hash = window.location.hash;
+        if (hash) {
+            var exerciseId = hash.substring(1); // Remove the '#' character
+            var exercise = document.getElementById(exerciseId);
+            if (exercise) {
+                var exerciseIndex = Array.from(exercise.parentElement.children).indexOf(exercise);
+                if (exerciseIndex !== -1) {
+                    showExercise(exerciseIndex);
+                    currentExerciseIndex = exerciseIndex;
+                }
+            }
+        }
+    };
+    </script>
+</div>
+</body>
+</html>

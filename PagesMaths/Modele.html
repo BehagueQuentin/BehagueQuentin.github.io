@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fonctions à valeurs vectorielles</title>
+    <link href="../stylePageMaths.css" rel="stylesheet">                                                                                                                                                                              
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"/>                                                                                                      
+    <link rel="icon" href="./../../Images/Icones/favicon.png">                                                                        
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>                                                                                                                  
+</head>
+
+<ul class="background">
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+</ul>
+
+
+<body background="./../../Images/Fonds/hexagonal.png" bgproperties="fixed">
+    <br>
+
+    
+    <div class="entete" style="position: relative;"><div class="effetneon"><span><h1>BEHAGUE Quentin - Etudiant en CPGE MPI*</h1> </span></div></div>
+
+    <!-- Menu de navigation du site -->
+    <span class="menu-de-navigation" id="menu">
+    <nav style="z-index: 10;">
+        <ul>
+            <li class ="home_button"><a href="../../index.html"><img src="./../../Images/NeonHouse.png" class="pic_menu_home"></a></li>
+            <li class="deroulant"><a href="#">Exercices corrigés &ensp;</a>
+
+                <ul class="sous" style="height: 300px; overflow-y: scroll;">
+                    <li><a href="../AlgebreLineaire/AlgebreLineaire.html">Algèbre linéaire</a></li>
+                    <li><a href="../Norme/Norme.html">Notion de norme</a></li>
+                    <li><a href="../SeriesEntieres/SeriesEntieres.html">Suites et séries entières</a></li>
+                    <li><a href="../Reduction/Reduction.html">Réduction</a></li>
+                    <li><a href="../Topologie/Topologie.html">Topologie</a></li>
+                    <li><a href="../EquationsDifferentielles/EquationsDifferentielles.html">Équations Différentielles</a></li>
+                    <li><a href="../CalculDifferentiel/CalculDifferentiel.html">Réduction</a></li>
+                    <li><a href="../EspacesEuclidiens/EspacesEuclidiens.html">Espaces euclidiens</a></li>
+                    <li><a href="../EspacesProbabilises/EspacesProbabilises.html">Espaces probabilisés</a></li>
+                    <li><a href="../StructureAlgebrique/StructureAlgebrique.html">Structures Algébriques</a></li>
+                    <li><a href="../FonctionsVectorielles/FonctionsVectorielles.html">Fonctions à valeurs vectorielles</a></li>
+                    <li><a href="../IntegralesParametres/IntegralesParametres.html">Intégrales à Paramétres</a></li>
+                    <li><a href="../SuitesSeriesFonction/SuitesSeriesFonction.html">Suites et séries de fonctions</a></li>
+                    <li><a href="../SuitesSeriesSommabilite/SuitesSeriesSommabilite.html">Suites, Séries et Sommabilité</a></li>
+                </ul>
+            
+                <li class="deroulant"><a href="#">Programmes &ensp;</a>
+                    <ul class="sous">
+                        <li><a href="../../Programmes/Syracuse.html">Suite de Syracuse</a></li>
+                        <li><a href="../../Programmes/Puzzle.html">Puzzle</a></li>
+                        <li><a href="https://github.com/BehagueQuentin/Jeu-Echecs">Jeux d'échec</a></li>
+                    </ul>
+                        <li ><a href="../../Téléchargement/Téléchargement.html">Téléchargements</a></li>
+                        <li class="deroulant"><a href="#">Contact &ensp;</a>
+                            <ul class="sous">
+                            <li><a>06 46 15 00 15</a></li>
+                            <li><a>quentinbehague59560@gmail.com</a></li>
+                            <li><a href="https://github.com/BehagueQuentin">Mon github</a>
+                        </ul>
+                        </li>
+                <li><a href="../../Apropos/Apropos.html">A propos</a></li>
+        </ul>
+    </nav>
+    </span>
+    <main style="z-index: 0; position: relative;">
+            <div class="container">
+                    <div class="container-title" style="width:50%; background-color: rgba(0, 2, 11, 0.5); border-radius: 2vw;">
+                        <h2  style="margin:1vw; text-align: center;">
+                            <span class="fading">Exercices :</span>
+                            <span class="fading">Fonctions</span>
+                            <span class="fading">à</span>
+                            <span class="fading">valeurs</span>
+                            <span class="fading">vectorielles</span>
+                        </h2>
+                    </div>
+            </div>
+            
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(1)">
+                <div class = "marge1">
+                <h4>Exercice n°1  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(2)">
+                <div class = "marge1">
+                <h4>Exercice n°2  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(3)">
+                <div class = "marge1">
+                <h4>Exercice n°3  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(4)">
+                <div class = "marge1">
+                <h4>Exercice n°4  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(5)">
+                <div class = "marge1">
+                <h4>Exercice n°5  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(6)">
+                <div class = "marge1">
+                <h4>Exercice n°6  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(7)">
+                <div class = "marge1">
+                <h4>Exercice n°7  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(8)">
+                <div class = "marge1">
+                <h4>Exercice n°8  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(9)">
+                <div class = "marge1">
+                <h4>Exercice n°9  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(10)">
+                <div class = "marge1">
+                <h4>Exercice n°10  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(11)">
+                <div class = "marge1">
+                <h4>Exercice n°11  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(12)">
+                <div class = "marge1">
+                <h4>Exercice n°12  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(13)">
+                <div class = "marge1">
+                <h4>Exercice n°13  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(14)">
+                <div class = "marge1">
+                <h4>Exercice n°14  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(15)">
+                <div class = "marge1">
+                <h4>Exercice n°15  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(16)">
+                <div class = "marge1">
+                <h4>Exercice n°16  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(17)">
+                <div class = "marge1">
+                <h4>Exercice n°17  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(18)">
+                <div class = "marge1">
+                <h4>Exercice n°18  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(19)">
+                <div class = "marge1">
+                <h4>Exercice n°19  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(20)">
+                <div class = "marge1">
+                <h4>Exercice n°20  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(21)">
+                <div class = "marge1">
+                <h4>Exercice n°21  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(22)">
+                <div class = "marge1">
+                <h4>Exercice n°22  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(23)">
+                <div class = "marge1">
+                <h4>Exercice n°23  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(24)">
+                <div class = "marge1">
+                <h4>Exercice n°24  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(25)">
+                <div class = "marge1">
+                <h4>Exercice n°25  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(26)">
+                <div class = "marge1">
+                <h4>Exercice n°26  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(27)">
+                <div class = "marge1">
+                <h4>Exercice n°27  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(28)">
+                <div class = "marge1">
+                <h4>Exercice n°28  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(29)">
+                <div class = "marge1">
+                <h4>Exercice n°29  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(30)">
+                <div class = "marge1">
+                <h4>Exercice n°30  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(31)">
+                <div class = "marge1">
+                <h4>Exercice n°31  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(32)">
+                <div class = "marge1">
+                <h4>Exercice n°32  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(33)">
+                <div class = "marge1">
+                <h4>Exercice n°33  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(34)">
+                <div class = "marge1">
+                <h4>Exercice n°34  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(35)">
+                <div class = "marge1">
+                <h4>Exercice n°35  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(36)">
+                <div class = "marge1">
+                <h4>Exercice n°36  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(37)">
+                <div class = "marge1">
+                <h4>Exercice n°37  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(38)">
+                <div class = "marge1">
+                <h4>Exercice n°38  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(39)">
+                <div class = "marge1">
+                <h4>Exercice n°39  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(40)">
+                <div class = "marge1">
+                <h4>Exercice n°40  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(41)">
+                <div class = "marge1">
+                <h4>Exercice n°41  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(42)">
+                <div class = "marge1">
+                <h4>Exercice n°42  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(43)">
+                <div class = "marge1">
+                <h4>Exercice n°43  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(44)">
+                <div class = "marge1">
+                <h4>Exercice n°44  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(45)">
+                <div class = "marge1">
+                <h4>Exercice n°45  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(46)">
+                <div class = "marge1">
+                <h4>Exercice n°46  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(47)">
+                <div class = "marge1">
+                <h4>Exercice n°47  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(48)">
+                <div class = "marge1">
+                <h4>Exercice n°48  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(49)">
+                <div class = "marge1">
+                <h4>Exercice n°49  :</h4>
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(50)">
+                <div class = "marge1">
+                <h4>Exercice n°50  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(51)">
+                <div class = "marge1">
+                <h4>Exercice n°51  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(52)">
+                <div class = "marge1">
+                <h4>Exercice n°52  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(53)">
+                <div class = "marge1">
+                <h4>Exercice n°53  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(54)">
+                <div class = "marge1">
+                <h4>Exercice n°54  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(55)">
+                <div class = "marge1">
+                <h4>Exercice n°55  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(56)">
+                <div class = "marge1">
+                <h4>Exercice n°56  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(57)">
+                <div class = "marge1">
+                <h4>Exercice n°57  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(58)">
+                <div class = "marge1">
+                <h4>Exercice n°58  :</h4>
+                
+            </div>
+            </div>
+            <div class="flexbox-item" style="flex: 8;" onclick="changePage(59)">
+                <div class = "marge1">
+                <h4>Exercice n°59  :</h4>
+                
+            </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+        </div>
+        
+    </main>
+
+
+    <script>
+        function afficher_texte(id){
+            var span = document.getElementById(id);
+            if(span.style.display == "none") {
+            span.style.display = "inline";
+            } else {
+            span.style.display = "none";
+            }
+        }
+
+        function changePage(exerciseNumber){
+            window.location.href = "./Exercice.html#exercise" + exerciseNumber;
+        }
+    </script>
+</body>
+</html>

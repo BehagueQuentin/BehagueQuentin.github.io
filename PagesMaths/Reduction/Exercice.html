@@ -1,0 +1,1677 @@
+<!DOCTYPE html>
+<html>
+<head><title>Suite, Séries, Sommabilité</title><link href="../stylePageMaths.css" rel="stylesheet"><link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"/><link rel="icon" href="./../../Images/Icones/favicon.png"><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> <script src = "../changePageMath.js"></script></head>
+
+<body background="../../Images/Fonds/hexagonal.png" bgproperties="fixed"><br>
+    <div class="entete" style="position: relative;"><div class="effetneon"><span><h1>BEHAGUE Quentin - Etudiant en CPGE MPI*</h1> </span></div></div>
+    <span class="menu-de-navigation" id="menu">
+    <nav style="z-index: 10;">
+    <ul>
+        <li class ="home_button"><a href="../../index.html"><img src="./../../Images/NeonHouse.png" class="pic_menu_home"></a></li>
+        <li class="deroulant"><a href="#">Exercices corrigés &ensp;</a>
+    <ul class="sous" style="height: 300px; overflow-y: scroll;">
+        <li><a href="../AlgebreLineaire/AlgebreLineaire.html">Algèbre linéaire</a></li>
+                    <li><a href="../Norme/Norme.html">Notion de norme</a></li>
+                    <li><a href="../SuitesSeriesSommabilite/SuitesSeriesSommabilite.html">Suites, Séries et Sommabilité</a></li>
+                    <li><a href="../Reduction/Reduction.html">Réduction</a></li>
+                    <li><a href="../FonctionsVectorielles/FonctionsVectorielles.html">Fonctions à valeurs vectorielles</a></li>
+                    <li><a href="../EspacesProbabilises/EspacesProbabilises.html">Espaces probabilisés</a></li>
+                    <li><a href="../SuitesSeriesFonction/SuitesSeriesFonction.html">Suites et séries de fonctions</a></li>
+                    <li><a href="../EquationsDifferentielles/EquationsDifferentielles.html">Équations différentielles</a></li>
+                    <li><a href="../CalculDifferentiel/CalculDifferentiel.html">Calcul différentiel</a></li>
+                    <li><a href="../IntegralesParametres/IntegralesParametres.html">Intégrales à Paramétres</a></li>
+                    <li><a href="../EspacesEuclidiens/EspacesEuclidiens.html">Espaces euclidiens</a></li>
+                    <li><a href="../Integration/Integration.html">Intégration</a></li>
+                    <li><a href="../SeriesEntieres/SeriesEntieres.html">Suites et séries entières</a></li>
+                    <li><a href="../Topologie/Topologie.html">Topologie</a></li>
+                    <li><a href="../VariablesAleatoires/VariablesAleatoires.html">Variables aléatoires</a></li>
+                    <li><a href="../StructureAlgebrique/StructureAlgebrique.html">Structures algébriques</a></li>
+    </ul>
+    <li class="deroulant"><a href="#">Programmes &ensp;</a>
+    <ul class="sous">
+        <li><a href="../../Programmes/Syracuse.html">Suite de Syracuse</a></li>
+        <li><a href="../../Programmes/Puzzle.html">Puzzle</a></li>
+        <li><a href="https://github.com/BehagueQuentin/Jeu-Echecs">Jeux d'échec</a></li>
+    </ul>
+        <li ><a href="../../Téléchargement/Téléchargement.html">Téléchargements</a></li>
+        <li class="deroulant"><a href="#">Contact &ensp;</a>
+            <ul class="sous">
+            <li><a>06 46 15 00 15</a></li>
+            <li><a>quentinbehague59560@gmail.com</a></li>
+            <li><a href="https://github.com/BehagueQuentin">Mon github</a>
+        </ul>
+        </li>
+        <li><a href="../../Apropos/Apropos.html">A propos</a></li>
+    </ul></nav></span>
+<style>
+    
+
+    
+</style>
+</head>
+<body style="min-height: 50vw;">
+<div class="container-ex0">
+    <div class="exercise-container" id="exerciseContainer">
+        <div class="exercise" id="exercise1"><h3>Exercice 1 :</h3><div>On pose : \[A = \left( \begin{array}{ccc} 1 & -3 & 0 \\ -3 & -2 & 1 \\ 0 & 1 & 1 \\ \end{array} \right)\]
+            <ol>
+                </li><li class = "lic2"> Résoudre \(M^2 = A\), où \(M \in \mathcal{M}_3(\mathbb{C})\)
+                </li><li class = "lic2"> Résoudre \(M^2 = A\), où \(M \in \mathcal{M}_3(\mathbb{R})\)
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé1')"> Corrigé </button><hr>  <span id="Indication1" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé1" style="display:none;"><p>  Le polynôme caractéristique de cette matrice vaut :
+            \[\chi_A(X) = \left| \begin{array}{ccc} x-1 & 3 & 0 \\ 3 & x+2 & -1 \\ 0 & -1 & x-1 \end{array} \right| = X^3-13X+12 = (X-1)(X-3)(X+4)\]
+            Le polynôme caractéristique est scindé simple, la matrice est donc diagonalisable (ce qu'on pouvait remarquer directement car cette matrice est symétrique réelle) et semblable à :
+            \[ A \sim \Delta = \left( \begin{array}{ccc} -4 & 0 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & 1 \\ \end{array} \right)\]
+            On établit ensuite l'expression de vecteurs propres associés aux valeurs propres trouvés précédemment, on a alors une matrice inversible :
+            \[P = \left( \begin{array}{ccc} -3 & -3 & 1 \\ -5 & 2& 0 \\ 1 & 1 &3 \\ \end{array} \right)\]
+            Posons \(N = PMP^{-1}\) alors on a \( N^2 = \Delta\).
+            Cela implique que \(N\) est diagonale. On en déduit que si \(N\) est solution, \(N\) est de la forme :
+            \[\boxed{N = \left( \begin{array}{ccc} \pm 2i & 0 & 0 \\ 0 & \pm \sqrt 3 & 0 \\ 0 & 0 & \pm 1 \\ \end{array} \right)}\]
+            On trouve alors la matrice \(M\)  en multipliant part \(P^{-1}\) et \(P\)...    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise2"><h3>Exercice 2 :</h3><div>On pose : \[A = \left( \begin{array}{ccc} -1 & -4 & 2 \\ 1 & 3 & -1 \\ -1 & -2 & 2 \\ \end{array} \right) \textrm{ et } B = \left( \begin{array}{ccc} 2 & 1 & 1 \\ 0 & 0 & -2 \\ -1 & 0 & 2 \\ \end{array} \right)\]
+            Les matrices \(A\) et \(B\) sont-elles semblables ? <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé2')"> Corrigé </button><hr>  <span id="Indication2" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé2" style="display:none;"><p>  On trouve, en appliquant la méthode de diagonalisation classique :
+            \[A \sim \left( \begin{array}{ccc} 2 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \\ \end{array} \right)\]
+            De même, on trouve que \(B\) admet les mêmes valeurs propres (\(\chi_B(X) = (x-2)(x-1)^2\)), cependant, \(B\) n'est pas diagonalisable car la dimension du sous-espace propre associé à la valeur propre \(1\) n'est pas égale à sa multiplicité.
+            Ainsi \(\boxed{\textrm{\(A\) et \(B\) ne sont pas semblables.}}\)    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise3"><h3>Exercice 3 :</h3><div>Soit \(A = \left( \begin{array}{ccc} 3 & 2 & 2 \\ 2 & 2 & 0 \\ 2 & 0 & 2 \\ \end{array} \right)\)<br>
+            Déterminer le spectre de \(A\).<br>
+            Donner une matrice diagonale \(D\) semblable à \(A\).<br>
+            La matrice \(A\) est-elle inversible ?<br> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé3')"> Corrigé </button><hr>  <span id="Indication3" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé3" style="display:none;"><p>  On trouve pour polynôme caractéristique de \(A\) :
+            \[\chi_A (X) = (X-2) \left(X^2-5 X-2\right) \]
+            Les racines du second membre se trouve facilement, est le polynôme caractéristique est scindé simple, on en déduit que :
+            \[\boxed{Sp(A) = \left\{ \frac{1}{2} \left(5+\sqrt{33}\right), 2, \frac{1}{2} \left(5-\sqrt{33}\right)\right\}}\]
+            Ainsi la matrice \(A\) est diagonalisable car son polynôme caractéristique est scindé simple, elle est semblable à :
+            \[\boxed{D = \left( \begin{array}{ccc} \frac{1}{2} \left(5+\sqrt{33}\right) & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & \frac{1}{2} \left(5-\sqrt{33}\right) <br> \end{array} \right)}\]
+            Enfin, cette matrice est inversible car son déterminant est non nulle, car \(0\notin Sp(A)\).    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise4"><h3>Exercice 4 :</h3><div>Montrer qu'une matrice de rang \(1\) est diagonalisable si et seulement si sa trace est non nulle. <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé4')"> Corrigé </button><hr>  <span id="Indication4" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé4" style="display:none;"><p>  Soit \(M\) de rang 1, remarquons tout d'abord qu'on a :
+            \(rg(M) = 1 \Longrightarrow dim(ker(M)) = dim(E_0(M)) = n-1\)
+            Donc \(0\) est valeur propre de multiplicité au moins \(n-1\).
+            Donc \(M\) admet une dernière valeur propre \(\lambda\), de plus toute matrice est trigonalisable dans \(\mathbb C\). On a donc : \(Tr(M) = \lambda + 0 + \cdots + 0\)<br>
+            Donc la dernière  valeur propre vaut \(Tr(M)\). Ainsi :
+            \[\boxed{\textrm{\(M\) est diagonalisable si et seulement si \(Tr(M) \neq 0\)}}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise5"><h3>Exercice 5 :</h3><div>Soit \(a, b \in \mathbb R\) et \(n>0\). On note :
+            \[\begin{array}{l|rcl}u: & \mathbb{C}_n[X] & \longrightarrow \mathbb{C}_n[X] \\ & P & \longmapsto & (X - a)(X - b)P' - nXP \end{array}\]
+            <ol>
+                </li><li class = "lic2"> Montrer que \(u\) est un endomorphisme.
+                </li><li class = "lic2"> Prouver que \(u\) est diagonalisable et trouver ses espaces propres.
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé5')"> Corrigé </button><hr>  <span id="Indication5" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé5" style="display:none;"><p>  Pour la première question, il suffit de poser l'expression du polynôme et de vérifier que les monômes de degré supérieur à \(n\) s'annulent.<br>
+            Pour la deuxième question, on trouve une base de \(\mathbb{C}_n[X]\) adaptée à l'application \(u\). On pose : \(\mathcal{B} = \left((X-a)^k\right)_{k\in [\![0, n]\!]}\)<br>
+            Cette famille est bien une base car est échelonnée en degré et de cardinal \(n+1\).<br>
+            La matrice de \(u\) dans cette base est alors triangulaire car : 
+            \[u((X-a)^k) = k(X - a)(X - b)(X-a)^{k-1} - nX(X-a)^k = (k-n)(X-a)^{k+1} - (k(a-b) - na)(X-a)^k \]
+            On en trouve ainsi les valeurs propres sur la diagonale :
+            \[Sp(u) = \{(k(a-b) - na) | k\in [\![0, n]\!]\}\]
+            Les sous espaces propres associés à ces valeurs propres sont donc de dimension 1.    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise6"><h3>Exercice 6 :</h3><div>Soit \(A = \left( \begin{array}{ccc} -1 & 1 & 1 \\ 1 & -1 & 1 \\ 1 & 1 & -1 \end{array} \right)\)
+            <ol>
+            
+                </li><li class = "lic2"> Trouver un polynôme annulateur \(P\) de \(A\).
+                </li><li class = "lic2"> Effectuer la division euclidienne de \(X^k\) par \(P\). En déduire \(A^k\).
+                </li><li class = "lic2"> On définit \(X_0 = (1 1 1)^{T}\) , puis \(X_{k+1} = AX_k\). Calculer \(X_k\) pour tout entier \(k\).
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé6')"> Corrigé </button><hr>  <span id="Indication6" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé6" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> D'après le théorème de Cayley-Hamilton, le polynôme caractéristique de \(A\) est annulateur de \(A\). On trouve donc :
+                \[\boxed{P(X) = \chi_A(X) = X^3 +3X^2 -4}\]
+                </li><li class = "lic2"> On peut se débrouiller avec la méthode de l'exercice en regardant les premières divisions pour \(k=3\) et \(k=4\) puis en faisant une récurrence sur \(k\). Mais il y a plus rapide, on remarque en posant \(J_3\) la matrice qui ne contient que des \(1\) que \(A = J_3 - 2I_3\).<br>
+                On remarque que \(J_3\) et \(-2I_3\) commutent. On peut donc appliquer le binôme de Newton. On trouve :
+                \(A^k = \frac13 J_3 \left(1+(-2)^k\right) + \frac{(-2)^k}3  I_3 \)
+                Ainsi :
+                \[\boxed{A^k = \frac{1}{3}\left( \begin{array}{ccc} 
+                1 +2(-2)^k &  1 +(-2)^k& 1 +(-2)^k \\
+                 1 +(-2)^k  & 1 +2(-2)^k & 1 +(-2)^k \\ 
+                 1 +(-2)^k & 1 +(-2)^k &  1 +2(-2)^k \\
+                 \end{array} \right) }\]
+                 </li><li class = "lic2"> Cette suite est trivialement constante égale à \(X_0\).
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise7"><h3>Exercice 7 :</h3><div>Soit \(A \in \mathcal{M}_3(\mathbb{R})\) telle que : \(\exists B \in \mathcal{M}_3(\mathbb{R})\) telle que \( AB \neq BA \) On suppose de plus qu'il
+            existe un réel \(a\) tel que \(\chi_A (X) = (X - a)^3\). Montrer que \(A\) n'est pas diagonalisable. <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé7')"> Corrigé </button><hr>  <span id="Indication7" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé7" style="display:none;"><p>  On remarque tout d'abord que \(A\) n'est pas une homothétie, sinon elle commuterait avec tout \( B \in \mathcal{M}_3(\mathbb{R})\). De plus \(a\) est valeur propre de multiplicité 3, donc si \(A\) est diagonalisable, alors \(A\) est semblable à \(aI_n\) qui n'est semblable qu'à elle-même, donc \(A = aI_n\). ABSURDE.<br>
+            Donc :
+            \[\boxed{\textrm{\(A\) n'est pas diagonalisable.}}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise8"><h3>Exercice 8 :</h3><div>À quelle condition sur le réel \(\alpha\) la matrice suivante est-elle diagonalisable :
+            \[A = \left( \begin{matrix}
+                    0 & \alpha & \alpha  \\
+                    1 & 0 & \alpha  \\
+                      1 & 1 & 0 \\
+                    \end{matrix} \right)\] 
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé8')"> Corrigé </button><hr>  <span id="Indication8" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé8" style="display:none;"><p>  \[\chi_A(X) = \left| \begin{matrix}
+                    X & -\alpha & -\alpha  \\
+                    -1 & X & -\alpha  \\
+                      -1 & -1 & X  \\
+                    \end{matrix} \right| = 
+                    \left| \begin{matrix}
+                    X & -\alpha & -\alpha  \\
+                      0 & X +1  & - (X +\alpha)  \\
+                      -1 & -1 & X  \\
+                    \end{matrix} \right|
+                 \]
+                    \[ = X \left| \begin{matrix}
+                    X +1  & - (X +\alpha)  \\
+                    -1 & X  \\
+                    \end{matrix} \right|
+              +  \alpha \left| \begin{matrix}
+                    1 & 1  \\
+                      X +1  & - (X +\alpha)  \\
+                    \end{matrix} \right|\]
+              \[ = X^3 + X^2 -X^2 - \alpha X - \alpha X - \alpha^2 - \alpha X - \alpha\]
+              \[ = X^3 - 3\alpha X - \alpha(\alpha + 1)\]
+            
+            On peut alors étudier les variations du polynôme caractéristique, par étude de fonction, on montre que \(\chi_A \) admet une unique racine \(x_0\) si \(\alpha \neq 1\), donc n'est pas diagonalisable, sinon elle serait semblable donc égale à \(x_0I_n\). Dans le cas où \(\alpha = 1\) on remarque que \(A\) est symétrique réelle donc est diagonalisable.
+            \[\boxed{\textrm{\(A\) est diagonalisable si et seulement si \(\alpha = 1\)}}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise9"><h3>Exercice 9 :</h3><div>Soit \(A \in  \mathcal{M}_n(\mathbb{R})\) telle que \(A^3 + I_n = 0\). Montrer que \(tr(A)\) est un entier. <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé9')"> Corrigé </button><hr>  <span id="Indication9" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé9" style="display:none;"><p>  \(A\) est trigonalisable dans \(\mathbb{C}\) et
+            \[A \sim \left( \begin{matrix}
+                    \lambda_1 & * & *  \\
+                    0 & \ddots & * \\
+                      0 & 0 & \lambda_n \\
+                    \end{matrix} \right) \Longrightarrow A^3 \sim \left( \begin{matrix}
+                    \lambda_1^3 & * & *  \\
+                    0 & \ddots & * \\
+                      0 & 0 & \lambda_n^3  \\
+                    \end{matrix} \right) \]
+            
+            Or, le polynôme : \[P = X^3 + 1 = (X+1)(X+j)(X+j^2)\]
+            est annulateur de \(A\). On sait donc que le spectre de A est compris dans \(\{-1, -j, -j^2\}\)
+            Donc A est semblable à une matrice triangulaire avec ces éléments diagonaux égaux à \(-1\), \(-j\) ou \(-j^2\). Or, les valeurs propres complexes sont conjuguées, donc elles apparaissent le même nombre de fois dans la diagonale, Donc : 
+            \[Tr(A) = 2k_1\times \operatorname{Re}(-j) + k_2 \times (-1)\]
+            Enfin : 
+            \[\boxed{Tr(A) \in \mathbb{N}}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise10"><h3>Exercice 10 :</h3><div>Soit \(n \leq 2\), \(A \in  \mathcal{M}_n(\mathbb{R})\) la matrice avec des \(1\) sur la diagonale, sur la première colonne et sur la première
+            ligne, puis des \(0\) partout ailleurs.
+            <ol>
+                </li><li class = "lic2"> Montrer que A est diagonalisable.
+                </li><li class = "lic2"> Cas \(n = 2\) : Calculer les éléments propres de \(A\).
+                </li><li class = "lic2"> Cas \(n\neq 2\) : 
+                <ol>
+                    </li><li class = "lic2"> Montrer que \(1\) est une valeur propre de \(A\).
+                    </li><li class = "lic2"> Montrer que si \(\lambda\) est une valeur propre de \(A\) autre que \(1\), alors \((\lambda - 1)^2 = n - 1\). Expliciter les éléments
+                    propres de \(A\).
+                    </li><li class = "lic2"> Calculer le déterminant de \(A\) en fonction de \(n\).
+                </ol>
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé10')"> Corrigé </button><hr>  <span id="Indication10" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé10" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> \(A\) est une matrice symétrique réelle, elle est donc diagonalisable.
+                \[\boxed{\textrm {\(A\) est diagonalisable}}\]
+                </li><li class = "lic2"> On a dans ce cas  :
+                \[A = \left( \begin{array}{cc} 1 & 1 \\ 1 & 0 \\ \end{array} \right)\]
+                On remarque que le polynôme caractéristique de \(A\) vaut :
+                \[\chi_A(X) = X^2 - X - 1\]
+                Et donc :
+                \[Sp(A) = \left\{ \frac{1+\sqrt 5}2, \frac{1-\sqrt 5}2 \right\}\]
+                Il faut alors résoudre le système suivant pour \(\lambda \in Sp(A)\) :
+                \[\left( \begin{array}{cc} 1 & 1 \\ 1 & 0 \\ \end{array} \right) \left( \begin{array}{cc} x \\ y \\ \end{array} \right) = \lambda \left( \begin{array}{cc} x \\ y \\ \end{array} \right)\]
+                Les solutions ne sont pas simples, mais il n'y a aucune subtilité, les calculs sont donc laissés au lecteur.
+                </li><li class = "lic2"> On trouve très facilement que 1 est valeur propre, en effet, à l'aide du polynôme caractéristique de A :
+                \[\chi_{A_n}(X) = \left| \begin{array}{cccc} X - 1&-1&\cdots&-1\\
+                -1 & \ddots & 0 & 0\\
+                \vdots & 0 & X - 1 &0\\
+                -1  & 0& \cdots & X-1\\
+                \end{array}\right|_{(n)} \Longrightarrow \chi_A (1) = 
+                \left| \begin{array}{cccc}
+                    0 & -1 & \cdots & -1 \\
+                    -1 & \ddots & 0  & 0\\
+                    \vdots & 0 & \ddots & \vdots\\
+                -1 & 0& \cdots &0 \\
+                \end{array}\right|_{(n)}\]
+                Or le déterminant ainsi obtenu est nul, car les colonnes sont liées.
+                Donc :
+                \[\boxed{\textrm{\(A\) admet \(1\) pour valeur propre}}\]
+            
+                
+             De plus, en calculant le déterminant de manière explicite, on trouve :
+             \[\chi_A(X) = \left| \begin{array}{cccc}
+             X - 1 & -1 & \cdots & -1 \\
+            -1 & \ddots & 0 & 0\\
+            \vdots & 0 & X - 1 &0\\
+            -1  & 0& \cdots & X-1 
+                \end{array}\right|_{(n)} \] 
+             \[ = (X-1) \left| \begin{array}{cccc}
+            X - 1 & -1 & \cdots & -1 \\
+            -1 & \ddots & 0 & 0\\
+            \vdots & 0 & X - 1 &0\\
+            -1  & 0& \cdots & X-1\\
+                \end{array}\right|_{(n-1)} + (-1)^{n+1} 
+             \left| \begin{array}{cccc}
+            - 1 & -1 & \cdots & -1 \\
+            X-1 & \ddots & 0 & 0\\
+            \vdots & \ddots & 0 &0\\
+            0  &  \cdots &X-1& 0\\
+                \end{array}\right|_{(n-1)}\]
+             \[=(X-1)\chi_{A_{n-1}}(X) + \left| \begin{array}{cccc}
+            X- 1 & 0 & \cdots & 0 \\
+            0 & \ddots & 0 & 0\\
+            \vdots & 0 & X - 1 &0\\
+            0 & 0& \cdots & X-1\\
+                \end{array}\right|_{(n-2)}\]
+             \[ \Longrightarrow \chi_{A_{n}}(X) = (X-1)\chi_{A_{n-1}}(X) +(X-1)^{n-2} \]
+             Il est alors possible de démontrer par récurrence, en s'aidant des premiers termes ainsi que de la formule de récurrence ci-dessus, que le polynôme caractéristique s'écrit :
+             \[\boxed{\chi_{A_{n}}(X) = (X-1)^{n-2} (X^2 -2X - (n-2))}\]
+             Les valeurs propres sont donc : 
+             \[ Sp(A_n) = \left\{ 1, 1- \sqrt{n-1}, 1 + \sqrt{n-1} \right\}\]
+             \[\boxed{\textrm{Donc, si \(\lambda \in Sp(A), (\lambda - 1)^2 = n - 1\)}}\]
+             
+             Il ne reste plus qu'à déterminer les vecteurs propres associés aux valeurs propres  \(1- \sqrt{n-1}\) et \(1 + \sqrt{n-1}\). Cette question calculatoire est, elle aussi, laissée au lecteur.
+             </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise11"><h3>Exercice 11 :</h3><div>On note \(E\) l'ensemble \(C^0(\mathbb{R}_+, \mathbb{R})\) et on définit l'application \(u\) telle que :
+            \[\forall f \in E,  u(f)(x) = \left\{
+                \begin{array}{ll}
+                    \frac1x \int^x_0 f(x)dx \textrm{ si } x > 0\\
+                    u(f)(0) = f(0)
+                \end{array}
+            \right.\]
+            <ol>
+                </li><li class = "lic2"> 
+                <ol>
+                    </li><li class = "lic2"> Montrer que pour tout \(f \in E, u(f )\) est continue sur \(\mathbb{R }_+\) et dérivable sur \(\mathbb{R }_+\).
+                    </li><li class = "lic2"> Pour tout \(f \in E\), déterminer \(u(f )'\).
+                </ol>
+                </li><li class = "lic2"> 
+                <ol>
+                    </li><li class = "lic2"> Montrer que \(u \in L(E)\)
+                    </li><li class = "lic2"> Montrer que \(u\) est injective.
+                    </li><li class = "lic2"> \(u\) est-elle surjective ?
+                </ol>
+                </li><li class = "lic2"> Déterminer les valeurs propres et les vecteurs propres associés de \(u\)
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé11')"> Corrigé </button><hr>  <span id="Indication11" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé11" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> 
+                <ol>
+                    </li><li class = "lic2"> La fonction \(u(f)\) est continue et dérivable comme primitive d'une fonction continue. On trouve la continuité en \(0\) en reconnaissant un taux d'accroissement
+                    </li><li class = "lic2"> On trouve trivialement, pour tout \(x\) :
+                    \[ u(f)'(x) = -\frac1x u(f)(x) + \frac1x f(x) \]
+                </ol>
+                </li><li class = "lic2"> 
+                <ol>
+                    </li><li class = "lic2"> Trivial
+                    </li><li class = "lic2"> On prend \(f\) dans \(\ker(u)\), la primitive de \(f\) s'annulant en \(0\) est nulle, on en déduit que \(f\) est nulle.
+                    </li><li class = "lic2"> Il suffit de remarquer que, pour tout \(x\), \(u^{-1}(f)(x) = D(xf)(x)\)
+                </ol>
+                </li><li class = "lic2"> En se servant de l'expression de la dérivée établie en 1) b), on considère \(f\) un vecteur propre pour la valeur propre \(\lambda\).
+                On établit alors que \(f\) est solution de l'équation différentielle :
+                \[\forall x, f'(x) + \left(\frac{1}{x}- \frac1{\lambda x}\right)f(x) = 0\]
+                On en déduit que tout \(\lambda \neq 0 \) est valeur propre et que les vecteurs propres associés sont de la forme :
+                \[f : x \longmapsto A \exp\left(\frac1{\lambda} - 1\right)\]
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise12"><h3>Exercice 12 :</h3><div>Soit \(E\) un \(\mathbb{R}\)-espace vectoriel de dimension finie et \((u, v) \in (L(E))^2\). Montrer que si \(\lambda \in \mathbb{R}\) est valeur propre
+            de \(u\circ v\), alors \(\lambda\) est valeur propre de \(v\circ u\). <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé12')"> Corrigé </button><hr>  <span id="Indication12" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé12" style="display:none;"><p>  Si \(\lambda \neq 0\), soit \(\vec{x_0} \neq 0\) tel que \(u\circ v(\vec{x_0}) = \lambda \vec{x_0}\). Alors
+            \(v \circ u\circ v(\vec{x_0}) = \lambda v(\vec{x_0})\). Autrement dit, \(\vec{x_0}\) est vecteur propre de \(v\circ u\) pour la valeur propre \(\lambda\).<br>
+            Sinon, on remarque que \(\det(u\circ  v) = 0 = \det(v \circ u)\), donc \(0\) est aussi valeur propre de \(v\circ u\) car son déterminant est nul.    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise13"><h3>Exercice 13 :</h3><div>Soit \(E\) un espace vectoriel de dimension finie \(n\). Soit \(u \in L(E)\) admettant \(n\) valeurs propres distinctes.
+            <ol>
+                </li><li class = "lic2"> Soit \(v \in L(E)\). Montrer que \(v \circ u = u \circ v\) si et seulement si \(u\) et \(v\) admettent une base commune de vecteurs propres.
+                </li><li class = "lic2"> Soient \(\mathcal{B}\) une base de \(E\) et \(A\) la matrice de \(u\) dans \(B\). Discuter le nombre de solutions de l'équation \(X^2 = A\), d'inconnue \(X \in \mathcal{M}_n(\mathbb{R})\).
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé13')"> Corrigé </button><hr>  <span id="Indication13" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé13" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> Dans le premier sens, supposons que \(v \circ u = u \circ v\). Alors, les sous espaces propres d'un des deux endomorphismes sont stables par l'autre. Ainsi, soit \(\vec{x_0}\) un vecteur propre de \(u\) pour la valeur propre \(\lambda\).
+                \[E_{\lambda}(u) = vect(\vec{x_0})\]
+                En particulier : \(v(\vec{x_0}) = \mu\vec{x_0}\)
+                Il suffit alors de prendre une base composée de vecteurs propres quelconques associés à chacune des valeurs propres.
+                <br>
+                Réciproquement, si \(u\) et \(v\) admettent une base commune de vecteurs propres, ils sont donc codiagonalisables, on en déduit le résultat.
+                </li><li class = "lic2"> Posons \(v\) l'endomorphisme associé à \(X\), alors \(v^2 = u \Longrightarrow u\circ v = v \circ u \).<br> Donc c'est deux matrices sont codiagonalisables d'après la question précédente, on en déduit que si les coefficients de \(A\) sont tous positifs, il y a \(2^n\) solutions (correspondant au choix du signe des éléments diagonaux de X). Sinon, il n'y pas de solution dans \(\mathcal{M}_n(\mathbb{R})\).
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise14"><h3>Exercice 14 :</h3><div>Soit \(a_1, \cdots, a_n\) des réels non tous nuls. On pose alors :
+            \[A =   \left( \begin{matrix}
+                    0 & a_1 & \cdots&  a_n \\
+                    a_1 & 0 & \cdots &  0 \\
+                    \vdots  & \vdots & \ddots & \vdots\\
+                    a_n & 0 & \cdots & 0\\
+                    \end{matrix} \right)\]
+            
+            <ol>
+                </li><li class = "lic2"> Montrer que \(A\) est diagonalisable.
+                </li><li class = "lic2"> Quel est le rang de \(A\) ? Que peut-on en déduire sur son spectre ?
+                </li><li class = "lic2"> Calculer \(A^2\). En déduire le spectre et le polynôme caractéristique de \(A\).
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé14')"> Corrigé </button><hr>  <span id="Indication14" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé14" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> A est symétrique réelle donc \(\boxed{\textrm{\(A\) est diagonalisable.}}\)
+                </li><li class = "lic2"> le rang de \(A\) vaut \(2\) car la première colonne est non nulle et trivialement linéairement indépendante des autres colonnes.<br>
+                On en déduit par théorème du rang que \(\dim(\ker(A)) = \dim(E_0(A)) = n-1\)
+                Donc \(0\) est valeur propre de multiplicité au moins \(n-1\). De plus la trace de \(A\) vaut \(0\). On a donc :
+                \[\boxed{Sp(A) = \{0, a, -a\}}\]
+                </li><li class = "lic2"> \[A^2 = 
+                    \left( \begin{matrix}
+                    \sum_{k=1}^n a_k^2 & 0 & \cdots&  0\\
+                    0 & a_1^2 & \cdots &  a_1a_n \\
+                    \vdots  & \vdots & \ddots & \vdots\\
+                    0 & a_na_1 & \cdots & a_n^2\\
+                    \end{matrix} \right)\]
+              Or \(A\) est semblable à :
+              \[\left( \begin{matrix}
+                    0 & 0 & \cdots &  0\\
+                    0 & \ddots & \ddots & 0 \\
+                    \vdots  &  0& a & \vdots\\
+                    0 & 0 & \cdots & -a\\
+                    \end{matrix} \right)\]
+              Donc \(A^2\) est semblable à :
+              \[\left( \begin{matrix}
+                    0 & 0 & \cdots &  0\\
+                    0 & \ddots & \ddots & 0 \\
+                    \vdots  & 0 & a^2 & \vdots\\
+                    0 & 0 & \cdots & a^2\\
+                    \end{matrix} \right)\]
+              Or, deux matrices semblables ont même trace, on en déduit l'égalité :
+              \[2a^2 = 2\sum_{k=1}^n a_k^2 \Longrightarrow  |a| = \sqrt{\sum_{k=1}^n a_k^2}\]
+              Donc :
+              \[\boxed{Sp(A) = \left\{0, \sqrt{\sum_{k=1}^n a_k^2}, -\sqrt{\sum_{k=1}^n a_k^2}\right\}} \textrm{ et } \boxed{\chi_A (X) = X^{n-1}\left(X^2 - \sum_{k=1}^n a_k^2\right)}\]
+            </ol>    </p></span></div></div>
+            
+            
+            <div class="exercise hidden" id="exercise15"><h3>Exercice 15 :</h3><div>
+
+                Soit \(E\) un \(\mathbb{R}\)-espace vectoriel de dimension finie \(n\) et \(f\) un endomorphisme de \(E\) vérifiant : \(f^2 = -Id_E\).
+            <ol>
+                <li class = "lic2"> Montrer que \(f\) n'admet pas de valeur propre réelle et montrer que \(f\) est bijectif.</li>
+                <li class = "lic2">En déduire que la dimension de \(E\) est paire.</li>
+                <li class = "lic2">Soit \(u\) un vecteur non nul. Montrer que \(Vect(u, f (u))\) est stable par \(f\).</li>
+                <li class = "lic2">On prend \(n = 4\). Montrer l'existence de deux vecteurs \(u, v\) tels que \((u, f (u), v, f (v))\) soit une base de \(E\).</li>
+                <li class = "lic2">Généraliser ce résultat.</li>
+            </ol>
+
+                <hr><button class="bouton" onclick="afficher_texte('Corrigé15')"> Corrigé </button><hr>
+                            
+                <span id="Indication15" style="display:none; text-align: left;"><p>
+                            ...
+                <HR></p></span>
+                <span id = "Corrigé15" style="display:none;"><p>
+                    <ol>
+                    </li><li class = "lic2"> Le spectre de \(f\) est inclus dans les racines du polynôme annulateur \(P(X) = X^2 - 1\) donc les valeurs propres ne sont pas réelles, de plus \(f\) est une involution de bijection réciproque égale à elle-même.
+                    </li><li class = "lic2"> \(\det(f^2)= \det^2(f) = \det(-Id) = (-1)^n\) donc \(n\in 2\mathbb{N}\).
+                    </li><li class = "lic2"> Soit \(x\in Vect(u, f(u))\), alors, il existe \((\lambda, \mu)\in \mathbb{R}^2\) tel que :
+                    \[ f(x) = f(\lambda u + u(\mu f(u))) = \lambda f(u) + \mu f^2(u) = \lambda f(u) + \mu u \in  Vect(u, f(u))\]
+                    </li><li class = "lic2"> On sait que \((u,f(u))\) est libre, d'après le théorème de la base incomplète, elle peut être complétée en base \(\mathcal{B} = (u, f(u), v, w)\) de \(E\). En particulier, la famille \((u, f(u), v)\) est libre, supposons par l'absurde que \(f(v) \in Vect(u, v, f(u))\), alors, il existe \(\lambda, \mu, \gamma\) tel que :
+                    \[f(v) = \lambda u + \mu v + \gamma f(u)\]
+                    Or :
+                    \[f(f(v)) = -v = \lambda f(u) + \mu f(v) - \gamma u \]
+                    En remplaçant \(f(u)\) par son expression dans la formule précédente, on obtient :
+                    \[-v = \lambda f(u) + \mu \lambda u + \mu^2 v + \mu \gamma f(u) - \gamma u \]
+                    \[\Longrightarrow (\mu^2 - 1)\]
+                    </li><li class = "lic2"> Par récurrence, on montre pour \(E\) de dimension paire l'existence de \(\frac n 2\) vecteurs \(u_1, \cdots, u_{n/2}\) tels que :
+                    \[\boxed{\mathcal{B} = (u_1, f(u_1), u_2, f(u_2), \cdots, u_{n/2}, f(u_{n/2})) \textrm{ est une base de E}}\]
+                </ol>
+                
+                </p></span>
+            </div></div>
+
+
+
+            <div class="exercise hidden" id="exercise16"><h3>Exercice 16 :</h3><div>Résoudre : \[\displaystyle A^3 = \left( \begin{matrix}
+                    1 & -2 & 1\\
+                    1 & -2 & 1\\
+                    1 &  -2& 1\\
+                    \end{matrix} \right)\] <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé16')"> Corrigé </button><hr>  <span id="Indication16" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé16" style="display:none;"><p> 
+            
+            Posons \(M\) la matrice de l'énoncé. On remarque que \(rg(M) = 1\), de plus \(Tr(M) = 0\). Donc \(0\) est valeur propre de multiplicité \(3\) mais son sous-espace propre associé est de multiplicité \(2\). Donc \(M\) n'est pas diagonalisable.<br>
+            
+            Cependant, les valeurs propres de \(A\) sont toutes nulles, sinon, \(M\) admettrait une valeur propre non nulle. Donc, A est trigonalisable dans \(\mathbb{C}\) avec des \(0\) sur la diagonale, en particulier, elle est nilpotente, donc \(A^3 = 0\).
+            \[\boxed{\textrm{Le système n'admet aucune solution.}}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise17"><h3>Exercice 17 :</h3><div>On considère la matrice : \[A = \left( \begin{array}{cc} -5 & 3 \\ 6 & -2 \\ \end{array} \right)\]
+            <ol>
+                </li><li class = "lic2"> Montrer que \(A\) s'écrit \(PDP^{-1}\) avec \(P\) matrice inversible de \(\mathcal{M}_2(\mathbb{R})\) et \(D\) matrice diagonale de  \(\mathcal{M}_2(\mathbb{R})\).
+            </li><li class = "lic2"> On cherche à résoudre l'équation \(X^2 = A\). Montrer que si \(X\) est solution de cette équation alors \(P^{-1}XP\)
+            commute avec \(D\) puis qu'elle est diagonale. Résoudre l'équation.
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé17')"> Corrigé </button><hr>  <span id="Indication17" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé17" style="display:none;"><p>  Pour la première question, on obtient l'égalité suivante par la méthode classique : 
+            \[\left( \begin{array}{cc} -5 & 3 \\ 6 & -2 \\ \end{array} \right) = \left( \begin{array}{cc} -1 & 1 \\ 1 & 2 \\ \end{array} \right) 
+            \left( \begin{array}{cc} -8 & 0 \\ 0 & 1 \\ \end{array} \right) \left( \begin{array}{cc} -\frac{2}{3} & \frac{1}{3} \\ \frac{1}{3} & \frac{1}{3} \end{array} \right)\]
+            On pose :
+            \[\boxed{P = \left( \begin{array}{cc} -1 & 1 \\ 1 & 2 \\ \end{array} \right) }\textrm{ et } \boxed{D = \left( \begin{array}{cc} -8 & 0 \\ 0 & 1 \\ \end{array} \right) }\]
+            Pour la deuxième question, on remarque que :
+            \[X^2A = AA = AX^2\]
+            De plus, comme \((PXP^{-1})^2 = D\), ces matrices commutent.<br>
+            Pour montrer que \(D\) est diagonale, on pose les produits matriciels explicitement, et on établit la forme de \(X\) à l'aide de la relation : \(PXP^{-1}D = DPXP^{-1}\).
+            La résolution se fait en trouvant les solutions dans \(\mathcal{M}_2(\mathbb{C})\).    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise18"><h3>Exercice 18 :</h3><div>Soit \(u \in L(\mathbb{R}^3)\) tel que \(u\neq 0\) et \(u^3 + u = 0\).
+            <ol>
+                </li><li class = "lic2"> Démontrer que \(E = Ker(u) \oplus Im(u)\).
+                </li><li class = "lic2"> Montrer que \(Im(u) = Ker(u^2 + Id)\).
+                </li><li class = "lic2"> Montrer que \(u\) n'est pas injective.<br> On raisonnera par l'absurde en utilisant le polynôme minimal.
+                </li><li class = "lic2"> Montrer que \(rg(u) = 2\).
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé18')"> Corrigé </button><hr>  <span id="Indication18" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé18" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> Soit \(x \in Im(u) \cap Ker(u)\), alors, \(u(x) = 0\) et il existe \(y\) tel que \(u(y) = x\). En particulier \(u^2(y) = 0\), donc \(u^3(y) = 0\).<br>
+                Ainsi, \(u^3(y) + u(y) = u(y) = x = 0\).
+            
+                </li><li class = "lic2"> Soit \(x\in Im(u)\), il existe \(y\) tel que \(u(y) = x\). Donc \(u^2(x) + x = u^3(y) + u(y) = 0\), d'où \(x\in Ker(u^2 + Id)\).<br>
+                Réciproquement, soit \(x \in Ker(u^2 + Id), u^2(x) + x = 0 \Longrightarrow x = u(-u(x)) \in Im(u)\).
+                
+                </li><li class = "lic2"> Un polynôme annulateur de u est \(P(X) = X(X^2 + 1)\), supposons que \(u\) soit injective, alors, \(0 \notin Sp(u)\)  notons \(\pi_u(X)\) son polynôme minimal. On a alors :  \(Sp(u) = Rac(\pi_u(X)) = Rac(\chi_u(X))\).
+                <br> On remarque que \(\pi_u(X)\) divise \(X^2+1\). En particulier \(\pi_u(X)\) n'admet pas de racines, or le polynôme caractéristique est de degré \(3\), on a donc au minimum une valeur propre. D'où l'absurdité.
+                \[\boxed{\textrm{\(u\) n'est pas injective.}}\]
+            
+                </li><li class = "lic2"> Supposons par l'absurde que \(dim(ker(u)) = dim(E_0(u)) \geq 2\), alors \(m_0 \geq 2\), dans ce cas il existe au plus une autre valeur propre \(\lambda, Sp(u) = {0, \lambda} \subset Rac(P)\)<br>
+                Donc \(\lambda \notin \mathbb{R}\), or ceci implique que son conjugué est aussi valeur propre, ce qui n'est pas possible, donc \(\dim(ker(A)) = 1\). Enfin :
+                \[\boxed{rg(A) = 2}\]
+                </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise19"><h3>Exercice 19 :</h3><div>Soit \(m \in \mathbb{R}\), on définit :
+            \[A_m = \left( \begin{matrix}
+                    -1 & m & m\\
+                    1 & -1 & 0\\
+                    -1 &  0& -1\\
+                    \end{matrix} \right)\]
+            La matrice \(A_m\) est-elle diagonalisable ? <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé19')"> Corrigé </button><hr>  <span id="Indication19" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé19" style="display:none;"><p>  Soit \(m \in \mathbb{R}\), on a :
+            \[Det(XI_n - A_m) = \left| \begin{array}{ccc} X+1 & a & a \\ -1 & X+1 & 0 \\ 1 & 0 & X+1 \end{array} \right| = X+1( (X+1)^2 - m) + m (X+1) = (X+1)^3\]
+            Donc \(A_m\) n'est pas diagonalisable, sinon elle serait semblable à \(-I_3\) qui n'est semblable qu'à elle-même.
+            \[\boxed{\forall m \in \mathbb{R}, A_m \textrm{ n'est pas diagonalisable}}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise20"><h3>Exercice 20 :</h3><div>Soit \(A \in  \mathcal{M}_n(\mathbb{R})\) telle que \(A^n = I_n\) et telle que la famille \((I_n, A, A^2, . . . , A^{n-1})\) soit libre.
+            Montrer que \(Tr(A) = 0\). <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé20')"> Corrigé </button><hr>  <span id="Indication20" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé20" style="display:none;"><p>  On remarque que \(P(X) = X^n-1\) est un polynôme annulateur de \(A\). Or, comme la famille \((I_n, A, A^2, . . . , A^{n-1})\) est libre, il n'existe pas de polynôme annulateur non nul de degré inférieur à \(n\) donc ce polynôme est en fait le polynôme minimal. On en déduit que \(Tr(A)\) est la somme des racines n-ième de l'unité, donc :
+            \[\boxed{Tr(A) = 0}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise21"><h3>Exercice 21 :</h3><div>Soit \(E\) un \(\mathbb{R}\)-espace vectoriel de dimension finie \(n\).<br>
+            Soit \(M = \left( \begin{array}{ccc} 1 & 0 & 0 \\ -1 & 3 & 0 \\ -8 & 2 & 4 \\ \end{array} \right)\)
+            <ol>
+                </li><li class = "lic2"> Soit \(f\) et \(g\) deux endomorphismes de \(E\) admettant chacun \(n\) valeurs propres distinctes. Montrer que si
+            \(f\circ g = g \circ f\) , alors leurs vecteurs propres sont identiques.
+            </li><li class = "lic2"> 
+                <ol>
+                    </li><li class = "lic2"> Trouver une matrice \(A\) telle que \(A^2 = M\).
+                    </li><li class = "lic2"> Trouver toutes les matrices \(A\) telles que \(A^2 = M\).
+                </ol>
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé21')"> Corrigé </button><hr>  <span id="Indication21" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé21" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> Question traitée à l'exercice 13.
+                </li><li class = "lic2"> <ol>
+                    </li><li class = "lic2"> On remarque que \(M\) est diagonalisable car admet un polynôme annulateur scindé simple, elle est donc semblable à :
+                    \[D = \left( \begin{array}{ccc} 4 & 0 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & 1 \\ \end{array} \right)\]
+                    Plus précisément, si on pose :
+                    \(P = \left( \begin{array}{ccc} 0 & 0 & 6 \\ 0 & -1 & 3 \\ 1 & 2& 14 \\ \end{array} \right)\)<br>
+                    On a l'égalité : \( A^2 = M = PDP^{-1}\).<br>
+                    On pose donc naturellement \(N = P^{-1}AP\), \(N\) commute avec \(D\) elle est donc diagonale car elle admet les mêmes vecteurs propres que \(M\) d'après la question précédente.
+                    On trouve alors toutes les solutions en remarquant que \(N\) ne peut être que de la forme :
+                    \[N = \left( \begin{array}{ccc} \pm 2 & 0 & 0 \\ 0 & \pm \sqrt 3 & 0 \\ 0 & 0 & \pm1 \\ \end{array} \right)\]
+                    
+                </ol>
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise22"><h3>Exercice 22 :</h3><div>On pose : 
+            \[A =\left( \begin{matrix}
+                    5 & 3 \\
+                    1 & 3 \\
+                    \end{matrix} \right)\]
+            <ol>
+                </li><li class = "lic2"> Diagonaliser \(A\).
+                </li><li class = "lic2"> Soit \(M\) une matrice telle que \(M^2 + M = A\).
+            <ol>
+                </li><li class = "lic2"> Montrer que les seules valeurs propres possibles pour \(M\) sont \(1\), \(2\), \(-2\), \(-3\).
+                </li><li class = "lic2"> Montrer que \(M\) est diagonalisable
+            </ol> 
+            </li><li class = "lic2"> Quelle est la forme de ces matrices \(M\) ?
+            </ol>
+            
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé22')"> Corrigé </button><hr>  <span id="Indication22" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé22" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> On trouve que \(A\) est diagonalisable et semblable à \(\left( \begin{array}{cc} 6 & 0 \\ 0 & 2 \\ \end{array} \right)\)
+                </li><li class = "lic2"> On pose \(X\) un vecteur propre associé à la valeur propre \(\lambda\), de sorte que \(MX = \lambda X\). En multipliant par \(X\) à droite dans l'équation vérifiée par \(M\) :
+                \[M^2X + MX = AX \Longrightarrow \lambda^2X + \lambda X = AX \longrightarrow 
+                \begin{pmatrix}
+                    \lambda^2 + \lambda \\
+                    \lambda^2 + \lambda 
+                \end{pmatrix} 
+                = 
+                \begin{pmatrix}
+                    5x + 3y \\
+                    x + 3y 
+                \end{pmatrix} \]
+                \[\Longrightarrow (x^2 + x - 5)(x^2 + x - 3)-3 = 0 \Longrightarrow (X-1)(X-2)(X+2)(X+3) = 0\]
+                \[\boxed{\textrm{Les seules racines possibles sont \(1\), \(2\), \(-2\) et \(3\).}}\]
+                De plus, avec les équations précédentes, on remarque que les sous-espaces propre engendrés par ces valeurs propres ne sont que de dimension 1. Donc \(M\) est diagonalisable, de plus, ses valeurs propres sont de multiplicité \(1\).
+                </li><li class = "lic2"> Les matrices \(A\) et \(M\) commutent, elles sont donc codiagonalisables dans la base dans laquelle on a diagonalisé \(A\), notons \(P\) la matrice de passage associée à ce changement de base. (Cf exercice précédent) En notant \(a\) et \(b\) les valeurs propres de \(M\) on trouve que les seules matrices solutions sont :
+                \[
+                \boxed{M = P\begin{pmatrix}
+                    a & 0\\ 0& b
+                \end{pmatrix} \textrm{ Avec : }\{a,b\} \in \{\{-3,-2\}, \{-3,1\}, \{2,-2\}, \{2,1\}\}}\]
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise23"><h3>Exercice 23 :</h3><div>Un endomorphisme \(f\) est dit cyclique dans \(E\) tel que \(dim(E) = n\), si :
+            \[\exists x_0\in E, Vect(x_0, f (x_0), \cdots , f^{n-1}(x_0)) = E\]
+            <ol>
+                </li><li class = "lic2"> Soit \(g\) un endomorphisme tel que sa matrice dans \(\mathbb{R}^3\) soit :
+            \[G = \left( \begin{array}{ccc}
+                0 & 0 & 6 \\
+                1 & 0 & -11 \\
+                0 & 1 & 6 \\
+            \end{array}\right)
+            \]
+            Montrer que \(g\) est cyclique et diagonalisable.
+            </li><li class = "lic2"> Un endomorphisme \(f\) cyclique est-il toujours diagonalisable ?
+            </li><li class = "lic2"> Soit \(f\) un endomorphisme diagonalisable de valeurs propres distinctes deux à deux. Est-il cyclique ?
+            </li><li class = "lic2"> Soit \(f\) un endomorphisme diagonalisable et cyclique. Ses valeurs propres sont-elles distinctes deux à deux ?
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé23')"> Corrigé </button><hr>  <span id="Indication23" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé23" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> On remarque que \(\vec{x_0} = e_1 \) convient. De plus \(\chi_G(X) = (X-1)(X-2)(X-3)\), l polynôme caractéristique de \(G\) étant scindé simple :
+                \[\boxed{\textrm{\(G\) est cyclique et diagonalisable}}\] 
+                </li><li class = "lic2"> Non, on prend la matrice suivante :
+                \[A = \left( \begin{array}{ccc}
+                0 & 0 & 1 \\
+                1 & 0 & 1 \\
+                0 & 1 & -1 \\
+                \end{array}\right)\]
+                Son polynôme caractéristique vaut \(\chi_A(X) =(X-1)(X+1)^2\). Cependant :
+                \[\dim(Ker(A + Id)) = rg(A + Id) = \left( \begin{array}{ccc}
+                1 & 0 & 1 \\
+                1 & 1 & 1 \\
+                0 & 1 & 0\\
+                \end{array}\right) = 1 \lt m_{-1}\]
+                \[\boxed{\textrm{Un endomorphisme cyclique n'est pas toujours diagonalisable}}\]
+                </li><li class = "lic2"> La matrice de \(f\) dans une certaine base est de la forme :
+                \[\Delta = 
+                \left( \begin{array}{ccc}
+                \lambda_1 &  & (0)\\
+                 & \ddots &  \\
+                (0) &  & \lambda_n\\
+                \end{array}\right)\]
+               <br>On cherche donc à montrer l'existence d'un vecteur \(X_0\) tel que la famille \((X_0, \Delta X_0, \Delta^2 X_0, ..., \Delta^{n-1} X_0)\) est libre. Autrement dit, on veut la liberté de :
+               \[\left( 
+               \left( \begin{array}{c}
+                x_1   \\
+                \vdots\\
+                x_n
+                \end{array}\right);
+                \left(\begin{array}{c}
+                \lambda_1 x_1   \\
+                \vdots\\
+                \lambda_nx_n
+                \end{array}\right); \cdots ;
+                \left(\begin{array}{c}
+                \lambda_1^{n-1} x_1   \\
+                \vdots\\
+                \lambda_n^{n-1}x_n
+                \end{array}\right)
+                \right)\]
+               Si on prend \(X_0\) la matrice dont tous les coefficients sont égaux à 1, on trouve que la famille est libre car son déterminant est un Vandermonde, et les \(\lambda\) sont distincts deux à deux.
+               \[\boxed{\textrm{Un endomorphisme diagonalisable de valeurs propres distinctes deux à deux est cyclique.}}\]
+               </li><li class = "lic2"> On remarque que si \(f\) est diagonalisable, son polynôme minimal \(\pi_f(X)\) est scindé. De plus, comme \(f\) est cyclique, il existe \(\vec{x_0}\) tel que \((\vec{x_0}, f(\vec{x_0}), \cdots, f^{n-1}(\vec{x_0}))\) soit libre, supposons par l'absurde que la famille \((Id, f, f^2, ..., f^{n-1})\) soit liée, lors pour tout \(\vec{x},  (\vec{x}, f(\vec{x}), \cdots, f^{n-1}(\vec{x}))\) est liée, absurde.<br>
+                On en déduit que \(\deg(\pi_f(X)) \geq n \Longrightarrow \deg(\pi_f(X)) = n\), or, il est scindé simple, on en déduit l'existence de \(n\) valeurs propres distinctes.
+                \[\boxed{\textrm{Les valeurs propres d'un endomorphisme diagonalisable sont distinctes deux à deux}}\]
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise24"><h3>Exercice 24 :</h3><div>Soit \(A \in\mathcal{M}_n(\mathbb{R})\) à coefficients dans \([0, 1]\), telle que pour tout \(\displaystyle i \in [\![1, n]\!], \sum_{j = 1}^n a_{i,j} =1\)
+            <ol>
+                </li><li class = "lic2"> Montrer que \(1\) est valeur propre de \(A\).
+                </li><li class = "lic2"> Soit \(\lambda\) une valeur propre de \(A\). Montrer que \(|\lambda| \leq 1\) et que pour \(\omega > 0, |\lambda - \omega| \leq 1 - \omega\).
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé24')"> Corrigé </button><hr>  <span id="Indication24" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé24" style="display:none;"><p>  Pour la première question, il suffit de multiplier la matrice \(A\) par le vecteur colonne \(E_1\) ne contenant que des \(1\), ce produit vaut trivialement \(E_1\).
+            Il y a une erreur d'énoncé dans la deuxième question. Pour \(\omega \geq 3\), le résultat est faux.    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise25"><h3>Exercice 25 :</h3><div>Soit \(A \in \mathcal{M}_{n} (\mathbb{C})\), on considère la matrice \(B\) suivante \(\begin{pmatrix} A & A\\ 0 & A \end{pmatrix}\).
+                <ol>
+                <li class = "lic2">Compare les spectres de \(A\) et \(B\).</li> 
+                <li class = "lic2">Trouve une condition sur \(A\) pour que \(B\) soit diagonalisable.</li>
+             </ol><br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé25')"> Corrigé </button><hr>  <span id="Indication25" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé25" style="display:none;"><p>  <ol>
+                </li><li class = "lic2">  \(A\) est trigonalisable dans \(\mathbb{C}\), Soit \(P\) inversible tel que \(A = P\Delta P^{-1}\), avec \(\Delta\) une matrice triangulaire supérieure, alors :
+                \[B =\left(\begin{array}{c|c}
+                 P\Delta P^{-1}& P\Delta P^{-1}\\
+                \hline
+                0& P\Delta P^{-1}
+                \end{array}\right) = 
+                \left(\begin{array}{c|c}
+                 P& 0\\
+                \hline
+                0& P
+                \end{array}\right)
+                \left(\begin{array}{c|c}
+                 \Delta &\Delta\\
+                \hline
+                0& \Delta 
+                \end{array}\right) \left(\begin{array}{c|c}
+                  P^{-1}& 0\\
+                \hline
+                0& P^{-1}
+                \end{array}\right)\]
+                On en déduis ainsi que B est semblable à une matrice triangulaire par bloc, les valeurs propres de B sont ses éléments diagonaux. D'où :
+                \[\boxed{\operatorname{Sp}(A) = \operatorname{Sp}(B)}\]
+                </li><li class = "lic2"> Nous pouvons remarquer, par une récurrence immédiate, que les puissance de \(B\) sont facile à obtenir: 
+                \[B^n=\left(\begin{array}{c|c}
+                A^n&nA^n\\
+                \hline
+                0&A^n
+                \end{array}\right).\]
+                De plus, en prenant \(P\) un polynôme quelconque, on a : 
+                \[P(B)=\left(\begin{array}{c|c}
+                P(A)&AP'(A)\\
+                \hline
+                0&P(A)  
+                \end{array}\right).\]
+                Supposons maintenant B diagonalisable, alors, il existe un polynôme scindé à racine simple vérifiant \(P(B) = 0\), donc aussi : \(P(A) = 0\) et \(AP'(A) = 0\).<br>
+                Or, \(P'\wedge P =1\) car \(P\) est scindé à racines simples. Donc, d'après le théorème de Bézout :
+                \[\exists U, V \in \mathbb{R}[X] : U(X)P(X) + V(X)P'(X) = 1 \]
+                \[\Longrightarrow \exists U, V \in \mathbb{R}[X] : XU(X)P(X) + XV(X)P'(X) = X \]
+                \[\Longrightarrow \boxed{A = 0}\]
+            </ol>.    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise26"><h3>Exercice 26 :</h3><div>Soit \(A \in\mathcal{M}_n(\mathbb{R})\) telle que \(A^2\) est diagonalisable à valeurs propres strictement positives.
+            Montrer que \(A\) est diagonalisable.<br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé26')"> Corrigé </button><hr>  <span id="Indication26" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé26" style="display:none;"><p>  On remarque que \(\pi_{A^2}(X)\) est scindé simple car \(A^2\) est diagonalisable. De plus,  en notant \(\displaystyle \pi_{A^2}(X) = \prod_{k = 1}^n (X - \lambda_k)\) (avec : \(\forall i \in [\![1, n]\!], \lambda_i > 0\)) on a :
+            \[ \pi_{A^2}(A^2) = \prod_{k = 1}^n \left(A^2 - \lambda_kI_n\right) =   \prod_{k = 1}^n \left(A + \sqrt{\lambda_k}I_n\right)  \prod_{k = 1}^n\left (A - \sqrt{\lambda_k}I_n\right)\]
+            En posant \(P(X)  =   \prod_{k = 1}^n \left(X + \sqrt{\lambda_k}\right)  \prod_{k = 1}^n \left(X -\sqrt{\lambda_k}\right)\), on trouve un polynôme annulateur de \(A\) scindé simple à racines réelles. Donc \(A\) est diagonalisable.    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise27"><h3>Exercice 27 :</h3><div>Soit \(E\) un \(\mathbb{C}\)-espace vectoriel, et \(f\) un endomorphisme de \(E\). On suppose qu'il existe \(P\) polynôme annulateur
+            de \(f\) vérifiant : \(P (0) = 0\) et \(P'(0) \neq 0\).
+            <br> Montrer que \(Ker(f)\) et \(Im(f)\) sont supplémentaires. <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé27')"> Corrigé </button><hr>  <span id="Indication27" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé27" style="display:none;"><p>  On sait que \(X\) divise \(P\) car \(P(0) = 0\), donc \(P\) est de la forme \(P = XQ\), de plus :
+            \[P'(0) = XQ'(0) + Q(0) = Q(0) \neq 0\]
+            Donc \(X\) ne divise pas \(Q\), de plus si \(Q|X\) on se retrouve dans un cas trivial.
+            Donc \(X\) et \(Q\) sont premier entre eux, on peut donc appliquer le lemme de décomposition des noyaux :
+            \[E=\ker(P(f))=\ker(f)\oplus \ker(Q(f)).\]
+            De plus en appliquant le théorème du rang à \(f\), il vient :
+            \[\dim(E) = \dim(\ker(f)) + \dim(Im(f))\]
+            D'où :
+            \[\dim(Im(f)) = \dim(\ker(Q(f)))\]
+            De plus \(Im(f) \subset \ker(Q(f))\) car \(P(f) = Q(f)\circ u = 0\).
+            Donc \(\ker(Q(f)) = Im(f)\)<br>
+            Enfin : \[\boxed{E=\ker(P(f))=\ker(f)\oplus Im(f)}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise28"><h3>Exercice 28 :</h3><div>Soit \(a \in ]0, 1[\) et \(b \in \mathbb{R}\). On définit une suite \((u_n)\) par récurrence par :
+            \[ \left\{
+                \begin{array}{ll}
+                    u_0 \in \mathbb{R}\\
+                    \forall n \in \mathbb{N}, u_{n+1} = au_n + b
+                \end{array}
+            \right.\]
+            <ol>
+                </li><li class = "lic2"> étudier la convergence de la suite. 
+                </li><li class = "lic2"> On considère \(E\) le \(\mathbb{R}\)-espace vectoriel des fonctions \(C^\infty\) de \(\mathbb{R}\) dans \(\mathbb{R}\) et \(\varphi\) l'application telle que :
+            \[\forall f \in  E, \forall x \in \mathbb{R}, \varphi(f)(x) = f (ax + b)\]
+            <ol>
+                </li><li class = "lic2"> Montrer que  \(\varphi\) est un endomorphisme de E.
+                </li><li class = "lic2"> Montrer que \(\varphi\) est bijective.
+                </li><li class = "lic2"> Soit \(\lambda\) une valeur propre de \(\varphi\) différente de \(1\) et \(f_{\lambda}\) un vecteur propre associé.
+                <ol>
+                    </li><li class = "lic2"> Montrer que \(f_{\lambda}( \frac b {1-a} ) = 0\) et que \(\lambda \in ]-1, 1[ \backslash {0}\).
+                </li><li class = "lic2"> Montrer que \(f'(\lambda)\) est aussi un vecteur propre.
+                </ol>
+            </ol>
+            </li><li class = "lic2">  Déterminer les vecteurs propres de \(\varphi\).
+            </ol>
+            
+            <hr> <button class="bouton" onclick="afficher_texte('Corrigé28')"> Corrigé </button><hr>  <span id="Indication28" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé28" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> Cette suite est arithmético-géométrique, donc est de la forme :
+                \[u_n = a^n\left(u_0 - \frac b {1-a}\right) + \frac b {1-a}\]
+                En particulier, comme \(|a| \lt 1\):
+                \[\boxed{\textrm{\((u_n)\) converge}}\]
+                </li><li class = "lic2"> 
+                <ol>
+                    </li><li class = "lic2"> \(\varphi\) est triviallement un endomorphisme
+                    </li><li class = "lic2"> On constate en effet qu'il est bijectif, en remarquant que \(\varphi\) admet pour bijection réciproque : 
+                    \[\varphi^{-1} : f \longmapsto \left(\varphi^{-1}(f) : x \longmapsto f\left(\frac{x-b}{a}\right)\right)\]
+                    </li><li class = "lic2"> Posons \((u_n)\) la suite définie par l'énoncé avec \(u_0 = x\). Par une récurrence immédiate, on remarque que pour tout \(n\in \mathbb{N}\):
+                    \[f_{\lambda}(u_n) = f\left(a^n\left(x - \frac b {1-a}\right) + \frac b {1-a}\right) = \lambda^nf(x)\]
+                    Or, par passage à la limite, comme \(f\) est continue, en prenant \(\lambda \in ]-1; 1[\), on obtient :
+                    \[\boxed{f\left(\frac b {1-a}\right) = \lim_{n\longrightarrow + \infty} \lambda^n f(x) = 0}\]
+                    Si, par l'absurde \(|\lambda| \geq 1\), le terme de gauche divergerait (car le cas \(\lambda = 1\) est exclu). Donc \(\lambda \in ]-1, 1[\). \(0\) n'est pas valeur propre car \(\varphi\) est bijective.<br>[6px]
+                    Si \(f\) est un vecteur propre pour la valeur propre \(\lambda\), on a l'égalité suivante pour tout \(x\) :
+                    \[f(ax + b) = \lambda f(x) \longrightarrow f'(ax + b) = \frac{\lambda}{a} f'(x)\]
+                    Donc \[\boxed{\textrm{\(f'\) est vecteur propre pour la valeur propre \(\frac{\lambda}{a}\).}}\] 
+                    </ol>
+                    </li><li class = "lic2"> On remarque que si \(f\) est vecteur propre, pour tout \(n\in \mathbb{N}\), \(f^{(n)}\) est aussi vecteur propre associé à la valeur propre \(\frac{\lambda}{a^n}\in ]-1, 1[\)
+                    cela signifie que \(f^{(n)}\) est nulle à partir d'un certain rang, car l'expression \(\frac{\lambda}{a^n}\) diverge, donc sort de l'intervalle \(]-1, 1[\). En particulier \(f\) est polynomiale. On peut conclure par une analyse-synthèse.
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise29"><h3>Exercice 29 :</h3><div>Soit \(E\) un \(\mathbb{C}\)-espace vectoriel de dimension finie \(n \in \mathbb{N}\), soit \(u \in L(E)\).
+            <ol>
+                </li><li class = "lic2"> Montrer que si \(u\) est de rang \(r\), alors son polynôme minimal a un degré inférieur ou égal à \(r + 1\).
+                </li><li class = "lic2"> Dans le cas général, peut-on améliorer cette majoration ?
+            </ol>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé29')"> Corrigé </button><hr>  <span id="Indication29" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé29" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> On pose :
+                \[
+                \begin{array}{l|rcl} \tilde{u}: & Im(u) & \longrightarrow Im(u) \\ & x & \longmapsto & f(x) \end{array}\]
+                On applique le théorème de Cayley-Hamiton qui donne un polynôme annulateur de \(u\) de degré \(r = rg(u)\) :
+                \[\chi_u(u) = 0 \Longrightarrow \chi_u(u)(f(x)) = 0\]
+                Or, \(u\) et \(f\) coÃ¯ncident sur \(Im(u)\), donc, on en déduit que :
+                \[\boxed{P(x) = X\chi_u(X) \textrm{ est annulateur de \(f\) de degré \(r+1\)}}\]
+                </li><li class = "lic2"> Il suffit de prendre la matrice 
+                \[M = \left(\begin{array}{cc}
+                1&1\\
+                0&0 \end{array}\right)\]
+                Cette matrice est de rang \(1\) et son polynôme minimal est de degré \(2\).
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise30"><h3>Exercice 30 :</h3><div>Soit \(A \in M_n(\mathbb{C}),A\neq0_{M_n(\mathbb C)}\). Soit \(\varphi_A\) l'endomorphisme de \(M_n(\mathbb{C})\) défini par \(\varphi_A(M) = tr(A)M - tr(M )A\).
+            <ol>
+                </li><li class = "lic2"> étudier les sous-espaces propres et la diagonalisabilité de \(\varphi_A\).
+                </li><li class = "lic2"> Soit \(B \in M_n(\mathbb{C})\). Résoudre l'équation \(\varphi_A(M ) = B\).
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé30')"> Corrigé </button><hr>  <span id="Indication30" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé30" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> Soit \(M\in \mathcal{M}_n(\mathbb C)\) :
+                \[\varphi_A\circ \varphi_A(M) = \varphi_A(tr(A)M) - \varphi_A(tr(M)A) = tr(A)\varphi_A(M)\]
+                On a donc trouvé un polynôme annulateur de \(A\) :
+                \[P = X^2 - tr(A)X\]
+                Ainsi :
+                \[Sp(A) \subset \{0, tr(A)\}\]
+                De plus, on constate que \(\dim(E_0(\varphi_A))= Vect(A)  = 1\) et \( = \dim(\ker(tr)) = n^2 - 1\). On en déduit que :
+                <ul>
+                    </li><li class = "lic2"> Si \(tr(A) \neq 0\), alors \(\dim(E_0(\varphi_A)) = 1\) et \(\dim(E_{tr(A)}(\varphi_A)) = n^2 - 1\) et \(\varphi_A\) est diagonalisable.
+                    </li><li class = "lic2"> Si \(tr(A) = 0\), alors \(\dim(E_0(\varphi_A)) = n^2 - 1\) et  \(\varphi_A\) n'est pas diagonalisable.
+                </ul>
+                </li><li class = "lic2"> Si \(tr(B) \neq 0\), il n'y a pas de solution car \(Im(\phi_A) = ker(tr)\).
+                Supposons donc \(tr(B) = 0\) et dans le même temps \(tr(A) \neq 0\) (cas trivial). Si \(\varphi_A(M) = B\), alors :
+                \[tr(A)M = tr(M)A + B\]
+                Donc \(M\) est combinaison linéaire de \(A\) et \(B\). On pose \(M = \lambda A + \mu B\). En réinjectant, on trouve que les solutions sont de la forme :
+                \[\boxed{M = \lambda A + \frac 1 {tr(A)}B \textrm{   avec \(\lambda \in \mathbb R\)}}\]
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise31"><h3>Exercice 31 :</h3><div>Soient \(n \geq 2\) entier et \(a_1, a_2, \cdots , a_n \in \mathbb C\) des nombres complexes. Soit
+            \[A = \begin{pmatrix}
+                a_1 & a_2 & \cdots & \cdots & a_n \\
+                1 & 0 & \cdots & \cdots & 0\\
+                0 & 1 & \ddots & & 0\\
+                \vdots & & \ddots & 0 & 0\\
+                0 & \cdots & \cdots & 1& 0\\
+            \end{pmatrix}\]
+            <ol>
+                </li><li class = "lic2"> Déterminer le polynôme caractéristique de A. 
+                </li><li class = "lic2"> Calculer la dimension des sous-espaces propres de A et en déduire une condition nécessaire et suffisante pour que A soit diagonalisable.
+                </li><li class = "lic2"> Montrer que la suite des \((A_p)_{p \in \mathbb N}\) est bornée si et seulement si pour tout \(\lambda \in Sp(A), |\lambda| \leq 1\) et si \(|\lambda| = 1\) alors \(\lambda\) est de multiplicité \(1\).
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé31')"> Corrigé </button><hr>  <span id="Indication31" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé31" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> En effectuant l'opération :
+                \[C_1 \longleftarrow \sum_{k=1}^n X^{n-k}C_k\]
+                On trouve l'expression du polynôme caractéristique en développant selon la dernière colonne :
+                \[\chi_A(X) = 
+                \left|\begin{array}{ccccc}
+                X - a_1 & -a_2 & \cdots & \cdots & -a_n \\
+                -1 & X & \cdots & \cdots & 0\\
+                0 & -1 & \ddots & & 0\\
+                \vdots & & \ddots & X & 0\\
+                0 & \cdots & \cdots & -1& X\\
+                \end{array}\right| 
+                = 
+                \left|\begin{array}{ccccc}
+                X - a_1 & -a_2 & \cdots & \cdots & P(X) \\
+                -1 & X & \cdots & \cdots & 0\\
+                0 & -1 & \ddots & & 0\\
+                \vdots & & \ddots & X & 0\\
+                0 & \cdots & \cdots & -1& 0\\
+                \end{array}\right| \]
+                Avec \(P(X) = X^n - a_1X^{n-1} - ... - a_n\)
+                Ainsi :
+                \[\boxed{det(A) = (-1)^n(-1)^{n-1}P(X) = -P(X)}\]
+                </li><li class = "lic2"> \(Sp(A) = Rac(\chi_A) = Rac(P)\)
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise32"><h3>Exercice 32 :</h3><div><ol>
+                </li><li class = "lic2"> Soit \(M \in \mathcal{M}_n(\mathbb C)\) nilpotente. Montrer l'existence de \(d = \min\{k \in \mathbb N | M^k = 0_n\}\) et que \(d \leq n\).
+                </li><li class = "lic2"> Soit \(M \in \mathcal{M}_n(\mathbb C)\) nilpotente. Montrer que \(M^2 - I_n\) est inversible et déterminer son inverse.
+                </li><li class = "lic2"> Soit \(M \in \mathcal{M}_n(\mathbb C)\) telle que \(M^4 + M^3 + M^2 + M + I_n = 0_n\). Montrer que \(Tr(M) \leq n\), puis étudier le cas d'égalité.
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé32')"> Corrigé </button><hr>  <span id="Indication32" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé32" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> Question classique, l'existence est assurée par le fait qu'on prenne le minimum d'un sous ensemble des entiers naturels (non vide par définition de la nilpotence), et il suffit de montrer que \((M^p)\) est une famille libre avec \(p\) l'indice de nilpotence.
+                </li><li class = "lic2"> On a l'identité suivante (car l'identité commute avec toute matrice donc avec \(M^{2d}\) :
+                \[I_n = - (M^{2d} - I_n^{2d}) = -(M^2 - I_n)\left(\sum_{k=0}^{d-1} M^{2k}\right)\]
+                Donc :
+                \[\boxed{(M^2 - I_n) \textrm{ est inversible d'inverse : } (M^2 - I_n)^{-1} = - \sum_{k=0}^{d-1} M^{2k}}\]
+                </li><li class = "lic2"> On remarque que :
+                \[X^4 + X^3 + X^2 + X + I_n = \frac{1-X^5}{1-X}\]
+                est annulateur de \(M\) on a donc inclus dans les racine 5-ièmes de l'unité, privés de \(1\). De plus, sur \(\mathbb C\), \(P\) est scindé simple, donc \(M\) est diagonalisable et :
+                \(Tr(M) \leq |Tr(M)| \leq \sum_{k=1}^{n}  |\lambda_k| = n\)
+                Il n'y aura pas d'égalité car :
+                \[Tr(M) = \Re(Tr(M)) = \sum_{k=1}^n \Re(\lambda_k) < \sum_{k=1}^n 1 < n\]
+                </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise33"><h3>Exercice 33 :</h3><div>On se place dans \(E = M \in \mathcal{M}_n(\mathbb R)\), avec \(A \in E\), et on définit l'endomorphisme \(u_A : M\longmapsto AM\).
+            <ol>
+                </li><li class = "lic2"> A quelle(s) condition(s) sur \(A\) l'application \(u_A\) est-elle un automorphisme ?
+                </li><li class = "lic2"> Calculer \(\det(u_A)\) et \(tr(u_A)\).
+                </li><li class = "lic2">  Montrer que \(u_A\) est diagonalisable si et seulement si \(A\) l'est.
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé33')"> Corrigé </button><hr>  <span id="Indication33" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé33" style="display:none;"><p>  L'application \(u_A\) est triviallement linéaire, il suffit de trouver une condition pour qu'elle soit injective, car c'est une application linéaire entre deux espaces de même dimension finie.
+            \[(\ker(u_A) = \{0\}) \Longleftrightarrow (AM = 0 \Longrightarrow M = 0)\]
+            Or ce dernier résultat est équivalent à la liberté des vecteurs colonnes, autrement dit \(M\) doit être inversible.
+            \[\boxed{\textrm{\(u_A\) est un endomorphisme \(\Longleftrightarrow A\) est inversible}}\]
+            Pour le calcul de la trace, il suffit de prendre l'image de la base canonique :
+            \[tr(u_A) = \sum_{1\leq i,j\leq n} (f(E_{i,i}))_{i,j} =   \sum_{1\leq i,j\leq n} (AE_{i,j})_{i,j} \]
+            \[=  \sum_{1\leq i,j\leq n} \left(\sum_{k=0}^na_{i,k}\delta_{i,k}\delta{k,j}\right)_{i,j} =  \sum_{1\leq i,j\leq n} a_{i,i} = nTr(A)\]
+            \[\boxed{tr(u_A) =nTr(A)}\]
+            Pour le déterminant, il faut réorganiser la base canonique de manière à faire apparaÃ®tre une matrice diagonale par bloc dont les blocs sont la matrice \(A\). On trouve alors :
+            \[Det(u_A) = Det(A)^n\]
+            Pour la dernière question, il suffit de remarquer que pour tout polynôme \(P\) :
+            \[P(u_A(M)) = P(A)M\]
+            Ainsi, si \(u_A\) admet un polynôme annulateur scindé simple, \(u_A\) est diagonalisable et \(A\) aussi, sinon, \(u_A\) n'est pas diagonalisable et \(A\) n'admet pas de polynôme annulateur scindé simple, donc n'est pas diagonalisable.
+            \[\boxed{\textrm{\(u_A\) diagonalisable \(\Longleftrightarrow A\) diagonalisable}}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise34"><h3>Exercice 34 :</h3><div>Soit \(A, B \in \mathcal{M}_n(\mathbb K)\) et un scalaire \(\alpha> 0\) tel que \(AB - BA = \alpha B\).
+            <ol>
+                </li><li class = "lic2"> Pour tout \(k \in \mathbb N\), montrer que \(AB^k - B^kA = k\alpha  B^k\).
+                </li><li class = "lic2"> Montrer en utilisant 2 méthodes différentes que \(B^n = 0_{\mathcal{M}_n(\mathbb K)}\).
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé34')"> Corrigé </button><hr>  <span id="Indication34" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé34" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> On procède par récurrence, l'initialisation est immédiate. Soit \(n \in \mathbb N\), supposons le résultat vrai pour le rang \(n\) et montrons qu'il reste vrai au rang \(n+1\) :
+                \[AB^{n+1} - B^{n+1}A = AB^kB - BB^kA = (k\alpha 
+                    B^k + B^kA)B - B(AB^k-k\alpha B^k) \]
+                \[= k\alpha B^{k+1} + B^kAB + k\alpha B^{k+1} -BAB^k = 2k\alpha B^{k+1} + B^k(\alpha B + BA) - (AB-\alpha B)B^k\]
+                En réarrangeant les termes, on trouve le résultat voulu.
+                \[=  2k\alpha B^{k+1} + \alpha B^{k+1} + B^{k+1}A - AB^{k+1} +\alpha B^{k+1} \]
+                </li><li class = "lic2"> Pour la première méthode, on remarque, en prenant la trace de l'égalité précédente que  :
+                \[\forall k\in [\![1, n]\!], Tr(B^k) = 0\]
+                Il en résulte que \(B\) est nilpotente (Cf exercice nÂ°45) donc :
+                \[\boxed{B^n = 0_{\mathcal{M}_n(\mathbb K)}}\]
+                D'une autre manière, posons :
+                \[
+                \begin{array}{l|rcl} {\varphi} : & {\mathcal{M}_n(\mathbb K)} & \longrightarrow {\mathcal{M}_n(\mathbb K)} \\ & M & \longmapsto & {AM - MA} \end{array}
+                \]
+                On constate que :
+                \[\varphi(B^k) = k\alpha B^k\]
+                Supposons par l'absurde que \(B^n\) soit non-nulle, alors \(I_n, B, B^2, \cdots, B^n\) sont vecteurs propres pour les valeurs propres \(0, \alpha, 2\alpha, \cdots, n\alpha\). Or, il ne peut pas y avoir plus de \(n\) valeurs propres distinctes, absurde. Ainsi :
+                \[\boxed{B^n = 0_{\mathcal{M}_n(\mathbb K)}}\]
+                
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise35"><h3>Exercice 35 :</h3><div> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé35')"> Corrigé </button><hr>  <span id="Indication35" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé35" style="display:none;"><p>      </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise36"><h3>Exercice 36 :</h3><div>Déterminer les matrices \(A \in \mathcal{M}_n(\mathbb R)\) telles que \(A^5-2A^4-2A^3 + A^2 + 4A + I_n = 0\),\( tr(A) = 0\) et \(\det (A) = \pm 1\) <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé36')"> Corrigé </button><hr>  <span id="Indication36" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé36" style="display:none;"><p>  Le polynôme \(P = X^5 - 2X^4 - 2X^3 + X^2 + 4X +1\) n'admet pas de racines évidentes l'énoncé est faux.    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise37"><h3>Exercice 37 :</h3><div>On note \(E_n = \left\{A \in  \mathcal{M}_n(\mathbb R)|A^3 + A = 10I_n\right\}\). Déterminer l'image directe de \(E_n\) par le déterminant. <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé37')"> Corrigé </button><hr>  <span id="Indication37" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé37" style="display:none;"><p>  Soit \(A\in E_n\), alors :
+            \[\det(A)\det(A^2 + I_n) = 10^n\]
+            Si \(A\) appartient à \(E_n\), alors \(X^3 +X - 10 = (X-2)(X+ 1 -2i)(X+1+2i)\) est un polynôme annulateur de \(A\). Donc \(A\) est diagonalisable sur \(\mathbb C\) car elle admet un polynôme annulateur scindé simple.
+            De plus ses éléments diagonaux sont racines de \(P\). Or, comme \(A\) est réelle, si elle admet une valeur propre complexe, elle admet son conjugué pour valeur propre, on a deux cas :
+            <ul>
+                </li><li class = "lic2"> \(Sp(A) = \{2\}\), alors \(\det(A) = 2^n\)
+                </li><li class = "lic2"> \(Sp(A) = \{2, -1-2i, -1+2i\}\), alors, notons \(m\) la multiplicité de la valeur propre \(-1-2i\), on a donc :
+                \[\det(A) = 2^{n-2m}5^m\]
+            </ul></p><p>
+            Ainsi :
+            \[\boxed{\det(E_n) = \left\{2^{n-2m}5^m| m\in [\![0,\lceil n/2 \rceil]\!] \right\}}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise38"><h3>Exercice 38 :</h3><div>On pose \(A = \left( \begin{array}{ccc} -1 & 2 & 1 \\ -2 & 3 & 1 \\ 4 & -4 & 1 \\ \end{array} \right) \) et on définit la matrice par blocs : \[B =
+            \left( \begin{array}{cc}
+            0& 2A\\
+            -A &3A \\
+            \end{array}\right)\]
+            Réduire B. <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé38')"> Corrigé </button><hr>  <span id="Indication38" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé38" style="display:none;"><p>  Tout d'abord, remarquons que \(A\) n'est pas diagonalisable. On va chercher à montrer que \(B\) n'est pas diagonalisable, pour cela posons :
+            \[C = \begin{pmatrix}
+                0 & 2 \\
+                -1 & 3
+            \end{pmatrix}\]
+            Cette matrice est diagonalisable et vérifie :
+            \[C = 
+            \begin{pmatrix}
+                1 & 2\\
+                1 & 1
+            \end{pmatrix}
+            \begin{pmatrix}
+                2 & 0\\
+                0 & 1
+            \end{pmatrix}
+            \begin{pmatrix}
+                -1 & 2\\
+                1 & -1
+            \end{pmatrix}\]
+            On en déduit que :
+            \[B = 
+            \begin{pmatrix}
+                I_n & 2I_n\\
+                I_n & I_n
+            \end{pmatrix}
+            \begin{pmatrix}
+                2A & 0\\
+                0 & A
+            \end{pmatrix}
+            \begin{pmatrix}
+                -I_n & 2I_n\\
+                I_n & -I_n
+            \end{pmatrix}\]
+            Supposons par l'absurde que \(B\) est diagonalisable, alors elle admet un polynôme annulateur \(P\) scindé simple et :
+            \[P(B) = \begin{pmatrix}
+                P(2A) & 0 \\
+                0 & P(A) 
+            \end{pmatrix} \Longrightarrow P(A) = 0\]
+            En particulier \(P\) est annulateur de \(A\) scindé simple donc \(A\) est diagonalisable, absurde.
+            Ainsi, \(B\) n'est pas diagonaliable. Le mieux que l'on puisse faire est alors de trigonaliser \(A\), qui est semblable à :
+            $T = \begin{pmatrix}
+                1 &1&0\\ 0&1&1 \\0&0&1
+            \end{pmatrix}$
+            Donc, \(B\) est trigonalisable semblable à :
+            \[\boxed{T_0 = \begin{pmatrix}
+                2 & 2 & 0 & 0 & 0 & 0   \\
+                0 & 2 & 2 & 0 & 0 & 0   \\
+                0 & 0 & 2 & 0 & 0 & 0   \\
+                0 & 0 & 0 & 1 & 1 & 0   \\
+                0 & 0 & 0 & 0 & 1 & 1   \\
+                0 & 0 & 0 & 0 & 0 & 1   
+            \end{pmatrix}}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise39"><h3>Exercice 39 :</h3><div>Soit \(n \in \mathbb  N\), soit \(A \in \mathcal{M}_n(\mathbb C)\), on considère l'application \(u\) définie, pour \(M \in  \mathcal{M}_n(\mathbb C)\), par \(u(M ) = AMA\).
+            <ol>
+                </li><li class = "lic2"> Montrer que \(u\) est un endomorphisme. Montrer que \(u\) est nilpotente si, et seulement si, \(A\) est nilpotente.
+                </li><li class = "lic2"> Montrer que \(u\) est diagonalisable si \(A\) l'est. Puis montrer la réciproque dans le cas où \(A\) est inversible.
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé39')"> Corrigé </button><hr>  <span id="Indication39" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé39" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> \(u\) est une application linéaire entre d'un espace dans lui-même, c'est un endomorphisme. Si \(u\) nilpotente, alors il existe \(p\) tel que pour tout \(X\):
+                \[u^p(X) = A^pXA^p = 0\]
+                Ceci est vrai pour l'identité, donc \(A^{2p} = 0\).
+                Don \(A\) est nilpotente.
+                Réciproquement, si \(A\) est nilpotente d'indice \(p\), alors \(u^p(X) = A^pXA^p = 0\). Donc \(u\) est nilpotente.
+                </li><li class = "lic2"> Supposons \(A\) diagonalisable, alors son polynôme minimal \(\pi_A\) est scindé simple, on remarque alors que pour tout \(M \in \mathcal{M}_n(\mathbb C)\) :
+                \[\pi_A(u(M)) = \pi_A(A) M \pi_A(A) = 0\]
+                Donc, \(u\) admet un polynôme annulateur scindé simple :
+                \[\boxed{\textrm{\(u\) est diagonalisable}}\]
+                Réciproquement, on a pour toute matrice \(M\) :
+                \[\pi_u(u(M)) = \pi_u(A) M \pi_u(A) = 0\]
+                Pour la réciproque, on peut se passer du fait que \(A\) est inversible. Supposons par l'absurde que \(\pi_u(A) \neq 0\), alors, en posant \(v\) l'endomorphisme associé à \(\pi_u(A)\), on a, pour tout \(w\in \mathcal L (E) :\)
+                \[u\circ w \circ u = 0\]
+                Or, comme \(u\neq 0\), il existe \(\vec{x_0}\) tel que \(u(\vec{x_0}) = \vec{x_1} \neq 0\), Or, en prenant \(w\) un endomorphisme qui vérifie \(w(\vec{x_1}) = \vec{x_0}\), on a :
+                \[u\circ w \circ u (\vec{x_0}) = \vec{x_1} \neq 0\]
+                Ceci est absurde, il en résulte que :
+                \[\boxed{\textrm{\(A\) diagonalisable \(\Longleftrightarrow\) \(u\) diagonalisable}}\]
+                
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise40"><h3>Exercice 40 :</h3><div>Soit \(A \in GL_2(\mathbb C)\) telle que \(\exists M > 0 : \forall n \in \mathbb Z , \|A^n\|_{\infty} \leq M\).
+            Montrer que \(A\) est diagonalisable.
+            <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé40')"> Corrigé </button><hr>  <span id="Indication40" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé40" style="display:none;"><p>  Si \(A\) admet des valeurs propres distinctes, elle est trivialement diagonalisable. Sinon, on note \(\lambda\) l'unique valeur propre de \(A\), \(A\) est semblable à la matrice :
+            \[\Delta = 
+            \begin{pmatrix}
+                \lambda & c \\
+                0 & \lambda
+            \end{pmatrix}\]
+            On montre facilement par récurrence que :
+            \[\forall k \in \mathbb N^* :
+            \Delta^k = 
+            \begin{pmatrix}
+                \lambda^k & k\lambda^{k-1}c \\
+                0 & \lambda^k
+            \end{pmatrix}\]
+            Et : 
+            \[\forall k \in \mathbb N^* :
+            \Delta^{-k} = 
+            \begin{pmatrix}
+                \frac1{\lambda^k} & k\frac1{\lambda^{k-1}}\frac{1}{c} \\
+                0 & \frac1{\lambda^k}
+            \end{pmatrix}\]
+            Or si la suite \((\|A^n\|_{\infty})\) est bornée, alors :
+            \((\|\Delta^n\|_{\infty})\) est bornée.<br>
+            Le premier résultat donne \(|\lambda\| \lt 1\). Le second donne \(|\lambda\| \geq 1\). Ces deux résultat sont incompatible, une telle matrice n'existe pas.
+            Toute les matrices inversibles vérifiant cette relation sont diagonalisables.    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise41"><h3>Exercice 41 :</h3><div>Soit \(E\) un \(\mathbb C\)-espace vectoriel de dimension finie \(n\) et \(u\) un endomorphisme de \(E\).
+            Montrer que \(u\) est diagonalisable si et seulement si tout sous-espace de \(E\) admet un supplémentaire stable par \(u\). <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé41')"> Corrigé </button><hr>  <span id="Indication41" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé41" style="display:none;"><p> Corrigé indisponible     </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise42"><h3>Exercice 42 :</h3><div>On note :
+            <ol>
+                </li><li class = "lic2"> \(\mathcal H\) l'ensemble des matrices carrées réelles d'ordre \(n\) de trace nulle.
+                </li><li class = "lic2"> \(\mathcal N\) l'espace vectoriel engendré par les matrices nilpotentes.
+            </ol>
+            <ol>
+                </li><li class = "lic2"> \(\mathcal N\) est-il l'ensemble des matrices nilpotentes ?
+                </li><li class = "lic2">  Montrer que \(\mathcal N \subset \mathcal H\).
+                </li><li class = "lic2"> A-t-on \(\mathcal N = \mathcal H\) ?
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé42')"> Corrigé </button><hr>  <span id="Indication42" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé42" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> Non, il suffit de prendre les matrices :
+                \[N_1 = \begin{pmatrix}
+                    0 & 0 \\
+                    1 & 0
+                \end{pmatrix} \textrm{ et } 
+                N_2 =\begin{pmatrix}
+                    0 & 1 \\ 
+                    0 & 0
+                \end{pmatrix}\]
+                Leur somme n'est pas nilpotente.
+                </li><li class = "lic2"> Si on prend une combinaison linéaire de matrice nilpotente, on sait qu'elles sont toute de trace nulle, puis, par linéarité de la trace, leur somme est de trace nulle.
+                Donc :
+                \[\boxed{\mathcal N \subset \mathcal H}\]
+                </li><li class = "lic2"> On se réfère à l'exercice 19 de l'algèbre linéaire : toute matrice de trace nulle est semblable à une matrice de diagonale nulle. Il suffit ensuite de décomposer cette nouvelle matrice de diagonale nulle en une somme de deux matrice triangulaire supérieure stricte et inférieure stricte. On vérifie ainsi que toute matrice de trace nulle s'écrit comme somme de deux matrices nilpotentes :
+                \[\boxed{\mathcal N = \mathcal H}\]
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise43"><h3>Exercice 43 :</h3><div>Soient \(A, B \in \mathcal{M}_n(\mathbb C).\)
+            Montrer que (\(A\) et \(B\) ont une valeur propre commune) \(\Longleftrightarrow\) (\(\exists P \neq 0\), tel que \(AP = PB\)). <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé43')"> Corrigé </button><hr>  <span id="Indication43" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé43" style="display:none;"><p>  établissons dans un premier temps l'équivalence suivante :
+            \[\chi_A(B) \textrm{inversible} \Longleftrightarrow (B - \lambda_1I_n)...(B  \lambda_nI_n) \textrm{inversible}
+            \]
+            \[\Longleftrightarrow \forall k \in [\![1, n]\!] , B-\lambda_kI_n \textrm{ inversible.}\]
+            \[
+            \Longleftrightarrow  \forall k \in [\![1, n]\!] , \lambda_k \textrm{ n'est pas valeur propre de B. }
+            \]
+            \[\Longleftrightarrow  Sp(A) \cap Sp(B) = \emptyset.\]
+            Supposons dans un premier temps l'existence de \(P \in \mathcal{C}_n(\mathbb{C})\backslash\{0\}\) telle que \(AP = PB\).
+            Alors, par une récurrence immdiate, on a, pour tout \(n\in \mathbb N\),
+            \[A^nP = PB^n \longrightarrow \chi_A(A)P = P\chi_A(B)\]
+            D'après le théorème de Cayley-Hamilton, et le fait que \(P\) est non-nulle, \(\chi_A(B)\) n'est pas inversible. En utilisant l'équivalence précédente, on en déduit que :
+            \[Sp(A) \cap Sp(B) \neq \emptyset\]
+            <br>Réciproquement : Supposons que ces matrices admettent une valeur propre commune, alors, \(A\) et \(B\) Sont trigonalisable, donc, il existe \(P_A, P_bB\in GL_n(\mathbb(C))\) telles que :
+            \[A = P_A\Delta_AP_A^{-1} \textrm{ et } B = P_B\Delta_BP_B^{-1}\]
+            Avec \(\Delta_A, \Delta_B\) triangulaires supérieures vérifiant : \[(\delta_A)_{1,1} = (\delta_B)_{1,1} = \lambda\]
+            En multipliant ensuite par la matrice \(E_{1,1}\) on trouve le résultat.
+            \[\boxed{\textrm{(\(A\) et \(B\) ont une valeur propre commune) \(\Longleftrightarrow\) (\(\exists P \neq 0\), tel que \(AP = PB\))}}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise44"><h3>Exercice 44 :</h3><div>Soient \(A \in GL_n(\mathbb R)\) et \(B \in   \mathcal{M}_n(\mathbb R)\) telle que \(rg(B) = 1\). On suppose que \(\alpha = Tr(BA^{-1}) \neq -1\).
+            Montrer que \(A + B\) est inversible d'inverse :
+            \[A^{1} - \frac{A^{-1}BA^{-1}}{1+\alpha}\]. <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé44')"> Corrigé </button><hr>  <span id="Indication44" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé44" style="display:none;"><p>  Posons \(M = BA^{-1}\), on sait que \(rg(M) = rg(B) = 1 \Longrightarrow M^2 = Tr(M)M\). Cherchons alors un polynôme annulateur de \((I_n + M)\), admettons dans un premier temps que \(Tr(M) \neq -1\) :
+            \[ (I_n + M)^2 + \alpha(I_n + M) + \beta I_n = 0 \Longrightarrow M^2 + 2M + I_n + \alpha I_n + \alpha M + \beta I_n = 0\]
+            \[\Longrightarrow (Tr(M) + 2  + \alpha) M + (  \alpha + \beta + 1) = 0 \]
+            \[\Longrightarrow \left\{ 
+            \begin{matrix}
+                \alpha = -Tr(M) - 2 \\
+                \beta = Tr(M) + 1
+            \end{matrix}\right.\]
+            Ainsi, on a :
+            \[(M +I_n)^2 - (Tr(M) + 2)(M+ I_n) + (Tr(M) + 1)I_n = 0 \]
+            \[\Longrightarrow \frac1{(Tr(M) + 1)} (M+I_n)(M - (Tr(M) + 1)I_n) = I_n\]
+            Ainsi, \((M + I_n)\) est inversible.
+            \[(M + I_n)^{-1} = I_n + \frac1{(Tr(M) + 1)}M\]
+            Il en résulte que  :
+            \[(BA^{-1} + I_n)^{-1} = I_n + \frac1{(Tr(BA^{-1}) + 1)}BA^{-1}\]
+            Enfin :
+            \[\boxed{(B + A)\textrm{ est inversible, d'inverse  }   A^{-1} + \frac1{(\alpha + 1)}A^{-1}BA^{-1} }\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise45"><h3>Exercice 45 :</h3><div>Montrer qu'une matrice carrée complexe de taille \(n\) est nilpotente si et seulement si la trace de ses puissances, entre \(1\) et \(n\), est nulle. <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé45')"> Corrigé </button><hr>  <span id="Indication45" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé45" style="display:none;"><p>  Soit dans un premier temps \(N\in \mathcal{M}_n(\mathbb C)\) nilpotente, alors on sait que \(N\) est trigonalisable dans \(\mathbb C\) est \(N^n = 0\) Donc les valeurs propres de \(N\) sont toutes nulle, en particulier, pour tout \(k\in [\![1,n]\!]\), \(A^k\) est semblable à une matrice triangulaire avec des zéros sur sa diagonale. Enfin :
+            \[\forall k \in [\![1,n]\!], Tr(N^k) = 0\]
+            Soit \(N\in \mathcal{M}_n(\mathbb C)\), supposons donc que :
+            \[\forall k \in [\![1,n]\!], Tr(N^k) = \sum_{i=0}^n \lambda_i^k = 0\]
+            Supposons qu'il existe au moins deux valeurs propres distinctes, et notons \(p\) le nombre de valeurs propres distinctes, notons \(m_1,\cdots, m_p\) leur multiplicités respectives. Alors, les valeurs propres sont solutions du système :
+            \[\left\{
+            \begin{array}{llll}
+                m_1\lambda_1 + \cdots + m_p \lambda_p = 0\\
+                m_1\lambda_1^2 + \cdots + m_p \lambda_p^2 = 0\\
+                 \vdots\\
+                m_1\lambda_1^p + \cdots + m_p \lambda_p^p = 0
+            \end{array}
+            \right.\]
+            Or ce système est de Cramer est son détemrinant est de Vandermonde, il n'y a donc qu'une unique solution, or \(\lambda_1 = \cdots = \lambda_p = 0\), c'est absurde.
+            Ainsi, les valeurs propres sont toutes nulles, donc \(N\) est nilpotente. Enfin :
+            \[\boxed{\textrm{\(N\) est nilpotente \(\longleftrightarrow \forall k \in [\![1,n]\!], Tr(N^k) = 0\)}}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise46"><h3>Exercice 46 :</h3><div>Soit \(u \in \mathcal L (\mathbb{R}^n)\) tel que : \(\exists q \in \mathbb{N}^*, u^q = Id\). Montrer que :
+            \[\dim (\ker (u - Id)) = \frac{1}{q}\sum_{k=1}^qTr(u^k)\] <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé46')"> Corrigé </button><hr>  <span id="Indication46" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé46" style="display:none;"><p>  Tout d'abord, posons \(\displaystyle p = \frac1n \sum_{k = 1}^{q} u^k\).
+            Montrons que \(p\) est un projecteur :
+            \[p^2 = \frac1{q^2}\sum_{k=1}^{q}\left(\sum_{j=1}^q u^k\circ u^j\right) = \frac1{q^2}\sum_{k=1}^{q} \left(\sum_{j = 1}^{q} u^j\right) = p\]
+            Comme \(p\) est un projecteur, on a l'égalité \(Tr(p) = rg(p)\).
+            D'où :
+            \[\dim(Im(p)) = Tr(p) = Tr\left(\frac1n \sum_{k = 1}^{q} u^k\right) = \frac1n \sum_{k = 1}^{q} Tr(u^k)\]
+            Supposons dans un premier temps que \(x \in \ker(u - Id)\) alors, \(u(x) = x\), et pour tout \( k\in \mathbb N, u^k(x) = x\) donc :
+            \[p(x) = \frac1n \sum_{k = 1}^{q} u^k(x) = \frac1n \times nx = x\]
+            En particulier, \(x\in Im(p)\).<br>
+            Réciproquement, si \(x\in Im(p)\), alors il existe \(y\) tel que \(p(y) = x\) et :
+            \[u(x) - x = u(p(y)) - p(y) = 0\]
+            Donc \(x\in \ker(u - Id)\). Ainsi, :
+            \[\boxed{\dim (\ker (u - Id)) = \frac{1}{q}\sum_{k=1}^qTr(u^k)}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise47"><h3>Exercice 47 :</h3><div>Soit \(A \in GL_6(\mathbb R)\) telle que \(A^3 - 3A^2 + 2A = 0\), et \(tr(A) = 8\).
+            <ol>
+                </li><li class = "lic2"> Quelles sont les valeurs propres possibles de \(A\) ?
+            </li><li class = "lic2"> \(A\) est-elle diagonalisable ?
+            </li><li class = "lic2"> Déterminer le polynôme caractéristique de \(A\).
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé47')"> Corrigé </button><hr>  <span id="Indication47" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé47" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> En posant \(X\) un vecteur propre associé à la valeur propre \(\lambda\), et en multipliant par \(X\) à droite dans l'égalité vérifiée par \(A\) on trouve que les valeurs propre doivent vérifier (on peut simplifier par \(X\) car un vecteur propre est non nul) :
+                \[\lambda^3 - 3 \lambda^2 + 2\lambda = 0\]
+                Donc, comme \(0\) ne peut pas être valeur propre car \(A\) est inversible : 
+                \[\boxed{Sp(A) \subset \{1,2\}}\]
+                </li><li class = "lic2"> \(A\) admet un polynôme annulateur scindé simple \(P = X(X-1)(X-2)\). Donc :
+                \[\boxed{\textrm{\(A\) est diagonalisable.}}\]
+                </li><li class = "lic2"> On sait que le polynôme caractéristique de \(A\) est de la forme :
+                \[\chi_A(X) = (X-1)^k(X-2)^{6-k}\]
+                Car le degré du polynôme caractéristique est égal à la dimension de l'espace, de plus, comme la trace de \(A\) vaut \(8\),
+                \(k\) est solution de l'équation :
+                \[k + 2(6-k) = 8 \Longrightarrow k = 4\]
+                Ainsi :
+                \[\boxed{\chi_A(X) = (X-1)^4(X-2)^{2}}\]
+                </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise48"><h3>Exercice 48 :</h3><div>Soit l'application 
+            \[\begin{array}{l|rcl}u: & \mathbb{R}_n[X] & \longrightarrow \mathbb{R}_n[X] \\ & P & \longmapsto & X^n P(\frac{1}{X}) \end{array}\]
+            <ol>
+                </li><li class = "lic2"> Montrer que l'application \(u\) est un endomorphisme.
+                </li><li class = "lic2"> Montrer que \(u\) est diagonalisable et exprimer son polynôme minimal.
+                </li><li class = "lic2"> Déterminer une base de vecteurs propres de \(u\).
+            </ol>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé48')"> Corrigé </button><hr>  <span id="Indication48" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé48" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> \(u\) est bien une application linéaire de \(\mathbb{R}_n[X]\) dans lui-même.
+                </li><li class = "lic2"> La matrice de \(u\) dans la base canonique est de la forme :
+                \[Mat_{\mathcal{B_c}}(u) = \begin{pmatrix}
+                    (0) & & 1\\
+                     & \ddots & \\
+                     1 & & (0)
+                \end{pmatrix}\]
+                Cette matrice est symétrique, donc :
+                \[\boxed{\textrm{\(u\) est diagonalisable.}}\]
+                On a d'autre part :
+                \[u^2(P(X)) = u\left(X^nP\left(\frac1X\right)\right) = X^n \left(\frac1X\right)^n P(X) = P(X)\]
+                Il en résulte que \(Q(X) = X^2 - 1\) est un polynôme annulateur de \(u\) de degré \(2\) unitaire. La famille \((Id, u)\) étant libre, on a pas de polynôme annulateur de degré inférieur stricte à deux.
+                \[\boxed{\textrm{\(\pi_u(X) = X^2 - 1\) est le polynôme minimal de \(u\)}}\]
+                </li><li class = "lic2"> En notant \(\displaystyle P = \sum_{k=0}^d \alpha_kX^k\) un vecteur propre de \(u\) associé à la valeur propre \(\lambda = \pm 1\), alors :
+                \[u(P(X)) = \pm P(X) \Longrightarrow \sum_{k=0}^n \alpha_{n-k} X^k = \pm \sum_{k=0}^n \alpha_{k} X^k\]
+                \[\Longrightarrow \forall k \in \left[\!\left[1, n\right]\!\right], \alpha_{n-k} = \pm\alpha_k\]
+                Il reste ensuite à montrer que la famille vecteurs propres suivante est bien une base :
+                \[\boxed{\mathcal B = \left\{k\in \left[\!\left[1,\left\lfloor \frac n2\right\rfloor \right]\!\right], X^k + X^{n-k}\right\} 
+                \cup
+                \left\{k\in \left[\!\left[1,\left\lceil \frac n2\right\rceil \right]\!\right], X^k - X^{n-k}\right\}}\]
+                </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise49"><h3>Exercice 49 :</h3><div>Soit \(n \in \mathbb{N}^*\) et une matrice \(A \in  \mathcal{M}_n(\mathbb C)\).<br>
+            On pose \(B = \begin{pmatrix} A & A\\ 0 & A \end{pmatrix} \in \mathcal{M}_{2n}(\mathbb C)\).
+            <ol>
+                </li><li class = "lic2"> Justifier que pour tout \(P \in \mathbb C[X]\) :
+                \[P (B) = \begin{pmatrix} P(A) & AP'(A)\\ 0 & P(A) \end{pmatrix}\]
+                </li><li class = "lic2"> <ol>
+                    </li><li class = "lic2"> énoncer des propriétés polynomiales de diagonalisation de matrices.
+                    </li><li class = "lic2"> On suppose que \(B\) est diagonalisable. Montrer que \(A\) est diagonalisable, puis que \(A = 0\).
+                </ol> 
+                </li><li class = "lic2"> Trouver une CNS sur \(A\) pour avoir : \(A\) est diagonalisable si, et seulement si, \(B\) est diagonalisable
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé49')"> Corrigé </button><hr>  <span id="Indication49" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé49" style="display:none;"><p>  Cet exercice est similaire à l'exercice 25.    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise50"><h3>Exercice 50 :</h3><div>Soit l'endomorphisme \(
+                \begin{array}{l|rcl} u : & \mathcal{M}_n(\mathbb R) & \longrightarrow \mathcal{M}_n(\mathbb R) \\ & M & \longmapsto & M + Tr(M)I_n \end{array}\)
+            Déterminer les valeurs propres de \(u\), ainsi que
+            les espaces propres associés. <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé50')"> Corrigé </button><hr>  <span id="Indication50" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé50" style="display:none;"><p>  Les valeurs propres de \(u\) sont : 
+            \[\boxed{Sp(u) = \{1, n+1\}}\]
+            On a \(1\) de multiplicité \(n^2-1\), le sous-espace propre associé à \(1\) est :
+            \[\boxed{E_1(u) = \ker(tr)}\]
+            Et on en déduit que \(n+1\) est valeur propre de multiplicité \(1\) et :
+            \[\boxed{E_{n+1}(u) = Vect(I_n)}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise51"><h3>Exercice 51 :</h3><div>On note : \(
+                \begin{array}{l|rcl} f : & \mathcal{M}_n(\mathbb R) & \longrightarrow \mathcal{M}_n(\mathbb R) \\ & M & \longmapsto & M + 2M^T \end{array}\)
+            <ol>
+                </li><li class = "lic2"> Montrer que \(f\) est un endomorphisme de \(\mathcal{M}_n(\mathbb R)\).
+                </li><li class = "lic2"> Donner les valeurs propres et les sous-espaces propres de \(f\).
+                </li><li class = "lic2"> L'endomorphisme \(f\) est-il diagonalisable ?
+                </li><li class = "lic2"> Calculer \(tr(f)\) et \(\det(f)\) .
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé51')"> Corrigé </button><hr>  <span id="Indication51" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé51" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> \(f\) est bien linéaire, par linéarité de la transposition, de \(\mathcal{M}_n(\mathbb R)\) dans lui-même.
+                </li><li class = "lic2"> Soit \(X\) un vecteur propre pour la valeur propre \(\lambda\) :
+                \[f(X) = X + 2X^{T} = \lambda X \Longrightarrow X^{T} = \frac{2}{1 - \lambda}X\]
+                écrivons \(X = X_S + X_A\), avec \(X_A\) antisymétrique et \(X_S\) symétrique.
+                \[f(X_A + X_S) = X_A + X_S + 2X_A - 2X_S = \lambda (X_A + X_S) \Longrightarrow (3 - \lambda)X_A - (1 + \lambda)X_S  = 0\]
+                Les valeur propres sont donc \(-1\) et \(3\), et les sous-espaces propres associés sont :
+                \[\boxed{\left\{\begin{array}{c}
+                     E_3(M) = \mathcal S_n(\mathbb R) \\
+                     E_{-1}(M) = \mathcal A_n(\mathbb R)
+                \end{array}\right.}\]
+                </li><li class = "lic2"> Dans une base adaptée à la décomposition \(\mathcal M_n(\mathbb R) = \mathcal S_n(\mathbb R) \oplus \mathcal A_n(\mathbb R)\), la matrice sera diagonale. 
+                \[\boxed{\textrm{\(f\) est diagonalisable}}\]
+                </li><li class = "lic2"> On a triviallement :
+                \[\boxed{\left\{\begin{array}{c}
+                     tr(f) = \frac{3n(n+1)}2 - \frac{n(n-1)}2\\
+                     det(f) = 3^{\frac{n(n+1)}2}\times (-1)^{\frac{n(n-1)}2}
+                \end{array}\right.}\]
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise52"><h3>Exercice 52 :</h3><div>Soit \(A = (a_{i,j}) \in\mathcal{M}_n(\mathbb R)\).
+            <ol>
+                </li><li class = "lic2"> Montrer que si \(\forall i \in [\![1, n]\!], |a_{i,i}| > \sum_{j\neq i}|a_{i,j}|\), alors \(A\) est inversible.
+                </li><li class = "lic2"> \(A\) est dite stochastique si \(\forall i, j \in [\![1, n]\!] a_{i,j} \leq  0\) et \(\forall i \in [\![1, n]\!],\sum_{j=1}^n a_{i,j} = 1\). Montrer alors que toutes les valeurs propres de \(A\) sont de module inférieur à \(1\), et que \(1\) est valeur propre.
+                </li><li class = "lic2"> Soit \(\lambda \) une valeur propre de \(A\) et \(X\) un vecteur propre associé, tel que \(\|X\|_{\infty} = 1\). Montrer que si \(AX\) possède une coordonnée de module \(1\), c'est également une coordonnée de \(X\).
+                </li><li class = "lic2"> En déduire que toutes les valeurs propres de A sont des racines de l'unité
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé52')"> Corrigé </button><hr>  <span id="Indication52" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé52" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> Supposons  que \(A = (a_{i,j})\) n'est pas inversible, alors son noyau n'est pas réduit à \(0\), soit donc un vecteur \(X_0 \in \ker(A)\) avec \(X_0 =(x_1, \cdots, x_n)\neq 0\), alors, en prenant \(i\) tel que \(|x_i|\) soit maximal :
+                \[\sum_{j=1}^n a_{ij}x_j  = 0 \Longrightarrow x_i a_{ii} = - \sum_{\underset{j \neq i}{j=1}}^n a_{ij}x_j \]
+                \[|a_{ii}| = \left| \sum_{j=1,j \neq i}^n a_{ij}\dfrac{x_j}{x_i}    \right| \leq \sum_{j=1,j \neq i}^n   \left| a_{ij}\dfrac{x_j}{x_i}    \right|\]
+                Or, comme on a pris \(x_i\) maximal :
+                \[|a_{ii}| \leq \sum_{j=1,j \neq i}^n   \left| a_{ij}\dfrac{x_j}{x_i}    \right| \leq \sum_{j=1,j \neq i}^n   \left| a_{ij}   \right|\] 
+                Ce qui absurde. Donc :
+                \[\boxed{\textrm{\(A\) est inversible}}\]
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise53"><h3>Exercice 53 :</h3><div>Trouver l'ensemble des matrices \(A \in \mathcal{M}_n(\mathbb R)\), diagonalisables sur \(\mathbb R\), telles que : \(A^3 + A = 2I_n\). <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé53')"> Corrigé </button><hr>  <span id="Indication53" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé53" style="display:none;"><p>  Si \(A\) est diagonalisable, notons \(\lambda_1, \cdots, \lambda_n\) ses valeurs propres, il existe \(P\in GL_n(\mathbb(R))\), \(\Delta = Diag(\lambda_1, \cdots, \lambda_n)\) telles que :
+            \[A = P\Delta P^{-1} \Longrightarrow P\Delta^3P^{-1} + P\Delta P^{-1} = 2I_n\]
+            \[\Longrightarrow 
+            \begin{pmatrix}
+                \lambda_1^3 & & 0 \\
+                 & \ddots & \\
+                 0 & & \lambda_n^3
+            \end{pmatrix} 
+            + 
+            \begin{pmatrix}
+                \lambda_1 & & 0 \\
+                 & \ddots & \\
+                 0 & & \lambda_n
+            \end{pmatrix} 
+            = 2
+            \begin{pmatrix}
+                1 & & 0 \\
+                 & \ddots & \\
+                 0 & & 1
+            \end{pmatrix}\]
+            Ainsi, toutes les valurs propres de \(A\) sont solutions de l'équation \(X^3 + X - 2 = 0\).
+            Or, \(1\) est racine évidente est c'est la seule racine réelle, on en déduit que si \(A\) est solution, alors \(A\) est semblable à l'identité, il donc un unique solution :
+            \[\boxed{A = I_n}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise54"><h3>Exercice 54 :</h3><div>On pose \(E = \mathbb R[X]\) et on définit \(f \in L(E)\) par :
+            \[\forall P \in E, f(P) = (X - 3)(X + 1)P' - XP\]
+            Donner les valeurs propres et vecteurs propres de \(f\). <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé54')"> Corrigé </button><hr>  <span id="Indication54" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé54" style="display:none;"><p>  Soit \(P\) un vecteur propre pour la valeur propre \(\lambda\) :
+            \[(X - 3)(X + 1)P' - XP = \lambda P \Longrightarrow (X - 3)(X + 1)P' - (X+\lambda)P = 0\]
+            Notons \(P = \sum_{k=0}^d a_kX^{k}\), alors \(P\) est vecteur propre pour la valeur propre \(\lambda\) si :
+            \[(X - 3)(X + 1)\sum_{k=0}^d (k+1)a_{k+1}X^{k} - (X+\lambda)\sum_{k=0}^d a_kX^{k} = 0\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise55"><h3>Exercice 55 :</h3><div>Soit \(A \in \mathcal{M}_n(\mathbb R)\) telle que \(A^3 = A\).
+            <ol>
+                </li><li class = "lic2">  Montrer que \(A\) est diagonalisable.
+                </li><li class = "lic2"> On suppose que \(rg(A) = Tr(A)\). Montrer que \(A\) est la matrice d'un projecteur
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé55')"> Corrigé </button><hr>  <span id="Indication55" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé55" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> On remarque que \(P = X^3 - X = X(X+1)(X-1)\). Ce polynôme est annulateur scindé simple, donc \(\boxed{\textrm{\(A\) est diagonalisable}}\).
+                </li><li class = "lic2"> Notons \(r = rg(A)\), alors, comme \(A\) est diagonalisable, elle est semblable à une matrice contenant uniquement des \(r\) coefficient diagonaux non nuls. En particulier cette matrice ne contient pas de valeurs propres égale à \(-1\). Il en résulte que \(Q = (X+1)X\) est annulateur de \(M\).
+                \[\boxed{\textrm{\(M\) est  la matrice d'un projecteur}}\]
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise56"><h3>Exercice 56 :</h3><div>Soient \(A\) et \(B\) dans \(\mathcal{M}_n(\mathbb R)\) qui commutent. On suppose qu'il existe \(n + 1\) réels deux à deux distincts \(t_1, t_2, \cdots , t_{n+1}\) tels que, pour tout \(i\) entre \(1\) et \(n + 1\), la matrice \(C_i = A + t_iB\) soit nilpotente.
+            Montrer que les matrices \(A\) et \(B\) sont nilpotentes <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé56')"> Corrigé </button><hr>  <span id="Indication56" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé56" style="display:none;"><p>  Il suffit de poser la matrice \(M = (A + XB)^n\) les coefficients de cette matrices sont des polynômes de degré inférieurs ou égaux à \(n\), or chaque coefficient admet \(n+1\) racines.<br>
+            Il en résulte que \(M\) est la matrice nulle. En écrivant \(M = A^n + \cdots + X^nB^n = 0\), on obtient le résultat voulu par unicité des coefficients d'un polynôme, à savoir \(A^n = B^n = 0\)
+            \[\boxed{\textrm{\(A\) et \(B\) sont nilpotentes}}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise57"><h3>Exercice 57 :</h3><div>Soit \(A \in \mathcal{M}_3(\mathbb C)\).
+            Montrer que \(A\) et \(-A\) sont semblables si et seulement si \(Tr(A) = 0\) et \(\det(A) = 0\). <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé57')"> Corrigé </button><hr>  <span id="Indication57" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé57" style="display:none;"><p>  Deux matrices semblables ont même trace :
+            \[Tr(A) = Tr(-A) \longrightarrow Tr(A) = 0\]
+            De même pour le déterminant :
+            \[Det(A) = Det(-A) = - Det(A) \Longrightarrow Det(A) = 0\]
+            Réciproquement, si \(Det(A) = 0\), alors \(0\) est valeur propre de \(A\), de plus la trace de \(A\) est nulle, on en déduit que :
+            <ul>
+                </li><li class = "lic2"> Si \(Sp(A) \neq \{0\}\), alors, \(A\) est diagonalisable semblable à :
+                $\Delta = 
+                \begin{pmatrix}
+                    \lambda & 0 & 0\\
+                    0 & -\lambda & 0\\
+                    0 & 0 & 0
+                \end{pmatrix}$
+                Donc, en échangeant les deux premiers vecteurs de la base, on trouve le résultat voulu.
+                Cela peut se faire en multipliant par la matrice :
+                \[P = 
+                \begin{pmatrix}
+                    0 & 1 & 0\\
+                    1 & 0 & 0\\
+                    0 & 0 & 1
+                \end{pmatrix}\]
+                </li><li class = "lic2"> Dans le second cas, \(Sp(A) = \{0\}\) est \(A\) n'est pas diagonalisable, mais \(P = X^3\) est annulateur de \(A\), on peut alors faire une nouvelle disjonction de cas selon si \(A^2 = 0\) ou \(A^2 \neq 0\), \(A\) sera alors respectivement semblable à (cela se vérifie en prenant un vecteur \(\vec{x_0}\) dont l'image sera non nul par \(A\) (resp. \(A^2\))) :
+                \[\Delta = 
+                \begin{pmatrix}
+                    0 & 0 & 1\\
+                    0 & 0 & 0\\
+                    0 & 0 & 0
+                \end{pmatrix} \textrm{  et  } 
+                \Delta = \begin{pmatrix}
+                    0 & 1 & 0\\
+                    0 & 0 & 1\\
+                    0 & 0 & 0
+                \end{pmatrix}\]
+            Or, c'est aussi le cas pour \(-A\), donc, par transitivité de la relation, \(A\) et \(-A\) semblables.
+            </ul>
+            </p><p>
+            Enfin on  en déduit l'équivalence : \[\boxed{\textrm{\(A\) est semblable à \(-A\) si et seulement si \(Det(A) = Tr(A) = 0\) }}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise58"><h3>Exercice 58 :</h3><div>Soit \(n \in \mathbb N^*\) et \(f, h \in \mathcal L(\mathbb C^n)\) tels que \(h \circ f - f \circ h = 2f\).
+            <ol>
+                </li><li class = "lic2">  Montrer que : \(\forall k \in \mathbb N, h \circ f^k - f^k \circ h = 2kf^k\).
+                </li><li class = "lic2">  En déduire que \(f\) est nilpotent, puis qu'il existe \(x \in \mathbb C^n \backslash \{0\}\) et \(\lambda \in \mathbb C\) tels que \(f(x) = 0_{C^n}\) et \(h(x) = \lambda x\).
+            </ol>
+           
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé58')"> Corrigé </button><hr>  <span id="Indication58" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé58" style="display:none;"><p>
+                <ol>
+                </li><li class = "lic1"> La première question se traite par récurrence (Cf exercice nÂ°34)
+                </li><li class = "lic1"> On pose :
+                \[
+                \begin{array}{l|rcl} \varphi : & \mathcal L(\mathbb C^n) & \longrightarrow \mathcal L(\mathbb C^n) \\ & h & \longmapsto & h\circ f - f \circ h \end{array}\]
+                Si on suppose que pour tout \(k\), \(f^k \neq 0\) alors, cet endomorphisme admet une infinité de valeur propre. ABSURDE<br>
+                \[\boxed{\textrm{\(f\) est nilpotent}}\]
+                Soit \(\lambda \in Sp(h)\) et \(\vec{x_0}\neq 0\) un vecteur propre associé à cette valeur propre. Alors :
+                \[h \circ f(\vec{x_0}) - f \circ h(\vec{x_0})  = 2f(\vec{x_0}) 
+                \Longrightarrow 
+                h \circ f(\vec{x_0}) - \lambda f(\vec{x_0}) = 2f(\vec{x_0})\]
+                \[\Longrightarrow h \circ f(\vec{x_0}) = (2+\lambda)f(\vec{x_0})\]
+                Or l'ensemble des valeur propre n'est pas stable par l'application \(x \longmapsto x + 2\) donc, il existe une valeur propre pour laquelle l'image du vecteur propre par \(f\) est nulle :
+                \[\boxed{\exists x \neq 0, f(x) = 0 \textrm{ et } h(x) = \lambda x}\]
+            </ol> <br>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise59"><h3>Exercice 59 :</h3><div><ol>
+                </li><li class = "lic2"> Montrer que le commutant d'une matrice \(A\) donnée est un sous-espace vectoriel de \(\mathcal{M}_n(\mathbb K)\).
+                </li><li class = "lic2"> Montrer que si deux matrices sont semblables, leurs commutants ont même dimension.
+                </li><li class = "lic2"> Que dire de la dimension de ce commutant, si A est diagonalisable.
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé59')"> Corrigé </button><hr>  <span id="Indication59" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé59" style="display:none;"><p>  <ol>
+            </li><li class = "lic2"> Aucune difficulté, laissé au lecteur.
+            </li><li class = "lic2"> On a très simplement, en posant \(A = PBP^{-1}\)
+            \[C_A = \left\{ M\in \mathcal{M}_n(\mathbb{C}) | AM = MA\right\}\]
+            \[= \left\{ M\in \mathcal{M}_n(\mathbb{C}) | PBP^{-1}M = MPBP^{-1}\right\}\]
+            \[= \left\{ M\in \mathcal{M}_n(\mathbb{C}) | BP^{-1}MP = P^{-1}MPB\right\}\]
+            En particulier, si \(M\in C_A\) alors, \(PMP^{-1}\in C_B\)
+            On vérifie de plus facilement que \(\varphi : X \longmapsto PXP^{-1}\) est endomorphisme bijective.
+            Ainsi :
+            \[\boxed{\dim(C_B) = \dim(\varphi(C_A)) = \dim(C_A)}\]
+            </li><li class = "lic2"> Soit \(B\) qui commute avec \(A\), alors les sous-espaces propres de \(A\) sont stables par \(B\). Notons \(Sp(A) = \left\{\lambda_1, \cdots, \lambda_p\right\}\).
+            Alors, notons \(B_i\) l'endomorphisme induit par \(B\) sur \(E_{\lambda_i}(A)\).= et considérons l'application :
+            \begin{array}{l|rcl} \varphi : & C_A & \longrightarrow & \mathcal{L}(E_{\lambda_1}(A)) \times \cdots \times \mathcal{L}(E_{\lambda_p}(A)) \\& B & \longmapsto & (B_1, \cdots, B_p) \end{array}\]
+            Cette application linéaire est infective :
+            \[\varphi(B) = 0 \longrightarrow B_1 = \cdots = B_n = 0 \Longrightarrow B = 0\]
+            Elle est aussi surjective. Soit \((B_1, \cdots, B_n) \in \mathcal{L}(E_{\lambda_1}(A)) \times \cdots \times \mathcal{L}(E_{\lambda_p}(A))\), alors l'endomorphisme \(B\) qui pour tout \(k\in [\![1, n ]\!]\) coÃ¯ncident avec les \(B_k\) sur \(E_{\lambda_k}(A)\) commute en effet avec \(A\).
+            On a donc \(C_A\) isomorphe à \(\mathcal{L}(E_{\lambda_1}(A)) \times \cdots \times \mathcal{L}(E_{\lambda_p}(A))\) Donc :
+            \[\boxed{\dim(C_A) = \sum_{k=1}^n \dim(\mathcal L (E_k(A))) = \sum_{k=1}^n \dim(E_k(A))^2}\]
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise60"><h3>Exercice 60 :</h3><div>Résoudre dans \(\mathcal{M}_3(\mathbb R)\) ou \(\mathcal{M}_3(\mathbb C)\) l'équation \(X^2 =\left( \begin{array}{ccc} -7 & 5 & -6 \\ -6 & 10 & -12 \\ -1 & 5 & -6 \\\end{array} \right) \) <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé60')"> Corrigé </button><hr>  <span id="Indication60" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé60" style="display:none;"><p>  Corrigé indisponible    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise61"><h3>Exercice 61 :</h3><div>Donner une base de \(\mathcal{M}_n(\mathbb C)\) telle qu'aucune matrice de cette base ne soit diagonalisable. <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé61')"> Corrigé </button><hr>  <span id="Indication61" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé61" style="display:none;"><p>  On remarque que les matrices \(E_{i,j}\) avec \(i\neq j\) ne sont pas diagonalisables car elle sont nilpotentes, donc seraient semblable à la matrice nulle si elle l'étaient.<br>
+            Posons \(K\) la matrice avec des \(1\) sur la sur-diagonale. Alors la famille :
+            \[\boxed{\mathcal B = (E_{1,1} + K, \cdots, E_{n,n} + K, E_{1,2}, \cdots E_{n, n-1})}\]
+            forme une base de \(\mathcal{M}_n(\mathbb C)\) dont les éléments ne sont pas diagonalisables.<br>
+            En effet, soit \(i\in [\![1, n]\!]\), alors 
+            \[\chi_{(K + E_{i,i})}(X) = (X-1)X^{n-1}\]
+            Or la dimension du sous espace propre associé à la valeur propre \(0\) est \(\dim(E_0(K + E_{i,i}) = 1\)
+            Pour \(n>2\), cette base convient.    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise62"><h3>Exercice 62 :</h3><div>Soient \(E = \mathcal{C}^{\infty}(\mathbb R, \mathbb R)\) et \(u\) l'application qui à \(f\) de \(E\) associe \(x \longmapsto f (px + q)\), avec \(p \in ]0, 1[\) et \(q = 1 - p\).
+            <ol>
+                </li><li class = "lic2"> Montrer que \(u\) est un automorphisme de \(E\).
+                </li><li class = "lic2"> Montrer que les valeurs propres de \(u\) sont dans \(] - 1, 1]\).
+                </li><li class = "lic2"> Montrer que si \(f\) est un vecteur propre, alors il existe \(k \in \mathbb N\) tel que \(f^{(k)} = 0\).
+                </li><li class = "lic2"> Trouver les valeurs propres de \(u\) et les vecteurs propres associés.
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé62')"> Corrigé </button><hr>  <span id="Indication62" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé62" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> Trivialement une application linéaire de \(E\) dans \(E\), pour la bijectivité, on a : 
+                \[u^{-1} : f \longmapsto \left(x\mapsto f\left(\frac{x-q}{p}\right)\right)\]
+                </li><li class = "lic2"> Soit \(\vec{x_0} \neq 0\) un vecteur propre de \(u\) associé à la valeur propre \(\lambda\). On définit la suite \((u_n)\)  par :
+                \[ \left\{
+                    \begin{array}{ll}
+                        u_0 = \vec{x_0} \neq 0<br>
+                        \forall n \in \mathbb{N}, u_{n+1} = pu_n + q
+                    \end{array}
+                \right.\]
+                Alors, en reconnaissant une suite arithmético-géométrique : \[f_{\lambda}(u_n) = f\left(p^n\left(x_0 - 1\right) + 1\right) = \lambda^nf(x)\]
+                    Or, par passage à la limite, comme \(f\) est continue, en prenant \(\lambda \in ]-1; 1[\), on obtient :
+                    \[f(1) = \lim_{n\longrightarrow + \infty} \lambda^n f(x_0)\]
+                    Ceci implique que \(\lambda \in ]-1,1]\).
+                </li><li class = "lic2"> On remarque que si \(f\) est vecteur propre, pour tout \(n\in \mathbb{N}\), \(f^{(n)}\) est aussi vecteur propre associé à la valeur propre \(\frac{\lambda}{p^n}\in ]-1, 1[\)
+                    cela signifie que \(f^{(n)}\) est nulle à partir d'un certain rang, car l'expression \(\frac{\lambda}{a^n}\) diverge, donc sort de l'intervalle \(]-1, 1[\).
+                </li><li class = "lic2"> La dernière question se fait par analyse-synthèse, en remarquant qu'un vecteur propre est nécessairement une fonction polynomiale.
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise63"><h3>Exercice 63 :</h3><div>Soit \(n \in \mathbb{N}^*\) et\( M \in  \mathcal{M}_{3n} (\mathbb R)\) telle que \(M^3 = -M\) et \(rg(M) = 2n\).
+            <ol>
+                </li><li class = "lic2"> \(M\) est-elle diagonalisable dans \(\mathcal{M}_{3n} (\mathbb C)\) ? Dans \(\mathcal{M}_{3n} (\mathbb R)\) ? Préciser les valeurs propres et la dimension des espaces propres.
+                </li><li class = "lic2"> Montrer que dans \(\mathcal{M}_{3n} (\mathbb R)\) :
+                \[M \sim \left(\begin{array}{ccc}
+                    0 & 0 & 0 \\
+                    0 & 0 & I_n \\
+                    0 & -I_n & 0 
+                \end{array}\right)\]
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé63')"> Corrigé </button><hr>  <span id="Indication63" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé63" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> Sur \(\mathcal M_n (\mathbb C)\), \(M\) est diagonalisable car admet un polynôme annulateur scindé à racines simples. Elle n'est pas diagonalisable sur \(\mathcal M_n (\mathbb R)\) car elle admet pour unique valeur propre \(0\) elle ne peut donc pas être diagonalisable sinon, elle serait semblable à la matrice nulle.<br>
+                Comme \(M\) est un matrice réelle, si \(\lambda\) est valeur propre complexe, alors son conjugué est aussi valeur propre de même multiplicité, il en résulte que :
+                \[\boxed{dim(E_0(M)) = dim(E_i(M)) = dim(E_{-i}(M)) = n}\]
+                </li><li class = "lic2"> On cherche ici à diagonaliser la matrice suivante :
+                \[A = \left(\begin{array}{ccc}
+                    0 & 0 & 0 \\
+                    0 & 0 & 1 \\
+                    0 & 1 & 0 
+                \end{array}\right)\]
+                Cette matrice est semblable à :
+                \[\Delta = \left(\begin{array}{ccc}
+                    0 & 0 & 0 \\
+                    0 & i & 0 \\
+                    0 & 0 & -i 
+                \end{array}\right)\]
+                Avec la matrice de passage :
+                \[P = \left(\begin{array}{ccc}
+                    1 & 0 & 0 \\
+                    0 & -i & i \\
+                    0 & 1 & 1 
+                \end{array}\right)\]
+                On peut se servir de ce résultat pour constater l'égalité :
+                \[\left(\begin{array}{ccc}
+                    0 & 0 & 0 \\
+                    0 & 0 & I_n \\
+                    0 & -I_n & 0 
+                \end{array}\right) \left(\begin{array}{ccc}
+                    I_n & 0 & 0 \\
+                    0 & -iI_n & iI_n \\
+                    0 & I_n & I_n
+                \end{array}\right) 
+                = 
+                \left(\begin{array}{ccc}
+                    I_n & 0 & 0 \\
+                    0 & -iI_n & iI_n \\
+                    0 & I_n & I_n
+                \end{array}\right) 
+                \left(\begin{array}{ccc}
+                    0 & 0 & 0 \\
+                    0 & iI_n & 0 \\
+                    0 & 0 & -iI_n
+                \end{array}\right) \]
+                Donc :
+                \[\left(\begin{array}{ccc}
+                    0 & 0 & 0 \\
+                    0 & 0 & I_n \\
+                    0 & -I_n & 0 
+                \end{array}\right)
+                \sim 
+                \left(\begin{array}{ccc}
+                    0 & 0 & 0 \\
+                    0 & iI_n & 0 \\
+                    0 & 0 & -iI_n
+                \end{array}\right) \]
+                De plus, on sait d'après la question précédente que \(M\) est semblable à cette dernière matrice, d'où le résultat par transitivité :
+                \[\boxed{M \sim \left(\begin{array}{ccc}
+                    0 & 0 & 0 \\
+                    0 & 0 & I_n \\
+                    0 & -I_n & 0 
+                \end{array}\right)}\]
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise64"><h3>Exercice 64 :</h3><div>Soit \(A \in  \mathcal{M}_n (\mathbb C)\). On suppose qu'il existe \(P \in \mathbb C[X]\) tel que \(P (A)\) soit diagonalisable, et \(P'(A)\) soit inversible.
+            Montrer que \(A\) est diagonalisable. <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé64')"> Corrigé </button><hr>  <span id="Indication64" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé64" style="display:none;"><p>  Considérons le polynôme minimal de \(P(A)\), \(\pi_{P(a)}\) qui est scindé simple car \(P(A)\) est diagonalisable et remarquons que le polynôme \(\pi_{P(A)}\circ P\) est annulateur de \(A\), donc \(\pi_A | \pi_{P(A)}\circ P\), ainsi supposons par l'absurde qu'il existe \(\lambda \in Sp(A)\) tel que \((X - \lambda)^2 | \pi_A\), alors \((X - \lambda)^2 |  \pi_{P(A)}\circ P\), il existe donc \(Q(X) \in \mathbb C[X]\) tel que pour tout \(x\) :
+            \[\pi_{P(A)}(P(x)) = (x- \lambda)^2Q(x)\]
+            En dérivant :
+            \[P'(x)\pi_{P(A)}'(P(x)) = (x- \lambda)^2Q'(x) + 2(x- \lambda)Q(x)\]
+            Puis en évaluant en \(\lambda\) :
+            \[P'(\lambda)\pi_{P(A)}'(P(\lambda)) = 0\]
+            Or comme \(P'(A) \in GL_n(\mathbb C)\), on sait que \(0\) n'est pas valeur propre de \(P'(A)\) donc, pour tout \(\lambda \in Sp(A), P'(\lambda) \neq 0\). (Pour tout polynôme \(P\), \(Sp(P(A)) = P(Sp(A))\))<br>
+            Ainsi \(\pi_{P(A)}'(P(\lambda)) = 0\), donc \(P(\lambda)\) est racine de multiplicité au moins deux de \(\pi_{P(a)}\), ce qui est absurde. Donc \(\pi_A\) est scindé simple, il en résulte que :
+            \[\boxed{\textrm{\(A\) est diagonalisable.}}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise65"><h3>Exercice 65 :</h3><div>Déterminer les matrices \(M \in  \mathcal{M}_n (\mathbb C)\) telles que \(M^2\) et \(M\) soient semblables. <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé65')"> Corrigé </button><hr>  <span id="Indication65" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé65" style="display:none;"><p>
+            Cet exercice ne peut pas être résolu sans faire appel à la réduction de Jordan, cependant on peut tenter d'établir quelques résultats. <br>
+            Soit \(M\) telle que \(M\) et \(M^2\) soient semblable. La matrice \(M\) est trigonalisable dans \(\mathbb{C}\). Soit \(\lambda \in Sp(A)\), alors \(\lambda^2 \in Sp(A^2)\). Or \(A^2\) et \(A\) ont le même spectre, il en résulte que \(\lambda^2 \in Sp(A)\). 
+            Par une récurrence immédiate, on montre que :
+            \[\forall k \in \mathbb{N}, \lambda^{2^k} \in Sp(A)\]
+            En particulier, comme le spectre et fini, on a nécessairement \(\lambda = 0\) ou \(|\lambda| = 1\) et il existe \(k \leq n\), tel que \(\lambda^{2^{k_0}} = \lambda\).
+            Notons :
+            \[P_{\lambda} = \{k\in \mathbb N | \lambda^{2^{k_0}} = \lambda \}\]
+            D'après ce qui a été dit précédemment, \(P_{\lambda}\) est une partie de \(\mathbb{N}\) non vide donc admet un plus petit élément, que l'on note \(k_0\) dans la suite.<br>
+            Posons, pour tout \(k \in [\![0, k_0-1]\!]\) : \[\lambda^{2^{k}}= e^{i\theta_k}\]
+            Avec ces notations, les \(\theta_k\) vérifient :
+            \[\left\{\begin{array}{c}
+                 \theta_0 \equiv 2^{k_0}\theta_0 [2\pi] <br>
+                 \forall k \in [\![0, k_0]\!], \theta_{k+1} = 2\theta_k
+            \end{array}\right.
+            \Longrightarrow 
+                 \left\{\begin{array}{c}
+                 \theta_0 \equiv 2^{k_0}\theta_0 [2\pi] <br>
+                 \forall k \in [\![0, k_0]\!], \theta_{k+1} = 2\theta_k
+            \end{array}\right.\]    </p></span></div></div>
+            
+            
+            
+            
+    </div><br>
+    <div class="arrow arrow-left" onclick="prevExercise(65)">&lt;</div>
+    <div class="arrow arrow-right" onclick="nextExercise(65)">&gt;</div>
+    <script>
+    window.onload = function() {
+        var hash = window.location.hash;
+        if (hash) {
+            var exerciseId = hash.substring(1); // Remove the '#' character
+            var exercise = document.getElementById(exerciseId);
+            if (exercise) {
+                var exerciseIndex = Array.from(exercise.parentElement.children).indexOf(exercise);
+                if (exerciseIndex !== -1) {
+                    showExercise(exerciseIndex);
+                    currentExerciseIndex = exerciseIndex;
+                }
+            }
+        }
+    };
+    </script>
+</div>
+</body>
+</html>
