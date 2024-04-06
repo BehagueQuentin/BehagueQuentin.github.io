@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notion de Norme</title>
+    <link href="../stylePageMaths.css" rel="stylesheet">                                                                                                                                                                              
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"/>                                                                                                      
+    <link rel="icon" href="./../../Images/Icones/favicon.png">                                                                        
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>                                                                                                                  
+</head>
+
+<ul class="background">
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+</ul>
+
+
+<body background="./../../Images/Fonds/hexagonal.png" bgproperties="fixed">
+    <br>
+
+    
+    <div class="entete" style="position: relative;"><div class="effetneon"><span><h1>BEHAGUE Quentin - Etudiant en CPGE MPI*</h1> </span></div></div>
+
+    <!-- Menu de navigation du site -->
+    <span class="menu-de-navigation" id="menu"><nav style="z-index: 10;"><ul>
+        <li class ="home_button"><a href="../../index.html"><img src="./../../Images/NeonHouse.png" class="pic_menu_home"></a></li>
+        <li class="deroulant"><a href="#">Exercices corrigés &ensp;</a>
+            <ul class="sous" style="height: 300px; overflow-y: scroll;">
+                <li><a href="../AlgebreLineaire/AlgebreLineaire.html">Algèbre linéaire</a></li>
+                <li><a href="../Norme/Norme.html">Notion de norme</a></li>
+                <li><a href="../SuitesSeriesSommabilite/SuitesSeriesSommabilite.html">Suites, Séries et Sommabilité</a></li>
+                <li><a href="../Reduction/Reduction.html">Réduction</a></li>
+                <li><a href="../FonctionsVectorielles/FonctionsVectorielles.html">Fonctions à valeurs vectorielles</a></li>
+                <li><a href="../EspacesProbabilises/EspacesProbabilises.html">Espaces probabilisés</a></li>
+                <!-- Page qui ne sont pas achevées :
+                <li><a href="../SuitesSeriesFonction/SuitesSeriesFonction.html">Suites et séries de fonctions</a></li>
+                <li><a href="../EquationsDifferentielles/EquationsDifferentielles.html">Équations différentielles</a></li>
+                <li><a href="../CalculDifferentiel/CalculDifferentiel.html">Calcul différentiel</a></li>
+                <li><a href="../IntegralesParametres/IntegralesParametres.html">Intégrales à Paramétres</a></li>
+                <li><a href="../EspacesEuclidiens/EspacesEuclidiens.html">Espaces euclidiens</a></li>
+                <li><a href="../Integration/Integration.html">Intégration</a></li>
+                <li><a href="../SeriesEntieres/SeriesEntieres.html">Suites et séries entières</a></li>
+                <li><a href="../Topologie/Topologie.html">Topologie</a></li>
+                <li><a href="../VariablesAleatoires/VariablesAleatoires.html">Variables aléatoires</a></li>
+                <li><a href="../StructureAlgebrique/StructureAlgebrique.html">Structures algébriques</a></li>-->
+            </ul>
+        <li class="deroulant"><a href="#">Programmes &ensp;</a>
+            <ul class="sous">
+                <li><a href="../../Programmes/Julia.html">Ensemble de Julia</a></li>
+                <li><a href="../../Programmes/Syracuse.html">Suite de Syracuse</a></li>
+                <li><a href="../../Programmes/Puzzle.html">Puzzle</a></li>
+                <li><a href="https://github.com/BehagueQuentin/Jeu-Echecs">Jeux d'échec</a></li>
+            </ul>
+        <li><a href="../../Téléchargement/Téléchargement.html">Téléchargements</a></li>
+        <li class="deroulant"><a href="#">Contact &ensp;</a>
+            <ul class="sous">
+                <li><a>06 46 15 00 15</a></li>
+                <li><a>quentinbehague59560@gmail.com</a></li>
+                <li><a href="https://github.com/BehagueQuentin">Mon github</a></li>
+            </ul>   
+        <li><a href="../../Apropos/Apropos.html">A propos</a></li>
+    </ul></nav></span>
+    <main style="z-index: 0; position: relative;">
+            <div class="container">
+                    <div class="container-title" style="width:50%; background-color: rgba(0, 2, 11, 0.5); border-radius: 2vw;">
+                        <h2  style="margin:1vw; text-align: center;">
+                            <span class="fading">Exercices :</span>
+                            <span class="fading">Notion</span>
+                            <span class="fading">de</span>
+                            <span class="fading">Norme</span>
+                        </h2>
+                    </div>
+            </div>
+            <div class="flexbox-container" style="font-size: 13px;">
+                <div class="flexbox-item flexbox-item-bottom-medium-height" onclick="changePage(1)">
+                    <div class = "marge1">
+                    <h4>Exercice n°1  :</h4>
+                    <ol>
+                        <li class = "lic1"> Donner les normes \(\| \cdot \|_1\) et \(\| \cdot \|_{\infty}\) sur \(E\).</li><br>
+                        <li class = "lic1"> Justifier oralement, en ne donnant que les arguments importants, que \(\Vert \cdot \Vert_1\) est une norme.</li><br>
+                        <li class = "lic1"> Montrer que si \(\left( f_n \right)_{n \in \mathbb{N}} \in E^{\mathbb{N}}\) converge au sens de \(\Vert \cdot \Vert_{\infty}\), alors elle converge au sens de \(\Vert \cdot \Vert_1\). </li><br>
+                        <li class = "lic1"> Les normes \(\Vert \cdot \Vert_1\) et \(\Vert \cdot \Vert_{\infty}\) sont-elles équivalentes ? </li>
+                    </ol>
+                    </div>
+                </div>
+
+
+
+
+                <div class="flexbox-item" style="flex: 8;" onclick="changePage(2)">
+                    <div class = "marge1">
+                    <h4>Exercice n°2  :</h4>
+                    Soit \(\|\cdot\|_{\infty}\) la norme de la convergence uniforme et \(E=\{f \in\mathcal{C}^1([0,1]) | f(0)=0\}\).<br>
+                    On considère \(n\) et \(N\) définies sur \(E\) par :
+                    \[\forall f \in E,\ n(f) = \lvert\lvert f+f'\rvert\rvert_{\infty}\ \textrm{et} \ N(f)=\lvert\lvert f\rvert\rvert_{\infty} + \lvert\lvert f'\rvert\rvert_{\infty} \]
+                    <ol>
+                        <li class = "lic1">Montrer que \(n\) et \(N\) sont des normes.</li><br>
+                        <li class = "lic1">Montrer qu'elles sont équivalentes. On pourra remarquer que \(f(x)= \int_{0}^{x} f'(t) \, \mathrm{d}t \) et que pour \(g(t)=\mathrm e^tf(t)\), on a \(f'(t)=\mathrm e^{-t}(g'(t)-g(t))\).</li>
+                    </ol>
+	
+	                 
+                </div>
+                </div>
+
+
+
+
+
+                <div class="flexbox-item flexbox-item-center-little-height" onclick="changePage(3)">
+                    <div class = "marge1">
+                    <h4>Exercice n°3  :</h4>
+                    
+                    Soit \(E={{C}^{0}}\left( \left[ 0,1 \right],\mathbb{R} \right)\) et \(f\in E\). On note :
+                    \[N(f)=\sup \left\{ \left| \int_{0}^{1}f(t)t^{n}dt \right|;n\in \mathbb{N} \right\}\] 
+                    Montrer que N est une norme sur E.
+                    </div>
+                </div>
+
+
+
+                <div class="flexbox-item flexbox-item-top-medium-height" onclick="changePage(4)">
+                    <div class = "marge1">
+                    <h4>Exercice n°4  :</h4>
+                    <ol>
+                        <li class = "lic1"> Démontrer la deuxième inégalité triangulaire pour une norme dans un espace vectoriel normé.</li>
+                        <li class = "lic1"> En déduire que :
+                            \[\left\| \cdot \right\|:\begin{matrix}
+                            E\to \mathbb{R}  \\
+                            \overrightarrow{x}\to \left\| \overrightarrow{x} \right\|  \\
+                        \end{matrix}\]
+                         est 1-lipschitzienne.</li>
+                    </ol>
+                </div>
+                </div>
+                
+
+                
+                <div class="flexbox-item flexbox-item-center-little-height" onclick="changePage(5)">
+                    <div class = "marge1">
+                    <h4>Exercice n°5  :</h4>                      
+                    <ol>
+                        <li class = "lic1"> Existe-t-il une norme N sur \(E={{M}_{n}}(\mathbb{R})\) telle que pour toutes matrices A et B de E, on ait \(N\left( AB \right)=N(A).N(B)\) ?</li><br>
+                        <li class = "lic1"> Même question avec \(N\left( AB \right) \leq N(A).N(B)\)</li>
+                    </ol>
+                    </div>
+                </div>
+
+
+
+                <div class="flexbox-item flexbox-item-bottom-medium-height" style="flex: 8;" onclick="changePage(6)">
+                    <div class = "marge1">
+                    <h4>Exercice n°6  :</h4>
+                    Soit \(E =\mathcal{C}^{1}([0,1],\mathbb{R})\).<br>
+                    On pose pour tout \(f\in E\) : \(\|f\|_{1} = \displaystyle\int_{0}^{1} \left|f(x)\right| \, \mathrm{d}x\) et: \(N_{1}(f) = \|f \|_{1} + \|f' \|_{1}\) et \(N_{2}(f) = |f(0)| + \|f' \|_{1}\).
+                    <ol>
+                        <li class = "lic1"> Montrer que \(N_{1}\) et \(N_{2}\) sont des normes.</li><br>
+                        <li class = "lic1"> \(N_{1}\) et \(N_{2}\) sont-elles équivalentes ?</li>
+                    </ol>
+                    </div>
+                </div>
+
+                <div class="flexbox-item flexbox-item-center-medium-height" onclick="changePage(7)">
+                    <div class = "marge1">
+                        <h4>Exercice n°7  :</h4>
+                                            
+                        Pour \(\lambda \in \mathbb(C)\), on note \(e_{\lambda} : x \longmapsto e^{\lambda x}\). On note \(F\) le sous-espace de \(\mathbb{C}^{\mathbb{R}}\) engendré par \((e_{\lambda})_{\lambda \in \mathbb{C}}\). Montrer qu'en posant, pour \(f \in F\),
+                        \[N(f) = \sum_{n = 0}^{+\infty} \frac{|f^{(n)}(0)|}{n!}\]
+                        On définit une norme sur F.
+                        </div>
+                        
+    
+                </div>
+
+
+
+                <div class="flexbox-item flexbox-item-center-little-height" style="flex: 10;" onclick="changePage(8)">
+                    <div class = "marge1">
+                    <h4>Exercice n°8  :</h4>
+                    <ol>
+                        <li class = "lic1"> Montrer que deux normes sont égales si et seulement si elles possèdent la même boule unité. </li><br>
+                        <li class = "lic1"> Par ailleurs, quelle influence a l'équivalence de deux normes pour leurs boules de centre O ? </li>
+                    </ol>
+                    </div>
+                </div>
+
+
+
+                <div class="flexbox-item flexbox-item-center-medium-height" onclick="changePage(9)">
+                <div class = "marge1">
+                    <h4>Exercice n°9  :</h4>
+                    <ol>
+                        <li class = "lic1"> Montrer qu'il existe un réel a, tel que : \(\forall M,N\in E\), \({{\left\| M.N \right\|}_{\infty }}\le a.{{\left\| M \right\|}_{\infty }}.{{\left\| N \right\|}_{\infty }}\).</li><br>
+                        <li class = "lic1"> En déduire que pour tout norme \(\left\| . \right\|\) sur E, in existe un réel b tel que : \(\forall M,N\in E\), \(\left\| M.N \right\|\le b.\left\| M \right\|.\left\| N \right\|\).</li><br>
+                        <li class = "lic1"> Montrer l'existence de l'exponentielle d'une matrice.</li>
+                    </ol>
+
+                </div>
+                </div>
+
+
+
+                <div class="flexbox-item flexbox-item-large" onclick="changePage(10)">
+                    <div class = "marge1">
+                        <h4>Exercice n°10 :</h4>
+                        
+                        <ol>
+                            <li class = "lic1"> Montrer qu'il existe \(\alpha >0\) tel que : \[\forall P\in {{\mathbb{R}}_{n}}\left[ X \right], \sum\limits_{k=0}^{n}{\left| P(k) \right|\le \alpha .\int\limits_{-1}^{1}{\sqrt{1-{{X}^{2}}}.\left| P(X) \right|.dX}}\]</li><br>
+                            <li class = "lic1"> Si \(r\) est un entier naturel, montrer qu'il existe \(\alpha >0\) tel que :\[\forall P\in {{\mathbb{R}}_{n}}\left[ X \right],\sum\limits_{k=0}^{r}{\left| P(k) \right|\le \alpha .\int\limits_{-1}^{1}{\sqrt{1-{{X}^{2}}}.\left| P(X) \right|.dX}}\]</li>
+                        </ol>
+
+
+                    </div>
+                </div>
+
+                <div class="flexbox-item flexbox-item-center-big-height" onclick="changePage(11)">
+                    <div class = "marge1">
+                    <h4>Exercice n°11 :</h4>
+                        
+                    Soit \(E\) un \(\mathbb K\)-espace vectoriel normé. On dit d'une suite \(\left( {{u}_{n}} \right)\in {{E}^{\mathbb{N}}}\) qu'elle est de Cauchy si : \(\forall \varepsilon >0,\exists {{n}_{0}}\in \mathbb{N}\) tel que : \[\forall n,p\ge {{n}_{0}},\left| {{u}_{n}}-{{u}_{p}} \right|\le \varepsilon \]<br>
+                    <ol>
+                        <li class = "lic1"> Montrer qu'une suite convergente est de Cauchy.</li><br>
+                        <li class = "lic1"> Montrer que si \(E= \Bbb K =\mathbb{Q}\), il existe des suites de Cauchy non convergentes.</li><br>
+                        <li class = "lic1"> Montrer que si \(E= \Bbb K =\mathbb{R}\), toute suite de Cauchy est convergente.</li><br>
+                        <li class = "lic1"> Montrer que l'image d'une suite de Cauchy par une application uniformément continue est une suite de Cauchy.</li><br>
+                        <li class = "lic1"> Que dire si l'application est juste supposée continue ?</li>
+                    </ol>
+                    </div>
+                </div>
+
+                <div class="flexbox-item flexbox-item-center-little-height" onclick="changePage(12)">
+                    <div class = "marge1">
+                        <h4>Exercice n°12 :</h4>
+                        Soit \(\left( {{u}_{n}} \right)\in {{\mathbb{R}}^{\mathbb{N}}}\) une suite telle que \(\underset{n\to +\infty }{\mathop{Lim}}\,\left( {{u}_{n+1}}-{{u}_{n}} \right)=0\). Montrer que l'ensemble des valeurs d'adhérence de cette suite est un intervalle. <br>
+                        Donner un exemple non trivial d'une telle suite.<br>
+                    </div>
+                </div>
+
+
+                <div class="flexbox-item flexbox-item-bottom-little-height" style="flex: 8;" onclick="changePage(13)">
+                    <div class = "marge1">
+                        <h4>Exercice n°13 :</h4>
+                        Sur \(\mathbb{R}^2\), montrer que \(\|(x,y) \|= \sup_{t\in \mathbb{R}}\frac{|x+yt|}{1+t^2} \) définit une norme. Commencer par calculer \(\|(1,1)\|\). Comparer explicitement cette norme avec les normes usuelles.<br>
+                    </div>
+                </div>
+
+
+                <div class="flexbox-item flexbox-item-center-medium-height" onclick="changePage(14)">
+                    <div class = "marge1">
+                        <h4>Exercice n°14 : </h4>
+                        On admet que sur \({{\mathbb{R}}^{n}}\), \({{\left\| \left( {{x}_{1}},{{x}_{2}},...,{{x}_{n}} \right) \right\|}_{p}}={{\left( \sum\limits_{i=1}^{n}{{{\left| {{x}_{i}} \right|}^{p}}} \right)}^{\frac{1}{p}}}\) définit une norme. <br><br>
+                        Montrer que \(\underset{p\to +\infty }{\mathop{Lim}}\,{{\left\| \left( {{x}_{1}},{{x}_{2}},...,{{x}_{n}} \right) \right\|}_{p}}={{\left\| \left( {{x}_{1}},{{x}_{2}},...,{{x}_{n}} \right) \right\|}_{\infty }}\).<br>
+                    </div>
+                </div>
+
+
+                <div class="flexbox-item flexbox-item-top-little-height" onclick="changePage(15)">
+                    <div class = "marge1">
+                        <h4>Exercice n°15 :</h4>
+                        
+ Soit \(E = \mathbb{R}_n[X]\) et \(a_0 < a_1 < \cdots < a_n\) des réels, soit \((P_k) \in (\mathbb{R}_n[X])^{\mathbb{N}}\). <br> Montrer que \(\|P_k\|^{[0;1]}_{\infty} \longrightarrow 0\) si et seulement si \(P_k(a_i) \longrightarrow 0\)<br>
+                    </div>
+                </div>
+
+
+                <div class="flexbox-item " style="height: 130px;" onclick="changePage(16)">
+                    <div class = "marge1">
+                        <h4>Exercice n°16 :</h4>
+                        
+ Démontrer qu'il existe des normes sur \({{\mathbb{R}}^{\mathbb{N}}}\).
+                    </div>
+                </div>
+
+
+
+            </div>
+        
+    </main>
+
+
+    <script>
+        function afficher_texte(id){
+            var span = document.getElementById(id);
+            if(span.style.display == "none") {
+            span.style.display = "inline";
+            } else {
+            span.style.display = "none";
+            }
+        }
+
+        function changePage(exerciseNumber){
+            window.location.href = "./Exercice.html#exercise" + exerciseNumber;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html>
+<head><title>Suite, Séries, Sommabilité</title><link href="../stylePageMaths.css" rel="stylesheet"><link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"/><link rel="icon" href="./../../Images/Icones/favicon.png"><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> <script src = "../changePageMath.js"></script></head>
+
+<body background="../../Images/Fonds/hexagonal.png" bgproperties="fixed"><br>
+    <div class="entete" style="position: relative;"><div class="effetneon"><span><h1>BEHAGUE Quentin - Etudiant en CPGE MPI*</h1> </span></div></div>
+    <!-- Menu de navigation du site -->
+    <span class="menu-de-navigation" id="menu"><nav style="z-index: 10;"><ul>
+        <li class ="home_button"><a href="../../index.html"><img src="./../../Images/NeonHouse.png" class="pic_menu_home"></a></li>
+        <li class="deroulant"><a href="#">Exercices corrigés &ensp;</a>
+            <ul class="sous" style="height: 300px; overflow-y: scroll;">
+                <li><a href="../AlgebreLineaire/AlgebreLineaire.html">Algèbre linéaire</a></li>
+                <li><a href="../Norme/Norme.html">Notion de norme</a></li>
+                <li><a href="../SuitesSeriesSommabilite/SuitesSeriesSommabilite.html">Suites, Séries et Sommabilité</a></li>
+                <li><a href="../Reduction/Reduction.html">Réduction</a></li>
+                <li><a href="../FonctionsVectorielles/FonctionsVectorielles.html">Fonctions à valeurs vectorielles</a></li>
+                <li><a href="../EspacesProbabilises/EspacesProbabilises.html">Espaces probabilisés</a></li>
+                <!-- Page qui ne sont pas achevées :
+                <li><a href="../SuitesSeriesFonction/SuitesSeriesFonction.html">Suites et séries de fonctions</a></li>
+                <li><a href="../EquationsDifferentielles/EquationsDifferentielles.html">Équations différentielles</a></li>
+                <li><a href="../CalculDifferentiel/CalculDifferentiel.html">Calcul différentiel</a></li>
+                <li><a href="../IntegralesParametres/IntegralesParametres.html">Intégrales à Paramétres</a></li>
+                <li><a href="../EspacesEuclidiens/EspacesEuclidiens.html">Espaces euclidiens</a></li>
+                <li><a href="../Integration/Integration.html">Intégration</a></li>
+                <li><a href="../SeriesEntieres/SeriesEntieres.html">Suites et séries entières</a></li>
+                <li><a href="../Topologie/Topologie.html">Topologie</a></li>
+                <li><a href="../VariablesAleatoires/VariablesAleatoires.html">Variables aléatoires</a></li>
+                <li><a href="../StructureAlgebrique/StructureAlgebrique.html">Structures algébriques</a></li>-->
+            </ul>
+        <li class="deroulant"><a href="#">Programmes &ensp;</a>
+            <ul class="sous">
+                <li><a href="../../Programmes/Julia.html">Ensemble de Julia</a></li>
+                <li><a href="../../Programmes/Syracuse.html">Suite de Syracuse</a></li>
+                <li><a href="../../Programmes/Puzzle.html">Puzzle</a></li>
+                <li><a href="https://github.com/BehagueQuentin/Jeu-Echecs">Jeux d'échec</a></li>
+            </ul>
+        <li><a href="../../Téléchargement/Téléchargement.html">Téléchargements</a></li>
+        <li class="deroulant"><a href="#">Contact &ensp;</a>
+            <ul class="sous">
+                <li><a>06 46 15 00 15</a></li>
+                <li><a>quentinbehague59560@gmail.com</a></li>
+                <li><a href="https://github.com/BehagueQuentin">Mon github</a></li>
+            </ul>   
+        <li><a href="../../Apropos/Apropos.html">A propos</a></li>
+    </ul></nav></span>
+<style>
+    
+
+    
+</style>
+</head>
+<body style="min-height: 50vw;">
+<div class="container-ex0">
+    <div class="exercise-container" id="exerciseContainer">
+        
+
+
+        <div class="exercise" id="exercise1"><h3>Exercice 1 :</h3><div>Soit \(k \in \mathbb{N}\).
+            <ol>
+                </li><li class = "lic2"> Montrer que : 
+                \[ \forall x \in ]-1, 1[, \sum^{+ \infty}_{n = k}\binom{n}{k}x^{n-k}= \frac{1}{(1 - x)^{k+1}}\]
+                </li><li class = "lic2"> Soit \(p \in ]0, 1[\). On pose : \(\forall n \geq k, P (n) =
+            \binom{n - 1}{k - 1}p^n(1 - p)^{n-k}\).<br>
+            Montrer que \(P\) définit bien une loi de probabilité.
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé1')"> Corrigé </button><hr>  <span id="Indication1" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé1" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> On connaît le DSE de \(\frac{1}{(1-x)}\). Pour tout \(x \in ]-1, 1 [ :\)
+                \[\sum_{k=0}^{+\infty} x^n = \frac{1}{1-x}\]
+                Or, en dérivant l'expression de cette série entière \(n\) fois, on trouve :
+                 \[ \sum_{n=k}^{+\infty} \frac{n!}{(n-k)!} x^{n-k} = \frac{k!}{(1-x)^{k+1}}\]
+                 \[\Longrightarrow \boxed{\sum_{n=k}^{+\infty}\binom{n}{k}x^{n-k} = \frac{1}{(1-x)^{k+1}}}\]
+                </li><li class = "lic2"> D'une part, les probabilités sont toute comprises entre 0 et 1, montrons de plus que leur somme vaut 1.
+                \[\sum_{n = k}^{+ \infty} P(k) = \sum_{n = k}^{+ \infty} \binom{n-1}{k-1} p^n (1 - p)^{n - k} = p^k \sum_{n = k}^{+ \infty} \binom{n-1}{k-1} (p(1 - p))^{n - k}\]
+                \[= p^k \sum_{n = k - 1}^{+ \infty} \binom{n}{k-1} (p(1 - p))^{n - (k - 1)} =\frac{p^k}{(1 - p(1-p))^k} \]
+                On peut ici trouver une condition sur \(p\) pour que \(P\) définisse bien une loi de probabilité, mais il y a sûrement une erreur d'énoncé.
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise2"><h3>Exercice 2 :</h3><div>Deux joueurs A et B s'affrontent lors d'un match de badminton selon les règles suivantes :
+                A commence à servir ; le joueur qui gagne le point sert pour le point suivant ; 
+                le joueur qui sert a probabilité \(2/3\) de gagner le point et \(1/3\) de le perdre.
+                Pour \(n \in \mathbb N^*\), on note \(A_n\) (resp. \(B_n\)) l'événement " \(A\) (resp. \(B\)) gagne le \(n\)-ème point " ainsi que \(a_n = P(A_n)\) et \(b_n = P(B_n)\). 
+                
+                <ol>
+                    </li><li class = "lic2"> Calculer \(a_1\) et \(a_2\).
+                    </li><li class = "lic2"> A gagne le deuxième point, quelle est la probabilité qu'il ait gagné le premier ?
+                    </li><li class = "lic2"> Montrer qu'il existe une matrice \(M \in \mathcal M_2(\mathbb R)\) telle que \(\forall n \in \mathbb N^*\), \(\begin{pmatrix} a_{n+1} \\ b_{n+1} \end{pmatrix} = M \begin{pmatrix} a_n \\ b_n \end{pmatrix}\).
+                    </li><li class = "lic2"> Montrer que \(M\) est diagonalisable puis expliquer la méthode pour déterminer \(M^n\).<br>Les suites \((a_n)\) et \((b_n)\) convergent-elles ?
+                    </li><li class = "lic2"> Grâce à python, représenter graphiquement les dix premiers termes des suites \((a_n)\) et \((b_n)\).
+                </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé2')"> Corrigé </button><hr>  <span id="Indication2" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé2" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> On trouve facilement \(a_1 = p(A_1) = \frac23\) et, en notant \(\omega = A_1 \cup \overline{A_1}\)
+                On a d'après la formule des probabilités totales :
+                \[A_2 = A_2 \cap \Omega = (A_2 \cap A_1) \cup (A_2 \cap \overline{A_1})\]
+                \[\Longrightarrow p(A_2) = p(A_2 \cap A_1) + p(A_2 \cap \overline{A_1})\]
+                \[\Longrightarrow p(A_2) = p_{A_1}(A_2)p(A_1) + p_{\overline{A_1}}(A_2)p(\overline{A_1}) = \frac 29 + \frac 49 = \frac 23\]
+                
+                </li><li class = "lic2"> on cherche la probabilités de \(A_1\) sachant \(A_2\), on dispose de la probabilité de \(A_2\) sachant \(A_1\), on peut donc employer la formule de Bayes :
+                \[p_{A_2}(A_1) = p_{A_1}(A_2) \times \frac{p(A_1)}{p(A_2)} = \frac23 \frac{2/3}{5/9} = \frac45\]
+                </li><li class = "lic2"> \(\omega = A_m \cup \overline{A_m}\) est une union disjointe.
+                \[A_{m+1} = (A_{m+1} \cap A_m) \cup (A_{m+1} \cap \overline{A_m})\]
+            
+                \[\Longrightarrow p(A_{m+1}) = p(A_m)\times p_{A_m}(A_{m+1}) + p(\overline{A_m}) \times p_{\overline{A_m}}(A_{m+1})\]
+                Il vient donc :
+                \[a_{n+1} = a_n \frac23 + (1-a_n)\frac13 = \frac13a_n + \frac13\]
+                Ainsi on trouve le système :
+                \[\left\{\begin{array}{c}
+                    a_{n+1} = a_n \frac23 + b_n\frac13 \\
+                    a_{n+1} = a_n \frac13 + b_n\frac23
+                \end{array}\right.\]
+                On a donc la matrice :
+                \[X_{n+1} = 
+                \begin{pmatrix}
+                    \frac23 & \frac 13 \\ \frac13 & \frac23
+                \end{pmatrix}X_n = MX_n\]
+                </li><li class = "lic2"> \(M\) est symétrique réelle donc est diagonalisable, on trouve son polynôme caractéristique :
+                \[\chi_n(X) = (X-1)\left(X- \frac13\right)\]
+                De plus :
+                \[E_1(M) =Vect\left(\binom{1}{1}\right) \textrm{ et } E_{1/3}(M) =Vect\left(\binom{1}{-1}\right)\]
+                En posant :
+                \[P = \begin{pmatrix}
+                     1 & 1 \\ 1 & -1
+                \end{pmatrix}\]
+                On obtient :
+                \[M = \frac13 P\begin{pmatrix}
+                     3 & 0 \\ 0 & 1
+                \end{pmatrix}P^{-1} \Longrightarrow M^n = \frac1{3^n} P\begin{pmatrix}
+                     3^n & 0 \\ 0 & 1
+                \end{pmatrix}P^{-1}\]
+                On peut alors en déduire une expression des suites \((a_n)\) et \((b_n)\) :
+                \[\begin{pmatrix} a_n \\ b_n \end{pmatrix} = M^{(n-1)} \begin{pmatrix} a_1 \\  b_1 \end{pmatrix}\]
+                On déduit de l'expression obtenue (calcul laissé au lecteur) que les deux suites convergent.
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise3"><h3>Exercice 3 :</h3><div>Des personnes se transmettent à la file une information. La première personne reçoit l'information exacte ; ensuite, chaque personne transmet fidèlement l'information (telle qu'elle l'a reçue, donc pouvant ou non être correcte) avec la probabilité \(p\), ou transmet l'information contraire de celle qu'elle a reçue avec la probabilité \(1-p\).
+                
+                On note \(A_n\) l'événement "la \(n\)-ième personne reçoit correctement l'information initiale", et l'on pose \(p_n=\mathbb P(A_n)\).
+                Exprimer \(p_{n+1}\) en fonction de \(p_n\), puis exprimer \(p_n\) en fonction de \(n\). <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé3')"> Corrigé </button><hr>  <span id="Indication3" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé3" style="display:none;"><p>  On a :
+             \[A_{n+1} = A_{n+1} \cap \Omega = (A_{n+1}  \cap A_n) \cup (A_{n+1} \cap \overline{A_n})\]
+                \[\Longrightarrow \mathbb P(A_{n+1} ) = \mathbb P(A_{n+1}  \cap A_n) + \mathbb P(A_{n+1} \cap \overline{A_n})\]
+                \[\Longrightarrow \mathbb P(A_{n+1} ) = \mathbb P_{A_n}(A_{n+1} )\mathbb P(A_n) + \mathbb P_{\overline{A_n}}(A_{n+1} )\mathbb P(\overline{A_n})\]
+                \[\Longrightarrow p_{n+1} = pp_n + (1-p)(1-p_n) = (2p - 1)p_n + 1 - p\]
+                On reconnaît une suite arithmético-géométrique, après calcul, on obtient : 
+                \[p_n = (2p-1)^n\left(p_0 - \frac{1}{2}\right) + \frac{1}{2} = \frac{(2p-1)^n + 1}{2}\]
+            </p></span></div></div>
+
+
+             <div class="exercise hidden" id="exercise4"><h3>Exercice 4 :</h3><div>               
+                On souhaite ranger sur une étagère 14 livres de mathématiques, 6 livres de physique, et 11 d'informatique. De combien de façons peut-on effectuer ce rangement : 
+                <ol>
+                   </li><li class = "lic2"> Si les livres doivent être groupés par matières.
+                
+                   </li><li class = "lic2"> si seuls les livres de mathématiques doivent être groupés.
+                </ol>
+                <hr> <button class="bouton" onclick="afficher_texte('Corrigé4')"> Corrigé </button><hr>  <span id="Indication4" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé4" style="display:none;"><p>
+                <ol>
+                    </li><li class = "lic2"> On a tout d'abord Le choix de l'ordre dans lequel on place les matières : \(3!\) possibilités.
+                    On classe ensuite les livres de mathématiques : \(14!\) possibilités, les livres de physique : \(6!\) possibilités, les livres d'informatique : \(11!\) possibilités.
+                    Ainsi, il y a \(3!14!6!11!\) façon de classer les livres par matières.
+                    </li><li class = "lic2"> On choisit dans un premier temps l'ordre des livres de mathématique. En considérant ensuite le bloc de livre de maths comme un seul livre, on trouve alors qu'il y a \(14!(6 + 11 + 1)!\) possibilités.
+                </ol>    
+            </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise5"><h3>Exercice 5 :</h3><div>
+                On considère deux points du plan à coordonnées entières. On veut aller de l'un à l'autre en avançant à chaque pas de 1 en abscisse ou en ordonnée. Combien y a-t-il de manières de faire (en fonction des coordonnées des points) ?<br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé5')"> Corrigé </button><hr>  <span id="Indication5" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé5" style="display:none;"><p>  
+                On note \(A = (a,b)\) et \(B = (c,d)\) les coordonnées des deux points. On doit effectuer exactement \((d-b)+(c-a)\) pas car on doit rester dans la région rectangulaire dont les deux extrémités sont \(A\) et \(B\). Pour atteindre le second point on doit faire exactement \((d-b)\) déplacements verticaux et \((c-a)\) déplacement horizontaux, un itinéraire est alors entièrement déterminé par la position des déplacements verticaux (ou horizontaux). <br>
+             On a donc \(S = \binom{(d-b)+(c-a)}{d-b}\) manière de faire.    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise6"><h3>Exercice 6 :</h3><div>
+                Combien les mots ABCDEF et AAABBCDE possèdent-ils d'anagrammes ? <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé6')"> Corrigé </button><hr>  <span id="Indication6" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé6" style="display:none;"><p>  <ul>
+                  </li><li class = "lic2"> Pour ABCDEF, on trouve trivialement \(6!\).
+                  </li><li class = "lic2"> Pour AAABBCDE, on compte le nombre d'anagramme sans se soucier des solutions comptés plusieurs fois : \(8!\) possibilité.<br>
+                  On a compté chaque solution \(3!2!\) fois qui est aussi le nombre de manière de permuter les \(A\) et \(B\) dans le mots une fois formé. on a donc \(\frac{8!}{12}\) possibilités.
+              </ul>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise7"><h3>Exercice 7 :</h3><div>Dans une loterie, avec 49 numéros, dont 6 sont tirés au sort, un joueur choisi au départ 6 numéros.
+                <br> Calculer les probabilités d'obtenir :
+                <ol>
+                    </li><li class = "lic2"> Les 6 bons numéros.
+                    </li><li class = "lic2"> 5 bons numéros au moins.
+                    </li><li class = "lic2"> Au moins 3 bons numéros.
+                    </li><li class = "lic2"> Exactement 3 bons numéros.
+                    </li><li class = "lic2"> Même question si le joueur choisit 7 puis 8 numéros.
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé7')"> Corrigé </button><hr>  <span id="Indication7" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé7" style="display:none;"><p>  Soit \(\Omega\) l'ensemble des grilles possibles, son cardinal est simplement :
+            \[Card(\Omega) = \binom{49}{6}\]
+            <ol>
+                </li><li class = "lic2"> On trouve trivialement : \(p_1 = \frac1{\binom{49}{6}}\)
+                </li><li class = "lic2"> On choisit \(5\) bon numéros parmi les \(6\) possibles et on choisit ensuite le dernier numéro. Donc on a :
+                \[p_2 = \frac{\binom{6}{5}\binom{49-5}{1}}{\binom{49}{6}}\]
+                </li><li class = "lic2"> De même :
+                \[p_3 = \frac{\binom{6}{3}\binom{49-3}{3}}{\binom{49}{6}}\]
+                </li><li class = "lic2"> On choisit toujours \(3\) numéros parmi les \(6\) gagnant, il faut ensuite choisir les derniers numéros parmi ceux qui ne sont pas gagnant :
+                \[p_4 = \frac{\binom{6}{3}\binom{49 - 6 }{3}}{\binom{49}{6}}\]
+                </li><li class = "lic2"> L'ensemble des grilles possibles est désormais de cardinal :
+                \[Card(\Omega) = \binom{49}{7}\]
+                On choisit toujours \(3\) numéros parmi les \(6\) gagnant, puis les numéros restants, soit \(4\), parmi ceux qui ne sont pas gagnant :
+                \[p_5 = \frac{\binom{6}{3}\binom{49 - 6 }{4}}{\binom{49}{7}} \]
+                Idem pour \(8\) numéros.
+                
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise8"><h3>Exercice 8 :</h3><div>Pour réussir un QCM, il faut répondre correctement à \(7\) questions sur les \(10\). Quelle est la probabilité de réussite en choisissant des réponses au hasard. <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé8')"> Corrigé </button><hr>  <span id="Indication8" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé8" style="display:none;"><p>  On note \(N\) le nombre de question et \(q\) le nombre de possibilités à chaque question, alors on note \(p = \frac1q\) la probabilité de répondre juste à la question. Notons \(X\) le nombre de bonne réponse obtenue, alors \(X \sim \mathcal{B}(10,\frac1q)\).<br>
+            Alors, on sait que :
+            \(\forall k\in [\![0, 10]\!], p(X=k) = \binom{10}{k}\left(\frac1q\right)^k(1-\frac1q)^{10-k}\)
+            Ainsi :
+            \[p(X\geq7) = \sum_{k=7}^{10} p(X=k) = \sum_{k=7}^{10}  \binom{10}{k}\left(\frac1q\right)^k\left(1-\frac1q\right)^{10-k}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise9"><h3>Exercice 9 :</h3><div><ol>
+                </li><li class = "lic2"> Mon voisin a deux enfants dont au moins une fille. Quelle est la probabilité pour que l'autre soit un
+                garçon ?
+                </li><li class = "lic2"> Un autre voisin a deux enfants dont le plus jeune est une fille. Quelle est la probabilité pour que l'autre
+                soit un garçon ?
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé9')"> Corrigé </button><hr>  <span id="Indication9" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé9" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> On tient compte de l'ordre, on note \(\Omega = \{(F,F), (F,G), (G,F), (G,G)\}\).<br>
+                Posons \(A = \{(F,F), (F,G), (G,F)\}\) et \(B = \{(F,G), (G,F)\}\).
+                On cherche :
+                \[P_A(B) = \frac{P(A\cap B)}{P(A)} = \frac{1/2}{3/4} = \frac23\]
+                </li><li class = "lic2"> On pose \(C = \{(F,F), (G,F)\}\) et \(D = \{(F,G), (G,F)\}\).
+                Alors :
+                \[P_C(D) = \frac{P(C\cap D)}{P(C)} = \frac{1/4}{1/2} = \frac12\]
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise10"><h3>Exercice 10 :</h3><div>Dans une urne on a 4 boules rouges, 5 boules noires et 6 boules vertes. On tire 6 boules (sans remise). Calcule
+            la probabilité de tirer :
+            <ol>
+                </li><li class = "lic2"> les 6 boules vertes.
+                </li><li class = "lic2"> 3 boules rouges et 3 boules noires.
+                </li><li class = "lic2"> 2 boules de chaque couleur.
+                </li><li class = "lic2"> Pas de boule verte.
+                </li><li class = "lic2"> au moins une boule rouge.
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé10')"> Corrigé </button><hr>  <span id="Indication10" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé10" style="display:none;"><p>  On pose \(\Omega = \{A \subset[\![1,15]\!] | Card(A) = 6 \}\)
+            On obtient alors :
+            \[Card(\Omega) = \binom{15}{6}\]
+            <ol>
+                </li><li class = "lic2"> Il n'y a qu'un seul tirage qui contient les six boules vertes :
+                \[p_1 = \frac{1}{\binom{15}{6}}\]
+                </li><li class = "lic2"> On compte le nombre de façon de choisir les \(3\) boules rouges puis les 3 boules noires :
+                \[p_2 = \frac{\binom{4}{3}\binom{5}{3}}{\binom{15}{6}}\]
+                </li><li class = "lic2"> De même :
+                \[p_3 = \frac{\binom{4}{2}\binom{5}{2}\binom{6}{2}}{\binom{15}{6}}\]
+                </li><li class = "lic2"> Il faut choisir toutes les boules parmi les rouges et les noires :
+                \[p_4 = \frac{\binom{4+5}{6}}{\binom{15}{6}}\]
+                </li><li class = "lic2"> Il faut choisir une boule parmi les boules rouges, puis \(5\) boules parmi les boules restantes :
+                \[p_5 = \frac{\binom{4}{1}\binom{4+5+6-1}{5}}{\binom{15}{6}} \]
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise11"><h3>Exercice 11 :</h3><div>On jette deux dés (non pipés), l'un après l'autre. On note respectivement A, B et C les événements A= {Le chiffre du premier dé est pair}, B={Le chiffre du deuxième dé est pair} et C={Les deux chiffres ont même parité}.
+                <ol>
+                    </li><li class = "lic2"> Montrer que les événements A, B et C sont deux à deux indépendants.
+                    </li><li class = "lic2">  Montrer que A, B et C ne sont pas indépendants dans leur ensemble.
+                </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé11')"> Corrigé </button><hr>  <span id="Indication11" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé11" style="display:none;"><p>  On pose \(\Omega = \{(i,j) | i,j \in [\![ 1, 6]\!]\}\). On a :
+            \[Card(\Omega) = 36\]
+            <ol>
+                </li><li class = "lic2"> Il faut vérifier les trois égalités suivante en déterminant les cardinaux des ensembles correspondants :
+                \[P(A\cap B) = \frac{Card(\{(2,2),(2,4),(2,6), ..., (6,6)\})}{36} = \frac9{36} = \left(\frac{18}{36}\right)^2 = P(A)P(B)\]
+                \[P(A\cap C) = \frac9{36} = P(A)P(C)\]
+                \[P(C\cap B) = \frac9{36} = P(C)P(B)\]
+                </li><li class = "lic2"> Il faut montrer que :
+                \[P(A \cap B \cap C) \neq P(A)P(B)P(C)\]
+                Or nous avons justement :
+                \[P(A \cap B \cap C) = \frac{Card(\{(2,2),(2,4),(2,6), ..., (6,6)\})}{36} = \frac9{36} = \frac 14 \]
+                \[P(A)P(B)P(C) = \frac 18 \]
+                
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise12"><h3>Exercice 12 :</h3><div>Soit \(A\) et \(B\) deux événements aléatoires associés à un espace probabilisé \((\Omega, P)\). Montrer
+            que \(A\) et \(B\) indépendants \(\Longleftrightarrow\) \(A^c\) et \(B\) indépendants <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé12')"> Corrigé </button><hr>  <span id="Indication12" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé12" style="display:none;"><p>  Par définition :
+            \[A \textrm{ et } B \textrm{ indépendants }\Longleftrightarrow P(A\cap B) = P(A)P(B)\]
+            \[
+            \Longleftrightarrow P(A\cap B) = (1 - P(A^c))P(B) = P(B) - P(A^c)P(B)\]
+            On a d'autre part :
+            \[B = B \cap \Omega = (B\cap A) \cup (B\cap A^c)\]
+            \[\Longrightarrow P(B) = P(B\cap A) + P(B\cap A^c)\]
+            \[\Longrightarrow P(B) = P(B) - P(A^c)P(B) + P(B\cap A^c)\]
+            \[\Longrightarrow \boxed{P(A^c)P(B) = P(B\cap A^c)}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise13"><h3>Exercice 13 :</h3><div>Démontrer les formules suivantes à l'aide de modélisation par une expérience, ou autre méthode : 
+                
+                <ol>
+                    </li><li class = "lic2"> 	\(\left( \begin{matrix}
+                        m+n  \\
+                        r  \\
+                    \end{matrix} \right)=\sum\limits_{k=0}^{r}{\left( \begin{matrix}
+                            m  \\
+                            k  \\
+                        \end{matrix} \right)}\left( \begin{matrix}
+                        n  \\
+                        r-k  \\
+                    \end{matrix} \right)\)
+                    </li><li class = "lic2"> \(\left( \begin{matrix}
+                        n  \\
+                        r  \\
+                    \end{matrix} \right)=\sum\limits_{k=r}^{n}{\left( \begin{matrix}
+                            k-1  \\
+                            r-1  \\
+                        \end{matrix} \right)}\)
+                    </li><li class = "lic2"> 	\(\sum\limits_{k=1}^{n}{k\left( \begin{matrix}
+                            n  \\
+                            k  \\
+                        \end{matrix} \right)}=n{{.2}^{n-1}}\)
+                    </li><li class = "lic2"> 	\({{2}^{p}}\left( \begin{matrix}
+                        n  \\
+                        p  \\
+                    \end{matrix} \right)=\sum\limits_{k=0}^{p}{\left( \begin{matrix}
+                            n  \\
+                            k  \\
+                        \end{matrix} \right)\left( \begin{matrix}
+                            n-k  \\
+                            p-k  \\
+                        \end{matrix} \right)}\) 
+                    
+                    </li><li class = "lic2"> 	\(0=\sum\limits_{k=0}^{p}{{{\left( -1 \right)}^{k}}\left( \begin{matrix}
+                            n  \\
+                            k  \\
+                        \end{matrix} \right)\left( \begin{matrix}
+                            n-k  \\
+                            p-k  \\
+                        \end{matrix} \right)}\)
+                    </li><li class = "lic2"> 	\({{\left( 1-\left( \begin{matrix}
+                                n  \\
+                                2  \\
+                            \end{matrix} \right)+\left( \begin{matrix}
+                                n  \\
+                                4  \\
+                            \end{matrix} \right)-.... \right)}^{2}}+{{\left( \left( \begin{matrix}
+                                n  \\
+                                1  \\
+                            \end{matrix} \right)-\left( \begin{matrix}
+                                n  \\
+                                3  \\
+                            \end{matrix} \right)+.... \right)}^{2}}={{2}^{n}}\).  (Utiliser \({{(1+i)}^{n}}\))
+                    </li><li class = "lic2">	\(\sum\limits_{k=1}^{n}{\frac{k}{(k+1)!}}=1-\frac{1}{(n+1)!}\)
+                    </li><li class = "lic2"> 	\(\sum\limits_{k=0}^{n-1}{(2k+1)}={{n}^{2}}\)
+                    </li><li class = "lic2"> 	\(\sum\limits_{k=1}^{n}{k.k!}=(n+1)!-1\)
+                    </li><li class = "lic2"> 	\(\prod\limits_{k=1}^{n}{(4k-2)}=\prod\limits_{k=n+1}^{2n}{k}\)
+                    </li><li class = "lic2"> 	\(\left( \begin{matrix}
+                        n  \\
+                        2  \\
+                    \end{matrix} \right)-\left( \begin{matrix}
+                        n-p \\
+                        2  \\
+                    \end{matrix} \right)-\left( \begin{matrix}
+                        n-q  \\
+                        2  \\
+                    \end{matrix} \right)+\left( \begin{matrix}
+                        n-p-q  \\
+                        2  \\
+                    \end{matrix} \right)=pq\) avec \(2+p+q\le n\)
+                    </li><li class = "lic2"> 	\(\left( \begin{matrix}
+                        n  \\
+                        q  \\
+                    \end{matrix} \right).\left( \begin{matrix}
+                        n-q  \\
+                        p-q  \\
+                    \end{matrix} \right)=\left( \begin{matrix}
+                        p  \\
+                        q  \\
+                    \end{matrix} \right)\left( \begin{matrix}
+                        n  \\
+                        p  \\
+                    \end{matrix} \right)\)  avec \(q\le p\le n\). En déduire la valeur de \(\sum\limits_{k=0}^{p}{\left( \begin{matrix}
+                            n  \\
+                            k  \\
+                        \end{matrix} \right).\left( \begin{matrix}
+                            n-k  \\
+                            p-k  \\
+                        \end{matrix} \right)}\).
+                </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé13')"> Corrigé </button><hr>  <span id="Indication13" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé13" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> A l'aide d'une expérience : choisir \(r\) boules depuis deux urnes contenant \(m\) et \(n\) boules.
+                On peut choisir \(r\) parmi la totalité des boules, ou choisir dans un premier temps \(k \in [\![0, r]\!]\) boules dans la première urne, puis \(r - k\) boules dans la seconde.
+                </li><li class = "lic2"> Par le calcul :
+                \[\sum_{k = r}^{n}\binom{k-1}{r-1} = \binom{r-1}{r-1} + \sum_{k = r + 1}^{n}\left(\binom{k}{r} - \binom{k-1}{r}\right)\]
+                \[ = \binom{r-1}{r-1} + \sum_{k = r + 1}^{n}\binom{k}{r} - \sum_{k = r + 1}^{n}\binom{k-1}{r} = \binom{r-1}{r-1} + \sum_{k = r + 1}^{n}\binom{k}{r} - \sum_{k = r}^{n - 1}\binom{k}{r}\]
+                \[ = \binom{r-1}{r-1} + \binom{n}{r} -  \binom{r}{r} = \binom{n}{r}\]
+                </li><li class = "lic2"> Par le calcul : dériver le polynôme \[\sum_{k=0}^n \binom{n}{k} X^k = (X+1)^n\] puis évaluer en \(1\). Ou remarquer que :
+                \[ k \binom{n}{k} = n \binom{n-1}{k-1} \]
+                </li><li class = "lic2"> Par le calcul :
+                \[\frac{n!}{q!(n-q)!} \frac{(n-q)!}{(p-q)!(n-p)!} = \frac{n!}{q!(n-p)!(p-q)!} = \frac{p!}{q!(p-q)!} \frac{n!}{p!(n-p)!}\]
+                En remplaçant dans la somme, on trouve le résultat trivialement avec le binôme de Newton.
+                </li><li class = "lic2"> De la même manière que précédemment.
+                </li><li class = "lic2"> Par le calcul : suivre l'indication, développer avec le binôme de Newton, puis calculer la norme au carré.
+                </li><li class = "lic2"> Par le calcul : remarquer que \(k = (k + 1) - 1\) au numérateur fait apparaÃ®tre une somme télescopique.
+                </li><li class = "lic2"> Par le calcul :
+                \[\sum_{k = 0}^{n-1} (2k + 1) = 2\times \frac{n(n-1)}2 + n = n^2 \]
+                </li><li class = "lic2"> Par le calcul : remarquer que \(k k! = (k + 1)! - k!\) puis télescopage.
+                </li><li class = "lic2"> Par le calcul :
+                \[\prod\limits_{k=1}^{n}{(4k-2)} = 2^n \prod\limits_{k=1}^{n}{(2k-1)} = 2^n \frac{(2n!)}{\prod\limits_{k=1}^{n}{(2k)}} = \frac{2^n(2n)!}{2^nn!}=\prod\limits_{k=n+1}^{2n}{k}\]
+                </li><li class = "lic2"> Par le calcul.
+                </li><li class = "lic2"> Voir question 4.
+                
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise14"><h3>Exercice 14 :</h3><div>Dans une population, une personne sur 10'000 souffre d'une pathologie. Un laboratoire pharmaceutique met sur le marché un test sanguin. Celui-ci est positif chez 99% des malades mais aussi faussement positif chez 0,1% des personnes non atteintes. Un individu passe ce test et obtient un résultat positif. Quelle est sa probabilité d'être malade ? Qu'en conclure ? <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé14')"> Corrigé </button><hr>  <span id="Indication14" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé14" style="display:none;"><p>  Notons \(M\) l'événement "l'individu est malade" et \(P\) l'événement "l'individu est testé positif".
+            On cherche la probabilité \(p_P(M)\). On dispose des probabilités \(p_M(P) = 0.99\) et \(p(M) = 0.0001\). Ainsi, d'après la formule de Bayes :
+            \[p_P(M) = \frac{p_M(P)p(P)}{p(M)}\]
+            Or, d'après la formule des probabilités totales :
+            \[p(P) = p(M)p_M(P) + p(\overline{M})p_{\overline{M}}(P)\]
+            On dispose de toutes ces données, il ne reste plus qu'à faire l'application numérique.    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise15"><h3>Exercice 15 :</h3><div>Deux usines A et B fabriquent des trottinettes. L'usine A fabrique deux fois plus de
+            trottinettes que l'usine B. Les trottinettes provenant de l'usine A ont dans 5% des cas un défaut, alors que celles provenant de l'usine B ont dans 2% des cas un défaut. Je viens d'acheter une trottinette, laquelle se révèle être défectueuse. Quelle est la probabilité qu'elle provienne de l'usine A. <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé15')"> Corrigé </button><hr>  <span id="Indication15" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé15" style="display:none;"><p>  Même exercice que le précédent.    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise16"><h3>Exercice 16 :</h3><div>Soit p \(\in ]0, 1[\) et \(\alpha \in \left]0, \frac{1}{p} - 1 \right[\). Pour \(n\geq 1\), la probabilité qu'une famille ait \(n\) enfants est \(\alpha p^n\).
+                <ol>
+                    </li><li class = "lic2"> Quelle est la probabilité qu'une famille n'ait aucun enfant ?
+                
+                    </li><li class = "lic2"> Quelle est la probabilité qu'une famille ait \(k\) garçons ?
+                
+                    </li><li class = "lic2"> Quelle est la probabilité qu'une la famille avec au moins un garçon ait au moins deux garçons ?
+                </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé16')"> Corrigé </button><hr>  <span id="Indication16" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé16" style="display:none;"><p>  <ol>
+                 </li><li class = "lic2"> On note \(A_n\) l'événement " La famille possède \(n\) enfants". On se se place sur l'univers :
+                 \[\Omega = \bigcup_{n=0}^{+\infty} A_n\]
+                 Ainsi, calculons la probabilité de \(A_0\) : 
+                 \[P(A_0) = 1 - \sum_{n=1}^{+\infty}\alpha p^n = 1 - \alpha \frac{1}{1-p}\]
+                 </li><li class = "lic2"> On introduit l'événement \(G_k\) l'événement : "La famille admet \(k\) garçons"
+                 Alors la formule en cherchant à appliquer la formules des probabilités totale :
+                 \[G_k = G_k \cap \Omega = \bigcup_{n = 0} ^{+\infty} (G_k \cap A_n) = \bigcup_{n = k} ^{+\infty} (G_k \cap A_n) \]
+                 Cette union est disjointe, on a donc :
+                 \[P(G_k) = \sum_{n = k} ^{+\infty} P(G_k \cap A_n) = \sum_{n = k} ^{+\infty} P_{A_n}(G_k) \times P(A_n)\]
+                 Or, on sait que :
+                 \[P_{A_n} (G_k) = \binom{n}{k} \left(\frac12\right)^k\left(\frac{1}{2}\right)^{n-k} =  \binom{n}{k} \frac1{2^n}\]
+                \[P(G_k) = \sum_{n = k} ^{+\infty} \binom{n}{k} \frac1{2^n} \alpha = \frac{\alpha}{k!} \sum_{n = k} ^{+\infty} \frac{n!}{(n-k)!}\left(\frac{p}{2}\right)^n\]
+                Or, en dérivant l'expression de cette série entière :
+                 \[\forall x \in ]-1,1[, \sum_{k=0}^{+\infty} x^n = \frac{1}{1-x}\]
+                 \[\Longrightarrow \sum_{n=k}^{+\infty} \frac{n!}{(n-k)!} x^{n-k} = \frac{k!}{(1-x)^{k+1}}\]
+                 Ce qui donne :
+                 \[P(G_k) = \frac{\alpha}{2} \left(\frac{2}{p}\right)^k \frac{k!}{\left(1 - \frac{p}{2}\right)^{k+1}}\]
+             </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise17"><h3>Exercice 17 :</h3><div><ol>
+                    </li><li class = "lic2"> Soit \(E\) un ensemble de cardinal \(n\). Combien y a t-il de couples \((X, Y)\) de parties de \(E\) tels que \(X\subset Y\) ?
+                
+                    </li><li class = "lic2"> Dans une urne contenant \(n\) boule numérotées de \(1\) à \(n\), on tire une poignée de boules, que l'on remet ensuite dans l'urne. On tire une deuxième poignée de boules. Quelle est la probabilité de tirer deux poignées de boules distinctes, i.e, aucune boule de la deuxième poignée n'a été tirée à la première ?
+                </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé17')"> Corrigé </button><hr>  <span id="Indication17" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé17" style="display:none;"><p>  <ol>
+                 </li><li class = "lic2"> Notons \(\mathcal A\) l'ensemble :
+                 \[\mathcal A = \left\{ (X, Y) \in P(E)^2 | X \subset Y \right\}\]
+                 Et, pour tout \( k \in [\![0,n]\!]\), on pose :
+                 \[ \mathcal A_k = \left\{ (X, Y) \in \mathcal A | Card(Y) = k \right\}\]
+                 On cherche alors à exprimer \(Card(\mathcal A_k)\) :
+                 on choisit d'abord \(Y\), soit \(\binom{n}{k}\) possibilités, on choisit ensuite \(X \subset Y\) soit \(2^k\) possibilités.
+                 \[Card(\mathcal A_k) = 2^k\binom{n}{k}\]
+                 \[Card(\mathcal A) = \sum_{k=0}^n Card(\mathcal A_k) = \sum_{k=0}^n \binom{n}{k}2^k = 3^k \]
+                 </li><li class = "lic2"> Comme l'énoncé ne précise pas et étant donné la nature de la question précédente, on suppose que les poignées de boules n'ont pas nécessairement le même cardinal.
+                 Posons ici \(E = [\![1,n]\!]\) et :
+                 \[\mathcal B = \left\{ (X, Y) \in P(E)^2 | X \subset \overline{Y}\right\}\]
+                 On établit par un raisonnement similaire que \[Card(\mathcal{B}) = \sum_{k = 0}^n \binom{n}{k} 2^{n-k} = 3^k\]
+                 Or, le nombre de couple de parties d'un ensemble à n éléments et \(2^{2n}\). Ainsi :
+                 \[\boxed{p = \left(\frac 34 \right)^n}\]
+                 
+             </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise18"><h3>Exercice 18 :</h3><div>Combien existe-t-il de partitions d'un ensemble de cardinal \(np\) en \(n\) parties de cardinal \(p\) ? <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé18')"> Corrigé </button><hr>  <span id="Indication18" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé18" style="display:none;"><p>  On choisit dans un premier temps les \(p\) éléments qui seront contenue dans la première partie, puis les \(p\) éléments de la seconde partie dans les \(p(n-1)\) élément restants ...<br>
+             On trouve alors :
+             \[P = \prod_{k=0}^n \binom{p(n-k)}{p}\]
+             Or on a tenu compte d'un ordre, on a donc compté \(n!\) fois chaque possibilités, on a donc :
+             \[\boxed{ S = \frac{1}{n!}\prod_{k=0}^n \binom{p(n-k)}{p}}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise19"><h3>Exercice 19 :</h3><div>On considère un ensemble de \(2n\) points. Combien existe-t-il de manière de les apparier deux à deux (on pourra proposer une démonstration directe et une démonstration par récurrence) <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé19')"> Corrigé </button><hr>  <span id="Indication19" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé19" style="display:none;"><p>  Soit \(P_n\) le nombre de manière d'apparier un ensemble de \(2n\) points, en tenant compte d'un ordre sur les paires. Lorsqu'on considère un ensemble à \(2(n+1)\) points, on peut dans un premier temps choisir deux points et les apparier puis apparier le reste des \(2n\) points :
+             \[P_{n+1} = \binom{2(n+1)}{2} P_{n}\]
+             Ainsi, par une récurrence immédiate, et car \(P_1 = 1\):
+            \[P_{n} = \prod_{k = 1}^n \binom{2k}{2}\]
+             On en déduit le résultat :
+             \[\boxed{S = \frac{1}{n!}\prod_{k = 1}^n \binom{2k}{2}}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise20"><h3>Exercice 20 :</h3><div>Soit \(A \) un ensemble fini. Déterminer \(\sum\limits_{X\subset A}{Card\left( X \right)}\). <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé20')"> Corrigé </button><hr>  <span id="Indication20" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé20" style="display:none;"><p>  \[S = \sum_{X\subset A} Card(X) = \sum_{k=0}^n \left(\sum_{X\subset A, Card(X) = k} Card(X)\right) = \sum_{k=0}^n\left(\sum_{X\subset A, Card(X) = k} k\right) \]
+             \[= \sum_{k = 1}^n k \left(\sum_{X\subset A, Card(X) = k} 1 \right)= \sum_{k = 1}^n k \binom{n}{k}\]
+             Avec une dernière somme classique. (Traitée à l'exercice 13)    </p></span></div></div>
+            
+            
+            <div class="exercise hidden" id="exercise21"><h3>Exercice 21 :</h3><div> Soit \(E\) un ensemble. Montrer qu'une intersection quelconque de tribus sur \(E\) est une tribu
+            sur \(E\).
+            <hr> <button class="bouton" onclick="afficher_texte('Corrigé21')"> Corrigé </button><hr>  <span id="Indication21" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé21" style="display:none;"><p>
+            </p></span></div></div>
+
+
+
+            <div class="exercise hidden" id="exercise22"><h3>Exercice 22 :</h3><div>On note \(S_{n}^{k}\) le nombre de surjections existant entre un ensemble à n éléments et un ensemble à k éléments.
+                
+                <ol>
+                    </li><li class = "lic2"> Préciser les valeur de \(S_{n}^{1}\) et \(S_{n}^{n}\).
+                    </li><li class = "lic2"> Montrer que \(S_{n}^{2}={{2}^{n}}-2\).
+                    </li><li class = "lic2"> Montrer que \(\forall n\in {{\mathbb{N}}^{*}}\), \(\forall k\in \left[\!\left[ 0,n \right]\!\right]\), \(\sum\limits_{j=1}^{n}{\left( \begin{matrix}
+                            k  \\
+                            j  \\
+                        \end{matrix} \right)}S_{n}^{j}={{k}^{n}}\).
+                    </li><li class = "lic2"> Montrer que \(S_{n}^{j}=j\left( S_{n-1}^{j}+S_{n-1}^{j-1} \right)\).
+                    </li><li class = "lic2"> Implémenter un programme python permettant de calculer les \(S_{n}^{k}\)
+                    </li><li class = "lic2"> Soit \(f\left( x \right)={{e}^{x}}-1\). Montrer que pour tout entier \(k\in \left[\!\left[ 0,n \right]\!\right]\), il existe des constantes \({{a}_{1}}\left( k \right),...,{{a}_{k}}\left( k \right)\) telles que \(\frac{{{d}^{n}}}{d{{x}^{n}}}\left[ {{f}^{n}}\left( x \right) \right]=\frac{{{d}^{n-k}}}{d{{x}^{n\_k}}}\left( \sum\limits_{j=1}^{k}{{{a}_{j}}\left( k \right){{f}^{n-j}}\left( x \right){{\left( f' \right)}^{j}}\left( x \right)} \right)\).
+                    </li><li class = "lic2"> En déduire que \(\sum\limits_{k=1}^{n}{{{\left( -1 \right)}^{n-k}}{{k}^{n}}\left( \begin{matrix}
+                            n  \\
+                            k  \\
+                        \end{matrix} \right)}=n!\).
+                    </li><li class = "lic2"> Montrer que \(S_{n}^{j}=\sum\limits_{k=1}^{j}{{{\left( -1 \right)}^{j-k}}{{k}^{n}}\left( \begin{matrix}
+                            j  \\
+                            k  \\
+                        \end{matrix} \right)}\).
+                </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé22')"> Corrigé </button><hr>  <span id="Indication22" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé22" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> On a \(\boxed{S_n^1 = 1}\) car il faut envoyer tout les éléments de l'ensemble de départ vers l'unique élément de l'ensemble d'arrivée.<br>
+                Et \(\boxed{S_n^n = n!}\) car il on a d'abord \(n\) choix pour atteindre le premier élément de l'espace d'arrivée, puis \(n-1\) choix, ... (Il faut remarquer qu'une surjection entre deux ensembles de même cardinal est une bijection).
+                </li><li class = "lic2"> Pour chaque élément de l'ensemble de départ on a deux possibilité pour son image dans l'ensemble d'arrivée, soit \(2^n\) possibilité. Or, il faut retirer les application qui envoient tous les éléments de l'ensemble de départ sur un seul élément de l'ensemble d'arrivée, d'où :
+                \[\boxed{S_{n}^{2}={{2}^{n}}-2}\]
+                </li><li class = "lic2"> Notons :
+                <ul>
+                    </li><li class = "lic2"> \(\mathcal B_n^k\) l'ensemble des applications d'un ensemble de \(n\) éléments à \(k\) éléments.
+                    </li><li class = "lic2"> \(\mathcal A_n^{k,j}\) l'ensemble des applications d'un ensemble de \(n\) éléments à \(k\) éléments atteignant exactement \(j\) éléments.
+                </ul>
+                Alors, on a l'union disjointe suivante :
+                \[B_n^k = \bigcup_{j=1}^n \mathcal A_n^{k,j}\]
+                Or, pour tout \(j\in [\![1,n]\!]\), on a :
+                \[Card(\mathcal A_n^{k,j}) = \binom{k}{j}S_j^n\]
+                En effet, pour construire une telle application, il faut choisir le sous-ensemble des éléments atteints parmi ceux de l'ensemble d'arrivée puis construire une surjection de entre ces deux ensembles.
+                Enfin, comme l'union est disjointe on établit l'égalité :
+                \[\boxed{\sum\limits_{j=1}^{n}{\left( \begin{matrix}
+                            k  <br>
+                            j  <br>
+                        \end{matrix} \right)}S_{n}^{j}={{k}^{n}}}\]
+               </li><li class = "lic2"> Pour construire une injection d'un ensemble à \(n\) éléments vers un ensemble à \(j\) éléments, il faut soit construire une surjection des \(n-1\) premiers éléments de l'ensemble de départ vers la totalité des éléments de l'ensemble d'arrivée puis choisir l'image du \(n\)-ième élément, soit construire une surjection de 
+                
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise23"><h3>Exercice 23 :</h3><div>On considère \(\Omega ={{\mathbb{N}}^{*}}\) et s un réel strictement supérieur à un. On muni  \(\Omega \) de la tribu \(T=P\left( \Omega  \right)\). On note \(\varsigma \left( s \right)=\sum\limits_{n=1}^{+\infty }{\frac{1}{{{n}^{s}}}}\). On munit \(T\) de la loi telle que : \(p\left( \left\{ n \right\} \right)=\frac{1}{\varsigma \left( s \right).{{n}^{s}}}\) .
+                <ol>
+                    </li><li class = "lic2"> Montrer que c'est bien une probabilité.
+                    </li><li class = "lic2"> Soit \({{A}_{n}}\) l'évènement  "être un multiple de \(n\)".  Montrer que les évènements \({{A}_{p}}\) où p parcourt l'ensemble des nombres premiers, sont indépendants dans leur ensemble.
+                    </li><li class = "lic2"> Exprimer l'évènement "n'être multiple d'aucun nombre premier" en fonction des \(\overline{{{A}_{p}}}\).
+                    </li><li class = "lic2"> On numérote les nombres premiers dans l'ordre croissant :  \(2={{p}_{1}}<{{p}_{2}}<....<{{p}_{k}}<...\) , et on note \({{E}_{n}}=\bigcap\limits_{k=1}^{n}{\overline{{{A}_{{{p}_{k}}}}}}\) . Montrer que \(p\left( \left\{ 1 \right\} \right)=\prod\limits_{p\_premier}{\left( 1-\frac{1}{{{p}^{s}}} \right)}\) .
+                    </li><li class = "lic2"> En déduire \(\varsigma \left( s \right)=\prod\limits_{p\_premier}{\frac{1}{\left( 1-\frac{1}{{{p}^{s}}} \right)}}\).
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé23')"> Corrigé </button><hr>  <span id="Indication23" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé23" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> 	Pour tout \(n\in \mathbb N, p(\{n\}) \geq 0\) , et :
+                \[\displaystyle\sum\limits_{n=1}^{+\infty} p(\{n\})
+                = \sum\limits_{n=1}^{+\infty} \frac{1}{\zeta(s) * n^s} 
+                = \frac{1}{\zeta(s)}\sum\limits_{n=1}^{+\infty} \frac{1}{n^s} = 1\]
+                
+                </li><li class = "lic2"> Remarquons que : \(A_n = \{n, 2n, ... \} = \{kn\}_{k \in \Bbb N^*} = n\mathbb N^* \)
+            Montrons que pour tout \((p_1, ..., p_k) \in \Bbb P^k\) 2 à 2 distincts, \(P(A_{p_1} \cap ... \cap A_{p_k}) = P(A_{p_1}) \times ... \times P(A_{p_k})\) : 
+            \[q \in A_{p_1} \cap ... \cap A_{p_k} <br>[0.2 cm] \iff p_1 | q ... p_k | q <br>[0.2 cm] \iff (p_1 ... p_k) | q \text{ (Gauss)} <br>[0.2 cm] \iff q \in A_{p_1 ... p_k}\]
+                Donc : \(A_{p_1} \cap ... \cap A_{p_k} = A_{p_1 ... p_k}\). Or :
+                \[P(A_p) = P\left(\bigcup\limits_{k=1}^{+\infty} \{kp\}\right) 
+                = \displaystyle\sum\limits_{k=1}^{+\infty} P(\{kp\}) = \displaystyle\sum\limits_{k=1}^{+\infty} \frac{1}{\zeta(s)(kp)^s} = \frac{1}{p^s}\]
+                On en déduit alors que :
+                \[P(A_{p_1 ... p_k}) = \frac{1}{(p_1 ... p_k)^s} = \frac{1}{p_1^s} ... \frac{1}{p_k^s} = P(A_{p_1}) ... P(A_{p_k})\]
+            
+                </li><li class = "lic2"> On a triviallement : \(\bigcap\limits_{p \in \Bbb P} \overline{A_p} = \{1\}\)
+                </li><li class = "lic2"> Par continuité décroissante :
+                \[\underset{n \to +\infty}{\lim} P(E_n) = P\left(\bigcap\limits_{k=1}^{+\infty} \overline{A_{p_k}}\right) = p(\{1\}) = \frac{1}{\zeta(s)}\]
+                \[P(E_n) = P\left(\bigcap\limits_{k=1}^{n} \overline{A_{p_k}}\right) = \displaystyle\prod_{k=1}^n P(\overline{A_{p_k}}) = \prod_{k=1}^n (1 - P(A_{p_k})) = \prod_{k=1}^n \left(1 - \frac{1}{p_k^s}\right)\]
+                </li><li class = "lic2"> Donc :
+                \[\displaystyle\prod\limits_{p \in \Bbb P} \left(1 - \frac{1}{p^s}\right) = \frac{1}{\zeta(s)} \; \; \textrm{ et } \; \;\zeta(s) = \displaystyle\prod\limits_{p \in \Bbb P}  \frac{1}{1 - \frac{1}{p^s}}\]
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise24"><h3>Exercice 24 :</h3><div>Soit A l'ensemble des nombres à 7 chiffres ne comportant aucun  "1". Déterminer le nombre d'éléments des ensembles suivants :
+                <ol>
+                    </li><li class = "lic2"> A.
+                    </li><li class = "lic2"> B, ensemble des nombres de A ayant 7 chiffres différents.
+                    </li><li class = "lic2"> C, ensemble des nombres pairs de A.
+                    </li><li class = "lic2"> D, ensemble des nombres de A dont les chiffres forment une suite strictement croissante
+                    (dans l'ordre où ils sont écrits).
+                </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé24')"> Corrigé </button><hr>  <span id="Indication24" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé24" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> Pour le premier chiffre, on dispose de 8 choix : 2, ..., 9.<br>
+                Pour les 6 derniers chiffres, on dispose de 9 choix : 0, 2, 3, ..., 9.
+                \[N_1 = 8\times9^6\]
+                </li><li class = "lic2"> Pour le premier chiffre, on a \(8\) possibilités (on exclu toujours le 0 et le 1)
+                De même pour le second, on ajoute 0 mais on retire le nombre choisi précédemment. On a ensuite 7 choix, puis 6, ..., jusqu'à 3 choix pour le dernier :
+                \[N_2 = \frac{8\times 8!}{2}\]
+                </li><li class = "lic2"> Le nombre de nombre pair de \(A\) et le cardinal de \(A\) multiplier par le rapport du nombre de chiffre pair possible pour le chiffre des unités par le nombre de chiffre possible : 
+                \[N_3 = \frac 59 8\times9^6 = 40\times9^5\]
+                </li><li class = "lic2"> Le premier nombre étant nécessairement supérieur ou égal à 2, on a donc une suite strictement croissante de [\![0, 6]\!] dans [\![2, 9]\!]. Le nombre est donc entièrement déterminé par le choix du chiffre qu'il ne contiendra pas. On a ainsi \(8\) possibilités :
+                \[N_4 = 8\]
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise25"><h3>Exercice 25 :</h3><div>On tire 6 cartes dans un jeu de 52 cartes. Calcule la probabilité de tirer : 
+                <ol>
+                    </li><li class = "lic2"> Exactement deux rois.
+                    </li><li class = "lic2"> Au moins deux rois.
+                    </li><li class = "lic2"> Exactement deux rois et deux dames.
+                    </li><li class = "lic2"> Au moins deux rois et deux dames.
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé25')"> Corrigé </button><hr>  <span id="Indication25" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé25" style="display:none;"><p>  On note \(\Omega\) l'ensemble des tirages possibles.
+            \[Card(\Omega) = \binom{52}{6}\]
+            <ol>
+                </li><li class = "lic2"> On choisit 2 rois parmi les 4 du jeu puis le reste de la main parmi les cartes qui ne sont pas des rois :
+                \[p_1 = \frac{\binom{4}{2}\binom{52 - 4}{4}}{\binom{52}{6}}\]
+                </li><li class = "lic2"> De même, on choisit 2 rois parmi les 4 du jeu puis le reste de la main parmi le reste des cartes :
+                \[p_2 = \frac{\binom{4}{2}\binom{52 - 2}{4}}{\binom{52}{6}}\]
+                </li><li class = "lic2"> On choisit les rois, puis les dames puis le reste des cartes parmi les cartes qui ne sont ni des rois ni des dames :
+                \[p_3 = \frac{\binom{4}{2}\binom{4}{2}\binom{52 - 8}{2}}{\binom{52}{6}}\]
+                </li><li class = "lic2"> De même :
+                \[p_4 = \frac{\binom{4}{2}\binom{4}{2}\binom{52 - 4}{2}}{\binom{52}{6}}\]
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise26"><h3>Exercice 26 :</h3><div>Soit \(n\) et \(p\) des entiers naturels. On note \(S^p_n = 1^p + 2^p + \cdots + n^p\) .
+            <ol>
+                </li><li class = "lic2"> Rappeler la formule donnant \(S^1_n\).
+                </li><li class = "lic2"> Montrer que \(S^2_n = \frac{n(n+1)(2n+1)}{6}\).
+                </li><li class = "lic2"> Montrer que pour tout polynôme \(P\) de degré \(n\), il existe un et un seul polynôme \(Q\), de degré \(n+1\), s'annulant en \(0\) tel que \(P (X) = Q (X + 1) - Q (X)\).
+                </li><li class = "lic2"> En déduire que \(S^p_n\), à \(p\) fixé, est un polynôme de degré \(p+1\) en \(n\).
+                </li><li class = "lic2"> Calculer \(S^3_n\), \(S^4_n\) et \(S^5_n\).
+                </li><li class = "lic2"> Montrer les relation suivantes :
+                <ul>
+                    </li><li class = "lic2"> \(3S^5_n = (S^1_n)^2 (4S^1_n - 1)\).
+                    </li><li class = "lic2"> \(4 (S^1_n + S^3_n) = n (n + 1) (n^2 + n + 2)\).
+                    </li><li class = "lic2"> \(6 (S^3_n + S^5_n) = n^2(n + 1)^2 (n^2 + n + 1)\).
+                    </li><li class = "lic2"> \(S^5_n + S^7_n = (S^1_n)^3n (n + 1) = 2(S^3_n)^2\).
+                </ul>
+                </li><li class = "lic2"> Soient \(p,q,r\) et \(m\) des entiers naturels non nuls, avec \(p \lt q\). Montrer que \((S^p_n)^m = (S^q_n)^r\) pour tout entier
+            naturel \(n\) si et seulement si \(p=1\), \(q=3\), \(m=2\) et \(r=1\).
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé26')"> Corrigé </button><hr>  <span id="Indication26" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé26" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> \(S^1_n = \frac{n(n+1)}2\)
+                </li><li class = "lic2"> On peut procéder par récurrence, mais on dispose d'une méthode plus générale :
+                \[\sum_{k=1}^n (k + 1)^3 = \sum_{k=1}^n (1+3k+3k^2+k^3) = n + 3S^1_n + 3S^2_n + \sum_{k=1}^n k^3\]
+                \[\Longrightarrow S_n^2 = \frac 13\left((n + 1)^3 - 1 - n - 3S^1_n \right)\]
+                On trouve ainsi le résultat voulu.
+                </li><li class = "lic2"> Comme \(Q(0) = 0\), on peut en déduire qu'il existe \(R \in \mathbb{R}_n(X)\) tel que :
+                \(Q(X) = X R(X)\). On peut alors poser l'application :
+                \[\begin{array}{l|rcl}\varphi: & \mathbb{R}_n(X) & \longrightarrow \mathbb{R}_n(X)\\ & R & \longmapsto &( X-1)R(X-1) - XR(X) \end{array}\]
+                On vérifie trivialement que cette application sont linéaire. De plus :
+                \[R \in \ker(\varphi) \Longrightarrow (X+1)R(X+1) - XR(X) = 0 \Longrightarrow R(X+1) = - X(R(X+1) - R(X))\]
+                Pour que l'égalité précédente n'est vraie en degré que si le polynôme est nul. L'application est donc injective, donc bijective car linéaire entre deux espaces de même dimension finie. On en déduit l'existence et l'unicité du polynôme \(R\), donc du polynôme \(Q\).
+                </li><li class = "lic2"> On peut montrer cela par récurrence en se servant de la relation établie précédemment mais dans le cas général :
+                \[\sum_{k=1}^n(k + 1)^{p+1} 
+                = \sum_{k=1}^n \sum_{i=0}^{p+1}\binom{p+1}{i}k^i 
+                =  \sum_{i=0}^{p - 1}\binom{p+1}{i}\sum_{k=1}^{n}k^i + (p+1)S^p_n + \sum_{k=1}^{n}k^{p + 1}\]
+                \[\Longrightarrow S^p_n = \frac1{p+1} \left( (n+1)^{p+1} - 1 - \sum_{i=0}^{p - 1}\binom{p+1}{i}S^i_n \right)\]
+                </li><li class = "lic2"> La relation de la question précédente permet également d'obtenir successivement les trois résultats suivants :
+                \[S^3_n = \frac{n^2(n+1)^2}4\]
+                \[S^4_n = \frac{ n (n+1) (2 n+1) (3 n (n+1)-1)}{30}\]
+                \[S^5_n = \frac{n^2 (n+1)^2 (2 n (n+1)-1)}{12}\]
+                </li><li class = "lic2"> Calculs laissés aux lecteurs.
+                </li><li class = "lic2"> On peut trivialement vérifier que le résultat sont vrai pour les valeurs choisies par l'énoncé à l'aide des résultats des questions 1 et 3. Pour l'unicité, on peut remarquer que l'égalité des degrés des deux polynômes implique : \[(p+1)m = (q + 1)r\]
+                De plus, on connaît le coefficient devant le monômes de plus haut degré par la formule générale de la question 4 :
+                \[(p+1)^m = (q+1)^r\]
+                
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise27"><h3>Exercice 27 :</h3><div>Soit \(\Omega \) un univers dénombrable et p une application additive de P(\(\Omega \)) dans \(\mathbb{R}+\), telle que p(\(\Omega \)) = 1. 
+                Montrer que p est une probabilité si et seulement si, pour toute suite croissante \({{\left( {{A}_{n}} \right)}_{n\in \mathbb{N}}}\) d'événements, \(P\left( \bigcup\limits_{n\in \mathbb{N}}{{{A}_{n}}} \right)=\underset{n\to +\infty }{\mathop{Lim}}\,P\left( {{A}_{n}} \right)\). <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé27')"> Corrigé </button><hr>  <span id="Indication27" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé27" style="display:none;"><p>      </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise28"><h3>Exercice 28 :</h3><div>Soit n un entier naturel non nul. On appelle dérangement de \(\left[\!\left[ 1,n \right]\!\right]\) une bijection de cet ensemble dans lui-même qui n'admet aucun point fixe : aucun élément n'est égal à son image. On note \({{D}_{n}}\) le nombre de dérangement de \(\left[\!\left[ 1,n \right]\!\right]\), et par convention, on pose \({{D}_{0}}=1\).
+                
+                Soit n un entier naturel non nul. On appelle dérangement de \(\left[\!\left[ 1,n \right]\!\right]\) une bijection de cet ensemble dans lui-même qui n'admet aucun point fixe : aucun élément n'est égal à son image. On note \({{D}_{n}}\) le nombre de dérangement de \(\left[\!\left[ 1,n \right]\!\right]\), et par convention, on pose \({{D}_{0}}=1\).
+                
+                <ol>
+                    </li><li class = "lic2"> Calculer \({{D}_{1}},{{D}_{2}},{{D}_{3}},{{D}_{4}}\). 
+                    </li><li class = "lic2"> Que vaut \(\sum\limits_{k=0}^{n}{\left( \begin{matrix}
+                            n \\
+                            k  \\
+                        \end{matrix} \right).{{D}_{n-k}}}\) ?
+                    </li><li class = "lic2"> Calculer \(\sum\limits_{k=i}^{n}{{{\left( -1 \right)}^{n-k}}.\left( \begin{matrix}
+                            n  \\
+                            k  \\
+                        \end{matrix} \right).\left( \begin{matrix}
+                            k  \\
+                            i  \\
+                        \end{matrix} \right)}\) pour \(0\le i\le n\).
+                    </li><li class = "lic2"> Soient \(\left( {{u}_{n}} \right),\left( {{v}_{n}} \right)\) deux suites réelles, telle que pour tout entier naturel n, \({{u}_{n}}=\sum\limits_{k=0}^{n}{\left( \begin{matrix}
+                            n  \\
+                            k  
+                        \end{matrix} \right){{v}_{k}}}\) . Montrer que pour tout entier naturel n, \({{v}_{n}}=\sum\limits_{k=0}^{n}{{{\left( -1 \right)}^{n-k}}\left( \begin{matrix}
+                            n  \\
+                            k  
+                        \end{matrix} \right){{u}_{k}}}\) . 
+                    </li><li class = "lic2"> En déduire que \({{D}_{n}}=n!\left( \sum\limits_{k=0}^{n}{\frac{{{\left( -1 \right)}^{k}}}{k!}} \right)\).
+                    </li><li class = "lic2"> Montrer, (éventuellement de deux manières), que \({{D}_{n+1}}=n\left( {{D}_{n}}+{{D}_{n-1}} \right)\).
+                    </li><li class = "lic2"> On note \({{\delta }_{n}}\) la densité des dérangements parmi l'ensemble des bijections de \(\left[\!\left[ 1,n \right]\!\right]\) dans lui-même. Déterminer la limite de \({{\delta }_{n}}\) quand n tend vers \(+\infty \).
+                    </li><li class = "lic2"> Montrer, de deux manières, que \({{D}_{n+1}}=n\left( {{D}_{n}}+{{D}_{n-1}} \right)\).
+                    </li><li class = "lic2"> Retrouver la formule de la question d) à l'aide de f).
+                </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé28')"> Corrigé </button><hr>  <span id="Indication28" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé28" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> On trouve :
+                \[D_1 = 0, D_2 = 1, D_3 = 2, D_4 = 9\]
+                </li><li class = "lic2"> Notons \(\mathcal P_n\) l'ensemble des permutations de \([\![1,n]\!]\), et notons \(\mathcal F_{n,k}\), les permutations de \([\![1,n]\!]\) contenant exactement \(k\) points fixes, alors on a l'union disjointe suivante :
+                \[\mathcal P_n = \bigcup_{k=1}^n \mathcal F_{n,k}\]
+                Or, construire une permutation de \([\![1,n]\!]\) à \(k\) points fixes revient à construire un dérangement de \([\![1, n-k]\!]\). Il faut aussi prendre en compte le choix des points fixes : \(\binom{n}{k}\) Ainsi :
+                \[\boxed{}\]
+                </li><li class = "lic2"> On utilise la formule suivante :
+                \[\binom{n}{k} \binom{k}{i}= \binom{n}{i}\binom{n - i}{k - i} \]
+                On obtient :
+                \[\sum\limits_{k=i}^{n}{{{\left( -1 \right)}^{n-k}} \binom{n}{k} \binom{k}{i}} = \binom{n}{i}\sum\limits_{k=i}^{n}{{{\left( -1 \right)}^{n-k}} \binom{n - i}{k - i}}\]
+                Et cette dernière somme n'est pas calculable
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise29"><h3>Exercice 29 :</h3><div>Soit \(\left( \Omega ,A,p \right)\) un espace probabilisé, h une application définie sur \(\Omega \) et f une application d'un ensemble E dans \(\Omega \).
+                <ol>
+                    </li><li class = "lic2">  Montrer que \(\left( E,{{f}^{-1}}\left( A \right),p' \right)\), où \(p'\) est définie par \(p'(B)=p\left( f\left( B \right) \right)\), est un espace probabilisé.
+                    </li><li class = "lic2"> Montrer que si on pose \(h'\left( A \right)=\left\{ B\in P\left( h\left( \Omega  \right) \right)/{{h}^{-1}}\left( B \right)\in A \right\}\), \(\left( h\left( \Omega  \right),h'\left( A \right),p' \right)\), où p' est défini par \(p'\left( h(A) \right)=p\left( A \right)\), est un espace probabilisé.
+                    </li><li class = "lic2"> Montrer que \(\left( h\left( \Omega  \right),h\left( A \right),p'' \right)\) n'est pas en général un espace probabilisé. (comment définir \(p''\) ?)
+                </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé29')"> Corrigé </button><hr>  <span id="Indication29" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé29" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> Il faut montrer d'une part que \(f^{-1}(A)\) est une tribu et que \(p'\) est une mesure de probabilité :
+                <ul>
+                    </li><li class = "lic2"> Montrons que \(f^{-1}(A)\) est une tribu :
+                    <ul>
+                        </li><li class = "lic2"> \(E = f^{-1}(\Omega)\) donc \(E\in f^{-1}(A)\)
+                        </li><li class = "lic2"> Soit \(X\in f^{-1}(A)\), \[f(X) \in A\Longrightarrow \overline{f(X)}\in A \Longrightarrow f(\overline{X}) \in A \Longrightarrow \overline{X} \in f^{-1}(A) \]
+                        </li><li class = "lic2"> Soit \((X_n)_{n \in \mathbb N} \in (f^{-1}(A))^{\mathbb{N}}\) alors :
+                        \[ \bigcup_{n\in \mathbb N}X_n \in f^{-1}(A)\Longrightarrow f\left(\bigcup_{n\in \mathbb N}X_n\right) \in A \Longrightarrow \exists n \in \mathbb N, f(X) \in X_n\]
+                    </ul>
+                    </li><li class = "lic2"> Montrons que \(p\) est une mesure de probabilité :
+                    <ul>
+                        </li><li class = "lic2"> Les valeurs prises par \(p'\) sont bien dans \([0,1]\) car \(p\) est une mesure de probabilité donc est à valeur dans \([0,1]\).
+                        </li><li class = "lic2"> \(p'(E) = p(f(E))= p(\Omega) = 1\)
+                        </li><li class = "lic2"> Soit \((X_n)_{n \in \mathbb N} \in (f^{-1}(A))^{\mathbb{N}}\) une suite d'éléments disjoints.
+                        \[p'\left(\bigcup_{n\in \mathbb N} X_n\right) = p\left(f\left(\bigcup_{n\in \mathbb N} X_n\right)\right) = p\left(\bigcup_{n\in \mathbb N} f(X_n)\right)\]
+                        Par une magie démoniaque les \(f(X_n)\) sont disjoints... donc :
+                        \[p'\left(\bigcup_{n\in \mathbb N} X_n\right) = \sum_{n\in \mathbb N} p(f(X_n)) = \sum_{n\in \mathbb N} p'(X_n)\]
+                    </ul>
+                    </li><li class = "lic2"> 
+                </ul>
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise30"><h3>Exercice 30 :</h3><div>Montrer qu'une tribu infinie est toujours non dénombrable. <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé30')"> Corrigé </button><hr>  <span id="Indication30" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé30" style="display:none;"><p>  On se donne \(\mathcal T\) une tribu d'un ensemble \(\Omega\). On suppose que \(\mathcal T\) est infinie.<br>
+            Notons, pour tout \(x\in \Omega\) l'ensemble :
+            \[\mathcal A(x) = \bigcap_{\substack{E \in \mathcal T<br>x\in E}} E\]
+            On remarque que pour tout \(x \in \Omega, \mathcal A (x) \in \mathcal T\).<br>
+            Notons maintenant, pour tout \((x,y) \in \Omega^2\) :
+            \[x \sim y \Longleftrightarrow x \in \mathcal A(y)\]
+            Cette relation est :
+            <ul>
+                </li><li class = "lic2"> <B>Réflexive</B> car \(x\) appartient à tous les ensembles de l'intersection donc appartient à \(\mathcal A (x)\).
+                </li><li class = "lic2"> <B>Symétrique</B> car si \(x \in \mathcal A (y)\), alors pour tout \(E \in \mathcal T\) contenant \(y\), \(E\) contient aussi \(x\) donc \(y \in \mathcal A(x)\)
+                </li><li class = "lic2"> <B>Transitive</B> car si \(x \in \mathcal A (y)\) et \(y \in \mathcal A (z)\), alors \(x\) appartient à tous les ensembles contenant \(y\) et \(y\) appartient à tous les ensembles contenant \(z\), donc \(x\) appartient à tous les ensembles contenant \(z\), et \(x \in \mathcal A (z)\)
+            </ul> </p>
+            <p>
+            \[\boxed{\textrm{\(\sim\) définit bien une relation d'équivalence.}}\]
+            Pour tout \(E \in \mathcal T\), on a d'une part :
+            \[E = \bigcup_{x \in E} \{x\} \subset \bigcup_{x \in E} \mathcal A(x)\]
+            Réciproquement, soit \(\displaystyle x \in \bigcup_{x \in E} \mathcal A(x)\) alors  </p> </span></div></div>
+            
+            <div class="exercise hidden" id="exercise31"><h3>Exercice 31 :</h3><div> Montrer que si on laisse un singe suffisamment longtemps devant une machine à écrire, et
+                qu’il tape au hasard sur les touches, il finira pas écrire "Les misérables" dans leur intégralité et sans erreur.          
+                <hr> <button class="bouton" onclick="afficher_texte('Corrigé31')"> Corrigé </button><hr>  <span id="Indication31" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé31" style="display:none;"><p>
+            
+                </p></span></div></div>
+            <div class="exercise hidden" id="exercise32"><h3>Exercice 32 :</h3><div>Soit  \(\left( \Omega ,A,p \right)\) un espace probabilisé. Soit \({{\left( {{B}_{k}} \right)}_{k\in \mathbb{N}}}\) une famille d'évènements.
+                <ol>
+                    </li><li class = "lic2"> Montrer que \(p\left( \bigcup\limits_{k\in \mathbb{N}}{{{B}_{k}}} \right)\le \sum\limits_{k\in \mathbb{N}}^{{}}{p\left( {{B}_{k}} \right)}\) (Inégalité de Boole)
+                    </li><li class = "lic2"> Montrer que \(p\left( \bigcap\limits_{k\in \mathbb{N}}{{{B}_{k}}} \right)\ge 1-\sum\limits_{k\in \mathbb{N}}^{{}}{p\left( {{B}_{k}} \right)}\) (Inégalité de Bonferroni)
+                    </li><li class = "lic2"> Montrer que \(p\left( \bigcup\limits_{i=1}^{n}{{{B}_{i}}} \right)\ge \sum\limits_{i=1}^{n}{p\left( {{B}_{i}} \right)}-\sum\limits_{1\le i\lt j\le n}^{{}}{p\left( {{B}_{i}}\cap {{B}_{j}} \right)}\) (Inégalité de Bonferroni aussi)
+                    </li><li class = "lic2"> Montrer que \(p\left( \bigcup\limits_{i=1}^{n}{{{B}_{i}}} \right)\le \underset{k\in \left[\!\left[ 1,n \right]\!\right]}{\mathop{\min }}\,\left[ \sum\limits_{i=1}^{n}{p\left( {{B}_{i}} \right)}-\sum\limits_{\begin{smallmatrix} 
+                            i=1 \\ 
+                            i\ne k 
+                    \end{smallmatrix}}^{n}{p\left( {{B}_{i}}\cap {{B}_{k}} \right)} \right]\) (Inégalité de Kounias)  
+                </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé32')"> Corrigé </button><hr>  <span id="Indication32" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé32" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> 
+            </ol>    </p></span></div></div>
+    
+
+
+
+    </div><br>
+    <div class="arrow arrow-left" onclick="prevExercise(32)">&lt;</div>
+    <div class="arrow arrow-right" onclick="nextExercise(32)">&gt;</div>
+    <script>
+    window.onload = function() {
+        var hash = window.location.hash;
+        if (hash) {
+            var exerciseId = hash.substring(1); // Remove the '#' character
+            var exercise = document.getElementById(exerciseId);
+            if (exercise) {
+                var exerciseIndex = Array.from(exercise.parentElement.children).indexOf(exercise);
+                if (exerciseIndex !== -1) {
+                    showExercise(exerciseIndex);
+                    currentExerciseIndex = exerciseIndex;
+                }
+            }
+        }
+    };
+    </script>
+</div>
+</body>
+</html>

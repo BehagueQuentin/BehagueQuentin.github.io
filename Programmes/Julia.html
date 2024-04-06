@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ensemble de Julia</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="./styles/atom-one-dark.css">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>                                                                                                                  
+    <style>
+        #juliaCanvas {
+            border: 1px solid #000;
+            margin :auto;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #canvasContainer {
+            max-height: 600;
+            max-width : 600;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #marge1 {
+            margin-left : 3vw;
+            margin-right: 3vw;
+        }
+        .bouton{
+        margin-left: 8px;
+        margin-right: auto;
+        display:inline-block;
+        background-color: #737f94;
+        border-radius: 10px;
+        border: 2px solid #152643;
+        color: #ffffffc3;
+        text-align: center;
+        font-size: 16px;
+        padding: 5px;
+        width: 200px;
+        cursor: pointer;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+    }
+    </style>
+    <link href="../style.css" rel="stylesheet">                                                                                
+    <script src="../scripts.js"></script>                                                                                       
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"/>                                                                                                      <!-- Chargement d'une police d'écriture -->
+    <link rel="icon" href="../Images/Icones/favicon.png">                                                                        
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script></head>
+<br>
+
+<div class="entete">
+    <div class="effetneon"><span><h1>BEHAGUE Quentin - Etudiant en CPGE MPI*</h1> </span></div>
+</div>
+    <!-- Menu de navigation du site -->
+    <span class="menu-de-navigation" id="menu"><nav style="z-index: 10;"><ul>
+        <li class ="home_button"><a href="../index.html"><img src="./../Images/NeonHouse.png" class="pic_menu_home"></a></li>
+        <li class="deroulant"><a href="#">Exercices corrigés &ensp;</a>
+            <ul class="sous" style="height: 300px; overflow-y: scroll;">
+                <li><a href="../PagesMaths/AlgebreLineaire/AlgebreLineaire.html">Algèbre linéaire</a></li>
+                <li><a href="../PagesMaths/Norme/Norme.html">Notion de norme</a></li>
+                <li><a href="../PagesMaths/SuitesSeriesSommabilite/SuitesSeriesSommabilite.html">Suites, Séries et Sommabilité</a></li>
+                <li><a href="../PagesMaths/Reduction/Reduction.html">Réduction</a></li>
+                <li><a href="../PagesMaths/FonctionsVectorielles/FonctionsVectorielles.html">Fonctions à valeurs vectorielles</a></li>
+                <li><a href="../PagesMaths/EspacesProbabilises/EspacesProbabilises.html">Espaces probabilisés</a></li>
+                <!-- Page qui ne sont pas achevées :
+                <li><a href="../PagesMaths/SuitesSeriesFonction/SuitesSeriesFonction.html">Suites et séries de fonctions</a></li>
+                <li><a href="../PagesMaths/EquationsDifferentielles/EquationsDifferentielles.html">Équations différentielles</a></li>
+                <li><a href="../PagesMaths/CalculDifferentiel/CalculDifferentiel.html">Calcul différentiel</a></li>
+                <li><a href="../PagesMaths/IntegralesParametres/IntegralesParametres.html">Intégrales à Paramétres</a></li>
+                <li><a href="../PagesMaths/EspacesEuclidiens/EspacesEuclidiens.html">Espaces euclidiens</a></li>
+                <li><a href="../PagesMaths/Integration/Integration.html">Intégration</a></li>
+                <li><a href="../PagesMaths/SeriesEntieres/SeriesEntieres.html">Suites et séries entières</a></li>
+                <li><a href="../PagesMaths/Topologie/Topologie.html">Topologie</a></li>
+                <li><a href="../PagesMaths/VariablesAleatoires/VariablesAleatoires.html">Variables aléatoires</a></li>
+                <li><a href="../PagesMaths/StructureAlgebrique/StructureAlgebrique.html">Structures algébriques</a></li>-->
+            </ul>
+        <li class="deroulant"><a href="#">Programmes &ensp;</a>
+            <ul class="sous">
+                <li><a href="./Julia.html">Ensemble de Julia</a></li>
+                <li><a href="./Syracuse.html">Suite de Syracuse</a></li>
+                <li><a href="./Puzzle.html">Puzzle</a></li>
+                <li><a href="https://github.com/BehagueQuentin/Jeu-Echecs">Jeux d'échec</a></li>
+            </ul>
+        <li><a href="../Téléchargement/Téléchargement.html">Téléchargements</a></li>
+        <li class="deroulant"><a href="#">Contact &ensp;</a>
+            <ul class="sous">
+                <li><a>06 46 15 00 15</a></li>
+                <li><a>quentinbehague59560@gmail.com</a></li>
+                <li><a href="https://github.com/BehagueQuentin">Mon github</a></li>
+            </ul>   
+        <li><a href="../Apropos/Apropos.html">A propos</a></li>
+    </ul></nav></span>
+
+    <body background="../Images/Fonds/hexagonal.png" bgproperties="fixed">
+
+        <div id ="marge1">
+        <div class="content">
+            <div class="text" >
+            <h4>Ensemble de Julia</h4>
+                <div style="float:left;width:90%;">
+                    <p> 
+                        Une fractale de Julia est un ensemble obtenu en associant une suite à chaque point du plan complexe, les points de l'ensemble sont alors ceux dont la suite associée est bornée.
+                        Sur cette page, on peut choisir la valeur de \(c\) dans l'expression de la suite. À chaque point du plan \(z\) on associe la suite :
+                        \[(z_n) : \left\{\begin{array}[c]{} z_0 = z \\ \forall n \in \mathbb N,  z_{n+1} = z_{n}^2 + c \end{array} \right.\]
+                        Ici les points du plan pour lesquels la suite est convergente sont coloriés en noir, la couleur des points dont la suite diverge varie en fonction de la vitesse de divergence.<br>
+                        Il est possible de télécharger la version python de ce code sur mon <a href="https://github.com/BehagueQuentin/Codes-Lycee">GitHub</a>. Une implémentation du flocon de Koch y est aussi disponible.<p>
+                </div>
+            </div>
+            </div>
+            <br><br>
+        </div>
+        <div id="canvasContainer"><canvas id="juliaCanvas" width="600" height="600"></canvas></div>
+       
+        <div style="text-align: center; font-size: 15px;">
+            <label for="realPart">Partie réelle:</label>
+            <input type="number" id="realPart" step="0.01"><br><br>
+            <label for="imaginaryPart">Partie imaginaire:</label>
+            <input type="number" id="imaginaryPart" step="0.01"><br><br>
+            <button class ="bouton" onclick="updateJuliaSet()">Mettre à jour</button>
+            <br><br>
+        </div>
+    
+
+
+        <div id="marge1">
+        <div class="content">
+        <div class="text" style="margin-right: 50px;">
+        <ul>
+        <li><h5>Implémentation en python : </h5></li>
+                    <pre class="hljs" style="font-size: 16px;"><code class="python line-numbers">
+import pygame
+pygame.init()
+ITERATION = 80
+abcisseMIN, abcisseMAX, ordonneeMIN, ordonneeMAX = -1.75, 1.75, -1.75, 1.75 
+LARGEUR, HAUTEUR = 400,400
+fenetre = pygame.display.set_mode((LARGEUR,HAUTEUR))
+pygame.display.set_caption("Ensemble de Julia")
+for y in range(HAUTEUR):
+    pygame.display.flip()
+    for x in range(LARGEUR):
+        xn = (x * (abcisseMAX - abcisseMIN) / LARGEUR + abcisseMIN)
+        yn = (y * (ordonneeMIN - ordonneeMAX) / HAUTEUR + ordonneeMAX)
+        cx = 0.3  # Re(c)
+        cy = 0.5  # Im(c)
+        n = 0
+        while (xn * xn + yn * yn) < 4 and n < ITERATION:
+            xn, yn = xn*xn - yn*yn +cx , 2*xn*yn+cy
+            n += 1
+        if n == ITERATION:
+            fenetre.set_at((x, y), (0,0,0))
+        else:
+            fenetre.set_at((x, y),((5* n+10) % 256, (20 * n) % 256, (2 * n+90) % 256))     
+pygame.display.flip()
+ouvert= True
+while ouvert:
+    for event in pygame.event.get():
+    if event.type == pygame.QUIT:
+        ouvert = False
+pygame.quit()
+                    </code></pre>
+        
+        <li><h5>Implémentation en JavaScript : </h5></li>
+        <pre class="hljs" style="font-size: 16px;"><code class="JavaScript line-numbers">
+function drawJuliaSet(canvas, cReal, cImaginary, maxIterations) {
+    const ctx = canvas.getContext('2d');
+    const imageData = ctx.createImageData(canvas.width, canvas.height);
+
+    for (let x = 0; x < canvas.width; x++) {
+        for (let y = 0; y < canvas.height; y++) {
+            const real = (x - canvas.width / 2) / (canvas.width / 2);
+            const imag = (y - canvas.height / 2) / (canvas.height / 2);
+            let zReal = real;
+            let zImag = imag;
+            let iteration = 0;
+            while (iteration < maxIterations) {
+                const zRealTemp = zReal * zReal - zImag * zImag + cReal;
+                zImag = 2 * zReal * zImag + cImaginary;
+                zReal = zRealTemp;
+                if (zReal * zReal + zImag * zImag > 4) {
+                    break;
+                }
+                iteration++;
+            }
+            const pixelIndex = (y * canvas.width + x) * 4;
+            if(iteration === maxIterations){
+                imageData.data[pixelIndex] = 0; 
+                imageData.data[pixelIndex + 1] = 0; 
+                imageData.data[pixelIndex + 2] = 0; 
+                imageData.data[pixelIndex + 3] = 255;
+            }
+            else{
+                const color =  255 - Math.floor(iteration / maxIterations * 255);
+                imageData.data[pixelIndex] = (5*color+10)%256;
+                imageData.data[pixelIndex + 1] = (20*color)%256;
+                imageData.data[pixelIndex + 2] = (2*color+90)%256;
+                imageData.data[pixelIndex + 3] = 255;
+            }
+        }
+    }
+    ctx.putImageData(imageData, 0, 0);
+}
+        </code></pre>
+        
+        </ul></div></div></div>
+                        
+                
+
+
+
+
+<script>
+    function drawJuliaSet(canvas, cReal, cImaginary, maxIterations) {
+        const ctx = canvas.getContext('2d');
+        const imageData = ctx.createImageData(canvas.width, canvas.height);
+
+        for (let x = 0; x < canvas.width; x++) {
+            for (let y = 0; y < canvas.height; y++) {
+                const real = (x - canvas.width / 2) / (canvas.width / 2);
+                const imag = (y - canvas.height / 2) / (canvas.height / 2);
+                let zReal = real;
+                let zImag = imag;
+                let iteration = 0;
+                while (iteration < maxIterations) {
+                    const zRealTemp = zReal * zReal - zImag * zImag + cReal;
+                    zImag = 2 * zReal * zImag + cImaginary;
+                    zReal = zRealTemp;
+                    if (zReal * zReal + zImag * zImag > 4) {
+                        break;
+                    }
+                    iteration++;
+                }
+                const pixelIndex = (y * canvas.width + x) * 4;
+                if(iteration === maxIterations){
+                    imageData.data[pixelIndex] = 0; 
+                    imageData.data[pixelIndex + 1] = 0; 
+                    imageData.data[pixelIndex + 2] = 0; 
+                    imageData.data[pixelIndex + 3] = 255;
+                }
+                else{
+                    const color =  255 - Math.floor(iteration / maxIterations * 255);
+                    imageData.data[pixelIndex] = (5*color+10)%256;
+                    imageData.data[pixelIndex + 1] = (20*color)%256;
+                    imageData.data[pixelIndex + 2] = (2*color+90)%256;
+                    imageData.data[pixelIndex + 3] = 255;
+                }
+            }
+        }
+        ctx.putImageData(imageData, 0, 0);
+    }
+    function updateJuliaSet() {
+        const canvas = document.getElementById('juliaCanvas');
+        const realInput = document.getElementById('realPart').value;
+        const imagInput = document.getElementById('imaginaryPart').value;
+        const cReal = parseFloat(realInput);
+        const cImaginary = parseFloat(imagInput);
+        const maxIterations = 1000;
+        drawJuliaSet(canvas, cReal, cImaginary, maxIterations);
+    }
+    const canvas = document.getElementById('juliaCanvas');
+    const cReal = -0.5;
+    const cImaginary = 0.6;
+    const maxIterations = 1000;
+    drawJuliaSet(canvas, cReal, cImaginary, maxIterations);
+</script>
+<script src="./highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</body>
+</html>

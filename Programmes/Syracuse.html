@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suite de Syracuse</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="./styles/atom-one-dark.css">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>                                                                                                                  
+
+    <style>
+        /* Ajouter des styles CSS pour limiter la largeur du conteneur du graphique */
+        #marge1 {
+            margin-left : 3vw;
+            margin-right: 3vw;
+        }
+        #marge2 {
+            margin-left : 1vw;
+            margin-right: 1vw;
+        }
+        #inputForm {
+            font-size: 2vw;    /* Utiliser la disposition flexible pour aligner les éléments en ligne */
+
+        }
+
+        #chartButtons {
+            margin-bottom: 20px; /* Ajouter une marge en bas pour l'espace entre les boutons et le graphique */
+        }
+
+        #chartContainer {
+            width: 100%;  
+            margin: 0 auto;   /* Centrer le conteneur dans la page */
+            display: flex;    /* Utiliser la disposition flexible pour aligner les éléments en ligne */
+            flex-direction: row; /* Aligner les éléments en ligne plutôt qu'en colonne */
+            justify-content: space-between; /* Espacement entre les éléments */
+            align-items: center; /* Centrer les éléments verticalement */
+        }
+
+        #chartContainer2 {
+            width: 50%;
+            width: 100%;
+            margin: 0 auto;    /* Centrer le conteneur dans la page */
+            display: flex;     /* Utiliser la disposition flexible pour aligner les éléments en ligne */
+            flex-direction: row; /* Aligner les éléments en ligne plutôt qu'en colonne */
+            justify-content: space-between; /* Espacement entre les éléments */
+            align-items: center; /* Centrer les éléments verticalement */
+            align-content: center;
+        }
+
+        #chartInfo {
+            margin-left: 20px; /* Marge à gauche pour l'espace entre le graphique et les informations */
+            width: 50%;
+        }
+    </style>
+    <link href="../style.css" rel="stylesheet">                                                                                    <!-- Lien vers le CSS associé -->
+    <script src="../scripts.js"></script>                                                                                          <!-- Lien vers le JavaScript associé -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />                                                                                                      <!-- Chargement d'une police d'écriture -->
+    <link rel="icon" href="../Images/Icones/favicon.png">                                                                        <!-- Chargement de l'icône d'onglet -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<br>
+
+<div class="entete">
+    <div class="effetneon"><span><h1>BEHAGUE Quentin - Etudiant en CPGE MPI*</h1> </span></div>
+</div>
+    <!-- Menu de navigation du site -->
+    <span class="menu-de-navigation" id="menu"><nav style="z-index: 10;"><ul>
+        <li class ="home_button"><a href="../index.html"><img src="./../Images/NeonHouse.png" class="pic_menu_home"></a></li>
+        <li class="deroulant"><a href="#">Exercices corrigés &ensp;</a>
+            <ul class="sous" style="height: 300px; overflow-y: scroll;">
+                <li><a href="../PagesMaths/AlgebreLineaire/AlgebreLineaire.html">Algèbre linéaire</a></li>
+                <li><a href="../PagesMaths/Norme/Norme.html">Notion de norme</a></li>
+                <li><a href="../PagesMaths/SuitesSeriesSommabilite/SuitesSeriesSommabilite.html">Suites, Séries et Sommabilité</a></li>
+                <li><a href="../PagesMaths/Reduction/Reduction.html">Réduction</a></li>
+                <li><a href="../PagesMaths/FonctionsVectorielles/FonctionsVectorielles.html">Fonctions à valeurs vectorielles</a></li>
+                <li><a href="../PagesMaths/EspacesProbabilises/EspacesProbabilises.html">Espaces probabilisés</a></li>
+                <!-- Page qui ne sont pas achevées :
+                <li><a href="../PagesMaths/SuitesSeriesFonction/SuitesSeriesFonction.html">Suites et séries de fonctions</a></li>
+                <li><a href="../PagesMaths/EquationsDifferentielles/EquationsDifferentielles.html">Équations différentielles</a></li>
+                <li><a href="../PagesMaths/CalculDifferentiel/CalculDifferentiel.html">Calcul différentiel</a></li>
+                <li><a href="../PagesMaths/IntegralesParametres/IntegralesParametres.html">Intégrales à Paramétres</a></li>
+                <li><a href="../PagesMaths/EspacesEuclidiens/EspacesEuclidiens.html">Espaces euclidiens</a></li>
+                <li><a href="../PagesMaths/Integration/Integration.html">Intégration</a></li>
+                <li><a href="../PagesMaths/SeriesEntieres/SeriesEntieres.html">Suites et séries entières</a></li>
+                <li><a href="../PagesMaths/Topologie/Topologie.html">Topologie</a></li>
+                <li><a href="../PagesMaths/VariablesAleatoires/VariablesAleatoires.html">Variables aléatoires</a></li>
+                <li><a href="../PagesMaths/StructureAlgebrique/StructureAlgebrique.html">Structures algébriques</a></li>-->
+            </ul>
+        <li class="deroulant"><a href="#">Programmes &ensp;</a>
+            <ul class="sous">
+                <li><a href="./Julia.html">Ensemble de Julia</a></li>
+                <li><a href="./Syracuse.html">Suite de Syracuse</a></li>
+                <li><a href="./Puzzle.html">Puzzle</a></li>
+                <li><a href="https://github.com/BehagueQuentin/Jeu-Echecs">Jeux d'échec</a></li>
+            </ul>
+        <li><a href="../Téléchargement/Téléchargement.html">Téléchargements</a></li>
+        <li class="deroulant"><a href="#">Contact &ensp;</a>
+            <ul class="sous">
+                <li><a>06 46 15 00 15</a></li>
+                <li><a>quentinbehague59560@gmail.com</a></li>
+                <li><a href="https://github.com/BehagueQuentin">Mon github</a></li>
+            </ul>   
+        <li><a href="../Apropos/Apropos.html">A propos</a></li>
+    </ul></nav></span>
+
+
+
+    <body background="../Images/Fonds/hexagonal.png" bgproperties="fixed">
+
+        <div id ="marge1">
+        <div class="content">
+            <div class="text" >
+            <h4>Suite de Syracuse</h4>
+                <div style="float:left;width:90%;">
+                    <p> 
+                        
+                        Vous trouverez sur cette page un petit programme que j'ai implémenté en terminal dans le cadre de mon grand oral. <br>
+                        Il vous permettra de visualiser la suite de Syracuse d'une graine choisie.<br>
+                        À l'avenir, des programmes visant à vérifier la conjecture de Syracuse sur un grand nombre d'entiers seront ajoutés sur cette page. <br>
+                        Ils seront plus complexes que ceux déjà présents, et les raisonnements permettant de les établir seront détaillés.
+                        <br>
+                    <p> 
+                </div>
+            </div>
+            </div>
+            <br><br>
+        </div>
+
+    <div id = "marge2">
+    <div class="content">
+    <div class="text">
+    <div id="chartContainer">
+        <!-- Ajouter un formulaire avec un champ de saisie pour la graine -->
+        <form id="inputForm" onsubmit="event.preventDefault(); updateSyracuseChart();">
+            <label for="seedInput">Entrez la graine :</label>
+            <input type="number" id="seedInput" required min="1">
+            <button type="submit" style="background-color: #3bcac5; /* Couleur de fond */
+            color: white; /* Couleur du texte */
+            padding: 10px 20px; /* Espacement du texte à l'intérieur du bouton */
+            border: none; /* Supprimer la bordure */
+            border-radius: 5px; /* Ajouter des coins arrondis */
+            cursor: pointer; /* Curseur pointeur au survol */
+            transition: background-color 0.3s;">Afficher le graphique</button>
+        </form>
+
+
+        <!-- Créer un canvas pour le graphique avec des dimensions spécifiées -->
+        <div id="chartContainer2">
+        <canvas id="myChart" width="400" height="400"></canvas>
+        </div>
+        <!-- Ajouter un élément pour afficher les informations -->
+        <div id="chartInfo">
+            <h3>Informations</h3>
+            <p>Temps de vol: <span id="flightTime"></span></p>
+            <p>Temps de vol en altitude: <span id="altitudeFlightTime"></span></p>
+            <p>Altitude maximale: <span id="maxAltitude"></span></p>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <br>
+    <div id="marge1">
+        <div class="content">
+            <div class="text" style="margin-right: 50px;">
+                <ul>
+                    <li><h5>Un premier code élémentaire : </h5></li>
+                    <p>
+                        En utilisant simplement la définition des suites de Syracuse, on obtient un premier programme qui part de toute graine comprise entre 1 et l'entier choisi et qui applique la relation de récurrence jusqu'à obtenir un 1.
+                    </p>
+                    <pre class="hljs" style="font-size: 16px;"><code class="python line-numbers">
+def verification_syracuse_0(n):
+    for k in range(1, n+1):
+        while k != 1:
+            if k % 2 == 1:
+                k = 3*k + 1
+            else:
+                k = k // 2
+    return True
+                    </code></pre>
+
+
+                    <li><h5>Un simple constat de parité :  </h5></li>
+                    <p>
+                        Dans le cas où l'entier \(k_0\) considéré est impaire, le nombre obtenu par l'opération \(k_1 = 3 \times k_0 + 1\) est nécessairement pair. <br>
+                        On peut alors s'épargner une vérification de parité en modifiant légèrement le code précédent : 
+                    </p>
+                    <pre class="hljs" style="font-size: 16px;"><code class="python line-numbers">
+def verification_syracuse_1(n):
+    for k in range(1, n+1):
+        while k != 1:
+            if k % 2 == 1:
+                k = (3*k + 1)//2
+            else:
+                k = k // 2
+    return True
+                    </code></pre>
+
+
+
+
+
+
+
+
+                    <li><h5>Diminuer le nombre de calculs en se servant d'une équivalence : </h5></li>
+                    <p>
+                        <B>Démonstration de l'équivalence :</B><br>
+                            <ul style="font-size: 20px;">
+                            Conjecture de Syracuse implique temps de vol en altitude fini : <br>
+                            
+                            <p id = "marge1" style="font-size: 17px;" >
+                                Ce sens est trivial : considérons la suite de Syracuse de graine \(k > 1\), si la conjecture de Syracuse est vraie, cela signifie qu'il existe un entier \(n\) pour lequel \(S_n = 1\).<br>
+                                En particulier, cela implique que le temps de vol en altitude est fini, car il est strictement inférieur à \(n\).
+                            </p>
+
+                            Temps de vol en altitude fini implique Conjecture de Syracuse : 
+
+                            <p id = "marge1" style="font-size: 17px;">
+                                Pour la réciproque, on procède par récurrence forte. <br>
+                                On prend pour hypothèse de récurrence \(H_n\) : "La suite de Syracuse de graine \(k\) admet un temps de vol fini". <br>
+                                Pour l'initialisation, si \(k=1\) la conjecture est vraie car la suite atteint 1 immédiatement.<br>
+                                Pour l'hérédité, soit \(k>1\), par hypothèse de temps de vol en altitude fini, soit \(n_0 \in \mathbb N\) le premier indice tel que \(S_{n_0} < k\). <br>
+                                Or, par hypothèse de récurrence, la suite de graine \(S_{n_0}\) admet un temps de vol fini, soit \(n_1\) le premier indice tel que \(S_{n_1} = 1\).
+                                Alors, le temps de vol de la suite de Syracuse de graine \(k\) vaut \(n_0 + n_1\), il est donc fini. D'où le résultat par principe de récurrence.
+                           </p></ul>
+                </p>
+                <pre class="hljs" style="font-size: 15px;"><code class="python line-numbers">
+def verification_syracuse_2(n):
+    for k in range(2, n+1):
+        k0 = k
+        while k >= k0:
+            if k % 2 == 1:
+                k = (3*k + 1)//2
+            else:
+                k = k // 2
+    return True
+                
+                </code></pre>
+
+                <li><h5>Temps de vol en altitude fini selon la congruence :  </h5></li>
+                    <p style="font-size: 13 px;">
+                        En étudiant le vol des nombres selon leur congruence par des entiers pairs, il est possible d'établir que certain d'entre eux vont nécessairement avoir un temps de vol en altitude fini. <br>
+                        En effet, on remarque que les entiers pairs ont un temps de vol en altitude égal à 1, il n'est donc pas nécessaire de les traiter. <br>
+                        De même, si on considère les entiers congrus à \(1\) modulo \(4\) :
+                        \[4k + 1 \stackrel{impair}{\longrightarrow} 12k + 4 \stackrel{pair}{\longrightarrow} 6k + 2 \stackrel{pair}{\longrightarrow} 3k + 1\]
+                        Or, pour tout \(k \geq 1\), \(4k + 1 > 3k + 1\). Leur temps de vol en altitude vaut 3, il n'est pas nécessaire de les tester.<br>
+                        Si on tente de faire de même avec les entiers congrus à \(3\) modulo \(4\), on tombe dans une impasse :
+                        \[4k + 3 \stackrel{impair}{\longrightarrow} 12k + 10 \stackrel{pair}{\longrightarrow} 6k + 5 \stackrel{impair}{\longrightarrow} 18k + 16 \stackrel{pair}{\longrightarrow} 9k + 8\]
+                        On ne connait pas la parité de \(9k + 8\), et \(9k + 8 > 4k + 3\) pour tout \(k \geq 1\). On ne peut rien en déduire. <br>
+                        On est alors tenté de regarder ce qui se produit en fonction de la parité de \(k\). <br>
+                        Autrement dit, on considère les entiers congrus à \(3\) ou \(7\) modulo \(8\). <br>
+                        On se retrouve une fois de plus dans une impasse. On passe à la puissance de deux supèrieure<br>
+                        \[16k + 3 \stackrel{impair}{\longrightarrow} 48k + 10 \stackrel{pair}{\longrightarrow} 24k + 5 \stackrel{impair}{\longrightarrow} 72k + 16 \stackrel{pair}{\longrightarrow} 36k + 8 \stackrel{pair}{\longrightarrow} 18k + 4 \stackrel{pair}{\longrightarrow} 9k + 2\]
+                        
+                    </p>
+                    <pre class="hljs" style="font-size: 16px;"><code class="python line-numbers">
+def verification_syracuse_3(n):
+    for k in range(2, n+1):
+        cg = k%16
+        if cg == 7 or cg == 11 or cg == 15:
+            k0 = k
+            while k >= k0:
+                if k % 2 == 1:
+                    k = (3*k + 1)//2
+                else:
+                    k = k // 2
+    return True
+                    </code></pre>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        var myChart;  // Variable pour stocker l'instance du graphique
+
+        // Fonction pour calculer la suite de Syracuse et afficher le graphique
+        function updateSyracuseChart() {
+            // Récupérer le contexte du canvas
+            var ctx = document.getElementById('myChart').getContext('2d');
+
+            // Récupérer la graine saisie par l'utilisateur
+            var seed = document.getElementById('seedInput').value;
+
+            // Vérifier que la graine est strictement supérieure à zéro
+            if (seed <= 0) {
+                alert("Veuillez choisir une graine strictement supérieure à zéro.");
+                return;
+            }
+
+            // Détruire l'ancien graphique s'il existe
+            if (myChart) {
+                myChart.destroy();
+            }
+
+            // Calculer la suite de Syracuse jusqu'à la première apparition de 1
+            var syracuseData = calculateSyracuse(seed);
+
+            // Données pour le graphique
+            var data = {
+                labels: Array.from({ length: syracuseData.length }, (_, i) => i),
+                datasets: [{
+                    label: 'Suite de Syracuse',
+                    data: syracuseData,
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 2,
+                    fill: false
+                }]
+            };
+
+            var options = {
+                scales: {
+                    x: {
+                        type: 'linear',
+                        position: 'bottom',
+                        ticks: {
+                            color: 'rgba(255, 255, 255, 0.7)' // Couleur des ticks de l'axe X
+                        },
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.2)' // Couleur de la grille de l'axe X
+                        }
+                    },
+                    y: {
+                        type: 'linear',
+                        position: 'left',
+                        ticks: {
+                            color: 'rgba(255, 255, 255, 0.7)' // Couleur des ticks de l'axe Y
+                        },
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.2)' // Couleur de la grille de l'axe Y
+                        }
+                    }
+                },
+                maintainAspectRatio: false,
+                responsive : true,
+                backgroundColor: 'rgba(255, 255, 255, 1)' // Couleur de fond du graphique
+            };
+
+            // Créer le nouveau graphique
+            myChart = new Chart(ctx, {
+                type: 'line',
+                data: data,
+                options: options
+            });
+
+            // Mettre à jour les informations
+            updateChartInfo(syracuseData);
+        }
+
+        // Fonction pour mettre à jour les informations à droite du graphique
+        function updateChartInfo(syracuseData) {
+            var flightTime = syracuseData.length - 1;  // Temps de vol
+            var altitudeFlightTime = syracuseData.findIndex(value => value < parseInt(document.getElementById('seedInput').value));  // Temps de vol en altitude
+            var maxAltitude = Math.max(...syracuseData);  // Altitude maximale
+
+            // Mettre à jour les éléments HTML avec les nouvelles informations
+            document.getElementById('flightTime').textContent = flightTime;
+            document.getElementById('altitudeFlightTime').textContent = altitudeFlightTime;
+            document.getElementById('maxAltitude').textContent = maxAltitude;
+        }
+
+        // Fonction pour calculer la suite de Syracuse
+        function calculateSyracuse(seed) {
+            var sequence = [];
+            while (seed !== 1) {
+                sequence.push(seed);
+                if (seed % 2 === 0) {
+                    seed /= 2;
+                } else {
+                    seed = 3 * seed + 1;
+                }
+            }
+            sequence.push(1);  // Ajouter la dernière valeur 1
+            return sequence;
+        }
+    </script>
+    <script src="./highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <br>
+</body>
+</html>

@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html>
+<head><title>Fonctions à valeurs vectorielles</title><link href="../stylePageMaths.css" rel="stylesheet"><link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"/><link rel="icon" href="./../../Images/Icones/favicon.png"><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> <script src = "../changePageMath.js"></script></head>
+
+<body background="../../Images/Fonds/hexagonal.png" bgproperties="fixed"><br>
+    <div class="entete" style="position: relative;"><div class="effetneon"><span><h1>BEHAGUE Quentin - Etudiant en CPGE MPI*</h1> </span></div></div>
+    <!-- Menu de navigation du site -->
+    <span class="menu-de-navigation" id="menu"><nav style="z-index: 10;"><ul>
+        <li class ="home_button"><a href="../../index.html"><img src="./../../Images/NeonHouse.png" class="pic_menu_home"></a></li>
+        <li class="deroulant"><a href="#">Exercices corrigés &ensp;</a>
+            <ul class="sous" style="height: 300px; overflow-y: scroll;">
+                <li><a href="../AlgebreLineaire/AlgebreLineaire.html">Algèbre linéaire</a></li>
+                <li><a href="../Norme/Norme.html">Notion de norme</a></li>
+                <li><a href="../SuitesSeriesSommabilite/SuitesSeriesSommabilite.html">Suites, Séries et Sommabilité</a></li>
+                <li><a href="../Reduction/Reduction.html">Réduction</a></li>
+                <li><a href="../FonctionsVectorielles/FonctionsVectorielles.html">Fonctions à valeurs vectorielles</a></li>
+                <li><a href="../EspacesProbabilises/EspacesProbabilises.html">Espaces probabilisés</a></li>
+                <!-- Page qui ne sont pas achevées :
+                <li><a href="../SuitesSeriesFonction/SuitesSeriesFonction.html">Suites et séries de fonctions</a></li>
+                <li><a href="../EquationsDifferentielles/EquationsDifferentielles.html">Équations différentielles</a></li>
+                <li><a href="../CalculDifferentiel/CalculDifferentiel.html">Calcul différentiel</a></li>
+                <li><a href="../IntegralesParametres/IntegralesParametres.html">Intégrales à Paramétres</a></li>
+                <li><a href="../EspacesEuclidiens/EspacesEuclidiens.html">Espaces euclidiens</a></li>
+                <li><a href="../Integration/Integration.html">Intégration</a></li>
+                <li><a href="../SeriesEntieres/SeriesEntieres.html">Suites et séries entières</a></li>
+                <li><a href="../Topologie/Topologie.html">Topologie</a></li>
+                <li><a href="../VariablesAleatoires/VariablesAleatoires.html">Variables aléatoires</a></li>
+                <li><a href="../StructureAlgebrique/StructureAlgebrique.html">Structures algébriques</a></li>-->
+            </ul>
+        <li class="deroulant"><a href="#">Programmes &ensp;</a>
+            <ul class="sous">
+                <li><a href="../../Programmes/Julia.html">Ensemble de Julia</a></li>
+                <li><a href="../../Programmes/Syracuse.html">Suite de Syracuse</a></li>
+                <li><a href="../../Programmes/Puzzle.html">Puzzle</a></li>
+                <li><a href="https://github.com/BehagueQuentin/Jeu-Echecs">Jeux d'échec</a></li>
+            </ul>
+        <li><a href="../../Téléchargement/Téléchargement.html">Téléchargements</a></li>
+        <li class="deroulant"><a href="#">Contact &ensp;</a>
+            <ul class="sous">
+                <li><a>06 46 15 00 15</a></li>
+                <li><a>quentinbehague59560@gmail.com</a></li>
+                <li><a href="https://github.com/BehagueQuentin">Mon github</a></li>
+            </ul>   
+        <li><a href="../../Apropos/Apropos.html">A propos</a></li>
+    </ul></nav></span>
+<style>
+    
+
+    
+</style>
+</head>
+
+
+
+
+
+<body style="min-height: 50vw;">
+<div class="container-ex0">
+    <div class="exercise-container" id="exerciseContainer">
+        
+        <div class="exercise " id="exercise1"><h3>Exercice 1 :</h3><div>Soit \(P \in \mathbb R[X]\). Montrer que si \(P\) est scindé, alors \(P'\) est scindé aussi. Pour cela :
+            <ol>
+                </li><li class = "lic2"> énoncer le théorème de Rolle.
+                </li><li class = "lic2"> Si \(a\) est une racine d'ordre \(k\) de \(P\) , quel est son ordre dans \(P'\)?
+                </li><li class = "lic2"> Montrer le résultat voulu.
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé1')"> Corrigé </button><hr>  <span id="Indication1" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé1" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> Cf cours.
+                </li><li class = "lic2"> Si une racine est d'ordre \(k>0\) dans \(P\) elle sera d'ordre \(k-1\) dans \(P'\).
+                </li><li class = "lic2"> Notons \(r_1, ..., r_p\) les racines du polynôme \(P\) et \(\lambda_1, ..., \lambda_p\) leur multiplicités respectives. On a alors \(deg(P) = \sum_{k=1}^p \lambda_k\). 
+                <br>On compte alors d'une part, les racines de \(P\) de multiplicité \(\lambda_k-1\) soit \(\sum_{k=1}^p \lambda_k - n\) racines.
+                <br> D'autre part, d'après le théorème de Rolle, comme \(P\) est continu sur tout intervalle \([r_k, r_{k+1}]\), dérivable sur \(]r_k, r_{k+1}[\), et \(f(r_{k+1} = f(r_k) = 0\), \(P'\) admet une racine sur chaque intervalle \(]r_k, r_{k+1}[\), ces intervalles sont disjoints, et les racines n'ont pas déjà été comptées, on a donc exhibé \(deg(P) - 1 = deg(P')\) racines.
+                \[\boxed{\textrm{\(P'\) est scindé}}\]
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise2"><h3>Exercice 2 :</h3><div>Montrer que l'équation \(Arctan(x) + x = 1\) admet une unique solution sur \([0, 1]\). <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé2')"> Corrigé </button><hr>  <span id="Indication2" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé2" style="display:none;"><p>  Il suffit de poser \(f : x \longmapsto Arctan(x) + x - 1\), cette fonction est dérivable et, pour tout \(x \in [0,1]\) :
+            \[f'(x) = \frac{1}{x^2+1}+1\]
+            Pour tout \(x \in \mathbb [0,1], f'(x) > 0\). On en déduit que \(f\) est strictement croissante sur \(\mathbb R\), donc d'après le théorème de la bijection, elle réalise une bijection de \([0,1]\) dans \([f(0),f(1)] = [-1, \frac{\pi}4]\)
+            \[\boxed{\textrm{\(Arctan(x) + x = 1\) admet une unique solution sur \([0, 1]\)}}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise3"><h3>Exercice 3 :</h3><div>Déterminer l'ensemble des \((a, b, c) \in \mathbb{R}^3\) tel que pour toute \(f : \mathbb R \longrightarrow \mathbb R\) de classe \(\mathcal{C}^2 \) et tout \(t \in \mathbb R\) :
+            \[ \lim_{ h \longrightarrow 0} \frac{af(t + h) + bf(t) + cf(t - h)}{h^2} = f''(t)\] <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé3')"> Corrigé </button><hr>  <span id="Indication3" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé3" style="display:none;"><p>  On effectue un développement limité de \(f\) par la formule de Taylor-Lagrange :
+            \[\frac{af(t + h) + bf(t) + cf(t - h)}{h^2} \]
+            \[ = \frac{af(t) + ahf'(t) + a\frac{h^2}2 f''(t) + o(h^2) + bf(t) + cf(t) - chf'(t) + c\frac{h^2}2 f''(t) + o(h^2)}{h^2}\]
+            \[= \frac{a + b}2 f''(t) + o(1)\]
+            \[\boxed{S = \{ (a,b,c) \in \mathbb R^3 | a + b = 2\}}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise4"><h3>Exercice 4 :</h3><div>Montrer chacune des inégalités suivantes sur l'intervalle demandé :
+            <ol>
+                </li><li class = "lic2"> \(x-\frac{{{x}^{3}}}{6}\le \sin x\le x\) sur \({{\mathbb{R}}^{*}}+\)	
+                </li><li class = "lic2"> \(\cos x\ge 1-\frac{{{x}^{2}}}{2}\) sur \(\mathbb{R}\).
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé4')"> Corrigé </button><hr>  <span id="Indication4" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé4" style="display:none;"><p>  Contrairement aux apparence, il ne faut chercher à utiliser une inégalité de Taylor-Lagrange. C'est une simple étude de fonction, cet exercice est donc laissé au lecteur.    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise5"><h3>Exercice 5 :</h3><div><ol>
+                </li><li class = "lic2"> On pose \({{u}_{n}}=\sum\limits_{k=1}^{n}{\frac{n}{{{n}^{2}}+{{k}^{2}}}}\). Calculer la limite de \({{u}_{n}}\) quand n tend vers \(+\infty \).
+                
+                </li><li class = "lic2"> Procéder de même avec \({{u}_{n}}=\frac{1}{n}.\left[ \sum\limits_{k=0}^{n}{\cos (\frac{k\pi }{2n})} \right]\), puis \({{u}_{n}}=\frac{1}{n.\sqrt{n}}.\sum\limits_{k=1}^{n-1}{\sqrt{k}}\).
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé5')"> Corrigé </button><hr>  <span id="Indication5" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé5" style="display:none;"><p>  On reconnaÃ®t une somme de Riemann à pas constant, posons \(f : x \longmapsto \frac1{1+x^2}\), définie sur \([0,1]\). Alors :
+            \[\boxed{\lim_{n\longrightarrow +\infty }\sum\limits_{k=1}^{n}{\frac{n}{{{n}^{2}}+{{k}^{2}}}} = \int^1_0 f(x)dx = Arctan(1) - Arctan(0) = \frac{\pi}4}\]
+            De la même manière, on trouve :
+            \[\boxed{\lim_{n\longrightarrow +\infty }\sum\limits_{k=0}^{n-1}\cos\left(\frac{k\pi}{2n}\right) = \int^1_0 \cos\left(\frac{\pi}{2}x\right) dx = \frac{2}{\pi}}\]
+            Et :
+            \[\boxed{\lim_{n\longrightarrow +\infty } \frac{1}{n.\sqrt{n}}.\sum\limits_{k=1}^{n-1}{\sqrt{k}} = \frac23}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise6"><h3>Exercice 6 :</h3><div><ol>
+                </li><li class = "lic2"> Calculer le coefficient de \({{x}^{n}}\) dans la dérivée \({{n}^{i\grave{e}me}}\) de la fonction \(f:x\to {{x}^{n}}{{(1-x)}^{n}}\). 
+                
+                </li><li class = "lic2"> En déduire \(\sum\limits_{k=0}^{n}{{{\left( \begin{matrix}
+                                n  <br>
+                                k  <br>
+                            \end{matrix} \right)}^{2}}}\).
+                
+                </li><li class = "lic2"> Démontrer le même résultat à l'aide d'un dénombrement.		
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé6')"> Corrigé </button><hr>  <span id="Indication6" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé6" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> Posons \(g : x \longmapsto x^n\) et \(h : x \longmapsto (1-x)^n\). Ces deux fonctions sont \(\mathcal{C}^{\infty}\), on obtient par récurrence immédiate les dérivée k-ièmes de ces deux fonctions :
+                \[\forall k \in [\![ 0, n]\!],\forall x \in \mathbb{R}, g^{(k)}(x) = \frac{n!}{(n-k)!} x^{n-k} \textrm{ et   } h^{(k)}(x) = \frac{(-1)^k n!}{(n-k)!} (1-x)^{n-k} \]
+                On peut donc appliquer la formule de Leibniz :
+                \[f^{(n)}(x) = (gh)^{(n)}(x) = \sum_{k=0}^n \binom{n}{k} g^{(k)}(x) h^{(k)}(x) =   \sum_{k=0}^n \left(\binom{n}{k} \frac{(-1)^{n-k} n!}{k!} (1-x)^{k} \frac{n!}{(n-k)!} x^{n-k} \right)\]
+                \[= n! \sum_{k=0}^n \left(\binom{n}{k}^2 (-1)^{n-k} \left(\sum_{j = 0}^k\binom{k}{j}x^{k-j}\right)x^{n-k}\right)\]
+                \[=  n! \sum_{k=0}^n \left(\binom{n}{k}^2 (-1)^{n-k} \left(\sum_{j = 0}^k\binom{k}{j}x^{n-j}\right)\right)\]
+                Or on remarque dans cette dernière expression que le coefficient devant le monôme de degré \(n\) vaut :
+                \(\boxed{c = n! \sum_{k=0}^n \left(\binom{n}{k}^2 (-1)^{n} \right)}\)
+                </li><li class = "lic2"> En calculant la dérivée en appliquant le binôme de Newton avant la dérivation, on obtient une seconde expression du coefficient :
+                \[C = (-1)^n \frac{(2n)!}{n!}\]
+                Or, par unicité des coefficients, on démontre l'égalité :
+                \[\boxed{\sum_{k=0}^n \binom{n}{k}^2 = \frac{(2n)!}{(n!)^2} = \binom{2n}{n}}\]
+                </li><li class = "lic2"> On peut montrer la formule de Vandermonde plus générale :
+                \[\binom{a+b}n=\sum_{k=0}^n\binom ak\binom b{n-k}.\]
+                On remarque que choisir \(n\) éléments dans un ensemble de \(a + b\) éléments revient à choisir le nombre d'élément \(i\) que l'on prend dans un ensemble de \(a\) éléments puis \(n-i\) dans un ensemble de \(b\) éléments. En prenant \(a = b = n\), on trouve le résultat voulu.
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise7"><h3>Exercice 7 :</h3><div>Calculer : \(\sum\limits_{k=0}^{n}{\cos (kx)}\). <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé7')"> Corrigé </button><hr>  <span id="Indication7" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé7" style="display:none;"><p>  Exercice classique. Si \(x\equiv 0[\pi]\) le résultat est trivial, sinon
+            \[\sum\limits_{k=0}^{n} (e^{ix})^k = \frac{1-e^{i(n+1)x}}{1-e^{ix}} = \frac{e^{i\frac{n+1}{2}x}}{e^{i\frac{x}{2}}} \times \frac{2i \sin\left(\frac{n+1}{2}x\right)}{2i \sin\left(\frac{x}{2}\right)}\]
+            Ainsi :
+            \[ \boxed{\textrm{Si } x\equiv 0[\pi],\sum\limits_{k=0}^{n}{\cos (kx)} = \Re\left(\sum\limits_{k=0}^{n} (e^{ix})^k\right) = \frac{\cos\left(\frac{n}{2}x\right) \sin\left(\frac{n+1}{2}x\right)}{ \sin\left(\frac{x}{2}\right)}}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise8"><h3>Exercice 8 :</h3><div>Soit f une fonction de classe \({{C}^{1}}\) sur \(\left[ a,b \right]\). Montrer que \(\underset{n\to +\infty }{\mathop{Lim}}\,\int\limits_{a}^{b}{\cos \left( nt \right)f(t)dt=0}\). <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé8')"> Corrigé </button><hr>  <span id="Indication8" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé8" style="display:none;"><p>  La fonction \(f\) étant \(\mathcal{C}^1\), on peut effectuer une intégration par partie qui donne :
+            \[\left|\int\limits_{a}^{b}\cos \left( nt \right)f(t)dt \right| =\left|\left[ \frac{\sin(nt)}{n} f(t) \right]_a^b - \int\limits_{a}^{b}\frac{\sin(nt)}{n} f'(t)dt\right| \leq \frac{2\|f\|_{\infty}^{[a,b]}}{n} + \frac{b-a}{n}\|f'\|_{\infty}^{[a,b]}\]
+            On peut effectuer la dernière majoration car \(f\) et \(f'\) sont continues sur \([a,b]\) donc sont bornées et atteignent leurs bornes d'après le théorème des bornes atteintes.<br>
+            Ainsi, comme ces deux dernières quantité tendent vers \(0\), on a le résultat voulu :
+            \[\boxed{\underset{n\to +\infty }{\mathop{Lim}}\,\int\limits_{a}^{b}{\cos \left( nt \right)f(t)dt=0}}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise9"><h3>Exercice 9 :</h3><div>Montrer que pour tout entier naturel n, \({{\left( {{X}^{2}}+X+1 \right)}^{2}}\) divise \({{\left( X+1 \right)}^{6n+1}}-{{X}^{6n+1}}-1\). <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé9')"> Corrigé </button><hr>  <span id="Indication9" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé9" style="display:none;"><p>  Soit \(n \in \mathbb{N}\), notons \(P = {{\left( {{X}^{2}}+X+1 \right)}^{2}}\) et \(Q = {{\left( X+1 \right)}^{6n+1}}-{{X}^{6n+1}}-1\)
+            <br>On remarque que \(P\) admet pour racines \(r_{1/2} = \frac{-1 \pm i\sqrt(3)}{2}\), chacune de multiplicité deux. <br>Il suffit alors de vérifier que \(r_1\) et \(r_2\) sont aussi racine de \(Q\) puis qu'elles sont racines de \(Q'\).
+            On démontre ainsi que \(\boxed{\textrm{\(P\) divise \(Q\)}}\).    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise10"><h3>Exercice 10 :</h3><div>Soit \(f\) une fonction continue sur \(\left[ a,b \right]\) telle que : \(\forall x\in \left[ a,b \right]\), \(f\left( a+b-x \right)=f(x)\).
+                <ol>
+                    </li><li class = "lic2"> Montrer que \(\int\limits_{a}^{b}{x.f(x)dx}=\frac{a+b}{2}.\int\limits_{a}^{b}{f(x)dx}\).
+                
+                   </li><li class = "lic2"> Appliquer au calcul de \(\int\limits_{0}^{\pi }{\frac{x.\sin x}{1+{{\cos }^{2}}x}dx}\).
+                
+                   </li><li class = "lic2"> Appliquer au calcul de \(\int\limits_{0}^{\pi }{\frac{x}{1+\sin x}dx}\).		
+                </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé10')"> Corrigé </button><hr>  <span id="Indication10" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé10" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> Notons I la première intégrale. On effectue le changement de variable continue, bijectif \(x = a + b -t\) de \([a,b]\) dans lui-même :
+                \[I = \int^b_a xf(x) dx = \int_b^a(a+b-t) f(a+b-t) (-dt) = \int^b_a (a+b-t)f(t) dt = (a+b) \int_a^b f(t)dt - I \]
+                \[\Longrightarrow\boxed{\int\limits_{a}^{b}{x.f(x)dx}=\frac{a+b}{2}.\int\limits_{a}^{b}{f(x)dx}}\]
+                
+                </li><li class = "lic2"> On pose \(f : x \longmapsto \frac{\sin(x)}{1+\cos^2(x)}\), on vérifie facilement que \(f(\pi -x) = f(x)\), on peut donc appliquer le résultat démontré à la question précédente :
+                \[\boxed{\int\limits_{0}^{\pi }{\frac{x.\sin x}{1+{{\cos }^{2}}x}dx} = \frac{\pi}2 \int\limits_{0}^{\pi }{\frac{\sin x}{1+{{\cos }^{2}}x}dx} =\frac{\pi}2 \left[  -Arctan (cos(x))\right]_0^{\pi} = \frac{\pi^2}4}\]
+            
+                </li><li class = "lic2"> On pose \(f : x \longmapsto \frac1{1+ \sin(x)}\), on vérifie encore une fois que \(f(\pi -x) = f(x)\), on applique le résultat de la question 1:
+                \[\int_0^{\pi} \frac x {1+ \sin(x)} dx = \frac{\pi}2 \int_0^{\pi} \frac1{1+\sin(x)}\]
+                On effectue ensuite le changement de variable continue bijectif \(t =\tan\left(\frac x 2\right) \Longrightarrow dt = \frac12 \left(1+\tan^2\left(\frac x2 \right)\right)dx\). Puis, en utilisant la formule suivante :
+                \[\sin(x) = \frac{2\tan\left(\frac{x}{2}\right)}{1+\tan^2\left(\frac{x}{2}\right)}\]
+                On obtient :
+                \[\int_0^{\pi} \frac1{1+\sin(x)} = 2\int_0^{\pi} \frac{\frac12 \left(1+\tan^2\left(\frac{x}{2}\right)\right)}{\left(1+\tan\left(\frac{x}{2}\right)\right)^2} = \int_0^{+\infty} \frac{2}{(1+t)^2}dt = \left[\frac{-2}{1+t}\right]_0^{+\infty} = 2\]
+                D'où :
+                \[\boxed{\int\limits_{0}^{\pi }{\frac{x}{1+\sin x}dx} = \pi}\]
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise11"><h3>Exercice 11 :</h3><div>Soit \(n \in \mathbb N\) tel que : \(n \geq 2\). On pose \(z = e^{\frac{2i\pi}n}\).
+            <ol>
+                </li><li class = "lic2"> Soit \(k \in [\![1, n - 1]\!]\). Déterminer le module et l'argument de \(z^k - 1\).
+                </li><li class = "lic2"> On pose \(\displaystyle S =\sum^{n-1}_{k=1}|z^k - 1|\). Montrer que \(\displaystyle S = \frac{2}{\tan(\frac{\pi}{2n})}\).
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé11')"> Corrigé </button><hr>  <span id="Indication11" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé11" style="display:none;"><p>  On trouve :
+            \[|z^k - 1| = \sqrt{\sin ^2\left(\frac{2 \pi k}n\right)+\left(\cos \left(\frac{2 \pi k}{n}\right)-1\right)^2}  = \sqrt{2 - 2 \cos\left(\frac{2k\pi}{n}\right)}\]
+            \[\arg(z^k -1) = \arg\left(e^{\frac{2ik\pi}{n}} \left(e^{\frac{ik\pi}{n}} + e^{-\frac{ik\pi}{n}}\right)\right) = \frac{(2k+n)\pi}{n}\]
+            On peut encore simplifier l'expression de \(|z^k - 1|\) en utilisant la relation :
+            \[\cos\left(\frac{2k\pi}n\right) = \frac{1 + \tan^2\left(\frac{k\pi}n\right)}{1- \tan^2\left(\frac{k\pi}n\right)}\]
+            Ainsi :
+            \[|z^k - 1| = \sqrt{2 - 2 \frac{1 + \tan^2\left(\frac{k\pi}n\right)}{1- \tan^2\left(\frac{k\pi}n\right)}} = \frac{2  \tan\left(\frac{k\pi}n\right)}{\sqrt{1 + \tan^2\left(\frac{k\pi}n\right)}}\]
+            En utilisant maintenant le fait que : 
+            \[\cos(Arctan(x))=\frac{1}{\sqrt{1+x^2}}\]
+            On obtient :
+            \[|z^k - 1| = 2\tan\left(\frac{k\pi}n\right)\cos\left(\frac{k\pi}n\right) = 2\sin\left(\frac{k\pi}n\right)\]
+            On trouve donc cette somme :
+            \[S = \sum^{n-1}_{k=1}|z^k - 1| = 2\sum^{n-1}_{k=1} \sin\left(\frac{k\pi}n\right) = 2 \Im\left(\sum^{n-1}_{k=1} e^{i\frac{k\pi}{n}}\right) \]
+            \[= 2\Im\left(\frac{1-(e^{i\frac{\pi}{n}})^{n}}{1-e^{i\frac{\pi}n}}\right) = 2 \Im \left(\frac{1+e^{\frac{i \pi }{n}}}{1 - e^{\frac{i \pi }{n}}}\right) = 2\frac{\cos\left(\frac{\pi}{2n}\right)}{\sin\left(\frac{\pi}{2n}\right)}\]
+            \[\boxed{S = \frac{2}{\tan(\frac{\pi}{2n})}}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise12"><h3>Exercice 12 :</h3><div>Montrer qu'il existe une constante \(c\) telle que :
+            \[\forall (x,y)\in \mathbb{R}_+^*, |\sqrt{x}-\sqrt{y}| \leq c\sqrt{|x-y|}\] <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé12')"> Corrigé </button><hr>  <span id="Indication12" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé12" style="display:none;"><p>  Supposons sans perte de généralité que \(y > x\), alors :
+            \[\left(\sqrt{x} - \sqrt{y}\right) \leq 0 \Longrightarrow 2\sqrt{x}\left(\sqrt{x} - \sqrt{y}\right) =  2x - 2\sqrt{xy} \leq 0 \Longrightarrow\]
+            En ajoutant \(y-x\) de chaque côté de l'inégalité, il vient :
+            \[x + y - 2\sqrt{xy} = (\sqrt{x}-\sqrt{y})^2 \leq y - x \Longrightarrow |\sqrt{x}-\sqrt{y}|^2 \leq |x-y|\]
+            Ces deux quantités étant positives, on peut prendre la racine, on obtient le résultat voulu :
+            \[\boxed{|\sqrt{x}-\sqrt{y}| \leq \sqrt{|x-y|}}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise13"><h3>Exercice 13 :</h3><div>Déterminer l'ensemble des polynômes de \(\mathbb{C}[X]\) tels que:
+            \[P(X^2)=P(X)P(X-1)\] <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé13')"> Corrigé </button><hr>  <span id="Indication13" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé13" style="display:none;"><p>  Procédons par analyse-synthèse : les polynômes constant égaux à 0 et 1 sont solutions évidentes. <br>
+            Supposons maintenant \(P\) non constant, soit alors \(a\) une racine de ce polynôme. Si \(a\) est racine, alors :
+            \[P(a^2) = P(a)P(a-1) \Longrightarrow P(a^2) = 0 \]
+            alors \(a^2\) est aussi racine, puis par récurrence immédiate,\(a^{2^n}\) est aussi racine pour tout entier naturel \(n\).
+            <br>Ainsi, si \(a\) est racine, \(a\) est de module 1 ou \(a = 0\), sinon, \(P\) admet une infinité de racines et est donc le polynôme nul.
+            De plus, si \(a\) est racine, alors, \((a+1)^2\) aussi :
+            
+            \[P((a+1)^2) = P(a+1)P(a) \Longrightarrow P((a+1)^2) = 0 \]
+            Et par le même raisonnement, \((a+1)\) est de module \(1\) ou \(a = -1\). On remarque alors que \(a\) appartient à deux cercles distinct :<br>
+            - Le cercle de centre \(-1\) et de rayon \(1\),<br>
+            - Le cercle unité<br>
+            Ainsi, les seules racines possibles sont \(-j\), \(-j^2\), \(0\) et \(-1\).
+            <br>
+            Par l'analyse, on trouve finalement que les seuls polynômes qui conviennent sont le polynômes constant égaux à \(0\) ou \(1\) et ceux de la forme \(P = X^n(X-1)^n\).
+            \[\boxed{P \in \{0,1\} \cup \{X^n(X-1)^n | n \in \mathbb{N}\}}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise14"><h3>Exercice 14 :</h3><div>Pour une fonction continue \(g : \mathbb R \longmapsto \mathbb R\) et tout \(k \in\mathbb N\), on définit :
+            \[c_k(g) = \frac 1{2i\pi}\int_0^{2\pi} e^{-ikx}g(x)dx\]
+            Soit \(f : \mathbb R \longmapsto \mathbb R\) une fonction de classe \(\mathcal{C}^{\infty}\) et \(2\pi\)-périodique.
+            <ol>
+                </li><li class = "lic2"> Justifier que \((c_k(f))_{k\in\mathbb N}\) est bornée.
+                </li><li class = "lic2"> Montrer que pour tout \(k \in \mathbb N\), \(c_k(f') = ikc_k(f)\)
+                </li><li class = "lic2"> Montrer que la série de terme général \((c_k(f))_{k\in\mathbb{N}}\) converge absolument et que pour tout \(M \in \mathbb{N}^*\), il existe
+            \(C \in \mathbb{R}_+\) tel que, pour tout \(N \in \mathbb{N}^*\) :
+            \[\sum_{k = N}^{+\infty}|c_k(f)|\leq \frac{C}{N^M} \]
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé14')"> Corrigé </button><hr>  <span id="Indication14" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé14" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> La fonction \(f\) est continue sur \([0, 2\pi]\) elle est donc bornée et atteint ses bornes sur cet intervalle d'après le théorème des bornes atteintes :
+                \[|c_k(f)| \leq \left|\frac{\|f\|_{\infty}^{[0, 2\pi]}}{2i\pi} \int_0^{2\pi} e^{-ikx}dx\right| \leq \left|\frac{\|f\|_{\infty}^{[0, 2\pi]}}{2i\pi}\frac{i \left(1-e^{-2 i \pi k}\right)}{k} \right|= \frac{\|f\|_{\infty}^{[0, 2\pi]}|1-e^{-ik\pi}|}{2k\pi} \longrightarrow 0\]
+                On en déduit que la suite est bornée.
+                </li><li class = "lic2"> On effectue une intégration par partie (possible car les fonctions sont \(\mathcal{C}^{\infty}\) sur \(\mathbb R\)) :
+                \[c_k(f') = \frac 1{2i\pi}\int_0^{2\pi} e^{-ikx}f'(x)dx = \frac 1{2i\pi}\left(\left[e^{-ikx}f(x)\right]_0^{2\pi}-\int_0^{2\pi} -ike^{-ikx}f(x)dx\right)\] 
+                \[\Longrightarrow \boxed{c_k(f') = ikc_k(f)}\]
+                </li><li class = "lic2"> 
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise15"><h3>Exercice 15 :</h3><div>Quels sont les polynômes complexes \(P\) tels que \(P(\mathbb U) \subset \mathbb U\) (en notant \(\mathbb U\) le cercle unité) ? <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé15')"> Corrigé </button><hr>  <span id="Indication15" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé15" style="display:none;"><p>  Soit \(P \in \mathbb{C}[X]\) tel que \(P(\mathbb{U}) \subset \mathbb{U}\), alors :
+            \[\forall z, | P(z) | = 1 \Longrightarrow P(z)\overline{P(z)} = 1\]
+            En notant :
+            \[ P(z) = \sum_{k = 0}^{n} a_k X^k \Longrightarrow \overline{P(z)} = \sum_{k = 0}^{n} \overline{a_k} \overline{X}^k = \overline{P}(\overline{X})\]
+            Comme sur \(\mathbb{U}, \overline{z} = \frac{1}{z}\), on en déduit :
+            \[ P(z) \overline{P}\left(\frac{1}{z}\right) = 1 \]
+            Si \(\alpha \ne 0\) est racine de \(P\), alors : 
+            \[1 = P(\alpha)\overline{P}\left(\frac{1}{\alpha}\right) = 0 \Longrightarrow \textrm{ABSURDE !} \]
+            Donc si \(P\) admet une racine, c'est 0. donc P est de la forme : \(P(X) = \lambda X^n\).<br>
+            De plus \(P(0) = \lambda \Longrightarrow \lambda \in \mathbb{U}\).<br>
+            On vérifie enfin sans problème que les polynômes de la forme suivante sont bien solution :
+            \[\boxed{S = \{P(X) = \lambda X^n | \lambda \in \mathbb{U}\}}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise16"><h3>Exercice 16 :</h3><div><ol>
+                </li><li class = "lic2"> Soit \(I\) un intervalle réel et \(f\) de classe \(\mathcal{C}^1(I, \mathbb R)\). Montrer que f'(I) est un intervalle.
+                </li><li class = "lic2"> Donner un exemple de fonction dérivable qui n'est pas de classe \(\mathcal{C}^1\).
+                </li><li class = "lic2"> Soit \(I\) un intervalle réel et \(f\) une fonction dérivable sur \(I\). Montrer que l'ensemble \(C = \left\{(x, y) \in I^2, x < y \right\}\)
+                est connexe par arcs.
+                </li><li class = "lic2"> Montrer que \(f'(I)\) est un intervalle.
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé16')"> Corrigé </button><hr>  <span id="Indication16" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé16" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> \(f\) est de classe \(\mathcal{C}^1\), elle est donc dérivable et sa dérivée est continue sur \(I\), d'après le théorème de la bijection, l'image d'un intervalle par une fonction continue est un intervalle.
+                \[\boxed{\textrm{\(f'(I)\) est un intervalle.}}\]
+                </li><li class = "lic2"> Il faut faire l'étude de la fonction :
+                \[\boxed{x \mapsto x^2 \sin\left(\frac 1x\right)}\]
+                </li><li class = "lic2"> Montrons la convexité de cet ensemble, ce qui impliquera la connexité par arcs.<br>
+                Soit \(X = (x_1, x_2), Y = (y_1, y_2) \in C\), soit \(\lambda \in [0,1]\), posons \(Z_{\lambda} = \lambda X + (1 - \lambda) Y\).
+                \[Z_{\lambda} = \lambda \binom{x_1}{x_2} + (1 - \lambda) \binom{y_1}{y_2} = \binom{\lambda x_1 + (1-\lambda) y_1}{\lambda x_2 + (1-\lambda) y_2}\]
+                Or on a triviallement, pour tout \(\lambda \in [0,1]\) :
+                \[ \lambda x_1 + (1-\lambda) y_1 < \lambda x_2 + (1-\lambda) y_2\]
+                Donc \(\forall \lambda \in [0,1], Z_\lambda \in [0,1]\)
+                </li><li class = "lic2"> On pose : 
+                \[\tau : (x, y) \longmapsto \frac{f(x)-f(y)}{x-y}\]
+                Alors : 
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise17"><h3>Exercice 17 :</h3><div>Soit \(f\) une fonction continue de \(\mathbb{R}_+\) dans \(\mathbb R\). On suppose que \(f\) tend vers une limite \(l\) en \(+\infty\).
+            Déterminer \(\displaystyle \lim_{n\longrightarrow + \infty}\frac1n \int_0^n f(t)dt\). <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé17')"> Corrigé </button><hr>  <span id="Indication17" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé17" style="display:none;"><p>  Soit \(\varepsilon >0\), il existe \(A\in \mathbb R\) tel que, pour tout \(x\geq A\), \(|f(x) - l | \leq \varepsilon\). Soit \(n > A \in \mathbb N\)
+            \[\left|\frac1n \int_0^n f(t)dt - l \right| = \left|\frac1n \int_0^n f(t)dt - \int_0^n \frac{l}{n} \right| = \left|\frac1n \int_0^n (f(t) - l) dt \right|\]
+            \[\left|\frac1n \int_0^A (f(t) - l) dt + \frac1n \int_A^{n} (f(t) - l) dt \right| \leq \frac1n \int_0^A \left| f(t) - l \right|dt + \frac1n \int_A^n \left| f(t) - l \right|dt\]
+            Le premier terme tend vers 0, et le second est l'intégrale d'un terme inférieur à \(\varepsilon\), ainsi, à partir d'un certain rang :
+            \[\left|\frac1n \int_0^n f(t)dt - l \right| \leq \varepsilon + \frac{n-A}{n}\varepsilon \leq 2\varepsilon\]
+            D'où :
+            \[\boxed{\lim_{n\longrightarrow + \infty}\frac1n \int_0^n f(t)dt = \lim_{x\longrightarrow + \infty} f(x)}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise18"><h3>Exercice 18 :</h3><div>Soit \(f:\left[ 0,1 \right]\to \mathbb{R}\) une fonction dérivable. On suppose que pour tout réel x de \(\left[ 0,1 \right]\), \(\left( f\left( x \right),f'\left( x \right) \right)\ne \left( 0,0 \right)\). Montrer que l'ensemble des zéros de \(f\) est fini. <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé18')"> Corrigé </button><hr>  <span id="Indication18" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé18" style="display:none;"><p>  Soit \(f\) une fonction dérivable sur \([0,1]\) dont l'ensemble des zéros sur cet intervalle est infini. Alors :
+            \[\forall \varepsilon > 0, \exists x,y \in [0,1], f(x) = f(y) = 0, |x-y|\leq \varepsilon\]
+            Si ce n'était pas le cas, il y aurait moins de \(\lceil 1/\varepsilon\rceil\) zéros de \(f\), absurde.<br>
+            On peut alors en déduire qu'il existe \(x\in [0,1]\) tel que \(f(x) = 0\) et pour tout \(\varepsilon > 0\), il existe \(y_{\varepsilon}\in [0,1]\) tel que \(f(y) = 0\) et \(|x - y_\varepsilon|\leq\varepsilon\). (Ce démontre encore par l'absurde)<br>
+            Ainsi \(f(x) = 0\) et 
+            \[f'(x) =  \lim_{y\longrightarrow x} \frac{f(x) - f(y)}{x-y} = \lim_{\varepsilon \longrightarrow 0} \frac{f(x) - f(y_{\varepsilon})}{x-y_{\varepsilon}} = 0\]
+            Ainsi, \(\boxed{\textrm{il existe \(x\in [0,1]\) tel que \((f(x), f'(x)) = (0,0)\)}}\). D'où le résultat par contraposé.    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise19"><h3>Exercice 19 :</h3><div>On considère la suite de polynômes définie par \({{T}_{0}}=1\) et \({{T}_{1}}=X\), puis \({{T}_{n+2}}=2X{{T}_{n+1}}-{{T}_{n}}\).
+                <ol>
+                    </li><li class = "lic2"> Montrer que pour tout entier n, \({{T}_{n}}\left( \cos (t) \right)=\cos (nt)\).
+                    </li><li class = "lic2"> Déterminer le degré de \({{T}_{n}}\), et son coefficient dominant.
+                    </li><li class = "lic2"> Montrer que les coefficients de \({{T}_{n}}\) sont des entiers relatifs.
+                    </li><li class = "lic2"> Soit \(z=\frac{1}{5}\left( 3+4i \right)\). Que vaut \(\left| z \right|\) ?
+                    </li><li class = "lic2"> Soit \({{t}_{0}}\) tel que \(z={{e}^{i{{t}_{0}}}}\). Que vaut \(\cos \left( {{t}_{0}} \right)\) ?
+                    </li><li class = "lic2"> Que vaut \(\cos \left( n{{t}_{0}} \right)\) si \({{z}^{n}}=1\) ?
+                </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé19')"> Corrigé </button><hr>  <span id="Indication19" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé19" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> Par récurrence double. Pour l'hérédité :
+                \[T_{n+2}(\cos(t)) = 2\cos(t)T_{n+1}(\cos(t)) - T_{n}(\cos(t)) = 2\cos(t)\cos((n+1)t) - \cos(nt) \]
+                \[= \cos((n+2)t) + cos(nt) - cos(nt) = cos((n+2)t)\]
+                </li><li class = "lic2"> Encore une fois par récurrence, on trouve que le monôme de plus haut degré est, pour tout \(n \geq 1\), \( 2^{(n-1)}x^n\).
+                </li><li class = "lic2"> Idem, par récurrence.
+                </li><li class = "lic2"> \(|z| = \frac15 \sqrt{3^2+4^2} = 1\)
+                </li><li class = "lic2"> Par définition, on a \(\cos(t_0) = \Re(z) = \frac 35\)
+                </li><li class = "lic2"> \(z^n = 1 \Longrightarrow e^{int_0} = 1 \Longrightarrow nt_0 \equiv 0 [2\pi] \Longrightarrow \cos(nt_0) = 1\)
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise20"><h3>Exercice 20 :</h3><div>On pose \({{T}_{n}}\left( x \right)=\cos \left( n.Arc\cos (x) \right)\).
+                <ol>
+                    </li><li class = "lic2"> Montrer que \({{T}_{n}}\) est un polynôme.
+                    </li><li class = "lic2"> Trouver une relation entre \({{T}_{n}}\), \({{T}_{n+1}}\) et \({{T}_{n+2}}\).
+                    </li><li class = "lic2"> Déterminer les extrema de \({{T}_{n}}\).
+                    </li><li class = "lic2"> Montrer que pour tout polynôme P de même degré et de même coefficient dominant que \({{T}_{n}}\), on a \(\left\| P \right\|\ge \left\| {{T}_{n}} \right\|\).
+                </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé20')"> Corrigé </button><hr>  <span id="Indication20" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé20" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> Par récurrence.
+                </li><li class = "lic2">\[F_{n+1}(x) + F_{n-1}(x) = \cos((n + 1) Arccos(x)) + \cos((n - 1) Arccos(x)) = 2 \cos(Arccos(x)) \cos(n Arccos x) = 2xF_n(x)\]
+                </li><li class = "lic2"> Les \(T_n\) sont dérivables car polynomiaux et pour tout \(x \in \mathbb R\) :
+                
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise21"><h3>Exercice 21 :</h3><div>On pose \({{u}_{n}}=\sum\limits_{k=1}^{n}{\sin \frac{k}{n}.\sin \frac{k}{{{n}^{2}}}}\) et \({{v}_{n}}=\sum\limits_{k=1}^{n}{\frac{k}{{{n}^{2}}}.\sin \frac{k}{n}.}\)
+                <ol>
+                    </li><li class = "lic2"> Montrer que pour tout réel x, on a \(\left| \sin x-x \right|\le \frac{{{x}^{2}}}{2}\).
+                 </li><li class = "lic2"> En déduire que \(\underset{n\to +\infty }{\mathop{Lim}}\,\left| {{u}_{n}}-{{v}_{n}} \right|=0\).
+                 </li><li class = "lic2"> En déduire la limite de la suite \({{\left( {{u}_{n}} \right)}_{n\in \aleph }}\).	
+                </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé21')"> Corrigé </button><hr>  <span id="Indication21" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé21" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> Trivial, faire une étude de fonction.
+                </li><li class = "lic2"> Soit \(n\in \mathbb{N}\):
+                \[|u_n - v_n| = \sum_{k=0}^n \left(\left|\sin\left(\frac{k}{n}\right)\right| \left|\sin\left(\frac{k}{n^2}\right) - \frac{k}{n^2}\right|\right) \leq \frac12 \sum_{k=0}^n \left(
+                \left|\sin\left(\frac{k}{n}\right)\right|
+                \left|\frac{k^2}{n^4}\right|\right)\]
+                \[|u_n - v_n| = O\left(\frac1{n^2}\right)\]
+                Donc :
+                \[\boxed{\lim_{n\longrightarrow +\infty} |u_n - v_n| = 0}\]
+                </li><li class = "lic2"> D'après la question précédentes, il suffit de déterminer la limite de \((v_n)\). Or on reconnaÃ®t l'expression d'une somme de Riemann, on a donc :
+                \[\boxed{\lim_{n\longrightarrow +\infty} u_n = \int^1_0 t \sin(t)dt = sin(1) - cos(1)}\]
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise22"><h3>Exercice 22 :</h3><div>Soit f une fonction de classe \({{C}^{1}}\) sur \(\left[ a,b \right]\), à valeur dans un espace vectoriel normé de dimension finie. On suppose que \(f(a)=f(b)=0\). <br>Montrer que : \(\left\| \int_{a}^{b}{f} \right\|\le \frac{{{\left( b-a \right)}^{2}}}{4}.\underset{\left[ a,b \right]}{\mathop{Sup}}\,\left\| f' \right\|\). <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé22')"> Corrigé </button><hr>  <span id="Indication22" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé22" style="display:none;"><p>  Comme \(f\) est de classe  \({{C}^{1}}\), on peut effectuer une intégration par partie, l'astuce est ici d'intégrer \(1\) en \(t+\alpha\) :
+            \[\left\| \int_{a}^{b}f(t)dt \right\| = \left\|\left[ (t-\alpha)f(t)\right]_{a}^{b} -\int_{a}^{b}(t-\alpha)f'(t)dt \right\| \leq \int_{a}^{b}|t-\alpha|\|f'\|_{+\infty}^{[a,b)}dt\]
+            On remarque qu'en prenant \(\alpha = \frac{b-a}{2}\), on trouve le résultat voulu :
+            \[\boxed{\left\| \int_{a}^{b}{f}(x)dx \right\|\le \frac{{{\left( b-a \right)}^{2}}}{4}\|f'\|_{+\infty}^{[a,b]}}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise23"><h3>Exercice 23 :</h3><div>Soit \(d \geq 1\) entier et \(f : [0, 1]^d \longmapsto [0, 1]^d\) une fonction continue telle que :
+            \[\forall x \neq y \in [0, 1]^d, \|f (x) - f (y)\| < \|x - y\|\]
+            <ol>
+                </li><li class = "lic2"> Montrer que \(f\) admet un unique point fixe.
+                </li><li class = "lic2"> Montrer que pour tout \(x \in [0, 1]^d\) la suite \((f^n(x))_{n\in\mathbb N}\) converge vers ce point fixe.
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé23')"> Corrigé </button><hr>  <span id="Indication23" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé23" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> Posons :
+                \[\begin{array}{l|rcl}g : & [0,1]^n & \longrightarrow \mathbb R\\ & x & \longmapsto & \|f(x) - x\| \end{array}\]
+                La fonction \(g\) admet un minimum qui est atteint en \(a \in [0,1]^n\), car \(g\) est continue sur un compact.<br>
+                En supposant pas l'absurde que \(f(a) \neq a\) :
+                \[g(f(a)) = \|f\circ f(a) - f(a)\| \lt \|f(a) - a\| = g(a)\]
+                Absurde car \(a\) est le minimum de \(g\) donc \(f(a) = a\).
+                Ainsi \(f\) admet un point fixe. Supposons que \(f\) admette deux points fixe \(a_1 \neq a_2\), alors :
+                \[ \| a_1 - a_2\| = \| f(a_1) - f(a_2) \| \lt \| a_1 - a_2\|\]
+                Ce qui est absurde, donc :
+                \[\boxed{\textrm{\(f\) admet un unique point fixe.}}\]
+                </li><li class = "lic2"> La suite \[(f^n(x))\] est une suite d'élément d'un compact, donc la propriété de Bolzano-Weierstrass donne une sous-suite convergente \((f^{\phi(n)}(x))\) vers \(b \in [0,1]^d\)
+                Montrons que \(b\) est l'unique point fixe de \(f\), qu'on notera \(a\) (et qui existe et est unique d'après la question précédente).
+                \[\forall k \in \mathbb N^*, f^k(a) = a\]
+                Donc  :
+                \[\forall k \in \mathbb N^*, |f^k(x) - a| = |f^k(x) - f^k(a)| \lt |f^{k-1}(x) - f^{k-1}(a)| = |f^{k-1}(x) - a|\]
+                La suite \((|f^k(x) - a|)\) est donc décroissante, minorée par \(0\), donc convergente vers une limite \(l\). On peut appliquer ce résultat à la suite extraite : 
+                \[|f^{\phi(n)}(x) - a| \longrightarrow l\]
+                Or, comme \(f^{\phi(n)}(x)\) tend vers \(b\) :
+                \[|b - a| = l\]
+                Mais on peut aussi appliquer ce résultat à la suite  \((f^{\phi(n)} +1)(x)\) qui tend vers \(f(b)\) par continuité de \(f\) donc :
+                \[|f(b) - a| = l\]
+                Supposons par l'absurde \(b\neq a\), alors 
+                \[l = |f(b) - a| = |f(b) - f(a)| \lt |b - a| = l\]
+                e qui est absurde donc \(a = b\). Ce qui permet de conclure.
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise24"><h3>Exercice 24 :</h3><div>Montrer qu'une fonction réelle continue d'une variable réelle, périodique, est uniformément continue. <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé24')"> Corrigé </button><hr>  <span id="Indication24" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé24" style="display:none;"><p>  Soit \(f\) périodique, continue sur \(\mathbb R\) :
+            <ul>
+                </li><li class = "lic2"> \(\exists T\in \mathbb R, \forall x\in \mathbb{R}, f(x+T) = f(x)\)
+                </li><li class = "lic2"> \(\forall a\in\mathbb R, \forall \varepsilon>0, \exists \eta>0, \forall x\in I, |x-a|<\eta \Longrightarrow |f(x)-f(y)|\leq \varepsilon\)
+            </ul>
+        </p><p>
+            Tout d'abord, \(f\) est continue sur l'intervalle \([-T, 2T]\), donc , d'après le théorème de Bolzanno-Weierstrass, \(f\) est uniformément continue sur cet intervalle.<br>
+            Soit donc \(\varepsilon > 0\) :
+            \[\exists \eta > 0, \forall (x,y) \in \mathbb{R}^2, |x-y| \leq \eta \Longrightarrow |f(x) - f(y)| \leq \varepsilon\]
+            Soit \((x,y) \in \mathbb{R}^2\) tel que \(|x-y| \leq \eta\) (On remarque que \(\eta\) peut être choisit inférieur strict à \(T\) en raison de la périodicité de \(f\)).
+            \[\exists k \in \mathbb{Z}, x_k = x + kT \in [0,T] \]
+            Alors, \(y_k = y + kT \in [-T, 2T]\) car \(|x-y| \leq \eta \leq T\)<br>
+            Donc \(|f(x) - f(y)| = |f(x_k) - f(y_k)| \leq \varepsilon\)<br>
+            D'où l'uniforme continuité sur \(\mathbb R\).
+            
+            \[\boxed{\textrm{Une fonction réelle et périodique, est uniformément continue.}}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise25"><h3>Exercice 25 :</h3><div>Soit \(f : [a, b] \longrightarrow \mathbb R\) continue, \(g : [a, b] \longrightarrow \mathbb R\) continue par morceaux et positive.
+             <ol>
+                 </li><li class = "lic2"> Montrer qu'il existe \(c \in [a, b]\)tel que :
+            \[\int_a^b f(x)g(x) dx = f (c)\int_a^bg(x)dx\]
+                </li><li class = "lic2">  Soit \(f : [0, \pi] \longrightarrow \mathbb R\) continue. Montrer que :
+             \[\lim_{n\longrightarrow +\infty}\int_0^{\pi}f(x) |\sin(nx)| dx = \frac{2}{\pi}\int_0^{\pi}f(x)dx\]
+             </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé25')"> Corrigé </button><hr>  <span id="Indication25" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé25" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> On sait que \(f\) est continue sur un \([a,b]\) donc est bornée et atteint ses bornes d'après le théorème des bornes atteintes, on en déduit l'existence de \[x_1, x_2 \in [a,b]\] tel que \(f(x_1) = \min_{[a,b]}f\) et \(f(x_2) = \max_{[a,b]}f\). Ainsi, pour tout \(x\in [a,b]\) :
+                
+                \[f(x_1)g(x)\leq f(x)g(x)\leq f(x_2)g(x) \Longrightarrow \int_a^b f(x_1)g(x)dx\leq \int_a^b f(x)g(x)dx\leq \int_a^b f(x_2)g(x)dx\]
+                De plus, si \(g\) est la fonction nulle, le résultat est trivial, supposons donc \(g\) non-nulle, comme elle est continue et positive, sont intégrale est donc strictement positive, on peut donc diviser de chaque côté de l'inégalité :
+                \[\Longrightarrow f(x_1) \leq \frac{\int_a^b f(x)g(x)dx}{\int_a^b g(x)dx} \leq f(x_2)\]
+                On en déduit que cette quantité est atteinte par \(f\) d'après le théorème des valeurs intermédiaires.
+                Ainsi, 
+                \[\boxed{\exists c \in [a, b], \int_a^b f(x)g(x) dx = f (c)\int_a^bg(x)dx}\]
+                </li><li class = "lic2"> On a :
+                \[\int_0^{\pi}f(x) |\sin(nx)| dx = \sum_{k = 0}^{n-1}\left(\int_{\frac{k\pi}{n}}^{\frac{(k+1)\pi}{n}}f(x) |\sin(nx)| dx\right) \]
+                \[ =  \sum_{\substack{k = 0 \\ k \textrm{ pair}}}^{n-1}\left(\int_{\frac{k\pi}{n}}^{\frac{(k+1)\pi}{n}}f(x)\sin(nx) dx \right) - \sum_{\substack{k = 0 \\ k \textrm{ impair}}}^{n-1}\left(\int_{\frac{k\pi}{n}}^{\frac{(k+1)\pi}{n}}f(x)\sin(nx)dx\right)\]
+                D'après la question précédente, il existe \(c_k \in \left[\frac{k\pi}{n}, \frac{(k+1)\pi}{n}\right]\) tels que :
+                \[\int_0^{\pi}f(x) |\sin(nx)| dx = \sum_{\substack{k = 0 \\ k \textrm{ pair}}}^{n-1}\left(f(c_k)\int_{\frac{k\pi}{n}}^{\frac{(k+1)\pi}{n}}\sin(nx) dx \right) - \sum_{\substack{k = 0 \\ k \textrm{ impair}}}^{n-1}\left(f(c_k)\int_{\frac{k\pi}{n}}^{\frac{(k+1)\pi}{n}}\sin(nx)dx\right)\]
+                \[ = \sum_{k=0}^{n-1}\left(\frac{2f(c_k)}n\right) = \frac{2}{n}\sum_{k=0}^{n-1}f(c_k) \]
+                On reconnaÃ®t une somme de Riemann à pas non constant, montrons que :
+                \[\left|\int_0^{\pi} f(x) dx -  \frac{\pi}n \sum_{k=0}^{n-1}f(c_k)\right| \longrightarrow 0\]
+                On sait que \(f\) est continue sur un segment donc uniformément continue, c'est-à-dire :
+                \[\forall \varepsilon>0,\ \exists \delta>0,\ \forall (x,y)\in I^2,\ |x-y|\lt\delta\implies |f(x)-f(y)|\lt\varepsilon\]
+                Posons \(\varepsilon > 0\), il existe donc \(\delta\) tel que :
+                \[\left|\frac{k\pi}{n} - c_k\right| \leq \delta \Longrightarrow \left|f\left(\frac{k\pi}{n}\right) - f(c_k)\right| \leq \varepsilon\]
+                à partir d'un certain rang \(n\), le terme
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise26"><h3>Exercice 26 :</h3><div>Soient \(a\) et \(b\) deux réels tels que \(a \lt b\), et \(E\) l'ensemble des fonctions
+            continues de \([a, b]\) dans \(\mathbb{R}^*_+\). Pour \(f \in E\), on note :
+            \[\phi (f) = \int_a^b f \times \int_a^b \frac1f\] Déterminer \(\phi(E)\). <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé26')"> Corrigé </button><hr>  <span id="Indication26" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé26" style="display:none;"><p>  On applique l'inégalité de Cauchy-Schwartz en remarquant que :
+            \[(g|h) = \int^b_a f(t)g(t) dt\]
+            définit un produit scalaire sur \(\mathcal{C}^0 ([a,b],\mathbb R)\) :
+            ...
+            Il en résulte que :
+            \[\varphi(E) \subset \left[(b-a)^2, +\infty\right[\]
+            De plus \((b-a)^2\) est atteint par les fonctions constantes.
+            Tentons de montrer que toutes les valeurs de l'ensemble précédent sont atteintes, pour cela soit \(x\in \left[(b-a)^2, +\infty\right[\) construisons une fonction \(f\) qui atteint \(x\).
+            
+            On pose :
+            \[f_p(x) = p(x) + (1-ap)\]
+            \[\int^b_a f(x)dx = p\left(\frac{b^2 - a^2}{2}\right) + (b-a) (1 - ap)\]
+            Et 
+            \[\int_a^b \frac1{f(x)}dx = \int_a^b \frac1{px + (1-ap)} = \left[\frac 1p \ln\left(px+(1-ap)\right)\right]^b_a = \]
+            \[\varphi(f_p) = \left(\frac{b^2-a^2}2 + (b-a)\frac{1-ap}p\right) \ln\left(\right)\]
+            Cette fonction de \(p\) atteint bien tout élément de    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise27"><h3>Exercice 27 :</h3><div><ol>
+                </li><li class = "lic2"> Pour tout \(n\in \mathbb{N}\), montrer l'existence de \({{P}_{n}}\in \mathbb{R}\left[ X \right]\) tel que : \(\forall \theta \in \left] 0,\frac{\pi }{2} \right[\), \({{P}_{n}}\left( \frac{1}{{{\tan }^{2}}\theta } \right)=\frac{\sin \left( \left( 2n+1 \right)\theta  \right)}{{{\sin }^{2n+1}}\theta }\).
+                
+                </li><li class = "lic2"> Préciser le degré et les racines de \({{P}_{n}}\). étudier la somme des racines.
+                
+                </li><li class = "lic2"> Montrer que \(\forall \theta \in \left] 0,\frac{\pi }{2} \right[\), \(\frac{1}{{{\tan }^{2}}\theta }\le \frac{1}{{{\theta }^{2}}}\le 1+\frac{1}{{{\tan }^{2}}\theta }\).
+                
+                </li><li class = "lic2"> En déduire la valeur de \(\sum\limits_{n=1}^{+\infty }{\frac{1}{{{n}^{2}}}}\).
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé27')"> Corrigé </button><hr>  <span id="Indication27" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé27" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> Dans un premier temps, exprimons le numérateur comme un polynôme en \(\sin(\theta)\) et \(\cos(\theta)\) :
+            \[
+            \sin((2n+1)\theta)
+            = \frac{e^{i(2n+1)\theta}-e^{-i(2n+1)\theta}}{2i}
+            =\frac{1}{2i} \displaystyle \left( (\cos(\theta) +i \sin(\theta))^{2n+1}-(\cos(\theta)-i \sin(\theta))^{2n+1}  \right)
+            \]
+            \[=\frac{1}{2i}\displaystyle \left( \sum_{k=1}^{2n+1} \binom{2n+1}{k}i^k\sin^{k}(\theta)\cos^{2n+1-k}(\theta) - \sum_{k=1}^{2n+1} \binom{2n+1}{k}(-1)^ki^k\sin^{k}(\theta)\cos^{2n+1-k}(\theta) \right)
+            \]
+            \[
+            =\frac{1}{2i}\displaystyle \left( \sum_{k=1}^{2n+1} \binom{2n+1}{k}(1-(-1)^k)i^k\sin^{k}(\theta)\cos^{2n+1-k}(\theta) \right)
+            \]
+            \[
+            =-i\displaystyle \left( \sum_{\underset{{k\ impair}}{k=0}}^{2n+1}\binom{2n+1}{k}i^k\sin^{k}(\theta)\cos^{2n+1-k}(\theta) \right)
+            \]
+            \[
+            =\displaystyle \sum_{p=0}^n\binom{2n+1}{2p+1}(-1)^p\sin^{2p+1}(\theta)\cos^{2(n-p)}(\theta)\]
+            Enfin, on trouve :
+            \[
+            \frac{\sin((2n+1)\theta)}{\sin^{2n+1}(\theta)} = \displaystyle \sum_{p=0}^n\binom{2n+1}{2p+1}(-1)^p\frac{\cos^{2(n-p)}(\theta)}{\sin^{2(n-p)}(\theta)}= \displaystyle \sum_{p=0}^n\binom{2n+1}{2p+1}(-1)^p \left(\frac{1}{{{\tan }^{2}}(\theta)}\right) ^{(n-p)}\]
+            Ce qui nous donne l'expression du polynôme :
+            \[\boxed{\forall n\in\mathbb N, P_n(X) = \sum_{p=0}^n\binom{2n+1}{2p+1}(-1)^p X^{(n-p)}}\]
+            </li><li class = "lic2"> Le polynôme \(P_n\) est de degré \(n\). Si \(\theta \in ]0, \frac{\pi}2[\) vérifie \(\sin((2n+1)\theta) = 0\), alors :
+            \[P_n\left(\frac{1}{{{\tan }^{2}}\theta}\right) = 0\]
+            Or :
+            \[\sin((2n+1)\theta) = 0 \Longleftrightarrow (2n+1)\theta \equiv 0 [\pi] <br>
+            \Longleftrightarrow \theta = \frac{k\pi}{2n+1}, (k \in \mathbb{Z})\]
+            On en déduit que les racines de ce polynôme sont exactement :
+            \[\boxed{R = \left\{cotan^2 \left(\dfrac{k\pi}{2n+1} \right) | k\in [\![1,n]\!] \right\}}\]
+            On a ainsi exhibé \(n\) racines distinctes pour un polynôme de degré \(n\), ce sont les seules.
+            <br>En notant S la somme des racines et en utilisant les relations de Viètes, on trouve :
+            \[\boxed{S = -\frac{-\binom{2n+1}{3}}{\binom{2n+1}{1}}=\frac{n(2n-1)}{3}}\]
+            </li><li class = "lic2"> On montre facilement les inégalité suivantes (par étude de fonction, ou argument de convexité) :
+            \[\forall \theta \in \left] 0,\frac{\pi }{2} \right[, \tan(\theta) \geq \theta \textrm{  et  } \sin(\theta) \leq \theta\]
+            Il en résulte les inégalités suivantes :
+            \[\frac{1}{\tan^2 (\theta)} \leq \dfrac{1}{\theta^2}\]
+            Et :
+            \[1+\frac{1}{\tan^2 (\theta)} 
+            = 1+\dfrac{\cos^2 \theta}{\sin^2 \theta}
+            =\dfrac{\cos^2 \theta+\sin^2\theta}{\sin^2 \theta}
+            =\dfrac{1}{\sin^2 \theta} 
+            \geq \dfrac{1}{\theta^2}\]
+            Enfin :
+            \[\boxed{\forall \theta \in \left] 0,\frac{\pi }{2} \right[, \frac{1}{{{\tan }^{2}}\theta }\leq \frac{1}{{{\theta }^{2}}}\leq 1+\frac{1}{{{\tan }^{2}}\theta }}\]
+            </li><li class = "lic2"> En utilisant l'inégalité précédente sur les valeurs de \(\theta\) pour lesquelles \(\frac1{\tan^2(\theta)}\) est racines de \(P_n\) et en sommant ses inégalités, il vient :
+            \[\sum_{k=1}^n cotan^2 \left(\dfrac{k\pi}{2n+1} \right) \leq \sum_{k=1}^n \left(\frac{(2n+1)}{k\pi}\right)^2 \leq n+\sum_{k=1}^n cotan^2 \left(\dfrac{k\pi}{2n+1} \right) \]
+            En remplaçant par l'expression de la somme des racines trouvée à la question \(2\), on trouve :
+            
+            \[\frac{n(2n-1)}{3} \leq \sum_{k=1}^n \left(\frac{(2n+1)}{k\pi}\right)^2 \leq  n+\frac{n(2n-1)}{3}\]
+            
+            On trouve le résultat voulu en multipliant les inégalité par la quantité \(\frac{\pi^2}{(2n +1)^2}\) et en constatant que les deux côtés de l'inégalité tendent vers \(\frac{\pi^2}{6}\), ainsi, on en déduit par théorème d'encadrement que :
+            \[\boxed{\sum\limits_{n=1}^{+\infty }{\frac{1}{{{n}^{2}}}}= \frac{\pi^2}{6}}\]
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise28"><h3>Exercice 28 :</h3><div>Soit \(f\) une fonction de classe \({{C}^{2}}\) sur \(\mathbb{R} +\), telle que \(f\) et \(f''\) soient bornées. On note respectivement \({{M}_{0}}=\underset{\mathbb{R} +}{\mathop{Sup}}\,\left\| f \right\|\) et \({{M}_{2}}=\underset{\mathbb{R} +}{\mathop{Sup}}\,\left\| f'' \right\|\).
+            <ol>
+                </li><li class = "lic2"> Montrer que pour tout réel \(h\) strictement positif, et pour tout réel \(x\) positif, \(\left| \left| f' \right| \right|\le \frac{2{{M}_{0}}}{h}+\frac{h.{{M}_{2}}}{2}\).
+                </li><li class = "lic2"> En déduire que \(f'\) est bornée et que \({{M}_{1}}=\underset{\mathbb{R} +}{\mathop{Sup}}\,\left\| f' \right\|\le 2\sqrt{{{M}_{0}}{{M}_{2}}}\).	
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé28')"> Corrigé </button><hr>  <span id="Indication28" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé28" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> \[|f'(x)| \leq \frac{|f(x+h)|}{h}+\frac{|f(x)|}{h} + \frac1h \int^{x+h}_{x} |x+h+t| |f'(x)| dt \leq \frac{M_0}h + \frac{M_0}h + \frac1h M_2 \int^{x+h}_{x} |x+h+t| dt\] 
+                \[\leq \frac{2M_0}h + \frac{M_2}h\left[-\frac{(x+h-t)^2}2\right]^{x+h}_x = \frac{2M_0}h + \frac{M_2h}2\]
+                Donc \(f'\) est bornée sur \(\mathbb{R}_+\) et :
+                \[\forall h > 0\]
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise29"><h3>Exercice 29 :</h3><div><ol>
+                    </li><li class = "lic2"> Trouver les racines de \({{P}_{n}}\left( X \right)={{\left( X+i \right)}^{2n+1}}-{{\left( X-i \right)}^{2n+1}}\).
+                    </li><li class = "lic2"> En déduire la valeur de \(\prod\limits_{k=1}^{n}{\left[ 4+\cot a{{n}^{2}}\left( \frac{k\pi }{2n+1} \right) \right]}\).
+                </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé29')"> Corrigé </button><hr>  <span id="Indication29" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé29" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> Soit \(z\in \mathbb C\) une racine de \(P_n\), alors :
+                \[{{\left( X+i \right)}^{2n+1}}-{{\left( X-i \right)}^{2n+1}} = 0 \]
+                On montre facilement que \(1\) n'est pas solution, soit maintenant \(z \neq 1\) racine de \(P\) :
+                \[\left(\frac{z+1}{z-1}\right)^{2n+1} = 1\]
+                Posons \(\omega = \frac{z+1}{z-1} \), \(\omega\) est donc une racine de l'unité et s'écrit sous la forme :
+                \[\omega  = e^{\frac{2ik\pi}{2n+1}}\]
+                On a de plus :
+                \[\frac{z+1}{z-1} = \omega \longleftrightarrow z+i = \omega(z-i) \Longleftrightarrow z(1-\omega) = -i(1+\omega) \Longleftrightarrow z = -i \frac{\omega+1}{\omega-1} \textrm{ et } \omega \neq 0 \]
+                \[\Longleftrightarrow \exists k \in [\![ 0, 2n]\!], z = \frac{e^{\frac{2ik\pi}{2n+1}} +1}{e^{\frac{2ik\pi}{2n+1}} -1} \Longleftrightarrow \boxed{\exists k \in [\![ 0, 2n]\!], z = cotan\left(\frac{k\pi}{2n + 1}\right)}\]
+                </li><li class = "lic2"> On trouve l'expression de \(P\) à l'aide du binôme de Newton :
+                \[P_n(X) = \sum_{k=0}^{2n+1} \binom{2n+1}{k} X^{2n + 1 - k} \left(i^k-(-i)^k\right)\]
+                Ainsi, les termes pairs sont nuls, le coefficient de plus haut degré est donc celui du monôme de degré \(2n\), soit \(2i(2n+1)\). Donc :
+                \[P_n(X) = 2i(2n+1) \prod_{k=1}^{2n} \left(X - cotan\left(\frac{k\pi}{2n + 1}\right) \right) \]
+                \[=2i(2n+1) \prod_{k=1}^{2n} \left(X - cotan\left(\frac{k\pi}{2n + 1}\right) \right) \prod_{k=n+1}^{2n} \left(X - cotan\left(\frac{k\pi}{2n + 1}\right) \right)\]
+                \[=2i(2n+1) \prod_{k=1}^{2n} \left(X - cotan\left(\frac{k\pi}{2n + 1}\right) \right) \prod_{k=1}^{n} \left(X - cotan\left(\frac{(2n + 1-k)\pi}{2n + 1}\right) \right)\]
+                Or on a la relation :
+                \[cotan\left(\frac{(2n + 1-k)\pi}{2n + 1}\right) = - cotan\left(\frac{k\pi}{2n + 1}\right)\]
+                D'où :
+                \[P_n(X) = 2i(2n+1) \prod_{k=1}^{n} \left(X^2 - cotan^2\left(\frac{k\pi}{2n + 1}\right)\right)\]
+                Enfin, en évaluant ce polynôme en \(2i\), on obtient :
+                \[\boxed{\prod\limits_{k=1}^{n}{\left[ 4+\cot a{{n}^{2}}\left( \frac{k\pi }{2n+1} \right) \right]} = (-1)^n\frac{(3i)^{2n+1} - i^{2n+1}}{2i(2n+1)}}\]
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise30"><h3>Exercice 30 :</h3><div>Soit f une fonction de classe \({{C}^{3}}\) de \(\left[ 0,1 \right]\) dans \(\mathbb{R}\). Montrer que :
+            \[ \frac{1}{n}\sum_{k=0}^{n-1}{f\left( \frac{k}{n} \right)=\int_{0}^{1}{f}-\frac{1}{2n}}\int_{0}^{1}{f}'+\frac{1}{12{{n}^{2}}}\int_{0}^{1}{f}''+O\left( \frac{1}{{{n}^{3}}} \right)\]
+            <br>En déduire  un développement limité à l'ordre 3 de \(\sum\limits_{k=n}^{2n-1}{\frac{1}{k}}\). <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé30')"> Corrigé </button><hr>  <span id="Indication30" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé30" style="display:none;"><p>  Soit \(n\in \mathbb N\), posons :
+            \[u_n = \]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise31"><h3>Exercice 31 :</h3><div>Soit \(f\) une fonction définie et de classe \(\mathcal{C}^1\) sur \([0; +\infty[\), telle que \(f(0)=f'(0)=0\). On suppose que \(f\) s'annule en une autre valeur \(a\) strictement positive. Montrer qu'il existe un point sur la courbe représentative
+            de \(f\) en lequel la tangente passe par l'origine. (Point autre que \((0 ;0)\)). <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé31')"> Corrigé </button><hr>  <span id="Indication31" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé31" style="display:none;"><p>  Soit \(\alpha \in \mathbb{R}_+\),la tangente au point  \((\alpha, f(\alpha))\) à pour équation :
+            \[(\tau_\alpha) : y = f'(\alpha)(x-\alpha) + f(\alpha)\]
+            La tangente passe par l'origine si et seulement si :
+            \[f'(\alpha)(0-\alpha) + f(\alpha) = 0 \longleftrightarrow f(\alpha) - \alpha f'(\alpha) = 0\]
+            Posons \(g : x\longmapsto f(x) - xf'(x)\). On veut donc montrer que \(g\) s'annule ailleurs qu'en \(0\). Tentons d'appliquer le théorème des valeurs intermédiaires. Supposons que \(f\) est strictement positive entre \(0\) et \(a\) (démonstration analogue dans l'autre cas) :
+            <ul>
+                </li><li class = "lic2"> On sait que \(f\) est continue sur \([0,a]\), dérivable sur \(]0, a[\) et \(f(0) = f(a) = 0\), donc, d'après le théorème de Rolle, il existe un point \(c\in ]0,a[\) telle que \(f'(c) = 0\). Alors, \(g(c) = f(c) - 0 > 0\). 
+                </li><li class = "lic2"> \(f'\) est continue sur \([0,c]\), elle est donc bornée et atteint ses bornes. Il existe \(d\in [0,c]\) telle que \(f'(d) = \|f'\|_{\infty}^[0,c]\).\[\forall x\in [0,c], f'(x) - f'(d) = 0 \Longrightarrow  \int^d_0 (f'(x) - f'(d))dx = f(d) - df'(d) = g(d) \leq 0\]
+            </ul>
+            </p><p>
+            Il en résulte l'existe d'un point \(\delta \in [d, c]\) tel que \(g(\delta) = 0\). Autrement dit :
+            \[\boxed{\textrm{La tangente à la courbe représentative de \(f\) en \(\delta\) passe par l'origine.}}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise32"><h3>Exercice 32 :</h3><div>Soit \(P\in \mathbb{R}\left[ X \right]\) de degré impair et \(f\) une fonction de classe \({{C}^{\infty }}\) de \(\mathbb{R}\) dans \(\mathbb{R}\) telle que \(\forall n\in \mathbb{N},\forall t\in \mathbb{R}\), \(\left| {{f}^{\left( n \right)}}\left( t \right) \right|\le \left| P\left( t \right) \right|\). 
+                <ol>
+                    </li><li class = "lic2"> Montrer qu'il existe \(a\in \mathbb{R}\) tel que \(\forall n\in \mathbb{N},{{f}^{\left( n \right)}}\left( a \right)=0\).
+                    </li><li class = "lic2"> Montrer que \(f\) est la fonction nulle.
+                    </li><li class = "lic2"> Le résultat subsiste-t-il si P est supposé être de degré pair ?
+                </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé32')"> Corrigé </button><hr>  <span id="Indication32" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé32" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> Si \(P\) est un polynôme de degré impair, le théorème des valeurs intermédiaires nous donne l'existence d'une racine \(a\in \mathbb R\). de l'inégalité de l'énoncé on déduit que :
+                \[\boxed{\exists a\in \mathbb R, \forall n\in \mathbb{N},{{f}^{\left( n \right)}}\left( a \right)=0 }\]
+                </li><li class = "lic2"> En appliquant la formule de Taylor-Lagrange entre \(a\) et \(x\), il vient directement :
+                \[|f(x)|\leq \frac{|x-a|^{n}}{n!}\|f^{(n)}\|_{\infty}^{[a,x]}\leq \|P\|_{\infty}^{[a,x]} \frac{|x-a|^n}{n!}\]
+                Or, cette inégalité est valable pour tout \(n \in \mathbb N\), donc, en faisant tendre \(n\) vers \(+\infty\), on trouve le résultat voulu.
+                \[\boxed{f = 0}\]
+                </li><li class = "lic2"> Il suffit de prendre la fonction constante égale à \(1\) et \(P(X) = 1+X^2\)
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise33"><h3>Exercice 33 :</h3><div>On considère la fonction \(f:x\to \frac{1}{\sqrt{1+{{x}^{2}}}}\).
+                <ol>
+                    </li><li class = "lic2"> Montrer que \(f\) est de classe \({{C}^{\infty }}\).
+                    </li><li class = "lic2"> Montrer que la dérivée \({{n}^{i\grave{e}me}}\) de \(f\) est de la forme \(\frac{{{P}_{n}}(x)}{{{\left( 1+{{x}^{2}} \right)}^{n+0,5}}}\) où \({{P}_{n}}\) est un polynôme de degré \(n\).
+                    </li><li class = "lic2"> Montrer que \({{P}_{n+1}}(X)=(1+{{X}^{2}})P{{'}_{n}}(X)-(2n+1)X{{P}_{n}}(X)\).
+                    </li><li class = "lic2"> Montrer que \({{P}_{n+1}}(X)+(2n+1)X.{{P}_{n}}(X)+{{n}^{2}}(1+{{X}^{2}}){{P}_{n-1}}(X)=0\).
+                    </li><li class = "lic2"> Montrer que \(P{{'}_{n}}(X)=-{{n}^{2}}{{P}_{n-1}}(X)\).
+                    </li><li class = "lic2"> Calculer \({{P}_{n}}(0)\) pour tout entier \(n\).
+                </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé33')"> Corrigé </button><hr>  <span id="Indication33" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé33" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> La fonction \(f\) est de classe \({{C}^{\infty }}\) comme composée de fonction de classe \({{C}^{\infty }}\).
+                </li><li class = "lic2"> Par récurrence, pour l'hérédité, on dérive comme un produit, il vient :
+                \[f^{(n+1)}(x) = \frac{{-(2n+1){P}_{n}(x)}}{{{\left( 1+{{x}^{2}} \right)}^{(n+1)+0,5}}} + \frac{{P_n'(x)}}{{{\left( 1+{{x}^{2}} \right)}^{n+0,5}}}\] 
+                Ainsi, en posant \({{P}_{n+1}}(X)=(1+{{X}^{2}})P{{'}_{n}}(X)-(2n+1)X{{P}_{n}}(X)\), on trouve bien un polynôme de degré \(n+1\), et on répond à la question suivante en modifiant légèrement l'hypothèse de récurrence pour y intégrer la forme du polynôme.
+                </li><li class = "lic2"> Démontré à la question précédente.
+                </li><li class = "lic2"> La dérivée de \(f\) est :
+                \[f : x \longmapsto -\frac{x}{\left(x^2+1\right)^{3/2}}\]
+                On remarque que :
+                \[(1+x^2)f'(x) - xf(x) = 0\]
+                En dérivant cette égalité à l'aide de la formule de Leibniz, on trouve :
+                \[(1+x^2)f^{(n+1)}(x) + 2nxf^{(n)}(x) + n(n+1)f^{(n-1)}(x)- xf^{(n)}(x) - f^{(n-1)}(x) = 0\]
+                \[\Longrightarrow (1+x^2)f^{(n+1)}(x) + (2n-1)xf^{(n)}(x) + (n(n+1) - 1)f^{(n-1)}(x) =  0\]
+                \[\Longrightarrow (1+x^2) \frac{P_{n+1}(x)}{(1+x^2)^{n+1+0.5}} + (2n-1)x\frac{{{P}_{n}}(x)}{{{\left( 1+{{x}^{2}} \right)}^{n+0,5}}} + (n(n+1) - 1)\frac{{{P}_{n-1}}(x)}{{{\left( 1+{{x}^{2}} \right)}^{n-0,5}}} = 0\]
+                \[\Longrightarrow  P_{n+1}(x) =  -(2n-1)x {P}_{n}(x)^{n+0,5} - (n(n+1) - 1)\frac{{{P}_{n-1}}(x)}{{{\left( 1+{{x}^{2}} \right)}^{n-0,5}}} = 0\]
+                 </li><li class = "lic2"> Le résultat découle directement des deux questions précédentes.
+                 </li><li class = "lic2"> D'après la question 4, pour tout \(n\in \mathbb N\) :
+                 \[P_{n+2}(0) =  -n^2 P_{n}(0)\]
+                 Or, on a :
+                 \[\left\{ \begin{array}{c}
+                      P_0(0) = 1 \\
+                      P_1(0) = 0 
+                 \end{array}\right.\]
+                 Donc :
+                 \[\boxed{
+                    \left\{ \begin{array}{c}
+                      P_{2n}(0) = (-1)^n (2^nn!)^2\\
+                      P_{2n + 1}(0) = 0 
+                 \end{array}\right. }\]
+             </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise34"><h3>Exercice 34 :</h3><div><ol>
+                </li><li class = "lic2"> Montrer que le polynôme\({{P}_{n}}\left( X \right)=\sum\limits_{k=0}^{n}{\frac{{{X}^{k}}}{k!}}\)  admet au plus une racine réelle, en précisant suivant \(n\).
+                
+                </li><li class = "lic2"> Déterminer la limite de la suite des racines ainsi obtenues.	
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé34')"> Corrigé </button><hr>  <span id="Indication34" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé34" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> La question se traite par récurrence en remarquant que \(P_n'(X) = P_{n-1}(X)\). On trouve que si \(n\) est pair, \(P_n\) n'admet pas de racine. Sinon, il admet une unique racine.
+                </li><li class = "lic2"> Notons, pour tout \(n\in \mathbb N\), \(a_{2n+1}\) la racine de \(P_{2n+1}\). étudions le signe de \(P_{2n+3}(a_{2n + 1})\), ce qui nous donnera l'éventuelle monotonie des racines. Pour tout \(x \in \mathbb R\) :
+                \[P_{2n+3}(x) = \frac{x^{2n+3}}{(2n+3)!}  + \frac{x^{2n+2}}{(2n+2)!}   + P_{2n+1}(x) = \frac{x^{2n+3}}{(2n+3)!}  + \frac{x^{2n+2}}{(2n+2)!} + P_{2n+1}(x)\]
+                \[\Longrightarrow P_{2n+3}(x) - P_{2n+1}(x) = \frac{x^{2n+2}}{(2n+3)!}(2n + 3 + x) \]
+                Le signe de \(P_{2n+3}(a_{2n+1})\) est celui de \((2n + 3 + a_{2n+1}).\)
+                Or, l'équation précédente donne :
+                \[P_{2n+3}(-2n-3) - P_{2n+1}(-2n-3) = 0 \]
+                Or \(P_{2n+1}\) est croissant : 
+                \[\Longrightarrow P_{2n+3}(-2n-3) =  P_{2n+1}(-2n-3) \leq P_{2n+1}(-2n-1)\]
+                La suite \((P_{2n+1}(-2n-1))_{n\in \mathbb N}\) est décroissante. Donc inférieure à \(P_1(-1) = 0\). Donc, par croissance de \(P\), \(-2n-1 \lt a_{2n+1}\)
+                On en déduit \(P_{2n+3}(a_{2n+1})\) de signe positif, la suite des racines est donc strictement décroissante.<br>
+                
+                On conclut en supposant par l'absurde qu'elle converge vers \(l \in \mathbb R\), alors \[ l \lt a_{2n+1} \Longrightarrow P_{2n+1}(l) \lt 0\]Par passage à la limite \(e^l \leq 0\), ce qui est absurde.
+                \[\boxed{\textrm{\((a_{2n+1})_{n\in\mathbb N}\) tend vers \(- \infty\)}}\]
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise35"><h3>Exercice 35 :</h3><div>
+                Calculer les dérivées des réciproques (sur un intervalle à définir) des fonctions : <ol>
+                </li><li class = "lic2"> \(x \longmapsto \sinh(x) \)
+                </li><li class = "lic2"> \(x \longmapsto \tan(x^3)\)
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé35')"> Corrigé </button><hr>  <span id="Indication35" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé35" style="display:none;"><p>  <ol>
+                </li><li class = "lic2">
+            On pourrait calculer ces dérivées à l'aide du résultat suivant : si \(f\) une fonction réelle, bijective de \(I\) sur \(J\) et dérivable sur \(I\). Si \(f'(f^{-1}(x))\neq 0\) pour \(x\in J\), alors \(f^{-1}\) est dérivable en \(x\) et :
+            \[(f^{-1})'(x)=f'(f^{-1}(x))1\]
+            Cependant la réciproque s'exprime à l'aide des fonction usuelles. Calculons donc explicitement la réciproque :
+            \[y = \sinh(x) = \frac{e^x - e^{-x}}2 \Longrightarrow 2y = e^x - e^{-x} \Longrightarrow (e^x)^2 - 2ye^x - 1 = 0\]
+            Or, ceci est un polynôme du second degré en \(e^x\), les racines de \(P = X^2 - 2yX - 1\) sont :
+            \[x_{1/2} = y \pm \sqrt{y^2+1}\]
+            Or, l'exponentielle étant à valeur positive, la seule solution valide est \(y + \sqrt{y^2+1}\). Il en résulte que, pour tout \(x\in \mathbb R\) :
+            \[\sinh^{-1}(x) = \ln\left(y + \sqrt{y^2+1}\right)\]
+            En dérivant, on trouve, pour tout \(x\in \mathbb R\):
+            \[\boxed{(\sinh^{-1})'(x) = \frac{1}{\sqrt{x^2+1}}}\]
+            </li><li class = "lic2"> On peut de nouveau exprimer la réciproque explicitement : 
+            \[y= \tan(x^3) \Longrightarrow \arctan(y) = x^3 \Longrightarrow x = \sqrt[3]{\arctan(y)}\]
+            Pour tout \(x\in \mathbb R\) :
+            \[f^{-1}(x) = \sqrt[3]{\arctan(x)}\]
+            En dérivant on obtient, pour tout \(x\in \mathbb R\) :
+            \[\boxed{(f^{-1})'(x) = \frac{1}{\left(3 x^2+3\right) \arctan(x)^{2/3}}}\]
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise36"><h3>Exercice 36 :</h3><div>Montrer chacune des inégalités suivantes sur l'intervalle demandé :
+                <ol>
+                    </li><li class = "lic2"> \(x-\frac{{{x}^{3}}}{6}\le \sin x\le x\) sur \({{\mathbb{R}}^{*}}+\)
+                    </li><li class = "lic2"> \(\cos x\ge 1-\frac{{{x}^{2}}}{2}\) sur \(\mathbb{R}\).
+                    </li><li class = "lic2"> \(3x \lt 2\sin x+\tan x\) sur \(\left] 0;\frac{\pi }{2} \right[\)
+                    </li><li class = "lic2"> \({{\sin }^{2}}x\le \frac{4}{{{\pi }^{2}}}x(\pi -x)\) sur \(\left[ 0;\pi  \right]\)
+                    </li><li class = "lic2"> \(\frac{x}{x+1}\le \ln (1+x)\le x\) sur \(\left] -1;+\infty  \right[\)
+                    </li><li class = "lic2"> \(\left| {{e}^{x}}-1-x \right|\le \frac{{{x}^{2}}}{2}{{e}^{\left| x \right|}}\) sur \(\mathbb{R}\)
+                    </li><li class = "lic2"> \(\frac{2}{\frac{2}{\sin x}+\frac{1}{\tan x}} \lt x\) sur \(\left] 0;\frac{\pi }{2} \right[\)
+                    </li><li class = "lic2"> \(\sin x\ge \frac{2}{\pi }x+\frac{x}{12\pi }({{\pi }^{2}}-4{{x}^{2}})\) sur \(\left[ 0;\frac{\pi }{2} \right]\)
+                    </li><li class = "lic2"> \(\left( 1+\frac{1}{{{x}^{2}}} \right)x.\sin \frac{1}{x}>1\) sur \(\left[ \frac{1}{\sqrt{5}};+\infty  \right[\).
+                </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé36')"> Corrigé </button><hr>  <span id="Indication36" style="display:none; text-align: left;"><p>   ... <HR></p></span>  <span id = "Corrigé36" style="display:none;"><p>  Cet exercice est laissée au lecteur. On procède simplement par étude de fonctions.    </p></span></div></div>
+            
+            
+            <div class="exercise hidden" id="exercise37"><h3> Exercice 37 :</h3><div>Soit \(f : \mathbb{R} \longrightarrow \mathbb{R}\) une fonction k-lipschitzienne, avec \(k \in \mathbb{R}^*_+\).
+            <ol>
+                </li><li class = "lic2"> Montrer que f admet un unique point fixe si elle est contractante (\(0\leq k \lt 1\)).
+                </li><li class = "lic2"> Montrer que cela est faux lorsque l'on suppose seulement que :
+            </ol>
+            \[\forall (x, y) \in \mathbb{R}, x\ne y \Longrightarrow |f (x) - f(y)| \lt |x - y|\] <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé37')"> Corrigé </button><hr>  <span id="Indication37" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé37" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> Posons \(u_n\) la suite définie de la manière suivante :
+            \[
+            \left\{
+                \begin{array}{ll}
+                    u_0 = 0 \\
+                    u_{n+1} = f(u_{n})
+                \end{array}
+            \right.
+            \]
+            Montrons l'existence en établissant qu'un point fixe existe et est limite de la suite \(u_n\) :
+            \[|u_{n+1}-u_{n}| \leq k |u_{n}-u_{n-1}|\]
+            Par récurrence immédiate, on obtient :
+            \[ |u_{n+1}-u_{n}| \leq k^n |u_{1}-u_{0}| \]
+            Ainsi :
+            \[\left|\sum_{k = 0}^N \left(u_{n+1}-u_{n}\right)\right| \leq |u_{1}-u_{0}| \frac{1-k^{N+1}}{1-k} \]
+            En particulier, on en déduit que la suite \(u_n\) est convergente, et que sa limite vérifie par conséquent \(l = f(l)\) par continuité de \(f\) (qui découle de la k-lipschitziannité), d'où l'existence.
+            Pour l'unicité, prenons \(l_1, l_2\) deux points fixes de \(f\).
+            alors :
+            \[| f(l_1) - f(l_2) | = | l_1 - l_2 | \leq k |l_1 - l_2| \]
+            Ce qui est absurde car \(0\leq k \lt 1\) d'où l'unicité.
+            Finalement, 
+            \[ \boxed{\textrm{Si f est contractante, alors f admet un unique point fixe}}\]
+                </li><li class = "lic2"> Prendre la fonction \(\boxed{g : x \longmapsto \sqrt{1+x^2}}\). Cette fonction est contre-exemple car n'admet pas de point fixe.
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise38"><h3>Exercice 38 :</h3><div>Soit \(f\) une fonction de \(\mathbb R\) dans \(\mathbb R\) bornée par \(M\). Pour \(x \in \mathbb R\) et \(r > 0\) fixés, on définit :
+            \[ osc_f (r, x) = \sup_{[x-r,x+r]}(
+            f) - \inf_{[x-r,x+r]}(f)\]
+            Et la fonction :
+            \[\begin{array}{l|rcl} osc(f) : & \mathbb R^*_+ & \longrightarrow \mathbb R \\ & r & \longmapsto & \sup_{x\in \mathbb R} osc_f (r, x) \end{array}\]
+            <ol>
+                </li><li class = "lic2"> Justifier l'existence de \(osc_f (r, x)\) et \(osc(f)\). Montrer que \(osc(f)\) est bornée par \(2M\).
+                </li><li class = "lic2"> On suppose qu'il existe \(\kappa \in ]0, 1[\) tel que :
+                \[\forall r \in ]0, 1] , osc(f)\left(\frac r 2 \right) \leq \kappa osc(f )(r).\]
+                On pose \(\alpha = \frac{\ln\left(\frac 1 {\kappa}\right)}{\ln(2)}\)
+                <ol>
+                    </li><li class = "lic2"> Montrer que \(f\) est \(\alpha\)-hôldérienne, c'est-à-dire : \[\exists C > 0 / \forall (x, y) \in \mathbb R2, |f (x) - f (y)| \leq C|x - y|\alpha\]    
+                    </li><li class = "lic2"> Que dire si \(\kappa \lt 1\)
+                    </li><li class = "lic2"> Que dire si la propriété est vraie pour tout \(r > 0\) ?
+                </ol> 
+            </ol>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé38')"> Corrigé </button><hr>  <span id="Indication38" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé38" style="display:none;"><p>  On a pour tout \(k \in \mathbb N\) :
+            \[osc(f)\left(\frac{r}{2^k}\right) \leq \kappa^k osc(f)(r)\]
+            Or, d'après la question précédente : \(osc(f)(r) \leq 2\|f\|_{\infty}\), donc :
+            \[osc(f)\left(\frac{r}{2^k}\right) \leq 2\kappa^k \|f\|_{\infty} \]
+            Alors, si \(|x - y| \leq \frac{r}{2^k}\) on a d'une part :
+            \[|f(x) - f(y)| \leq \left|\sup_{[x-\frac{r}{2^k}, x+\frac{r}{2^k}]}(f) - \inf_{[x-\frac{r}{2^k}, x+\frac{r}{2^k}]}(f)\right|\leq osc_f\left(\frac{r}{2^k},x\right) \leq osc(f)\left(\frac{r}{2^k}\right) \]
+            \[\Longrightarrow |f(x) - f(y)| \leq 2\kappa^k \|f\|_{\infty} = 2e^{k\ln(\kappa)} \|f\|_{\infty}\]
+            D'autre part :
+            \[|x - y| \leq \frac{r}{2^k} \Longrightarrow 2^k \leq \frac{r}{|x-y|} \Longrightarrow k \leq \frac{\ln\left(\frac{r}{|x-y|}\right)}{\ln(2)}\leq \frac{-\ln(|x-y|)}{\ln(2)}\]
+            En combinant ces deux résultats :
+            \[|f(x) - f(y)| \leq 2e^{\frac{-\ln(|x-y|)}{\ln(2)}\ln(\kappa)} \|f\|_{\infty} \leq C|x-y|^{\alpha}\]
+            \[\boxed{\textrm{\(f\) est \(\alpha\)-holdérienne}}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise39"><h3>Exercice 39 :</h3><div>Soit f une fonction continue sur \(\left[ 0,1 \right]\), telle que \(f(1)\ne 0\). On pose \({{u}_{n}}=\int\limits_{0}^{1}{{{t}^{n}}f(t)dt}\).
+            <ol>
+                </li><li class = "lic2"> Montrer que \({{u}_{n}}\) tend vers 0 lorsque n tend vers \(+\infty \).
+                </li><li class = "lic2"> Donner un équivalent de \({{u}_{n}}\) quand n tend vers \(+\infty \).
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé39')"> Corrigé </button><hr>  <span id="Indication39" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé39" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> \(f\) est continue sur [0,1], d'après le théorème des bornes atteintes, elle est bornée et atteint ses bornes. On a donc les inégalités suivantes :
+                \[|u_n| \leq \int_{0}^{1}{{{t}^{n}}\|f\|_{\infty}^{[0,1]}dt} \leq \|f\|_{\infty}^{[0,1]} \left[ \frac{t^{n+1}}{n+1}\right]_0^1 \longrightarrow 0\]
+                Donc :
+                \[\boxed{u_n \longrightarrow 0}\]
+                </li><li class = "lic2"> On peut supposer dans un premier temps la dérivabilité de \(f\) pour se donner une idée dans le cas général. Effectuer une intégration par partie nous donne :
+                \[u_n = \left[\frac{{t}^{n+1}}{n+1}f(t)\right]_{0}^{1} -\int_{0}^{1}{{\frac{{t}^{n+1}}{n+1}}f'(t)dt} = \frac{f(1)}{n+1} - \frac{1}{n+1} \int_{0}^{1}{{{t}^{n+1}}f'(t)dt}\]
+                Or d'après la question précédente, cette dernière intégrale tend vers \(0\), donc la suite est équivalente à :
+                \[ \]
+                \[\boxed{u_n \sim \frac{f(1)}{n}}\]
+                
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise40"><h3>Exercice 40 :</h3><div>On pose $\displaystyle f (x) =
+            \int^{x^2}_x \left(\frac{1}{\ln(t)} - \frac{1}{t\ln(t)}\right)dt$.
+            
+            <ol>
+                </li><li class = "lic2"> Montrer que \(f(x)\) tend vers \(0\) quand \(x\) tend vers \(1\).
+                </li><li class = "lic2"> En déduire la limite quand \(x\) tend vers \(1\) de \(\displaystyle\int^{x^2}_x \frac{dt}{\ln(t)}\).
+            </ol> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé40')"> Corrigé </button><hr>  <span id="Indication40" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé40" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> Soit \(x >1 \) :
+                \[f(x) = \int_x^{x^2} \frac{t-1}{tln(t)}dt\]
+                Notons \(u : t \longmapsto  \frac{t-1}{tln(t)}\). On sait que :
+                \[\frac{h}{(1+h)\ln(1+h)} \underset{h\longrightarrow 0}{\sim}\frac1{1+h} \underset{h\longrightarrow 0}{\longrightarrow} 1\]
+                On en déduit :
+                \[\lim_{t\longrightarrow1} u(t) = \lim_{h\longrightarrow0} u(1+h) =  \lim_{h\longrightarrow0} \frac{h}{(1+h)\ln(1+h)}= 1\]
+                Ainsi, \(u\) est continue sur \(]1, +\infty[\) zt admet une limite finie en 1, donc est prolongeable par continuité en \(1\) en une fonction \(\tilde{u}\).<br>
+                La fonction \(f\) est donc dérivable sur \([1, +\infty[\) donc est continue, en particulier :
+                \[\boxed{\lim_{x\longrightarrow1} f(x) = 0}\]
+                </li><li class = "lic2">  Soit \(x > 1\) :
+                \[\int^{x^2}_x \frac{dt}{t\ln(t)} = \left[\ln(\ln|t|)\right] = \ln(\ln(x^2)) - \ln(\ln(x)) = \ln(2)\]
+                Ainsi, en utilisant la question précédente :
+                \[\boxed{\lim_{x\longrightarrow1} \int^{x^2}_x \frac{dt}{\ln(t)} = \ln(2)}\]
+                </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise41"><h3>Exercice 41 :</h3><div>On pose \(f (x) = \exp( \sin(x))\). Etudier la liberté de la famille \((f, f^2, f \circ f)\). <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé41')"> Corrigé </button><hr>  <span id="Indication41" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé41" style="display:none;"><p>   Corrigé indisponible   </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise42"><h3>Exercice 42 :</h3><div>Soit \(\displaystyle f : t \longmapsto \frac t{\sqrt{1+t^2}}\). étudier \(\displaystyle\lim_{n\longrightarrow +\infty}\sum_{k=1}^n f\left(\frac{k}{n^2}\right)\). <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé42')"> Corrigé </button><hr>  <span id="Indication42" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé42" style="display:none;"><p> Corrigé indisponible     </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise43"><h3>Exercice 43 :</h3><div>Existence et unicité de la suite de polynômes \((P_n)_{n\in\mathbb{N}}\) tels que \(P_n(X + \frac{1}{X}) = X^n + \frac{1}{X^n}\) . Déterminer les
+            racines de ces polynômes <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé43')"> Corrigé </button><hr>  <span id="Indication43" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé43" style="display:none;"><p> Corrigé indisponible     </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise44"><h3>Exercice 44 :</h3><div> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé44')"> Corrigé </button><hr>  <span id="Indication44" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé44" style="display:none;"><p> Corrigé indisponible     </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise45"><h3>Exercice 45 :</h3><div> <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé45')"> Corrigé </button><hr>  <span id="Indication45" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé45" style="display:none;"><p> Corrigé indisponible     </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise46"><h3>Exercice 46 :</h3><div>Soit \(P \in \mathbb C[X]\), tel que \(P(0) \neq 0\). Soit \(r > 0\). Déterminer l'expression suivante en fonction de de \(P(0)\) et des racines de \(P\) de module inférieur strictement à \(r\).
+            \[\frac1{2\pi} \int_0^{2\pi}\ln |P(re^{it})|dt\]
+             
+            <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé46')"> Corrigé </button><hr>  <span id="Indication46" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé46" style="display:none;"><p> 
+            On ne peut pas résoudre cet exercice avec les outils au programme de MPI, on peut cependant effectuer la démarche suivante. En notant :
+            \[P = \prod_{k = 1}^d (X - \alpha_k)\]
+            On obtient : 
+            \[\frac 1{2\pi} \int_0^{2\pi}\ln |P(re^{it})|dt = \frac 1{2\pi}\sum_{k=1}^d \int_0^{2\pi} \ln |re^{it} - \alpha_k|dt\]
+            En notant \(\alpha_k = r_k e^{i\theta_k}\), il vient :
+            \[\frac 1{2\pi} \int_0^{2\pi}\ln |P(re^{it})|dt = \frac 1{2\pi}\sum_{k=1}^d \int_0^{2\pi} \left(\ln |\alpha_k| + \ln\left| \frac{r}{r_k}e^{i(t-\theta_k)} - 1 \right|\right)dt \]
+            \[ =  \frac 1{2\pi}\sum_{k=1}^d \left( 2\pi \ln |\alpha_k| + \int_0^{2\pi}  \ln\left| \frac{r}{r_k}e^{i(t-\theta_k)} - 1 \right|dt\right)\]
+            \[=\sum_{k=1}^d \ln |\alpha_k|  + \frac 1{2\pi} \sum_{k=1}^d \left(  \int_0^{2\pi}  \ln\left| \frac{r}{r_k}e^{i(t-\theta_k)} - 1 \right|dt\right)\]
+            \[= \ln \left(\prod_{k=1}^d|\alpha_k|\right)  + \frac 1{2\pi}\sum_{k=1}^d \left( \int_0^{2\pi}  \ln\left| \frac{r}{r_k}e^{i(t-\theta_k)} - 1 \right|dt\right)\]
+            \[ = \ln \left|P(0)\right|  + \frac 1{2\pi}\sum_{k=1}^d \left(\int_0^{2\pi}  \ln\left| \frac{r}{r_k}e^{i(t-\theta_k)} - 1 \right|dt\right)\]
+             Supposant que \(|\alpha_k| \leq r\), Calculons le terme général de cette somme, on a pour tout \(k\) :
+             \[\left| \frac{r}{r_k}e^{i(t-\theta_k)} - 1 \right| = \sqrt{\left(\frac{r}{r_k}\cos(t-\theta_k) - 1\right)^2 + \frac{r^2}{r_k^2}\sin^2(t-\theta_k)}\]
+             \[= \sqrt{1 - 2\frac{r}{r_k}\cos(t - \theta_k) + \frac{r^2}{r_k^2}}\]
+             \[\Longrightarrow \int_0^{2\pi}\ln \left| \frac{r}{r_k}e^{i(t-\theta_k)} - 1 \right| dt= \frac12 \int_0^{2\pi}\ln\left(1 - 2\frac{r}{r_k}\cos(t - \theta_k) + \frac{r^2}{r_k^2}\right)dt\]
+             Or, par \(2\pi\)-périodicité, puis par parité, on a :
+             \[\int_0^{2\pi}\ln \left| \frac{r}{r_k}e^{i(t-\theta_k)} - 1 \right| dt = \frac12 \int_{-\pi}^{\pi}\ln\left(1 - 2\frac{r}{r_k}\cos(t) + \frac{r^2}{r_k^2}\right)dt\]
+             \[= \int_{0}^{\pi}\ln\left(1 - 2\frac{r}{r_k}\cos(t) + \frac{r^2}{r_k^2}\right)dt\]
+             En notant \(r'_k = \frac{r}{r_k}\), et en se plaçant dans le cas où \(r_k < r\), i.e. \(r'_k > 1\) étudions la limite de la somme :
+             \[S_n = \frac{\pi}n \sum_{p = 1}^{n-1}\ln\left(1 - 2r'_k\cos\left(\frac{p\pi}{n}\right) +(r'_k)^2\right) = \frac{\pi}n  \ln\left(\prod_{p = 1}^{n-1}\left(1 - 2r'_k\cos\left(\frac{p\pi}{n}\right) + (r'_k)^2\right)  \right)\]
+            \[ = \frac{\pi}n  \ln\left(\prod_{p = 1}^{n-1} \left( r'_k - e^{\frac{ip\pi}{n}}\right)  \left(r'_k - e^{-\frac{ip\pi}{n}}\right)\right)\]
+            \[ = \frac{\pi}n  \ln\left(\prod_{p = 1}^{n-1} \left( r'_k - e^{\frac{ip\pi}{n}}\right)  \left(r'_k - e^{-\frac{ip\pi}{n}}\right)\right)\]
+            \[= \frac{\pi}n  \ln\left(\frac{(r'_k )^{2n} - 1}{(r'_k + 1)(r'_k - 1)}\right) + \ln\left(\frac{1-(1/r'_k)^{2n}}{1-(1/r'_k)^2}\right)\]
+            \[\sim \frac{(2n-2)\pi}{n}\ln(r'_k) \longrightarrow 2\pi \ln(r'_k)\]
+            Ainsi, cette somme converge pour les racines vérifiant \(|\alpha_k| < r\), il en résulte, d'après le résultat sur les sommes de Riemann : 
+            \[\frac 1{2\pi} \int_0^{2\pi}\ln |P(re^{it})|dt = \ln \left|P(0)\right|  +\sum_{\substack{k=1 \\ |\alpha_k| < r}}^d \ln\left(\frac{r}{|\alpha_k|}\right) +  \frac 1{2\pi}\sum_{\substack{k=1 \\ |\alpha_k| \geq r}}^d\left(\int_0^{2\pi}  \ln\left| \frac{r}{r_k}e^{i(t-\theta_k)} - 1 \right|dt\right)\]
+            Il ne reste plus qu'à montrer que la dernière somme est nulle, autrement dit que toutes intégrale de la forme suivante avec \(r < 1\) est nulle :
+            \[\int_0^{2\pi} \ln\left|1 - re^{it}\right| dt \]
+            En calculant explicitement le module,  :
+            \[\int_0^{2\pi} \ln\left|1 - re^{it}\right| dt  =  \int_0^{\pi} \ln(1 - 2r\cos(t) + r^2) dt\]
+            Posons \(f : x, t \longmapsto \ln(1 - 2r\cos(t) + r^2) \) et en vérifiant que les hypothèses du théorème, on a :
+            \[\frac{\partial}{\partial r} \int_0^{2\pi} \ln\left|1 - re^{it}\right| dt  
+            = \int_0^{\pi} \frac{2(r - cos(t))}{1 - 2r\cos(t) + r^2}dt\]
+            En effectuant le changement de variable \( u = \tan\left(\frac{t}2\right)\) :
+            \[\frac{\partial}{\partial r} \int_0^{2\pi} \ln\left|1 - re^{it}\right| dt  
+            = \int_0^{+\infty} \frac{2r - 2\frac{1-u^2}{1+u^2}}{1 - 2r\frac{1-u^2}{1+u^2}+ r^2}\frac{2du}{1+u^2}\]
+            \[= \int_0^{+\infty} \frac{2r - 2\frac{1-u^2}{1+u^2}}{1 - 2r\frac{1-u^2}{1+u^2}+ r^2}\frac{2du}{1+u^2}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise47"><h3>Exercice 47 :</h3><div>Soit \(f\) une fonction continue de \([a, b]\) dans \(\mathbb R\) telle que \(f(a) = f(b)\).
+            <ol>
+                </li><li class = "lic2"> Pour \(n\) entier supérieur à \(2\), montrer qu'il existe \((a', b') \in [a, b]^2\) tel que \(f(a') = f(b')\) et \(b'- a' = \frac{b - a}n\).
+                </li><li class = "lic2"> En supposant de plus \(f\) dérivable sur \(]a, b[\), en déduire le théorème de Rolle.
+                </li><li class = "lic2"> Application : soit \(f : x \longmapsto e^{-x^2}\). Déterminer le nombre de points d'annulation de \(f^{(n)}\).
+            </ol>
+            <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé47')"> Corrigé </button><hr>  <span id="Indication47" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé47" style="display:none;"><p>  <ol>
+                </li><li class = "lic2"> Trouver un tel couple \((a',b')\) revient à trouver un point d'annulation pour la fonction :
+                \[g : x \longmapsto f(x) - f\left(x+ \frac{b-a}n\right)\]
+                Or, cette fonction s'annule en effet car \(f\) est continue sur un intervalle donc est bornée et atteint ses bornes. Il en résulte que 
+                </li><li class = "lic2"> 
+            </ol>    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise48"><h3>Exercice 48 :</h3><div>Soit \(P\in \mathbb{C}\left[ X \right]\) non constant. Décomposer \(\frac{P'}{P}\) en éléments simple et montrer que tout racine de P' appartient à l'enveloppe convexe des racines de P. <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé48')"> Corrigé </button><hr>  <span id="Indication48" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé48" style="display:none;"><p>  On pose :
+            \[P(X) = \alpha \prod_{k = 1}^d (X - r_k)^{m_k}\]
+            Alors :
+            \[P'(X) = \alpha \sum_{k=1}^d \left(m_k (X - r_k)^{m_k - 1} \sum_{\substack{j = 1 \\ j \neq k}}^d (X - r_j)^{m_j}\right)\]
+            On trouve alors :
+            \[\boxed{\frac{P'(X)}{P(X)} = \sum_{k = 1}^d \frac{m_k}{X - r_k}}\]
+            On prend la définition suivante de l'enveloppe convexe d'un ensemble de complexe \(E = \{z_1, z_2, ..., z_n\}\) est définie par :
+            \[Env(E) = \left\{\left.\sum_{k = 1}^{n}\lambda_kz_k  \right|\lambda_1, ..., \lambda_n \textrm{ positifs de somme \(1\)}\right\}\]
+            Si \(z\) est une racine de \(P\), alors c'est aussi une racine de \(P'\), donc elle appartient à l'enveloppe convexe, sinon on peut écrire :
+            \[\frac{P'(z)}{P(z)} = 0 \]
+            \[\Longrightarrow \sum_{k = 1}^d \frac{m_k}{z - r_k} = \sum_{k = 1}^d \frac{m_k\overline{z - r_k}}{|z - r_k|^2} = 0\]
+            Soit, en conjuguant l'égalité :
+            \[\Longrightarrow \sum_{k = 1}^d\frac{m_k(z - r_k)}{|z - r_k|^2} = 0\]
+            \[ z = \frac{\sum_{k = 1}^d\frac{m_k}{|z - r_k|^2}}{\sum_{k = 1}^d\frac{m_k r_k}{|z - r_k|^2}}\]
+            Donc \(z\) est bien un barycentre à coefficient positif des racines de \(P\).
+            \[\boxed{\textrm{Les racines de \(P'\) sont dans l'enveloppe convexe des racines de \(P\)}}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise49"><h3>Exercice 49 :</h3><div>On suppose que le graphe de \(f\)  admet deux centres de symétrie. Montrer que \(f\) est la somme d'une fonction affine et d'une fonction périodique. <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé49')"> Corrigé </button><hr>  <span id="Indication49" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé49" style="display:none;"><p>  L'exercice ne définit pas ce qu'est un centre de symétrie, en faisant un schéma, on trouve facilement une définition. On dira que le point \(C = (c, d)\) est un point de symétrie pour le graphe de \(f\) si pour tout \(x \in \mathbb R\) :
+            \[f(c-x) + f(c+x) = 2d\]
+            De plus, par continuité de \(f\), on sait que \(d = f(c)\) :
+            \[f(c-x) + f(c+x) = 2f(c)\]
+            Notons \(a \neq b\) les abscisses des points de symétrie du graphe de \(f\) et posons :
+            \[\boxed{y : x \longmapsto \frac{f(b) - f(a)}{b-a} x + \frac{bf(a) - af(b)}{b-a}}\]
+            Qui est la fonction affine passant par les deux points de symétrie du graphe de \(f\).
+            Montrons maintenant que \(f-y\) est une fonction périodique de période \(2(b-a)\) :
+            \[f(x + (b-a)) - y(x + (b-a)) = f(x + (b-a)) - \left(\frac{f(b) - f(a)}{b-a} (x + (b-a)) + \frac{bf(a) - af(b)}{b-a}\right)\]
+            \[= f(x + (b-a))
+            - \left(\frac{f(b) - f(a)}{b-a} (x - (b-a) + 2(b-a)) + \frac{bf(a) - af(b)}{b-a}\right)\]
+            \[ = f(x + (b - a)) - 2(f(b) - f(a)) - y(x - (b-a))\]
+            Or, en utilisant le fait que \(b\) et \(a\) sont des points de symétrie :
+            \[f(x + (b - a)) = f(b + (x-a)) = 2f(b) - f(b - (x-a)) \]
+            \[ = 2f(b) - f(a + (b-x) = 2f(b) - 2f(a) + f(a - (b-x))\]
+            \[= f(x - (b-a)) + 2(f(b) - f(a))\]
+            Enfin, en posant :
+            \[\boxed{z : x \longmapsto f(x) - y(x)}\]
+            On obtient une décomposition qui convient :
+            \[\boxed{\textrm{\(f\) est la somme d'une fonction affine et d'une fonction périodique}}\]    </p></span></div></div>
+            
+            
+            
+            <div class="exercise hidden" id="exercise50"><h3>Exercice 50 :</h3><div>Déterminer les fonctions \(f \in \mathcal C^0 (\mathbb R, \mathbb R)\) telle que \(\forall x \in \mathbb R, f \circ f (x) = x\) <br>
+             <hr> <button class="bouton" onclick="afficher_texte('Corrigé50')"> Corrigé </button><hr>  <span id="Indication50" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé50" style="display:none;"><p>  Remarquons en premier lieux que \(f\) est bijective de \(\mathbb R\) de dans \(\mathbb R\) de bijection réciproque égale à elle même :
+            \[f^{-1} = f\]
+            Montrons que \(f\) est monotone.<br>
+            Soit \(a \neq b \in \mathbb R\), alors par injectivité : 
+            \[f(a) \neq f(b)\]
+            Supposons sans perte de généralité que \(f(a) \lt f(b)\). Soit \(x\in [a, b]\) montrons que :
+            \[f(a) \lt f(x) \lt f(b)\]
+            Supposons par l'absurde que \(f(a) \geq f(x)\) ou \(f(x) \geq f(b)\).
+            <ul>
+                </li><li class = "lic2"> Si \(f(a) \geq f(x)\), alors d'après le théorème des valeurs intermédiaire, comme \(f\) est continue, il existe \(c \in [x, a]\) tel que \(f(c) = f(a)\) car \(f(a) \in [f(c), f(b)]\).<br>
+                La valeur \(f(a)\) est atteint en deux points distincts, ce qui contredit l'injectivité de \(f\), absurde.
+                </li><li class = "lic2"> Sinon \(f(x) \geq f(b)\) et par le même argument, la valeur \(f(b)\) est atteinte plusieurs fois, absurde.
+            </ul>
+            Donc \(f(a) \lt f(x) \lt f(b)\).<br>
+            Prenons maintenant deux réels \(a \lt x \lt y \lt b\). En appliquant ce qui a été fait précédemment, comme \(x \in [a, y]\) :
+            \[f(a) \lt f(x) \lt f(y) \longrightarrow f(x) \lt f(y)\]
+            
+            Donc \(f\) est strictement croissante sur l'intervalle \([a,b]\).
+            Par le même raisonnement, on prouve que \(f\) est croissante sur tout intervalle de la forme \([c, a]\) donc sur \(]-\infty, a]\), puis que \(f\) est croissante sur tout intervalle de la forme \([b, c]\), donc sur \([b, +\infty[\).<br>
+            La démonstration est analogue dans le cas décroissant.<br>
+            Ainsi :
+            \[\boxed{\textrm{\(f\) est strictement monotone}}\]
+            <ul>
+                </li><li class = "lic2"> Si \(f\) est strictement croissante, alors, soit \(x\in \mathbb R\), supposons par l'absurde que \(f(x) > x\), alors \(f(f(x)) = x > f(x)\) Absurde, de même, \(f(x) \lt x\) mène à une absurdité donc \(f(x) = x\). 
+                \[\boxed{\textrm{Si \(f\) est croissante, alors  \(f = Id\)}}\]
+                </li><li class = "lic2"> Supposons donc que \(f\) est strictement décroissante, notons \(Inv_{\mathcal C^0}^-(\mathbb R)\) l'ensemble des involutions continues de \(\mathbb{R}\) dans \(\mathbb{R}\) strictement décroissante et  posons :
+                \[\mathcal B = \{g \circ -Id\circ g^{-1} | g : \mathbb R\longrightarrow \mathbb R \textrm{ bijection continue}\}\]
+                On a triviallement l'inclusion \(\mathcal B \subset Inv_{\mathcal C^0}^-(\mathbb R)\).<br>
+                Montrons l'inclusion réciproque. Posons :
+                \[g : x \longmapsto x - f(x)\]
+                La fonction \(g\) est continue et bijective par croissance stricte et continuité de \(-f\) et de \(Id\).<br>
+                On remarque de plus que :
+                \[g(f(x)) = f(x) - f(f(x)) = f(x) - x = - g(x)\]
+                En composant à gauche par \(g^{-1}\) on obtient :
+                \[ f = g^{-1} \circ -Id \circ g\]
+                Il en résulte l'inclusion réciproque donc l'égalité. Enfin :
+                \[\boxed{Inv_{\mathcal C^0}(\mathbb R) = \{g \circ -Id\circ g^{-1} | g : \mathbb R\longrightarrow \mathbb R \textrm{ bijection continue}\}
+                \cup \{Id\}}\]
+            </ul>    </p></span></div></div>
+            
+            
+            
+            
+
+
+    </div><br>
+    <div class="arrow arrow-left" onclick="prevExercise(50)">&lt;</div>
+    <div class="arrow arrow-right" onclick="nextExercise(50)">&gt;</div>
+    <script>
+    window.onload = function() {
+        var hash = window.location.hash;
+        if (hash) {
+            var exerciseId = hash.substring(1); // Remove the '#' character
+            var exercise = document.getElementById(exerciseId);
+            if (exercise) {
+                var exerciseIndex = Array.from(exercise.parentElement.children).indexOf(exercise);
+                if (exerciseIndex !== -1) {
+                    showExercise(exerciseIndex);
+                    currentExerciseIndex = exerciseIndex;
+                }
+            }
+        }
+    };
+    </script>
+</div>
+</body>
+</html>

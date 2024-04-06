@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html>
+<head><title>Suite, Séries, Sommabilité</title><link href="../stylePageMaths.css" rel="stylesheet"><link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"/><link rel="icon" href="./../../Images/Icones/favicon.png"><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> <script src = "../changePageMath.js"></script></head>
+
+<body background="../../Images/Fonds/hexagonal.png" bgproperties="fixed"><br>
+    <div class="entete" style="position: relative;"><div class="effetneon"><span><h1>BEHAGUE Quentin - Etudiant en CPGE MPI*</h1> </span></div></div>
+    <span class="menu-de-navigation" id="menu">
+    <nav style="z-index: 10;">
+    <ul>
+        <li class ="home_button"><a href="../../index.html"><img src="./../../Images/NeonHouse.png" class="pic_menu_home"></a></li>
+        <li class="deroulant"><a href="#">Exercices corrigés &ensp;</a>
+    <ul class="sous" style="height: 300px; overflow-y: scroll;">
+        <li><a href="../AlgebreLineaire/AlgebreLineaire.html">Algèbre linéaire</a></li>
+        <li><a href="../Norme/Norme.html">Notion de norme</a></li>
+        <li><a href="../SeriesEntieres/SeriesEntieres.html">Suites et séries entières</a></li>
+        <li><a href="../Reduction/Reduction.html">Réduction</a></li>
+        <li><a href="../Topologie/Topologie.html">Topologie</a></li>
+        <li><a href="../EquationsDifferentielles/EquationsDifferentielles.html">Équations Différentielles</a></li>
+        <li><a href="../CalculDifferentiel/CalculDifferentiel.html">Calcul Différentiel</a></li>
+        <li><a href="../CalculDifferentiel/CalculDifferentiel.html">Réduction</a></li>
+        <li><a href="../EspacesEuclidiens/EspacesEuclidiens.html">Espaces euclidiens</a></li>
+        <li><a href="../EspacesProbabilises/EspacesProbabilises.html">Espaces probabilisés</a></li>
+        <li><a href="../StructureAlgebrique/StructureAlgebrique.html">Structures Algébriques</a></li>
+        <li><a href="../FonctionsVectorielles/FonctionsVectorielles.html">Fonctions à valeurs vectorielles</a></li>
+        <li><a href="../IntegralesParametres/IntegralesParametres.html">Intégrales à Paramétres</a></li>
+        <li><a href="../Integration/Integration.html">Intégration</a></li>
+        <li><a href="../SuitesSeriesFonction/SuitesSeriesFonction.html">Suites et séries de fonctions</a></li>
+        <li><a href="../SuitesSeriesSommabilite/SuitesSeriesSommabilite.html">Suites, Séries et Sommabilité</a></li>
+    </ul>
+    <li class="deroulant"><a href="#">Programmes &ensp;</a>
+    <ul class="sous">
+        <li><a href="../../Programmes/Syracuse.html">Suite de Syracuse</a></li>
+        <li><a href="../../Programmes/Puzzle.html">Puzzle</a></li>
+        <li><a href="https://github.com/BehagueQuentin/Jeu-Echecs">Jeux d'échec</a></li>
+    </ul>
+        <li ><a href="../../Téléchargement/Téléchargement.html">Téléchargements</a></li>
+        <li class="deroulant"><a href="#">Contact &ensp;</a>
+            <ul class="sous">
+            <li><a>06 46 15 00 15</a></li>
+            <li><a>quentinbehague59560@gmail.com</a></li>
+            <li><a href="https://github.com/BehagueQuentin">Mon github</a>
+        </ul>
+        </li>
+        <li><a href="../../Apropos/Apropos.html">A propos</a></li>
+    </ul></nav></span>
+<style>
+    
+
+    
+</style>
+</head>
+<body style="min-height: 50vw;">
+<div class="container-ex0">
+    <div class="exercise-container" id="exerciseContainer">
+        <div class="exercise" id="exercise1"><h3>Exercice 1 :</h3><div>
+            <button class="bouton" onclick="afficher_texte('Indication1')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé1')"> Corrigé </button>
+
+            <span id="Indication1" style="display:none; text-align: left;"><p>
+                Pour l'une des inégalité, se servir du théorème fondamentale de l'analyse. <br>
+                Pour la seconde, faire une disjonction de cas selon l'annulation où non de la fonction \(f\).
+            <HR></p></span>
+            <span id = "Corrigé1" style="display:none;"><p>
+                Pour la première inégalité, il suffit d'appliquer le théorème fondamental du calcul intégrale. Soit \(x\in [0,1] :\)
+                \[ |f(x)| \leq \left| f(0) + \int_0^x f'(t) dt \right| \leq |f(0)| + \int_0^x |f'(t)|dt\]
+                Or, \(|f'|\) étant une fonction positive, et \(x\) étant compris dans \([0, 1]\) on a :
+                \[ |f(x)| \leq |f(0)| + \int_0^x |f'(t)| dt \leq |f(0)| + \int_0^1 |f'(t)| dt  = N_2 (f) \]
+                Ainsi, on a bien :
+                \[ N_1(f) \leq 2N_2(f)\]
+                Démontrons la seconde inégalité, on a tout d'abord :
+                \[\|f'\|_{1} \leq N_1(f)\]
+                Supposons dans un premier temps que \(f\) s'annule en  \(\alpha \in [0, 1]\), alors :
+                \[|f(0)| = |f(0) - f(\alpha)| = \left|\int^{\alpha}_0 f'(t)dt\right| \leq \int_0^{\alpha} |f'(t)| dt \leq \int_0^{1} |f'(t)| dt = \|f'\|_1 \leq N_1(f)\]
+                Supposons maintenant que \(f\) ne s'annule pas, alors \(f\) est de signe constant, supposons donc \(f\) de signe notons \(M = f(\beta)\) sont minimum sur \([0,1]\). On a :
+                \[|f(0)| = |f(0) + f(\beta) - f(\beta)| = \left| M - \int_0^{\beta} f'(t)dt \right| \leq |M| + \int_0^1 |f'(t)|dt = |M| + \|f'\|_1\]
+                Or :
+                \[\|f\|_1 = \int_0^1 |f(t)|dt \geq \int^1_0 |M|dt = M \]
+                D'où :
+                \[N_2(f) \leq 2N_1(f)\]
+                Enfin :
+                \[\boxed{\textrm{Les normes $N_1$ et $N_2$ sont équivalentes.}}\]
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise2"><h3>Exercice 2 :</h3><div>
+            <button class="bouton" onclick="afficher_texte('Indication2')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé2')"> Corrigé </button>
+
+            <span id="Indication2" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé2" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise3"><h3>Exercice 3 :</h3><div>
+            <button class="bouton" onclick="afficher_texte('Indication3')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé3')"> Corrigé </button>
+
+            <span id="Indication3" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé3" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise4"><h3>Exercice 4 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication4')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé4')"> Corrigé </button>
+
+            <span id="Indication4" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé4" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise5"><h3>Exercice 5 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication5')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé5')"> Corrigé </button>
+
+            <span id="Indication5" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé5" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise6"><h3>Exercice 6 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication6')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé6')"> Corrigé </button>
+
+            <span id="Indication6" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé6" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise7"><h3>Exercice 7 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication7')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé7')"> Corrigé </button>
+
+            <span id="Indication7" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé7" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise8"><h3>Exercice 8 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication8')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé8')"> Corrigé </button>
+
+            <span id="Indication8" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé8" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise9"><h3>Exercice 9 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication9')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé9')"> Corrigé </button>
+
+            <span id="Indication9" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé9" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise10"><h3>Exercice 10 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication10')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé10')"> Corrigé </button>
+
+            <span id="Indication10" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé10" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise11"><h3>Exercice 11 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication11')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé11')"> Corrigé </button>
+
+            <span id="Indication11" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé11" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise12"><h3>Exercice 12 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication12')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé12')"> Corrigé </button>
+
+            <span id="Indication12" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé12" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise13"><h3>Exercice 13 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication13')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé13')"> Corrigé </button>
+
+            <span id="Indication13" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé13" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise14"><h3>Exercice 14 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication14')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé14')"> Corrigé </button>
+
+            <span id="Indication14" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé14" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise15"><h3>Exercice 15 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication15')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé15')"> Corrigé </button>
+
+            <span id="Indication15" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé15" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise16"><h3>Exercice 16 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication16')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé16')"> Corrigé </button>
+
+            <span id="Indication16" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé16" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise17"><h3>Exercice 17 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication17')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé17')"> Corrigé </button>
+
+            <span id="Indication17" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé17" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise18"><h3>Exercice 18 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication18')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé18')"> Corrigé </button>
+
+            <span id="Indication18" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé18" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise19"><h3>Exercice 19 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication19')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé19')"> Corrigé </button>
+
+            <span id="Indication19" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé19" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise20"><h3>Exercice 20 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication21')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé21')"> Corrigé </button>
+
+            <span id="Indication21" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé21" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise21"><h3>Exercice 21 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication21')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé21')"> Corrigé </button>
+
+            <span id="Indication21" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé21" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise22"><h3>Exercice 22 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication22')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé22')"> Corrigé </button>
+
+            <span id="Indication22" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé22" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise23"><h3>Exercice 23 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication23')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé23')"> Corrigé </button>
+
+            <span id="Indication23" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé23" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise24"><h3>Exercice 24 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication24')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé24')"> Corrigé </button>
+
+            <span id="Indication24" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé24" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise25"><h3>Exercice 25 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication25')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé25')"> Corrigé </button>
+
+            <span id="Indication25" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé25" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise26"><h3>Exercice 26 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication26')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé26')"> Corrigé </button>
+
+            <span id="Indication26" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé26" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise27"><h3>Exercice 27 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication27')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé27')"> Corrigé </button>
+
+            <span id="Indication27" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé27" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise28"><h3>Exercice 28 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication28')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé28')"> Corrigé </button>
+
+            <span id="Indication28" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé28" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise29"><h3>Exercice 29 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication29')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé29')"> Corrigé </button>
+
+            <span id="Indication29" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé29" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise30"><h3>Exercice 30 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication30')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé30')"> Corrigé </button>
+
+            <span id="Indication30" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé30" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise31"><h3>Exercice 31 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication31')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé31')"> Corrigé </button>
+
+            <span id="Indication31" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé3" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise32"><h3>Exercice 32 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication32')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé32')"> Corrigé </button>
+
+            <span id="Indication32" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé32" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise33"><h3>Exercice 33 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication33')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé33')"> Corrigé </button>
+
+            <span id="Indication33" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé33" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise34"><h3>Exercice 34 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication34')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé34')"> Corrigé </button>
+
+            <span id="Indication34" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé34" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise35"><h3>Exercice 35 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication35')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé35')"> Corrigé </button>
+
+            <span id="Indication35" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé35" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise36"><h3>Exercice 36 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication36')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé36')"> Corrigé </button>
+
+            <span id="Indication36" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé36" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise37"><h3>Exercice 37 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication37')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé37')"> Corrigé </button>
+
+            <span id="Indication37" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé37" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise38"><h3>Exercice 38 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication38')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé38')"> Corrigé </button>
+
+            <span id="Indication38" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé38" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise39"><h3>Exercice 39 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication39')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé39')"> Corrigé </button>
+
+            <span id="Indication39" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé39" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise40"><h3>Exercice 40 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication40')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé40')"> Corrigé </button>
+
+            <span id="Indication40" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé40" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise41"><h3>Exercice 41 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication41')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé41')"> Corrigé </button>
+
+            <span id="Indication41" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé41" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise42"><h3>Exercice 42 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication42')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé42')"> Corrigé </button>
+
+            <span id="Indication42" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé42" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise43"><h3>Exercice 43 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication43')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé43')"> Corrigé </button>
+
+            <span id="Indication43" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé43" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise44"><h3>Exercice 44 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication44')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé44')"> Corrigé </button>
+
+            <span id="Indication44" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé44" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise45"><h3>Exercice 45 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication45')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé45')"> Corrigé </button>
+
+            <span id="Indication45" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé45" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise46"><h3>Exercice 46 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication46')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé46')"> Corrigé </button>
+
+            <span id="Indication46" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé46" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise47"><h3>Exercice 47 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication47')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé47')"> Corrigé </button>
+
+            <span id="Indication47" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé47" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise48"><h3>Exercice 48 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication48')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé48')"> Corrigé </button>
+
+            <span id="Indication48" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé48" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise49"><h3>Exercice 49 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication49')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé49')"> Corrigé </button>
+
+            <span id="Indication49" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé49" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise50"><h3>Exercice 50 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication50')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé50')"> Corrigé </button>
+
+            <span id="Indication50" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé50" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise51"><h3>Exercice 51 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication51')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé51')"> Corrigé </button>
+
+            <span id="Indication51" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé51" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise52"><h3>Exercice 52 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication52')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé52')"> Corrigé </button>
+
+            <span id="Indication52" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé52" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+        <div class="exercise hidden" id="exercise53"><h3>Exercice 53 :</h3><div>
+                <button class="bouton" onclick="afficher_texte('Indication53')" > Indication </button>
+            <button class="bouton" onclick="afficher_texte('Corrigé53')"> Corrigé </button>
+
+            <span id="Indication53" style="display:none; text-align: left;"><p>
+                ...
+            <HR></p></span>
+            <span id = "Corrigé53" style="display:none;"><p>
+                ...
+            </p></span>
+        </div></div>
+    </div><br>
+    <div class="arrow arrow-left" onclick="prevExercise(53)">&lt;</div>
+    <div class="arrow arrow-right" onclick="nextExercise(53)">&gt;</div>
+    <script>
+    window.onload = function() {
+        var hash = window.location.hash;
+        if (hash) {
+            var exerciseId = hash.substring(1); // Remove the '#' character
+            var exercise = document.getElementById(exerciseId);
+            if (exercise) {
+                var exerciseIndex = Array.from(exercise.parentElement.children).indexOf(exercise);
+                if (exerciseIndex !== -1) {
+                    showExercise(exerciseIndex);
+                    currentExerciseIndex = exerciseIndex;
+                }
+            }
+        }
+    };
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Espaces Probabilisés</title>
+    <link href="../stylePageMaths.css" rel="stylesheet">                                                                                                                                                                              
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"/>                                                                                                      
+    <link rel="icon" href="./../../Images/Icones/favicon.png">                                                                        
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>                                                                                                                  
+</head>
+
+<ul class="background">
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+    <li><div class="hexagon"></div></li>
+</ul>
+
+
+<body background="./../../Images/Fonds/hexagonal.png" bgproperties="fixed">
+    <br>
+
+    
+    <div class="entete" style="position: relative;"><div class="effetneon"><span><h1>BEHAGUE Quentin - Etudiant en CPGE MPI*</h1> </span></div></div>
+
+    <!-- Menu de navigation du site -->
+    <span class="menu-de-navigation" id="menu"><nav style="z-index: 10;"><ul>
+        <li class ="home_button"><a href="../../index.html"><img src="./../../Images/NeonHouse.png" class="pic_menu_home"></a></li>
+        <li class="deroulant"><a href="#">Exercices corrigés &ensp;</a>
+            <ul class="sous" style="height: 300px; overflow-y: scroll;">
+                <li><a href="../AlgebreLineaire/AlgebreLineaire.html">Algèbre linéaire</a></li>
+                <li><a href="../Norme/Norme.html">Notion de norme</a></li>
+                <li><a href="../SuitesSeriesSommabilite/SuitesSeriesSommabilite.html">Suites, Séries et Sommabilité</a></li>
+                <li><a href="../Reduction/Reduction.html">Réduction</a></li>
+                <li><a href="../FonctionsVectorielles/FonctionsVectorielles.html">Fonctions à valeurs vectorielles</a></li>
+                <li><a href="../EspacesProbabilises/EspacesProbabilises.html">Espaces probabilisés</a></li>
+                <!-- Page qui ne sont pas achevées :
+                <li><a href="../SuitesSeriesFonction/SuitesSeriesFonction.html">Suites et séries de fonctions</a></li>
+                <li><a href="../EquationsDifferentielles/EquationsDifferentielles.html">Équations différentielles</a></li>
+                <li><a href="../CalculDifferentiel/CalculDifferentiel.html">Calcul différentiel</a></li>
+                <li><a href="../IntegralesParametres/IntegralesParametres.html">Intégrales à Paramétres</a></li>
+                <li><a href="../EspacesEuclidiens/EspacesEuclidiens.html">Espaces euclidiens</a></li>
+                <li><a href="../Integration/Integration.html">Intégration</a></li>
+                <li><a href="../SeriesEntieres/SeriesEntieres.html">Suites et séries entières</a></li>
+                <li><a href="../Topologie/Topologie.html">Topologie</a></li>
+                <li><a href="../VariablesAleatoires/VariablesAleatoires.html">Variables aléatoires</a></li>
+                <li><a href="../StructureAlgebrique/StructureAlgebrique.html">Structures algébriques</a></li>-->
+            </ul>
+        <li class="deroulant"><a href="#">Programmes &ensp;</a>
+            <ul class="sous">
+                <li><a href="../../Programmes/Julia.html">Ensemble de Julia</a></li>
+                <li><a href="../../Programmes/Syracuse.html">Suite de Syracuse</a></li>
+                <li><a href="../../Programmes/Puzzle.html">Puzzle</a></li>
+                <li><a href="https://github.com/BehagueQuentin/Jeu-Echecs">Jeux d'échec</a></li>
+            </ul>
+        <li><a href="../../Téléchargement/Téléchargement.html">Téléchargements</a></li>
+        <li class="deroulant"><a href="#">Contact &ensp;</a>
+            <ul class="sous">
+                <li><a>06 46 15 00 15</a></li>
+                <li><a>quentinbehague59560@gmail.com</a></li>
+                <li><a href="https://github.com/BehagueQuentin">Mon github</a></li>
+            </ul>   
+        <li><a href="../../Apropos/Apropos.html">A propos</a></li>
+    </ul></nav></span>
+    <main style="z-index: 0; position: relative;">
+            <div class="container">
+                    <div class="container-title" style="width:50%; background-color: rgba(0, 2, 11, 0.5); border-radius: 2vw;">
+                        <h2  style="margin:1vw; text-align: center;">
+                            <span class="fading">Exercices :</span>
+                            <span class="fading">Espaces</span>
+                            <span class="fading">Probabilisés</span>
+                        </h2>
+                    </div>
+            </div>
+            <div class="flexbox-container" style="font-size: 13px;">
+                        
+                    
+                    
+                    
+                <div class="flexbox-item" onclick="changePage(1)">
+                    <div class="marge1">
+                        <h4>Exercice n° 1 :</h4>
+                        Soit \(k \in \mathbb{N}\).
+                            <ol>
+                                </li><li class = "lic1"> Montrer que : 
+                                \[ \forall x \in ]-1, 1[, \sum^{+ \infty}_{n = k}\binom{n}{k}x^{n-k}= \frac{1}{(1 - x)^{k+1}}\]
+                                </li><li class = "lic1"> Soit \(p \in ]0, 1[\). On pose : \(\forall n \geq k, P (n) =
+                            \binom{n - 1}{k - 1}p^n(1 - p)^{n-k}\).<br>
+                            Montrer que \(P\) définit bien une loi de probabilité.
+                            </ol> <br>
+                    </div>
+                </div>
+                
+                <div class="flexbox-item " onclick="changePage(2)">
+                    <div class="marge1">
+                        <h4>Exercice n° 2 :</h4>
+                        Deux joueurs A et B s'affrontent lors d'un match de badminton selon les règles suivantes :
+                                A commence à servir ; le joueur qui gagne le point sert pour le point suivant ; 
+                                le joueur qui sert a probabilité \(2/3\) de gagner le point et \(1/3\) de le perdre.
+                                Pour \(n \in \mathbb N^*\), on note \(A_n\) (resp. \(B_n\)) l'événement " \(A\) (resp. \(B\)) gagne le \(n\)-ème point " ainsi que \(a_n = P(A_n)\) et \(b_n = P(B_n)\). 
+                                
+                                <ol>
+                                    </li><li class = "lic1"> Calculer \(a_1\) et \(a_2\).
+                                    </li><li class = "lic1"> A gagne le deuxième point, quelle est la probabilité qu'il ait gagné le premier ?
+                                    </li><li class = "lic1"> Montrer qu'il existe une matrice \(M \in \mathcal M_2(\mathbb R)\) telle que \(\forall n \in \mathbb N^*\), \(\begin{pmatrix} a_{n+1} \\ b_{n+1} \end{pmatrix} = M \begin{pmatrix} a_n \\ b_n \end{pmatrix}\).
+                                    </li><li class = "lic1"> Montrer que \(M\) est diagonalisable puis expliquer la méthode pour déterminer \(M^n\).<br>Les suites \((a_n)\) et \((b_n)\) convergent-elles ?
+                                    </li><li class = "lic1"> Grâce à python, représenter graphiquement les dix premiers termes des suites \((a_n)\) et \((b_n)\).
+                                </ol> <br>
+                    </div>
+                </div>
+                
+                <div class="flexbox-item" onclick="changePage(3)">
+                    <div class="marge1">
+                        <h4>Exercice n° 3 :</h4>
+                        Des personnes se transmettent à la file une information. La première personne reçoit l'information exacte ; ensuite, chaque personne transmet fidèlement l'information (telle qu'elle l'a reçue, donc pouvant ou non être correcte) avec la probabilité \(p\), ou transmet l'information contraire de celle qu'elle a reçue avec la probabilité \(1-p\).
+                                
+                                On note \(A_n\) l'événement "la \(n\)-ième personne reçoit correctement l'information initiale", et l'on pose \(p_n=\mathbb P(A_n)\).
+                                Exprimer \(p_{n+1}\) en fonction de \(p_n\), puis exprimer \(p_n\) en fonction de \(n\). <br>
+                    </div>
+                </div>
+                
+                <div class="flexbox-item flexbox-item flexbox-item-top-medium-height" onclick="changePage(4)">
+                    <div class="marge1">
+                        <h4>Exercice n° 4 :</h4>
+                        On souhaite ranger sur une étagère 14 livres de mathématiques, 6 livres de physique, et 11 d'informatique. De combien de façons peut-on effectuer ce rangement : 
+                                <ol>
+                                   </li><li class = "lic1"> Si les livres doivent être groupés par matières.
+                                
+                                   </li><li class = "lic1"> si seuls les livres de mathématiques doivent être groupés.
+                                </ol>
+                    </div>
+                </div>
+                
+                <div class="flexbox-item flexbox-item flexbox-item-top-medium-height" onclick="changePage(5)">
+                    <div class="marge1">
+                        <h4>Exercice n° 5 :</h4>
+                        On considère deux points du plan à coordonnées entières. On veut aller de l'un à l'autre en avançant à chaque pas de 1 en abscisse ou en ordonnée. Combien y a-t-il de manières de faire (en fonction des coordonnées des points) ?<br>
+                    </div>
+                </div>
+                
+                <div class="flexbox-item flexbox-item flexbox-item-tiny" onclick="changePage(6)">
+                    <div class="marge1">
+                        <h4>Exercice n° 6 :</h4>
+                        Combien les mots ABCDEF et AAABBCDE possèdent-ils d'anagrammes ? <br>
+                    </div>
+                </div>
+                
+                <div class="flexbox-item flexbox-item flexbox-item-top-medium-height" onclick="changePage(7)">
+                    <div class="marge1">
+                        <h4>Exercice n° 7 :</h4>
+                        Dans une loterie, avec 49 numéros, dont 6 sont tirés au sort, un joueur choisi au départ 6 numéros.
+                                <br> Calculer les probabilités d'obtenir :
+                                <ol>
+                                    </li><li class = "lic1"> Les 6 bons numéros.
+                                    </li><li class = "lic1"> 5 bons numéros au moins.
+                                    </li><li class = "lic1"> Au moins 3 bons numéros.
+                                    </li><li class = "lic1"> Exactement 3 bons numéros.
+                                    </li><li class = "lic1"> Même question si le joueur choisit 7 puis 8 numéros.
+                            </ol> <br>
+                    </div>
+                </div>
+                
+                <div class="flexbox-item flexbox-item-tiny" onclick="changePage(8)">
+                    <div class="marge1">
+                        <h4>Exercice n° 8 :</h4>
+                        Pour réussir un QCM, il faut répondre correctement à \(7\) questions sur les \(10\). Quelle est la probabilité de réussite en choisissant des réponses au hasard. <br>
+                    </div>
+                </div>
+                
+                <div class="flexbox-item flexbox-item-tiny" onclick="changePage(9)">
+                    <div class="marge1">
+                        <h4>Exercice n° 9 :</h4>
+                        <ol>
+                                </li><li class = "lic1"> Mon voisin a deux enfants dont au moins une fille. Quelle est la probabilité pour que l'autre soit un
+                                garçon ?
+                                </li><li class = "lic1"> Un autre voisin a deux enfants dont le plus jeune est une fille. Quelle est la probabilité pour que l'autre
+                                soit un garçon ?
+                            </ol> <br>
+                    </div>
+                </div>
+                
+                <div class="flexbox-item flexbox-item-center-medium-height" onclick="changePage(10)">
+                    <div class="marge1">
+                        <h4>Exercice n° 10 :</h4>
+                        Dans une urne on a 4 boules rouges, 5 boules noires et 6 boules vertes. On tire 6 boules (sans remise). Calcule
+                            la probabilité de tirer :
+                            <ol>
+                                </li><li class = "lic1"> les 6 boules vertes.
+                                </li><li class = "lic1"> 3 boules rouges et 3 boules noires.
+                                </li><li class = "lic1"> 2 boules de chaque couleur.
+                                </li><li class = "lic1"> Pas de boule verte.
+                                </li><li class = "lic1"> au moins une boule rouge.
+                            </ol> <br>
+                    </div>
+                </div>
+                
+                <div class="flexbox-item flexbox-item-center-medium-height" onclick="changePage(11)">
+                    <div class="marge1">
+                        <h4>Exercice n° 11 :</h4>
+                        On jette deux dés (non pipés), l'un après l'autre. On note respectivement A, B et C les événements A= {Le chiffre du premier dé est pair}, B={Le chiffre du deuxième dé est pair} et C={Les deux chiffres ont même parité}.
+                                <ol>
+                                    </li><li class = "lic1"> Montrer que les événements A, B et C sont deux à deux indépendants.
+                                    </li><li class = "lic1">  Montrer que A, B et C ne sont pas indépendants dans leur ensemble.
+                                </ol> <br>
+                    </div>
+                </div>
+                
+                <div class="flexbox-item flexbox-item-tiny" onclick="changePage(12)">
+                    <div class="marge1">
+                        <h4>Exercice n° 12 :</h4>
+                        Soit \(A\) et \(B\) deux événements aléatoires associés à un espace probabilisé \((\Omega, P)\). Montrer
+                            que \(A\) et \(B\) indépendants \(\Longleftrightarrow\) \(A^c\) et \(B\) indépendants <br>
+                    </div>
+                </div>
+                
+                <div class="flexbox-item flexbox-item-center-big-height" style="flex: 8; overflow-y: scroll;" onclick="changePage(13)">
+                    <div class="marge1">
+                        <h4>Exercice n° 13 :</h4>
+                        Démontrer les formules suivantes à l'aide de modélisation par une expérience, ou autre méthode : 
+                                
+                                <ol>
+                                    </li><li class = "lic1"> 	\(\left( \begin{matrix}
+                                        m+n  \\
+                                        r  \\
+                                    \end{matrix} \right)=\sum\limits_{k=0}^{r}{\left( \begin{matrix}
+                                            m  \\
+                                            k  \\
+                                        \end{matrix} \right)}\left( \begin{matrix}
+                                        n  \\
+                                        r-k  \\
+                                    \end{matrix} \right)\)
+                                    </li><li class = "lic1"> \(\left( \begin{matrix}
+                                        n  \\
+                                        r  \\
+                                    \end{matrix} \right)=\sum\limits_{k=r}^{n}{\left( \begin{matrix}
+                                            k-1  \\
+                                            r-1  \\
+                                        \end{matrix} \right)}\)
+                                    </li><li class = "lic1"> 	\(\sum\limits_{k=1}^{n}{k\left( \begin{matrix}
+                                            n  \\
+                                            k  \\
+                                        \end{matrix} \right)}=n{{.2}^{n-1}}\)
+                                    </li><li class = "lic1"> 	\({{2}^{p}}\left( \begin{matrix}
+                                        n  \\
+                                        p  \\
+                                    \end{matrix} \right)=\sum\limits_{k=0}^{p}{\left( \begin{matrix}
+                                            n  \\
+                                            k  \\
+                                        \end{matrix} \right)\left( \begin{matrix}
+                                            n-k  \\
+                                            p-k  \\
+                                        \end{matrix} \right)}\) 
+                                    
+                                    </li><li class = "lic1"> 	\(0=\sum\limits_{k=0}^{p}{{{\left( -1 \right)}^{k}}\left( \begin{matrix}
+                                            n  \\
+                                            k  \\
+                                        \end{matrix} \right)\left( \begin{matrix}
+                                            n-k  \\
+                                            p-k  \\
+                                        \end{matrix} \right)}\)
+                                    </li><li class = "lic1"> 	\({{\left( 1-\left( \begin{matrix}
+                                                n  \\
+                                                2  \\
+                                            \end{matrix} \right)+\left( \begin{matrix}
+                                                n  \\
+                                                4  \\
+                                            \end{matrix} \right)-.... \right)}^{2}}+{{\left( \left( \begin{matrix}
+                                                n  \\
+                                                1  \\
+                                            \end{matrix} \right)-\left( \begin{matrix}
+                                                n  \\
+                                                3  \\
+                                            \end{matrix} \right)+.... \right)}^{2}}={{2}^{n}}\).  (Utiliser \({{(1+i)}^{n}}\))
+                                    </li><li class = "lic1">	\(\sum\limits_{k=1}^{n}{\frac{k}{(k+1)!}}=1-\frac{1}{(n+1)!}\)
+                                    </li><li class = "lic1"> 	\(\sum\limits_{k=0}^{n-1}{(2k+1)}={{n}^{2}}\)
+                                    </li><li class = "lic1"> 	\(\sum\limits_{k=1}^{n}{k.k!}=(n+1)!-1\)
+                                    </li><li class = "lic1"> 	\(\prod\limits_{k=1}^{n}{(4k-2)}=\prod\limits_{k=n+1}^{2n}{k}\)
+                                    </li><li class = "lic1"> 	\(\left( \begin{matrix}
+                                        n  \\
+                                        2  \\
+                                    \end{matrix} \right)-\left( \begin{matrix}
+                                        n-p \\
+                                        2  \\
+                                    \end{matrix} \right)-\left( \begin{matrix}
+                                        n-q  \\
+                                        2  \\
+                                    \end{matrix} \right)+\left( \begin{matrix}
+                                        n-p-q  \\
+                                        2  \\
+                                    \end{matrix} \right)=pq\) avec \(2+p+q\le n\)
+                                    </li><li class = "lic1"> 	\(\left( \begin{matrix}
+                                        n  \\
+                                        q  \\
+                                    \end{matrix} \right).\left( \begin{matrix}
+                                        n-q  \\
+                                        p-q  \\
+                                    \end{matrix} \right)=\left( \begin{matrix}
+                                        p  \\
+                                        q  \\
+                                    \end{matrix} \right)\left( \begin{matrix}
+                                        n  \\
+                                        p  \\
+                                    \end{matrix} \right)\)  avec \(q\le p\le n\). En déduire la valeur de \(\sum\limits_{k=0}^{p}{\left( \begin{matrix}
+                                            n  \\
+                                            k  \\
+                                        \end{matrix} \right).\left( \begin{matrix}
+                                            n-k  \\
+                                            p-k  \\
+                                        \end{matrix} \right)}\).
+                                </ol> <br>
+                    </div>
+                </div>
+                
+                <div class="flexbox-item flexbox-item-bottom-medium-height" onclick="changePage(14)">
+                    <div class="marge1">
+                        <h4>Exercice n° 14 :</h4>
+                        Dans une population, une personne sur 10'000 souffre d'une pathologie. Un laboratoire pharmaceutique met sur le marché un test sanguin. Celui-ci est positif chez 99% des malades mais aussi faussement positif chez 0,1% des personnes non atteintes. Un individu passe ce test et obtient un résultat positif. Quelle est sa probabilité d'être malade ? Qu'en conclure ? <br>
+                    </div>
+                </div>
+                
+                <div class="flexbox-item flexbox-item-center-medium-height" onclick="changePage(15)">
+                    <div class="marge1">
+                        <h4>Exercice n° 15 :</h4>
+                        Deux usines A et B fabriquent des trottinettes. L'usine A fabrique deux fois plus de
+                            trottinettes que l'usine B. Les trottinettes provenant de l'usine A ont dans 5% des cas un défaut, alors que celles provenant de l'usine B ont dans 2% des cas un défaut. Je viens d'acheter une trottinette, laquelle se révèle être défectueuse. Quelle est la probabilité qu'elle provienne de l'usine A. <br>
+                    </div>
+                </div>
+                
+                <div class="flexbox-item flexbox-item-center-medium-height" onclick="changePage(16)">
+                    <div class="marge1">
+                        <h4>Exercice n° 16 :</h4>
+                        Soit p \(\in ]0, 1[\) et \(\alpha \in \left]0, \frac{1}{p} - 1 \right[\). Pour \(n\geq 1\), la probabilité qu'une famille ait \(n\) enfants est \(\alpha p^n\).
+                                <ol>
+                                    </li><li class = "lic1"> Quelle est la probabilité qu'une famille n'ait aucun enfant ?
+                                
+                                    </li><li class = "lic1"> Quelle est la probabilité qu'une famille ait \(k\) garçons ?
+                                
+                                    </li><li class = "lic1"> Quelle est la probabilité qu'une la famille avec au moins un garçon ait au moins deux garçons ?
+                                </ol> <br>
+                    </div>
+                </div>
+                
+                <div class="flexbox-item flexbox-item-center-medium-height" onclick="changePage(17)">
+                    <div class="marge1">
+                        <h4>Exercice n° 17 :</h4>
+                        <ol>
+                                    </li><li class = "lic1"> Soit \(E\) un ensemble de cardinal \(n\). Combien y a t-il de couples \((X, Y)\) de parties de \(E\) tels que \(X\subset Y\) ?
+                                
+                                    </li><li class = "lic1"> Dans une urne contenant \(n\) boule numérotées de \(1\) à \(n\), on tire une poignée de boules, que l'on remet ensuite dans l'urne. On tire une deuxième poignée de boules. Quelle est la probabilité de tirer deux poignées de boules distinctes, i.e, aucune boule de la deuxième poignée n'a été tirée à la première ?
+                                </ol> <br>
+                    </div>
+                </div>
+                
+                <div class="flexbox-item flexbox-item-tiny" onclick="changePage(18)">
+                    <div class="marge1">
+                        <h4>Exercice n° 18 :</h4>
+                        Combien existe-t-il de partitions d'un ensemble de cardinal \(np\) en \(n\) parties de cardinal \(p\) ? <br>
+                    </div>
+                </div>
+                
+                <div class="flexbox-item flexbox-item-tiny" onclick="changePage(19)">
+                    <div class="marge1">
+                        <h4>Exercice n° 19 :</h4>
+                        On considère un ensemble de \(2n\) points. Combien existe-t-il de manière de les apparier deux à deux (on pourra proposer une démonstration directe et une démonstration par récurrence) <br>
+                    </div>
+                </div>
+                
+                <div class="flexbox-item flexbox-item-tiny" onclick="changePage(20)">
+                    <div class="marge1">
+                        <h4>Exercice n° 20 :</h4>
+                        Soit \(A \) un ensemble fini. Déterminer \(\sum\limits_{X\subset A}{Card\left( X \right)}\). <br>
+                    </div>
+                </div>
+
+                <div class="flexbox-item flexbox-item-tiny" onclick="changePage(21)">
+                    <div class="marge1">
+                        <h4>Exercice n° 21 :</h4>
+                        Soit \(E\) un ensemble. Montrer qu'une intersection quelconque de tribus sur \(E\) est une tribu sur \(E\). <br>
+                    </div>
+                </div>
+                
+                <div class="flexbox-item flexbox-item-center-big-height" onclick="changePage(22)">
+                    <div class="marge1">
+                        <h4>Exercice n° 22 :</h4>
+                        On note \(S_{n}^{k}\) le nombre de surjections existant entre un ensemble à n éléments et un ensemble à k éléments.
+                                
+                                <ol>
+                                    </li><li class = "lic1"> Préciser les valeur de \(S_{n}^{1}\) et \(S_{n}^{n}\).
+                                    </li><li class = "lic1"> Montrer que \(S_{n}^{2}={{2}^{n}}-2\).
+                                    </li><li class = "lic1"> Montrer que \(\forall n\in {{\mathbb{N}}^{*}}\), \(\forall k\in \left[\!\left[ 0,n \right]\!\right]\), \(\sum\limits_{j=1}^{n}{\left( \begin{matrix}
+                                            k  \\
+                                            j  \\
+                                        \end{matrix} \right)}S_{n}^{j}={{k}^{n}}\).
+                                    </li><li class = "lic1"> Montrer que \(S_{n}^{j}=j\left( S_{n-1}^{j}+S_{n-1}^{j-1} \right)\).
+                                    </li><li class = "lic1"> Implémenter un programme python permettant de calculer les \(S_{n}^{k}\)
+                                    </li><li class = "lic1"> Soit \(f\left( x \right)={{e}^{x}}-1\). Montrer que pour tout entier \(k\in \left[\!\left[ 0,n \right]\!\right]\), il existe des constantes \({{a}_{1}}\left( k \right),...,{{a}_{k}}\left( k \right)\) telles que \(\frac{{{d}^{n}}}{d{{x}^{n}}}\left[ {{f}^{n}}\left( x \right) \right]=\frac{{{d}^{n-k}}}{d{{x}^{n\_k}}}\left( \sum\limits_{j=1}^{k}{{{a}_{j}}\left( k \right){{f}^{n-j}}\left( x \right){{\left( f' \right)}^{j}}\left( x \right)} \right)\).
+                                    </li><li class = "lic1"> En déduire que \(\sum\limits_{k=1}^{n}{{{\left( -1 \right)}^{n-k}}{{k}^{n}}\left( \begin{matrix}
+                                            n  \\
+                                            k  \\
+                                        \end{matrix} \right)}=n!\).
+                                    </li><li class = "lic1"> Montrer que \(S_{n}^{j}=\sum\limits_{k=1}^{j}{{{\left( -1 \right)}^{j-k}}{{k}^{n}}\left( \begin{matrix}
+                                            j  \\
+                                            k  \\
+                                        \end{matrix} \right)}\).
+                                </ol> <br>
+                    </div>
+                </div>
+                
+                <div class="flexbox-item flexbox-item-center-big-height" onclick="changePage(23)">
+                    <div class="marge1">
+                        <h4>Exercice n° 23 :</h4>
+                        On considère \(\Omega ={{\mathbb{N}}^{*}}\) et s un réel strictement supérieur à un. On muni  \(\Omega \) de la tribu \(T=P\left( \Omega  \right)\). On note \(\varsigma \left( s \right)=\sum\limits_{n=1}^{+\infty }{\frac{1}{{{n}^{s}}}}\). On munit \(T\) de la loi telle que : \(p\left( \left\{ n \right\} \right)=\frac{1}{\varsigma \left( s \right).{{n}^{s}}}\) .
+                                <ol>
+                                    </li><li class = "lic1"> Montrer que c'est bien une probabilité.
+                                    </li><li class = "lic1"> Soit \({{A}_{n}}\) l'évènement  "être un multiple de \(n\)".  Montrer que les évènements \({{A}_{p}}\) où p parcourt l'ensemble des nombres premiers, sont indépendants dans leur ensemble.
+                                    </li><li class = "lic1"> Exprimer l'évènement "n'être multiple d'aucun nombre premier" en fonction des \(\overline{{{A}_{p}}}\).
+                                    </li><li class = "lic1"> On numérote les nombres premiers dans l'ordre croissant :  \(2={{p}_{1}}<{{p}_{2}}<....<{{p}_{k}}<...\) , et on note \({{E}_{n}}=\bigcap\limits_{k=1}^{n}{\overline{{{A}_{{{p}_{k}}}}}}\) . Montrer que \(p\left( \left\{ 1 \right\} \right)=\prod\limits_{p\_premier}{\left( 1-\frac{1}{{{p}^{s}}} \right)}\) .
+                                    </li><li class = "lic1"> En déduire \(\varsigma \left( s \right)=\prod\limits_{p\_premier}{\frac{1}{\left( 1-\frac{1}{{{p}^{s}}} \right)}}\).
+                            </ol> <br>
+                    </div>
+                </div>
+                
+                <div class="flexbox-item flexbox-item-center-medium-height" onclick="changePage(24)">
+                    <div class="marge1">
+                        <h4>Exercice n° 24 :</h4>
+                        Soit A l'ensemble des nombres à 7 chiffres ne comportant aucun  "1". Déterminer le nombre d'éléments des ensembles suivants :
+                                <ol>
+                                    </li><li class = "lic1"> A.
+                                    </li><li class = "lic1"> B, ensemble des nombres de A ayant 7 chiffres différents.
+                                    </li><li class = "lic1"> C, ensemble des nombres pairs de A.
+                                    </li><li class = "lic1"> D, ensemble des nombres de A dont les chiffres forment une suite strictement croissante
+                                    (dans l'ordre où ils sont écrits).
+                                </ol> <br>
+                    </div>
+                </div>
+                
+                <div class="flexbox-item flexbox-item-bottom-medium-height" onclick="changePage(25)">
+                    <div class="marge1">
+                        <h4>Exercice n° 25 :</h4>
+                        On tire 6 cartes dans un jeu de 52 cartes. Calcule la probabilité de tirer : 
+                                <ol>
+                                    </li><li class = "lic1"> Exactement deux rois.
+                                    </li><li class = "lic1"> Au moins deux rois.
+                                    </li><li class = "lic1"> Exactement deux rois et deux dames.
+                                    </li><li class = "lic1"> Au moins deux rois et deux dames.
+                            </ol> <br>
+                    </div>
+                </div>
+                
+                <div class="flexbox-item flexbox-item-bottom-big-height" onclick="changePage(26)">
+                    <div class="marge1">
+                        <h4>Exercice n° 26 :</h4>
+                        Soit \(n\) et \(p\) des entiers naturels. On note \(S^p_n = 1^p + 2^p + \cdots + n^p\) .
+                            <ol>
+                                </li><li class = "lic1"> Rappeler la formule donnant \(S^1_n\).
+                                </li><li class = "lic1"> Montrer que \(S^2_n = \frac{n(n+1)(2n+1)}{6}\).
+                                </li><li class = "lic1"> Montrer que pour tout polynôme \(P\) de degré \(n\), il existe un et un seul polynôme \(Q\), de degré \(n+1\), s'annulant en \(0\) tel que \(P (X) = Q (X + 1) - Q (X)\).
+                                </li><li class = "lic1"> En déduire que \(S^p_n\), à \(p\) fixé, est un polynôme de degré \(p+1\) en \(n\).
+                                </li><li class = "lic1"> Calculer \(S^3_n\), \(S^4_n\) et \(S^5_n\).
+                                </li><li class = "lic1"> Montrer les relation suivantes :
+                                <ul>
+                                    </li><li class = "lic1"> \(3S^5_n = (S^1_n)^2 (4S^1_n - 1)\).
+                                    </li><li class = "lic1"> \(4 (S^1_n + S^3_n) = n (n + 1) (n^2 + n + 2)\).
+                                    </li><li class = "lic1"> \(6 (S^3_n + S^5_n) = n^2(n + 1)^2 (n^2 + n + 1)\).
+                                    </li><li class = "lic1"> \(S^5_n + S^7_n = (S^1_n)^3n (n + 1) = 2(S^3_n)^2\).
+                                </ul>
+                                </li><li class = "lic1"> Soient \(p,q,r\) et \(m\) des entiers naturels non nuls, avec \(p \lt q\). Montrer que \((S^p_n)^m = (S^q_n)^r\) pour tout entier
+                            naturel \(n\) si et seulement si \(p=1\), \(q=3\), \(m=2\) et \(r=1\).
+                            </ol> <br>
+                    </div>
+                </div>
+                
+                <div class="flexbox-item flexbox-item-center-medium-height" onclick="changePage(27)">
+                    <div class="marge1">
+                        <h4>Exercice n° 27 :</h4>
+                        Soit \(\Omega \) un univers dénombrable et p une application additive de P(\(\Omega \)) dans \(\mathbb{R}+\), telle que p(\(\Omega \)) = 1. 
+                                Montrer que p est une probabilité si et seulement si, pour toute suite croissante \({{\left( {{A}_{n}} \right)}_{n\in \mathbb{N}}}\) d'événements, \(P\left( \bigcup\limits_{n\in \mathbb{N}}{{{A}_{n}}} \right)=\underset{n\to +\infty }{\mathop{Lim}}\,P\left( {{A}_{n}} \right)\). <br>
+                    </div>
+                </div>
+                
+                <div class="flexbox-item flexbox-item-center-big-height" style="flex: 8; overflow-y: scroll;" onclick="changePage(28)">
+                    <div class="marge1">
+                        <h4>Exercice n° 28 :</h4>
+                        Soit n un entier naturel non nul. On appelle dérangement de \(\left[\!\left[ 1,n \right]\!\right]\) une bijection de cet ensemble dans lui-même qui n'admet aucun point fixe : aucun élément n'est égal à son image. On note \({{D}_{n}}\) le nombre de dérangement de \(\left[\!\left[ 1,n \right]\!\right]\), et par convention, on pose \({{D}_{0}}=1\).
+                                
+                                Soit n un entier naturel non nul. On appelle dérangement de \(\left[\!\left[ 1,n \right]\!\right]\) une bijection de cet ensemble dans lui-même qui n'admet aucun point fixe : aucun élément n'est égal à son image. On note \({{D}_{n}}\) le nombre de dérangement de \(\left[\!\left[ 1,n \right]\!\right]\), et par convention, on pose \({{D}_{0}}=1\).
+                                
+                                <ol>
+                                    </li><li class = "lic1"> Calculer \({{D}_{1}},{{D}_{2}},{{D}_{3}},{{D}_{4}}\). 
+                                    </li><li class = "lic1"> Que vaut \(\sum\limits_{k=0}^{n}{\left( \begin{matrix}
+                                            n \\
+                                            k  \\
+                                        \end{matrix} \right).{{D}_{n-k}}}\) ?
+                                    </li><li class = "lic1"> Calculer \(\sum\limits_{k=i}^{n}{{{\left( -1 \right)}^{n-k}}.\left( \begin{matrix}
+                                            n  \\
+                                            k  \\
+                                        \end{matrix} \right).\left( \begin{matrix}
+                                            k  \\
+                                            i  \\
+                                        \end{matrix} \right)}\) pour \(0\le i\le n\).
+                                    </li><li class = "lic1"> Soient \(\left( {{u}_{n}} \right),\left( {{v}_{n}} \right)\) deux suites réelles, telle que pour tout entier naturel n, \({{u}_{n}}=\sum\limits_{k=0}^{n}{\left( \begin{matrix}
+                                            n  \\
+                                            k  
+                                        \end{matrix} \right){{v}_{k}}}\) . Montrer que pour tout entier naturel n, \({{v}_{n}}=\sum\limits_{k=0}^{n}{{{\left( -1 \right)}^{n-k}}\left( \begin{matrix}
+                                            n  \\
+                                            k  
+                                        \end{matrix} \right){{u}_{k}}}\) . 
+                                    </li><li class = "lic1"> En déduire que \({{D}_{n}}=n!\left( \sum\limits_{k=0}^{n}{\frac{{{\left( -1 \right)}^{k}}}{k!}} \right)\).
+                                    </li><li class = "lic1"> Montrer, (éventuellement de deux manières), que \({{D}_{n+1}}=n\left( {{D}_{n}}+{{D}_{n-1}} \right)\).
+                                    </li><li class = "lic1"> On note \({{\delta }_{n}}\) la densité des dérangements parmi l'ensemble des bijections de \(\left[\!\left[ 1,n \right]\!\right]\) dans lui-même. Déterminer la limite de \({{\delta }_{n}}\) quand n tend vers \(+\infty \).
+                                    </li><li class = "lic1"> Montrer, de deux manières, que \({{D}_{n+1}}=n\left( {{D}_{n}}+{{D}_{n-1}} \right)\).
+                                    </li><li class = "lic1"> Retrouver la formule de la question d) à l'aide de f).
+                                </ol> <br>
+                    </div>
+                </div>
+                
+                <div class="flexbox-item" onclick="changePage(29)">
+                    <div class="marge1">
+                        <h4>Exercice n° 29 :</h4>
+                        Soit \(\left( \Omega ,A,p \right)\) un espace probabilisé, h une application définie sur \(\Omega \) et f une application d'un ensemble E dans \(\Omega \).
+                                <ol>
+                                    </li><li class = "lic1">  Montrer que \(\left( E,{{f}^{-1}}\left( A \right),p' \right)\), où \(p'\) est définie par \(p'(B)=p\left( f\left( B \right) \right)\), est un espace probabilisé.
+                                    </li><li class = "lic1"> Montrer que si on pose \(h'\left( A \right)=\left\{ B\in P\left( h\left( \Omega  \right) \right)/{{h}^{-1}}\left( B \right)\in A \right\}\), \(\left( h\left( \Omega  \right),h'\left( A \right),p' \right)\), où p' est défini par \(p'\left( h(A) \right)=p\left( A \right)\), est un espace probabilisé.
+                                    </li><li class = "lic1"> Montrer que \(\left( h\left( \Omega  \right),h\left( A \right),p'' \right)\) n'est pas en général un espace probabilisé. (comment définir \(p''\) ?)
+                                </ol> <br>
+                    </div>
+                </div>
+                
+                <div class="flexbox-item flexbox-item-tiny" onclick="changePage(30)">
+                    <div class="marge1">
+                        <h4>Exercice n° 30 :</h4>
+                        Montrer qu'une tribu infinie est toujours non dénombrable. <br>
+                    </div>
+                </div>
+                
+                <div class="flexbox-item flexbox-item-tiny" onclick="changePage(31)">
+                    <div class="marge1">
+                        <h4>Exercice n° 31 :</h4>
+                        Montrer que si on laisse un singe suffisamment longtemps devant une machine à écrire, et
+                                qu’il tape au hasard sur les touches, il finira pas écrire "Les misérables" dans leur intégralité et sans erreur.
+                    </div>
+                </div>
+                
+                <div class="flexbox-item" onclick="changePage(32)">
+                    <div class="marge1">
+                        <h4>Exercice n° 32 :</h4>
+                        Soit  \(\left( \Omega ,A,p \right)\) un espace probabilisé. Soit \({{\left( {{B}_{k}} \right)}_{k\in \mathbb{N}}}\) une famille d'évènements.
+                                <ol>
+                                    </li><li class = "lic1"> Montrer que \(p\left( \bigcup\limits_{k\in \mathbb{N}}{{{B}_{k}}} \right)\le \sum\limits_{k\in \mathbb{N}}^{{}}{p\left( {{B}_{k}} \right)}\) (Inégalité de Boole)
+                                    </li><li class = "lic1"> Montrer que \(p\left( \bigcap\limits_{k\in \mathbb{N}}{{{B}_{k}}} \right)\ge 1-\sum\limits_{k\in \mathbb{N}}^{{}}{p\left( {{B}_{k}} \right)}\) (Inégalité de Bonferroni)
+                                    </li><li class = "lic1"> Montrer que \(p\left( \bigcup\limits_{i=1}^{n}{{{B}_{i}}} \right)\ge \sum\limits_{i=1}^{n}{p\left( {{B}_{i}} \right)}-\sum\limits_{1\le i\lt j\le n}^{{}}{p\left( {{B}_{i}}\cap {{B}_{j}} \right)}\) (Inégalité de Bonferroni aussi)
+                                    </li><li class = "lic1"> Montrer que \(p\left( \bigcup\limits_{i=1}^{n}{{{B}_{i}}} \right)\le \underset{k\in \left[\!\left[ 1,n \right]\!\right]}{\mathop{\min }}\,\left[ \sum\limits_{i=1}^{n}{p\left( {{B}_{i}} \right)}-\sum\limits_{\begin{smallmatrix} 
+                                            i=1 \\ 
+                                            i\ne k 
+                                    \end{smallmatrix}}^{n}{p\left( {{B}_{i}}\cap {{B}_{k}} \right)} \right]\) (Inégalité de Kounias)  
+                                </ol> <br>
+                    </div>
+                </div>
+                
+                
+
+
+
+
+            </div>
+        </main>
+        <script>
+            function afficher_texte(id){
+                var span = document.getElementById(id);
+                if(span.style.display == "none") {
+                span.style.display = "inline";
+                } else {
+                span.style.display = "none";
+                }
+            }
+    
+            function changePage(exerciseNumber){
+                window.location.href = "./Exercice.html#exercise" + exerciseNumber;
+            }
+        </script>
+    </body>
+    </html>
+    

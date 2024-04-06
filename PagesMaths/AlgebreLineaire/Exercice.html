@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html>
+<head><title>Algèbre Linéaire</title><link href="../stylePageMaths.css" rel="stylesheet"><link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"/><link rel="icon" href="./../../Images/Icones/favicon.png"><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> <script src = "../changePageMath.js"></script></head>
+
+<body background="../../Images/Fonds/hexagonal.png" bgproperties="fixed"><br>
+    <div class="entete" style="position: relative;"><div class="effetneon"><span><h1>BEHAGUE Quentin - Etudiant en CPGE MPI*</h1> </span></div></div>
+    <!-- Menu de navigation du site -->
+    <span class="menu-de-navigation" id="menu"><nav style="z-index: 10;"><ul>
+        <li class ="home_button"><a href="../../index.html"><img src="./../../Images/NeonHouse.png" class="pic_menu_home"></a></li>
+        <li class="deroulant"><a href="#">Exercices corrigés &ensp;</a>
+            <ul class="sous" style="height: 300px; overflow-y: scroll;">
+                <li><a href="../AlgebreLineaire/AlgebreLineaire.html">Algèbre linéaire</a></li>
+                <li><a href="../Norme/Norme.html">Notion de norme</a></li>
+                <li><a href="../SuitesSeriesSommabilite/SuitesSeriesSommabilite.html">Suites, Séries et Sommabilité</a></li>
+                <li><a href="../Reduction/Reduction.html">Réduction</a></li>
+                <li><a href="../FonctionsVectorielles/FonctionsVectorielles.html">Fonctions à valeurs vectorielles</a></li>
+                <li><a href="../EspacesProbabilises/EspacesProbabilises.html">Espaces probabilisés</a></li>
+                <!-- Page qui ne sont pas achevées :
+                <li><a href="../SuitesSeriesFonction/SuitesSeriesFonction.html">Suites et séries de fonctions</a></li>
+                <li><a href="../EquationsDifferentielles/EquationsDifferentielles.html">Équations différentielles</a></li>
+                <li><a href="../CalculDifferentiel/CalculDifferentiel.html">Calcul différentiel</a></li>
+                <li><a href="../IntegralesParametres/IntegralesParametres.html">Intégrales à Paramétres</a></li>
+                <li><a href="../EspacesEuclidiens/EspacesEuclidiens.html">Espaces euclidiens</a></li>
+                <li><a href="../Integration/Integration.html">Intégration</a></li>
+                <li><a href="../SeriesEntieres/SeriesEntieres.html">Suites et séries entières</a></li>
+                <li><a href="../Topologie/Topologie.html">Topologie</a></li>
+                <li><a href="../VariablesAleatoires/VariablesAleatoires.html">Variables aléatoires</a></li>
+                <li><a href="../StructureAlgebrique/StructureAlgebrique.html">Structures algébriques</a></li>-->
+            </ul>
+        <li class="deroulant"><a href="#">Programmes &ensp;</a>
+            <ul class="sous">
+                <li><a href="../../Programmes/Julia.html">Ensemble de Julia</a></li>
+                <li><a href="../../Programmes/Syracuse.html">Suite de Syracuse</a></li>
+                <li><a href="../../Programmes/Puzzle.html">Puzzle</a></li>
+                <li><a href="https://github.com/BehagueQuentin/Jeu-Echecs">Jeux d'échec</a></li>
+            </ul>
+        <li><a href="../../Téléchargement/Téléchargement.html">Téléchargements</a></li>
+        <li class="deroulant"><a href="#">Contact &ensp;</a>
+            <ul class="sous">
+                <li><a>06 46 15 00 15</a></li>
+                <li><a>quentinbehague59560@gmail.com</a></li>
+                <li><a href="https://github.com/BehagueQuentin">Mon github</a></li>
+            </ul>   
+        <li><a href="../../Apropos/Apropos.html">A propos</a></li>
+    </ul></nav></span>
+</head>  <!-- <button class="bouton" onclick="afficher_texte('Indication31')" > Indication </button>  --> 
+<body style="min-height: 50vw;">
+<div class="container-ex0">
+    <div class="exercise-container" id="exerciseContainer">
+        <div class="exercise" id="exercise1"><h3>Exercice 1 :</h3><div>Soient \(u\) et \(v\) deux endomorphismes d'un espace vectoriel E. Montrer que \(u\circ v = 0\) si et seulement si  \(Im(v)\subset Ker(u)\) <br><br>
+        <hr><button class="bouton" onclick="afficher_texte('Corrigé1')"> Corrigé </button><HR>  <span id="Indication1" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé1" style="display:none;"><p>  Dans le sens direct : supposons que \(u \circ v = 0\), soit \(x\in Im(v)\). Il existe \(y\in E\) tel que \(x = v(y)\) donc \(u(x) = u(v(y)) = 0\). On a bien \(x\in Ker(u)\) d'où l'inclusion \(Im(v)\subset Ker(u)\).<br>
+           Réciproquement, supposons que \(Im(v)\subset Ker(u)\), alors soit \(x\in E\), on a \(v(x) \in Im(v)\) donc \(v(x) \in Ker(u)\) puis enfin \(u\circ v(x) = 0\) cette égalité est valable pour tout \(x\) donc \(u\circ v = 0\).
+           \[\boxed{u\circ v = 0 \Longleftrightarrow Im(v)\subset Ker(u)}\]    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise2"><h3>Exercice 2 :</h3><div>Soit \(E\) un espace vectoriel de dimension finie et \(f,g\in\mathcal L(E)\). Montrer que :
+            \[\operatorname{rg}(f+g)=\operatorname{rg}f+\operatorname{rg}g\ \Longleftrightarrow \begin{cases}\operatorname{Im}f\cap \operatorname{Im}g=\{0\}\\ \operatorname{Ker}f+\operatorname{Ker}g=E\end{cases}\] <br>
+            <hr><button class="bouton" onclick="afficher_texte('Corrigé2')"> Corrigé </button><HR>  <span id="Indication2" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé2" style="display:none;"><p>  Dans un premier temps, supposons que \(rg(f+g)=rg(f)+rg(g)\), alors, comme on a l'inclusion triviale \(Im(f+g)\subset Im(f)+Im(g)\), on a immédiatement, en prenant la dimension :
+           \[rg(f+g)\leq rg(f)+rg(g)-\dim(Im(f)\cap Im(g))\]
+           \[ \Longleftrightarrow  \dim(Im(f)\cap Im(g))\leq rg(f)+rg(g)-rg(f+g)=0\]
+           \[ \Longrightarrow \underline{Im(f)\cap  Im(g)=\{0\}} \]
+           De même, on a l'inclusion triviale \(\ker(f)\cap \ker(g)\subset \ker(f+g)\) donc, en prenant de  nouveau la dimension et en faisant trois théorème du rang :
+           \[\dim(\ker(f+g))\geq \dim( \ker(f))+ \dim(\ker(g))-\dim(\ker(f)+\ker(g)) \]
+           \[\Longleftrightarrow \dim(\ker(f)+\ker(g)) \geq n+rg(f+g)-(rg(f)+rg(g))=n \]
+           \[\Longrightarrow \underline{\ker(f)+\ker(g)=E}\]
+           Réciproquement, supposons que  \(Im(f)\cap Im(g)={0}\) et \(\ker(f)+\ker(g)=E\).<br> 
+           Soit \(x\in \ker(f+g)\), on a \(f(x)+g(x)=0\) et donc \(f(x)=-g(x)\in Im(f)\cap Im(g)=\{0\}\). <br>
+           Ainsi, \(x\in \ker(f)\cap \ker(g)\) d'où l'égalité (la deuxième inclusion étant triviale) :
+           \[\underline {\ker(f)+\ker(g)= \ker(f+g)}\]
+           Enfin, une succession d'égalité nous donne le résultat :
+           \[\underline{rg(f+g)}=\dim(E)-\dim(\ker(f+g))=\dim(E)-\dim(\ker(f)\cap \ker(g))\]
+           \[ = \dim(E)-\dim(\ker(f))-\dim(\ker(g))+\dim(\ker(f)+\ker(g))\]
+           \[=\dim(E)-\dim \ker(f)+\dim(E)-\dim(\ker(g))=\underline{rg(f)+rg(g)}\]
+           On a donc enfin le résultat voulu :
+           \[\boxed{\operatorname{rg}(f+g)=\operatorname{rg}f+\operatorname{rg}g\ \Longleftrightarrow \begin{cases} \operatorname{Im}f\cap \operatorname{Im}g=\{0\} \\ \operatorname{Ker}f+\operatorname{Ker}g=E\end{cases}}\]    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise3"><h3>Exercice 3 :</h3><div>Soit \(E\) un \(\mathbb{K}\)-espace vectoriel de dimension finie.	
+               <ul>
+                   </li><li class = "lic2"> Soit \(p\) un projecteur (\(p\) linéaire et \(p^2 = p\)). Montrer que \(Ker(p) \oplus Im(p) = E\) et que \(p\) est la projection sur
+                   \(Im(p)\) de direction \(Ker(p)\).
+               </li><li class = "lic2">  Soit \(f\in \mathcal{L}(E)\). Montrer qu'il existe \(g\in \mathcal{L}(E)\) tel que \(g \circ f=0\) et \(f+g\in \mathrm{GL}(E)\) si et seulement si \(E=\operatorname{Ker}f\oplus \operatorname{Im}f\).
+               </ul> <br>
+            <hr><button class="bouton" onclick="afficher_texte('Corrigé3')"> Corrigé </button><HR>  <span id="Indication3" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé3" style="display:none;"><p>  Pour la première question, aucune difficulté, on montre que l'intersection est réduite au singleton zéro, il suffit ensuite de montrer que la décomposition \(x = (x - p(x)) + p(x)\) convient à la décomposition.
+            <br>Pour la deuxième question,    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise4"><h3>Exercice 4 :</h3><div>Soit \(n \in \mathbb{N}^*\) et \((a_k)_{1\leq k\leq n}\) une suite de réels deux à deux distincts.
+           <ol>
+               </li><li class = "lic2"> Montrer que la famille de fonctions \((f_k)_{1\leq k\leq n}\), définie par \(f_k(x) = |x - a_k|\) pour \(k \in [\![1, n]\!]\) et \(x \in \mathbb R\), forme une famille libre.
+               </li><li class = "lic2"> Pour \(k \in [\![1, n]\!]\), on considère le polynôme \(\displaystyle P_k = \prod_{\underset{i \neq k}{i\in[\![1,n]\!]}}(X - ai)\). Montrer que la famille \((P_k)_{1\leq k\leq n}\) est libre.
+           </ol> <br>
+             <hr><button class="bouton" onclick="afficher_texte('Corrigé4')"> Corrigé </button><HR>  <span id="Indication4" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé4" style="display:none;"><p>  <ol>
+               </li><li class = "lic2"> Soit \(\lambda_1, \cdots, \lambda_n \in \mathbb R\) tels que, pour tout \(x\):
+               \[\sum_{k = 1}^{n}\lambda_k |x - a_k| = 0 \Longrightarrow \forall j \in [\![1, n]\!], \sum_{\underset{k\neq j}{k = 1}}^{n}\lambda_k |x - a_k| = \lambda_j |x - a_j|\]
+               Or le terme de gauche est dérivable en \(a_j\), donc le terme de droite doit l'être aussi, la seule possibilité pour que ça soit le cas est \(\lambda_j = 0\). Ceci étant valable pour tout \(j\) :
+               \[\boxed{\textrm{La famille \((f_k)_{1\leq k\leq n}\) est libre.}}\]
+               </li><li class = "lic2"> Soit \(\lambda_1, \cdots, \lambda_n \in \mathbb R\) tels que, pour tout \(x\):
+               \[\sum_{k = 1}^{n}\lambda_k P_k(x) = 0 \]
+               En évaluant cette égalité en les \((a_i)\) on trouve le résultat voulu :
+               \[\boxed{\textrm{\((P_k)_{1\leq k\leq n}\) est libre.}}\]
+           </ol>    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise5"><h3>Exercice 5 :</h3><div>Soit \(E\) un \(\mathbb{K}\)-espace vectoriel de dimension finie \(n \in \mathbb{N}^*\). Soit \(u \in \mathcal{L}(E)\).
+               <ol>
+                   </li><li class = "lic2"> Montrer que si \(u\) est nilpotent alors \(u^n = 0\).
+                   </li><li class = "lic2"> On suppose \(n \geq 2\), où \(n\) est tel que \(u^n = 0\) et \(u^{n-1} \neq 0\).
+                   <ol>
+                       </li><li class = "lic2"> Montrer qu'il existe une base \(e\) de \(E\) telle que la matrice A de \(u\) dans la base \(e\) est de la forme :
+                      \[\begin{pmatrix} 0 & 0 & \cdots & 0 \\ 1 & 0 & \cdots & 0 \\ \vdots & \ddots & \ddots & \vdots \\ 0 & \cdots & 1 & 0 \end{pmatrix}\]
+                       </li><li class = "lic2"> Résoudre \(X^2 = A, X \in \mathcal{M}_n\mathbb(K)\).	
+                   </ol>
+               </ol> <br>
+            <hr><button class="bouton" onclick="afficher_texte('Corrigé5')"> Corrigé </button><HR>  <span id="Indication5" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé5" style="display:none;"><p>  <ol>
+               </li><li class = "lic2"> Soit \(u\) nilpotente. Posons \(p\) l'indice de nilpotence de \(u\). 
+           Posons \(x_0 \in E\), tel que \(u^{p-1}(x_0) \neq 0\) (qui existe par définition).<br>
+           Montrons que la famille \((x_0, u(x_0), u^2(x_0), \ldots, u^{p-1}(x_0))\) est libre.<br>
+           Soit \(\lambda_0, \ldots, \lambda_{p-1} \in \mathbb{K}\) tels que
+           \[\lambda_0 x_0 + \lambda_1 u(x_0) + \cdots + \lambda_{p-1} u^{p-1}(x_0) = 0\]
+           
+           Supposons par l'absurde que les \(\lambda\) soient non tous nuls, et posons k l'indice du premier \(\lambda\) non nul. Alors en composant l'égalité précédente par \(u^{p + k -1}\), on obtient :
+           \[ \lambda_k u^{p-1}(x_0) = 0 \Longrightarrow  \lambda_k = 0\]
+           
+           Absurde car \( \lambda_k \) est supposé non nul. Donc la famille est libre, dans un espace de dimension \(n\), elle est donc de cardinal \(\boxed{p \leq n}\).
+               </li><li class = "lic2"> <ol>
+                   </li><li class = "lic2"> D'après la question précédente, il suffit de prendre la base \(\boxed{B = (x_0, u(x_0), u^2(x_0), \ldots, u^{n-1}(x_0))}\).
+                   </li><li class = "lic2"> Si l'équation \(X^2 = A\) admettait des solutions, alors \(X^{2n} = A^n = 0\), mais \(X^{2n-2} = A^{n-1} \neq 0\). Ainsi, l'indice de nilpotence de \(X\) serait compris entre \(2n-1\) et \(2n\), ce qui n'est pas possible car \(2n-2 \geq n\) avec \(n \geq 2\). Or, d'après la première question, si \(X\) est nilpotente, alors son indice de nilpotence est inférieur ou égal à \(n\).<br>
+               \[\boxed{\textrm{L'équation \(X^2 = A\) n'admet pas de solution }}\]
+           
+               </ol> 
+           </ol>    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise6"><h3>Exercice 6 :</h3><div>Soit \(p\) une projection de \(E\), où \(E\) est un \(\mathbb K\)-espace vectoriel.
+           <ol>
+               </li><li class = "lic2"> Montrer que \(E = Ker(p) \oplus Im(p)\).
+               </li><li class = "lic2"> Soit \(s\) une symétrie. Montrer à l'aide de la question précédente que \(E = Ker(s - Id) \oplus Ker(s + Id)\).
+           </ol> <br>
+        <hr><button class="bouton" onclick="afficher_texte('Corrigé6')"> Corrigé </button><HR>  <span id="Indication6" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé6" style="display:none;"><p>  Pour la première question, aucune difficulté, exercice classique.<br>
+           Pour la deuxième question, prenons \(x\in  Ker(s - Id) \cap  Ker(s + Id)\). Alors \(s(x) - x = 0 \) et \(s(x) + x = 0\) En faisant la différence de ces deux relations il vient \(2x = 0 \Longrightarrow x = 0\).<br>
+           De plus, on remarque que pour tout \(x\in E\) la décomposition  \(x = \frac{s(x) - s(-x)}2 +  \frac{s(x) + s(-x)}2\) convient.
+           \[\boxed{E = Ker(s - Id) \oplus Ker(s + Id)}\]    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise7"><h3>Exercice 7 :</h3><div>Soit \(E\) un  K-espace vectoriel de dimension finie et \(f\) un endomorphisme de \(E\). Montrer l'équivalence entre les propositions suivantes :
+               <br>
+               (i)	    \(E=Ker(f)\oplus \operatorname{Im}(f)\)
+               <br>
+               (ii)	\(Ker(f)=Ker({{f}^{2}})\)
+               <br>
+               (iii)	\(\operatorname{Im}(f)=\operatorname{Im}({{f}^{2}})\)
+               <br>
+               (iv)	\(Ker(f)\cap \operatorname{Im}(f)=\left\{ 0 \right\}\).
+               <br>
+               (v)	\(E=Ker(f)+\operatorname{Im}(f)\) <br><br>
+         <hr><button class="bouton" onclick="afficher_texte('Corrigé7')"> Corrigé </button><HR>  <span id="Indication7" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé7" style="display:none;"><p>  Nous avons directement \((i) \Longrightarrow (iv)\) et \((i) \Longrightarrow (v).\) Supposons que \(E = Ker(f) \oplus Im(f)\).
+           Dans le cas général, nous avons les inclusions \(Ker(f) \subset Ker(f^2)\) ainsi que \(Im(f^2) \subset Im(f)\).
+           De plus, si \(y = f^2(x)\), en particulier, \(y = f(z)\) avec \(z = f(x)\).
+           Or, si \(x \in Ker(f^2)\), alors \(f^2(x) = 0\). Il y a deux possibilités :
+           <ul>
+               </li><li class = "lic2"> Si \(f(x) = 0\), \(x \in Ker(f)\)
+               </li><li class = "lic2"> Si \(f(f(x)) = 0\) mais que \(f(x) \neq 0\). Alors \(f(x) \in Ker(f) \cap Im(f) = \{0\}\) : Ceci est absurde, donc \(f(x) = 0\)
+           </ul>
+           Ainsi, \(Ker(f^2) = Ker(f)\) par double inclusion.<br>
+           Soit \(y \in Im(f)\). Alors \(\exists x \in E, y = f(x)\). Or, \(E = Ker(f) \oplus Im(f)\). Donc \(\exists! (x_k, x_i) \in Ker(f) \times Im(f), x = x_k + x_i\).<br>
+           Nous avons donc \(y = f(x) = f(x_k + x_i) = f(x_i)\) et \(x_i \in Im(f) \Longrightarrow \exists z \in E, y = f(x) = f^2(z) \in Im(f^2)\).<br>
+           Ainsi, \(Im(f) = Im(f^2)\).<br>
+           Remarquons au passage que (ii) et (iii) sont équivalentes :
+           <ul>
+               </li><li class = "lic2"> Si \(Ker(f) = Ker(f^2)\), Montrons que \(rg(f^2) = rg(f)\), ce qui permet d'affirmer l'égalité entre ces espaces car \(Im(f^2) \subset Im(f)\) :<br>
+               D'après le théorème du rang, \(\dim(E) = \dim(Ker(f^2)) + rg(f^2)\) (\(f^2\) est une application de \(E\) dans \(Im(f^2)\)).<br>
+               Donc \(rg(f^2) = \dim(E) - \dim(Ker(f^2)) = \dim(E) - \dim(Ker(f)) = rg(f)\). D'où l'égalité entre les espaces.
+               </li><li class = "lic2"> Idem, si \(Im(f^2) = Im(f)\), nous avons \(\dim(Ker(f)) = \dim(E) - rg(f) = \dim(E) - rg(f^2) = \dim(Ker(f^2))\).
+           </ul>
+           Montrons que (v) \(\Longrightarrow\) (iv) \(\Longrightarrow\) (i) : Si \(E = Ker(f) + Im(f)\).
+           Nous avons par la formule de Grassmann : \(\dim(E) = \dim(Ker(f)) + \dim(Im(f)) - \dim(Ker(f) \cap Im(f))\).<br>
+           Or, le théorème du rang donne \(\dim(Ker(f) \cap Im(f)) = 0\), donc \(Ker(f) \cap Img(f) = \{0\}\).
+           Ainsi, (v) \(\Longrightarrow\) (iv) et (v) + (iv) \(\Longrightarrow\) (i).
+           Montrons finalement que (ii) \(\Longrightarrow \) (iv), Supposons que \(Ker(f^2) = Ker(f)\) et \(Im(f^2) = Im(f)\).<br>
+           Soit \(x \in Ker(f) \cap Im(f)\), alors \(f(x) = 0\) et \(\exists z \in E, f(z) = x \Longrightarrow f^2(z) = 0\).<br>
+           Or, \(Ker(f^2) = Ker(f) \Longrightarrow f(z) = 0 \Longrightarrow x = 0\).<br>
+           Finalement, (i) \(\Longrightarrow \) (ii) \(\Longrightarrow \) (iii), (iv).<br>
+           (i) \(\Longrightarrow \) (v) et (v) \(\Longrightarrow \) (iv). Avec (v) et (iv) \(\Longrightarrow \) (i).<br>
+           Nous avons donc (i) \(\iff\) (iv) \(\iff\) (v). De plus, (i) \(\implies\) (ii), avec (ii) \(\iff\) (iii), et (ii) \(\implies\) (iv) \(\iff\) (i)<br>
+           D'où (i) \(\iff\) (ii) \(\iff\) (iii) \(\iff\) (iv) \(\iff\) (v)    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise8"><h3>Exercice 8 :</h3><div>Soit \(E\) un espace vectoriel réel et \(f\) une forme linéaire sur \(E\), ie \(f \in L(E, \mathbb R)\), supposée non nulle. Montrer que le noyau de \(f\) est un hyperplan de \(E\) (c'est-à-dire qu'il possède un supplémentaire de dimension 1), dans les deux cas suivants :
+           <ol>
+               </li><li class = "lic2"> Si \(E\) est de dimension finie.
+               </li><li class = "lic2"> Dans le cas général.
+           </ol> <br>
+            <hr><button class="bouton" onclick="afficher_texte('Corrigé8')"> Corrigé </button><HR>  <span id="Indication8" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé8" style="display:none;"><p>  Faisons directement le cas général, qui englobe le cas de dimension finie.<br>
+           Soit \(f\) une forme linéaire.
+           \[\ker(f) \neq 0 \Longrightarrow \exists \vec{x_0} \notin \ker(f)\]
+           Montrons que \(E = \ker(f) \oplus Vect(\vec{x_0})\).<br>
+           Soit \(x\in \ker(f) \cap Vect(\vec{x_0})\), il existe \(\lambda \in \mathbb R\) et \(x_1 \in \ker(f)\) tels que :
+           \[x = x_1 = \lambda \vec{x_0} \Longrightarrow f(x) = f(x_1) = 0 =\lambda f(\vec{x_0})\Longrightarrow \lambda = 0\]
+           Soit \(x\in E\) et soient \(\lambda \in \mathbb R\) et \(x_1 \in \ker(f)\) tels que \(x = x_1 + \lambda \vec{x_0}\)
+           \[f(x) = f(x_1) + \lambda f(\vec{x_0}) = \lambda f(\vec{x_0})\Longrightarrow \lambda = \frac{f(x)}{f(\vec{x_0})}\]
+           On remarque que :
+           \[x = \left(x - \frac{f(x)}{f(\vec{x_0})} \vec{x_0} \right)+ \frac{f(x)}{f(\vec{x_0})}\vec{x_0}\]
+           De plus :
+           \[f\left(x - \frac{f(x)}{f(\vec{x_0})} \vec{x_0} \right) = 0 \textrm{ et } f\left(\frac{f(x)}{f(\vec{x_0})} \vec{x_0}\right) = f(x) \neq 0 \textrm{ si } x \notin \ker(f)\]
+           Donc :
+           \[\boxed{\textrm{Le noyau d'une forme linéaire non-nulle est un hyperplan}}\]    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise9"><h3>Exercice 9 :</h3><div>Dans quels cas l'union de deux sous-espaces vectoriels est-elle un sous-espace ? <br><br>
+            <hr><button class="bouton" onclick="afficher_texte('Corrigé9')"> Corrigé </button><HR>  <span id="Indication9" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé9" style="display:none;"><p>  Dans un sens, on a triviallement que si l'un des espaces est inclus dans l'autre, l'union est un sous-espace.<br>
+           Réciproquement, supposons que ça ne soit pas le cas, alors soit \(x_1 \in E_1 \backslash E_2 \) et \( x_2 \in E_2 \backslash E_1 \).
+           Montrons que \( x_1 + x_2 \) n'appartient pas à l'union des sous-espaces, ce qui montrera que cette union n'est pas stable par somme. On a :
+           \[ (x_1 + x_2) - x_1 = x_2 \in E_2 \backslash E_1\]
+           Or \(x_1\) appartient à \(E_1 \backslash E_2\), il en résulte que \( x_1 + x_2 \) n'appartient pas à \(E_1\), par le même argument, il n'appartient pas à \(E_2\), donc n'appartient pas à l'union.
+           \[\boxed{\textrm{ \(E_1 \cap E_2\) est un sous-espace \(\Longleftrightarrow E_1 \subset  E_2\) ou \(E_2 \subset  E_1\)}}\]    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise10"><h3>Exercice 10 :</h3><div><ol>
+               </li><li class = "lic2"> Montrer que pour tout entier naturel n, on a : \(\ker(f^n) \subset \ker(f^{n+1})\) et \(\textrm{Im}(f^{n+1}) \subset \textrm{Im}(f^n)\).
+               </li><li class = "lic2"> En déduire qu'il existe un rang \(N\) tel que \(\ker(f^N) = \ker(f^{N+1})\).
+               </li><li class = "lic2"> Montrer alors que \(\textrm{Im}(f^{N+1}) = \textrm{Im}(f^N)\).
+               </li><li class = "lic2"> Montrer alors que pour tout entier naturel \(p\), on a : \(\ker(f^{N+p}) = \ker(f^{N +p+1})\) et \(\textrm{Im}(f^{N +p+1}) = \textrm{Im}(f^{N +p})\).
+               </li><li class = "lic2"> Montrer que \(\ker(f^N)\) et \(\textrm{Im}(f^N)\) sont deux sous-espaces supplémentaires de \(E\).
+               </li><li class = "lic2"> Si on pose \(d_n = \dim(\ker(f^{n+1})) - \dim(\ker(f^n))\), montrer que la suite \((d_n)_{n\in \mathbb N}\) est décroissante. (niveau 3)
+           </ol> <br>
+            <hr><button class="bouton" onclick="afficher_texte('Corrigé10')"> Corrigé </button><HR>  <span id="Indication10" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé10" style="display:none;"><p>  <ol>
+               </li><li class = "lic2"> Si \(x\in \ker(f^k)\), alors \(f^{k+1}(x)=f(f^k(x))=f(0)=0\) et donc :
+               \[\boxed{\ker(f^k)\subset \ker(f^{k+1})}\]
+               De même, si \(y\in\textrm{Im}(f^{k+1})\), alors il existe \(x\in E\) tel que \(y=f^{k+1}(x)=f^k(f(x))\) et donc \(y\in\textrm{Im}(f^k)\), et : \[\textrm{Im}(f^k) \subset \textrm{Im}(f^{k+1})\]
+               </li><li class = "lic2"> La suite \(u_k = \dim(\ker(f^k))\) est croissante dans \(\mathbb N\), majorée par \(\dim(E)\) donc stationnaire à partir d'un certain rang. Il existe donc un certain indice \(N\) tel qu'on ai l'égalité des dimension, de plus une inclusion est toujours vrai, on a donc l'égalité.
+               \[\boxed{\exists N \in \mathbb N, \ker(f^N) = \ker(f^{N+1})}\]
+               </li><li class = "lic2"> Il suffit d'appliquer un théorème à \(f^N\) et \(f^{N+1}\).
+               </li><li class = "lic2"> Il suffit de procéder par récurrence n appliquant \(f\) à l'égalité \(\textrm{Im}(f^{N +p+1}) = \textrm{Im}(f^{N +p})\).
+               On trouve le résultat pour le \(\ker\) en faisant de nouveau un théorème du rang.
+               </li><li class = "lic2"> Soit \(x\in \ker(f^N) \cap \textrm{Im}(f^N)\), \(f^N(x) = 0\) et \(\exists y\in E, f^{N} (y) = x \Longrightarrow f^{2N}(y) = 0 \Longrightarrow f\in \ker(f^{2N}) \Longrightarrow f\in \ker(f^{N})\Longrightarrow x = 0\). <br>
+               On procède ensuite par analyse-synthèse pour trouver une décomposition qui convient.
+               </li><li class = "lic2"> On effectue un théorème du rang sur \(f_{|Im(f^n)}\) :
+               \[\dim( Im(f^n)) = \dim(\ker(f_{|Im(f^n)})) + \dim(Im(f_{|Im(f^n)})) \]
+               \[= \dim(\ker(f)\cap Im(f^n)) + \dim(Im(f^{n+1})) \]
+               \[\Longrightarrow n - d_n =  \dim(\ker(f)\cap Im(f^n)) + n - d_{n+1} \]
+               \[\Longrightarrow d_{n+1} - d_n = \dim(\ker(f)\cap Im(f^n)) \]
+               Or le terme de droite est décroissant en fonction de \(n\). D'où le résultat.
+               \[\boxed{(d_{n+1} - d_n)_{n\in \mathbb{N}}\textrm{ est décroissante.}}\]
+               
+           </ol>    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise11"><h3>Exercice 11 :</h3><div><ol>
+               </li><li class = "lic2"> Soit \(f\in L\left( E \right)\) tel que pour tout \(x\in E\), \(x\) et  \(f(x)\) soient colinéaires. Montrer que \(f\) est une homothétie vectorielle.
+               </li><li class = "lic2"> En déduire les endomorphismes de \({{\mathbb{R}}^{n}}\) qui commutent avec tous les autres.
+               </li><li class = "lic2"> Proposer une solution matricielle de la question précédente.
+           </ol> <br>
+             <hr><button class="bouton" onclick="afficher_texte('Corrigé11')"> Corrigé </button><HR>  <span id="Indication11" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé11" style="display:none;"><p>  <ol>
+               </li><li class = "lic2"> Dans un premier temps on prend \(x\) et \(y\) liés, on a alors l'existence de \(\lambda\) tel que \(x = \lambda y\), en appliquant \(f\) :
+               \[f(x) = \lambda_x x = f(\lambda y) = \lambda \lambda_y y \Longrightarrow \lambda_x = \lambda_y\]
+               Soit maintenant \(x\) et \(y\) libres, alors :
+               \[ f(x + y) = \lambda_x x + \lambda_y y = \lambda_{x + y} (x + y)\]
+               Or cette famille étant libre, on a \(\lambda_x = \lambda_{x+y} = \lambda_y\)
+               Donc :
+               \[\boxed{\textrm{\(f\) est une homothétie}}\]
+               </li><li class = "lic2"> Soit \(f\) un endo qui commute avec tout les autres. Soit \(x\in E\), Prenons \(p\) la projection sur \( Vect(\vec{x}) \) alors, \(f\) et \(p\) commutent, en particulier :
+               \[f\circ p(x) = f(x) = p\circ f(x) \in Vect(\vec{x})\]
+               Donc, pour tout \(x\), il existe \(\lambda\) tel que \(f(x) = \lambda x\). D'après la question précédente :
+               \[\boxed{\textrm{\(f\) est une homothétie.}}\]
+               </li><li class = "lic2"> On montre le résultat en établissant des conditions sur les égalités : \[ME_{i,j} = E_{i,j} M\]
+           </ol>    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise12"><h3>Exercice 12 :</h3><div>Déterminer la trace et le déterminant de l'endomorphisme de transposition dans \(\mathcal{M}_n(\mathbb{K})\). <br><br>
+             <hr><button class="bouton" onclick="afficher_texte('Corrigé12')"> Corrigé </button><HR>  <span id="Indication12" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé12" style="display:none;"><p>  \[\fonction{f}{\mathcal{M}_n(\mathbb{K})}{\mathbb{R}}{M}{M^\top}\]
+           Il suffit de montrer que l'ensemble des matrices symétriques et antisymétriques sont en somme directes dans \( \mathcal{M}_n(\mathbb{K}) \) :
+           \[ \mathcal{M}_n(\mathbb{K}) = \mathcal{S}_n(\mathbb{K}) \oplus \mathcal{A}_n(\mathbb{K}) \]<br>
+           On peut alors poser une base \( \mathcal{B} = (S_1, ..., S_p, A_1, ..., A_q)\) adaptée à la décomposition et écrire la matrice de l'endomorphisme transposée dans cette base. Il en découle :
+           \(\)
+           \boxed{
+           \left\{
+               \begin{array}{ll}
+                   Tr(f) = p - q <br>
+                   Det(f) = (-1)^q
+               \end{array}
+           \right.}\(\)
+           Il reste alors à donner le cardinal de la base de l'espace des matrices symétriques pour donner la valeur de \(p\) et de \(q\).    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise13"><h3>Exercice 13 :</h3><div>Soit \(A \in \mathcal{M}_n(\mathbb{K})\). Montrer que \(A^2 = {\rm O}_n\) si et seulement si \(A\) est semblable à la matrice suivante où \(r \leq \dfrac n2\) :
+           \[ B = \left(\begin{array}{c c} \rm O & I_r \\ \rm O & \rm O \end{array} \right)\] <br>
+        <hr><button class="bouton" onclick="afficher_texte('Corrigé13')"> Corrigé </button><HR>  <span id="Indication13" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé13" style="display:none;"><p>  Posons \(r\) le rang de \(A\) (l'inégalité sur \(r\) sera bien vérifiée par la nilpotence d'ordre 2 de la matrice).<br>
+           Soit \(f\) canoniquement associé à \(A\).<br> 
+           On sait que \(A\) vérifie \(A^2=0_n\), ce qui ce traduit en terme d'isomorphisme par  \(\underline{\operatorname{Im}(f)\subset \operatorname{Ker}(f)}\).<br>
+            Soit \((e_1,...,e_r)\) une base de \(\operatorname{Im}(f)\) qu'on complète en une base \((e_1,...,e_{n-r})\) de \(\operatorname{Ker}(f)\).(Les dimensions sont données par le théorème du rang.) <br>
+            Soit enfin, pour \(i = 1,..,r\), \(e_{n-r+i}\) un vecteur tel que \(f(e_{n-r+i})=e_{i}\) (un tel vecteur existe car \(e_i\) est dans \(\operatorname{Im}(f)\)).  <br>
+            Montrons que la famille \((e_1,...,e_{n})\) est libre, donc qu'elle constitue une base de \(\mathbb{K}^n\) :<br>
+            En effet, si \(\lambda_1e_1+...+\lambda_ne_n=0\), on applique \(f\) :
+            \[\lambda_{n-r+1}e_1+...+\lambda_ne_r=0\]
+            La famille \((e_1,...,e_r)\) étant une base de \(\operatorname{Im}(f)\) , on en déduit que \(\lambda_{n-r+1} = ... = \lambda_n = 0\). On obtient alors \(\lambda_1e_1+...+\lambda_{n-r}e_{n-r}=0\) ce qui implique à son tour que \(\lambda_1=...=\lambda_{n-r} = 0\) puisque la famille \((e_1,...,e_{n-r})\) est une base de \(\operatorname{Ker}(f)\).
+           Maintenant, dans la base \((e_1,...,e_n)\), la matrice de \(f\) est  ce qui prouve bien que A est semblable à cette dernière matrice
+           \[\boxed{A \textrm{ est semblable à }  \left(\begin{array}{cc}0&I_r<br>0&0\end{array}\right)}\]    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise14"><h3>Exercice 14 :</h3><div><ol>
+               </li><li class = "lic2"> Déterminer les matrices de \(M_n(\mathbb C)\) commutant avec toutes les autres.
+               </li><li class = "lic2"> Montrer l'équivalence suivante pour toute matrice \(A \in M_n(\mathbb C) \) :
+               \[\exists \lambda \in \mathbb{C}^*, A = \lambda I_n \Longleftrightarrow \forall(M, N ) \in M_n(\mathbb C)^2, (A = M N \Longrightarrow A = N M ) \]  
+               </li><li class = "lic2"> Déterminer les matrices qui ne sont semblables qu'à elles-mêmes.
+           </ol> <br>
+            <hr><button class="bouton" onclick="afficher_texte('Corrigé14')"> Corrigé </button><HR>  <span id="Indication14" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé14" style="display:none;"><p>  <ol>
+               </li><li class = "lic2"> La première question se fait très simplement en établissant les conditions sur la commutativité avec les éléments de la base canonique.
+               </li><li class = "lic2"> Le premier sens est trivial. Pour la réciproque, soit \(P \in GL_n (\mathbb {C})\) :
+               \[A = (AP)P^{-1} \Longrightarrow A = P^{-1}(AP) \Longrightarrow AP = PA\]
+               Donc \(A\) commute avec toute matrice inversible.
+               Il est alors possible de montrer que \(A\) est une homothétie en regardant les conditions sur la commutativité avec les matrices \((I_n + E_{i,j})\)
+               </li><li class = "lic2"> Si \(A\) n'est semblable qu'à elle même, alors :
+               \[\forall P \in GL_n, A = PAP^{-1} \Longrightarrow AP = PA\]
+               Donc \(A\) commute avec toute matrice inversible.
+           </ol>    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise15"><h3>Exercice 15 :</h3><div>Soient \(A,B \in \mathcal M_n(\mathbb R)\).
+               <ol>
+                   </li><li class = "lic2"> Montrer que \(\operatorname{rg}(A+B) \leq \operatorname{rg}(A)+\operatorname{rg}(B)\).
+                   </li><li class = "lic2"> Montrer que \(\lvert \operatorname{rg}(A)-\operatorname{rg}(B)\rvert\leq \operatorname{rg}(A+B)\).
+               </ol> <br>
+            <hr><button class="bouton" onclick="afficher_texte('Corrigé15')"> Corrigé </button><HR>  <span id="Indication15" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé15" style="display:none;"><p>  <ol>
+               </li><li class = "lic2"> Notons \(f\) et \(g\) les endomorphismes associés à \(A\) et \(B\). On a l'inclusion triviale : \[Im(f+g) \subset Im(f) + Im(g)\]
+               En passant aux dimensions et en exploitant la formule de Grassman, on en déduit que : 
+               \[ \boxed{\operatorname{rg}(A+B) \leq \operatorname{rg}(A)+\operatorname{rg}(B)}\]
+               </li><li class = "lic2"> En réutilisant l'inégalité de la question précédente avec \(A - B\) et \(B\), on obtient :
+               \[ \operatorname{rg}((A-B)+B) \leq \operatorname{rg}(A-B)+\operatorname{rg}(B) \Longrightarrow  \operatorname{rg}(A) -\operatorname{rg}(B)\leq\operatorname{rg}(A-B)\]
+               Puis, par symétrie des rôles entre \(A\) et \(B\), on a enfin :
+                \boxed{|\operatorname{rg}(A) -\operatorname{rg}(B)|\leq\operatorname{rg}(A-B)}
+           </ol>    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise16"><h3>Exercice 16 :</h3><div>Soient \(A, B \in M_n (\mathbb R)\) tels que \((AB)^n = 0\). Montrer que \((BA)^n = 0\). <br><br>
+             <hr><button class="bouton" onclick="afficher_texte('Corrigé16')"> Corrigé </button><HR>  <span id="Indication16" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé16" style="display:none;"><p>  Si \((AB)^n = 0\), alors \(B(AB)^nA = (BA)^{n+1} = 0\), or, si une matrice est nilpotente, son indice de nilpotence est inférieur ou égal à n, donc :
+           \[\boxed{(BA)^{n} = 0}\]    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise17"><h3>Exercice 17 :</h3><div>Soient \({{x}_{1}},{{x}_{2}},...,{{x}_{n}}\) n réels. On pose : \[V({{x}_{1}},{{x}_{2}},...,{{x}_{n}})=\left| \begin{matrix}
+                   1 & {{x}_{1}} & x_{1}^{2} & \cdots  & x_{1}^{n-1}  \\
+                   1 & {{x}_{2}} & x_{2}^{2} & \ldots  & x_{2}^{x-1}  \\
+                   \vdots  & {} & {} & {} & {}  \\
+                   \vdots  & {} & {} & {} & {}  \\
+                   1 & {{x}_{n}} & x_{n}^{2} & \ldots  & x_{n}^{n-1}  \\
+               \end{matrix} \right|\]
+               <ol>
+                   </li><li class = "lic2"> Montrer que si les réels \({{x}_{1}},{{x}_{2}},...,{{x}_{n}}\) ne sont pas deux à deux distincts, alors :
+                \[V({{x}_{1}},{{x}_{2}},...,{{x}_{n}})=0\]
+                Dans la suite, on les suppose deux à deux distincts.
+               </li><li class = "lic2"> On pose \(P(X)=V({{x}_{1}},{{x}_{2}},...,{{x}_{n-1}},X)\). Montrer que P est un polynômes de degré n-1 en la variable X.
+               </li><li class = "lic2"> Déterminer le coefficient dominant de P.
+               </li><li class = "lic2"> Déterminer les racines de P, puis son expression.
+               </li><li class = "lic2"> En déduire \(V({{x}_{1}},{{x}_{2}},...,{{x}_{n}}).\) .
+               </li><li class = "lic2"> Retrouver le résultat procédant par opérations sur les lignes et les colonnes.
+               </li><li class = "lic2"> En déduire le résultat sur l'existence d'un polynôme d'interpolation en \({{x}_{1}},{{x}_{2}},...,{{x}_{n}}\).		
+               </ol> <br>
+             <hr><button class="bouton" onclick="afficher_texte('Corrigé17')"> Corrigé </button><HR>  <span id="Indication17" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé17" style="display:none;"><p>  <ol>
+                   </li><li class = "lic2"> On remarque dans ce cas que deux au moins des lignes sont égales, donc le déterminant est nul.
+                   </li><li class = "lic2"> On le remarque en effectuant un développement selon la dernière ligne de la matrice.
+                   </li><li class = "lic2"> Le coefficient dominant est le mineur \(\Delta_{n,n} = V(x_1, x_2, ..., x_{n-1})\)
+                   </li><li class = "lic2"> D'après la question précédente, les racines de \(P\) sont les \(x_1, ...., x_{n-1}\) comme elles sont distinctes et que le polynôme est de degré \(n-1\), ce sont les seules, le polynôme est scindé simple. On a donc :
+                   \[P(X) = V(x_1, x_2, ..., x_{n-1}) \prod_{k=1}^{n-1} (X - x_k)\]
+                   </li><li class = "lic2"> Une simple récurrence permet d'établir :
+                   \[\boxed{V(x_1,\dots,x_n)=\prod_{1\leq i \lt j\leq n}(x_j-x_i)}\]
+                   </li><li class = "lic2"> On effectue les opérations :
+                   \[ C_i = C_i - x_1 * C_{i-1}\]
+                   En partant de la dernière colonne jusqu'à la seconde. On peut alors factoriser dans chaque colonne, puis on conclut par une récurrence.
+                   </li><li class = "lic2"> On montre tout simplement que Trouver un polynôme interpolateur :
+                   \[P(X) = \sum_{k = 0}^{n-1} \lambda_k X^k\]
+                   Vérifiant, pour tout \(i, P(x_i) = b_i\) revient à résoudre le système :
+                   \[\left( \begin{matrix}
+                   P(x_1) \\
+                   P(x_2)  \\
+                   \vdots  \\
+                   \vdots   \\
+                   P(x_n)  \\
+               \end{matrix} \right) = \left( \begin{matrix}
+                   1 & {{x}_{1}} & x_{1}^{2} & \cdots  & x_{1}^{n-1}  \\
+                   1 & {{x}_{2}} & x_{2}^{2} & \ldots  & x_{2}^{x-1}  \\
+                   \vdots  & {} & {} & {} & {}  \\
+                   \vdots  & {} & {} & {} & {}  \\
+                   1 & {{x}_{n}} & x_{n}^{2} & \ldots  & x_{n}^{n-1}  \\
+               \end{matrix} \right) \left( \begin{matrix}
+                   \lambda_0  \\
+                   \lambda_1 \\
+                   \vdots  \\
+                   \vdots   \\
+                   \lambda_{n-1} \\
+               \end{matrix} \right) =  \left( \begin{matrix}
+                   b_0  \\
+                   b_1 \\
+                   \vdots  \\
+                   \vdots   \\
+                   b_{n-1} \\
+               \end{matrix} \right) \]
+            Or ce système est de Cramer et son déterminant est non nul donc il admet une unique solution.
+           </ol>    </p></span></div></div>
+           
+           
+
+           <div class="exercise hidden" id="exercise18"><h3>Exercice 18 :</h3><div>
+            Soient \(A\),\(B\),\(C\) et \(D\) quatre matrices carrées de \(M_n (\mathbb R)\).
+            Montrer que si \(AC=CA\) et que \(A\) est inversible : \[\det \left( \begin{matrix} A & B  \\C & D \\ \end{matrix} \right)= \det(AD - CB)\]
+            
+            <hr><button class="bouton" onclick="afficher_texte('Corrigé18')"> Corrigé </button><HR>
+            <span id="Indication18" style="display:none; text-align: left;"><p>
+                        ...
+            <HR></p></span>
+            <span id = "Corrigé18" style="display:none;"><p>
+                Il suffit de remarquer que :
+                \[
+                    \left( \begin{matrix}
+                        I_n & 0 \\
+                         - CA^{-1} & I_n 
+                    \end{matrix} \right) 
+                    \left( \begin{matrix}
+                        A & B  \\
+                        C & D \\
+                    \end{matrix} \right) 
+                    = 
+                    \left( \begin{matrix}
+                        A & B  \\
+                        0 & -CA^-1B + D \\
+                    \end{matrix} \right) \]
+                 \[\Longrightarrow \det \left( \begin{matrix}
+                        A & B  \\
+                        C & D \\
+                    \end{matrix} \right) \times 1 = \det(-ACA^{-1}B + AD)\]
+                 \[ \Longrightarrow \boxed{\det \left( \begin{matrix}
+                        A & B  \\
+                        C & D \\
+                    \end{matrix} \right)
+                = \det(AD - CB)}\]
+            </p></span>
+        </div></div>
+
+
+           
+           <div class="exercise hidden" id="exercise19"><h3>Exercice 19 :</h3><div>Montrer par récurrence sur \(n\) que toute matrice de \({{M}_{n}}\left( K \right)\) de trace nulle est semblable à une matrice de diagonale nulle. <br><br>
+            <hr><button class="bouton" onclick="afficher_texte('Corrigé19')"> Corrigé </button><HR>  <span id="Indication19" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé19" style="display:none;"><p>  
+           
+            On procède par récurrence sur la taille de la matrice, pour l'initialisation, aucune difficulté. Pour l'hérédité, supposons le résultat vrai pour une matrice de taille \(n\) et montrons qu'il reste vrai pour une matrice de taille \(n+1\).<br>
+            Soit \(M\) de trace nulle :
+            <ul>
+                </li><li class = "lic2"> S'il n'existe pas d'élément \(x\) tel que \((x,f(x))\) soit une famille libre, alors \(M\) est une homothétie, donc \(M\) est la matrice nulle, donc est de diagonale nulle.
+                </li><li class = "lic2"> Sinon \((x,f(x))\) est une famille libre, on peut donc la compléter en une base \(\mathcal{B}\) d'après le théorème de la base incomplète.<br>
+                \[ Mat_{\mathcal{B}}(M) = \left( \begin{matrix}
+                   0 & & * &   \\
+                   1 & &   &   \\
+                   \vdots & & M'  &   \\
+                   0 & &   &   \\
+               \end{matrix} \right)\]
+            Avec \(tr(M') = 0\), on peut donc appliquer l'hypothèse de récurrence à \(M'\).<br> Soit \(\Delta\) de diagonale nulle et \(P\in GL_n (\mathbb{K})\) tels que \(M' = P\Delta P^{-1}\). Alors on remarque qu'en posant :
+            \[Q =  \left( \begin{matrix}
+                   1 & 0 & \cdots & 0  \\
+                   0 & &   &   \\
+                   \vdots & & P  &   \\
+                   0 & &   &   \\
+               \end{matrix} \right)\]
+            On obtient :
+            \[QMat_{\mathcal{B}}(M)Q^{-1} = 
+               \left( \begin{matrix}
+                   1 & 0 & \cdots & 0  \\
+                   0 & &   &   \\
+                   \vdots & & P  &   \\
+                   0 & &   &   \\
+               \end{matrix} \right)
+               \left( \begin{matrix}
+                   0 & & * &   \\
+                   1 & &   &   \\
+                   \vdots & & M'  &   \\
+                   0 & &   &   \\
+               \end{matrix} \right)
+               \left( \begin{matrix}
+                   1 & 0 & \cdots & 0  \\
+                   0 & &   &   \\
+                   \vdots & & P^{-1}  &   \\
+                   0 & &   &   \\
+               \end{matrix} \right) = 
+            \left( \begin{matrix}
+                   0 & * & \cdots & *  \\
+                   * & &   &   \\
+                   \vdots & & \Delta  &   \\
+                   * & &   &   \\
+               \end{matrix} \right)\]
+            Ainsi, d'après le principe de récurrence :
+            \[\boxed{\textrm{Toute matrice de trace nulle est semblable à une matrice de diagonale nulle}}\]
+           </ul>    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise20"><h3>Exercice 20 :</h3><div>Soit A une matrice de \({{M}_{3n}}\left( \mathbb{R} \right)\) telle que \({{A}^{3}}=0\) et A est de rang 2n. Montrer que A est semblable à la matrice définie par blocs : \[\left( \begin{matrix}
+                   0 & 0 & 0  \\
+                   {{I}_{n}} & 0 & 0  \\
+                   0 & {{I}_{n}} & 0  \\
+               \end{matrix} \right)\]. <br>
+        <hr><button class="bouton" onclick="afficher_texte('Corrigé20')"> Corrigé </button><HR>  <span id="Indication20" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé20" style="display:none;"><p>  Montrons dans un premier temps que \(rg(M^2) = n\), on se servira de ce résultat pour trouver une base adéquate.
+           Notons \(f\) l'endomorphisme associé à M. On a :
+           \[ ker(f) \subset Im(f^2) \]
+           \[ ker(f^2) \subset Im(f) \]
+           En appliquant le théorème du rang à \(f\), on obtient :
+           \[dim(ker(f)) = n\]
+           Ainsi, on a une première inégalité : 
+           \[n = dim(ker(f)) \leq rg(f^2)\]
+           Pour la seconde inégalité appliquons le théorème du rang à \(f_{|Im(f^2)}\) :
+           \[rg(f^2) = \dim(\ker(f)\cap Im(f^2)) + \dim(Im(f_{|Im(f^2)})) \Longrightarrow rg(f^2) = \dim(\ker(f)) + \dim(Im(f_{|Im(f^2)})) \leq n\]
+           On sait alors que \(rg(f^2) = n\)
+           Soit \((e_1, \cdots, e_n)\) une base de \(Im(f^2)\). Alors, pour tout \(k\in [\![1,n]\:]\), il existe \(f_k\) tel que \(f^2(f_k) = e_k\). On peut alors écrire la matrice de \(f\) dans la base \(\mathcal{B} = (f_1, \cdots, f_n, f(f_1), \cdots, f(f_n), e_1, \cdots, e_n)\) :
+           \[\boxed{Mat_{\mathcal{B}}(f) = \left( \begin{matrix}
+                   0 & 0 & 0  \\
+                   {{I}_{n}} & 0 & 0  \\
+                   0 & {{I}_{n}} & 0  \\
+               \end{matrix} \right)}\]    </p></span></div></div>
+           
+           
+           
+        <div class="exercise hidden" id="exercise21"><h3>Exercice 21 :</h3><div>Soient \({{x}_{0}}\lt {{x}_{1}} \lt ... \lt {{x}_{n}}\). Montrer qu'il existe n+1 réels \({{\lambda }_{0}},...,{{\lambda }_{n}}\) tels que \(\forall P\in {{\mathbb{R}}_{n}}\left[ X \right]\), \(\int\limits_{0}^{1}{\frac{P\left( t \right)}{\sqrt{t^2 + 1}}}dt=\sum\limits_{k=0}^{n}{{{\lambda }_{k}}P\left( {{x}_{k}} \right)}\). <br>
+        <hr><button class="bouton" onclick="afficher_texte('Corrigé21')"> Corrigé </button><HR>  <span id="Indication21" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé21" style="display:none;"><p>  Il suffit de remarquer que le terme de gauche est une application linéaire, et de montrer que la famille \((P\left( {{x}_{k}} \right))_{k\in[\![0, n]\!]}\) est une famille libre de l'espace \({{\mathbb{R}}_{n}}\left[ X \right]\) de taille \(n+1\) donc une base (Cf. exercice n°24), l'application linéaire du terme de gauche s'exprime donc nécessairement comme combinaison linéaire de ces éléments.    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise22"><h3>Exercice 22 :</h3><div>Soient \(E\) et \(F\) deux espaces de dimension finie et \(u,v\in \mathcal{L}(E,F)\).
+               
+               Montrer que : \[\dim(\ker(u+v))\leq \dim(\ker(u)\cap \ker(v))+\dim(\text{Im}(u)\cap \text{Im}(v))\] <br><br>
+            <hr><button class="bouton" onclick="afficher_texte('Corrigé22')"> Corrigé </button><HR>  <span id="Indication22" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé22" style="display:none;"><p>  On effectue un théorème du rang sur \(u_{|\ker(u+v)}\) ce qui nous donne :
+           \[\dim(\ker(u+v) = \dim\left(\ker(u_{|\ker(u+v)})\right)+\dim\left(Im(u_{|\ker(u+v)}\right) \]
+           \[= \dim\left(\ker(u) \cap \ker(u+v)\right)+\dim\left(Im(u_{|\ker(u+v)})\right) \]
+           Or, soit \(x\in \ker(u) \cap \ker(u+v)\), alors \(u(x) = 0\) et \( u(x) + v(x) = 0\), donc \(v(x) = 0\).<br>Ainsi \(\underline{\ker(u) \cap \ker(u+v) \subset \ker(u) \cap \ker(v)}\).<br>
+           De plus, si \(x\in Im(u_{|\ker(u+v)}) \), il existe donc \(y \in ker(u+v)\) tel que \(x = u(y) = -v(y)\). Donc \(x\in Im(u) \cap Im(v)\). Enfin, en combinant ces inégalités et inclusions :
+           \[\boxed{\dim(\ker(u+v))\leq \dim(\ker(u)\cap \ker(v))+\dim(\text{Im}(u)\cap \text{Im}(v))}\]    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise23"><h3>Exercice 23 :</h3><div>Soit \(f\) un endomorphisme de \(\mathbb{R}^3\). Sa matrice dans la base canonique est :
+           \[A = \left( \begin{matrix}
+               -2 & 1 & -2\\
+               -8 & \frac{13}3 & -\frac{14}{3} \\
+               -4 & \frac53 & - \frac{4}{3}
+               \end{matrix} \right)
+            \in \mathcal{M}^3(\mathbb R)\]
+           Soient :
+           \[u =
+           \left( \begin{matrix}
+           1\\
+           1\\
+           -1\\
+           \end{matrix} \right),
+           v =
+           \left( \begin{matrix}
+           0\\
+           2\\
+           1\\
+           \end{matrix} \right),
+           \textrm{ et } w =
+           \left( \begin{matrix}
+           1\\
+           2\\
+           1\\
+           \end{matrix} \right)\]
+           On note \(\mathcal{B}\) la famille composée des trois
+           vecteurs précédents.
+           <ol>
+               </li><li class = "lic2"> Montrer que \(\mathcal{B}\) est une base de \(\mathbb {R}^3\).
+               </li><li class = "lic2"> écrire la matrice de \(f\) dans la base \(\mathcal{B}\).
+               </li><li class = "lic2"> Exprimer \(A^n\) pour tout \(n \in \mathbb{N}\).
+           </ol> <br>
+            <hr><button class="bouton" onclick="afficher_texte('Corrigé23')"> Corrigé </button><HR>  <span id="Indication23" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé23" style="display:none;"><p>  <ol>
+               </li><li class = "lic2"> Aucune difficulté, il suffit de montrer qu'elle est libre.
+               </li><li class = "lic2"> De même, aucune difficulté, il suffit de regarder l'image des vecteurs de la base par \(f\).
+               on obtient :
+               \[Mat_{\mathcal{B}}(f) = \]
+               
+           </ol>    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise24"><h3>Exercice 24 :</h3><div>Soit \((a_k)_{k\in \mathbb{N}}\) une suite strictement croissante de réels. On définit pour tout \(k\in \mathbb{N}\) : \(\displaystyle L_k:\begin{array}[t]{c}  \mathbb{R}[X] & \longrightarrow &\mathbb{R} \\ P & \longmapsto & P(a_k)\end{array}\)
+           <ol>
+               </li><li class = "lic2"> Montrer que, pour tout \(k\in\mathbb N\), \(L_k\) est une forme linéaire.
+               </li><li class = "lic2"> Déterminer le rang de \((L_k)_{0\leq k\leq n}\).	
+           </ol> <br>
+            <hr><button class="bouton" onclick="afficher_texte('Corrigé24')"> Corrigé </button><HR>  <span id="Indication24" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé24" style="display:none;"><p>  Pour la première question, \(L_k\) est bien une forme linéaire par linéarité de l'évaluation en un réel.<br>
+           Pour la seconde question, posons \(\lambda_0, ... \lambda_n\) tels que pour tout \(P \in \mathbb{R[X]}\) :
+           \[\sum_{k=0}^{n} \lambda_k L_k(P) = 0\]
+           En évaluant en un polynôme \(P\) dont les racines sont exactement les \(a_k\) à l'exception d'un d'entre eux on trouve n égalité de la forme :
+           \[ \lambda_k P(a_k) = 0 \textrm{   avec  } P(a_k) \neq 0\].
+           On en déduit que cette famille est libre, ainsi :
+            \[\boxed{rg\left((L_k)_{0\leq k\leq n}\right) = n+1}\]    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise25"><h3>Exercice 25 :</h3><div>Soit \(A_n\) la matrice de \(\mathcal{M}_n(\mathbb C)\) définie par :
+           \[A_n = 
+           \left( \begin{matrix}
+           a+b & ab & 0 & \cdots & 0\\
+           1 & a+b & \ddots & \ddots & \vdots\\
+           0 & \ddots & \ddots &\ddots & 0\\
+           \vdots & \ddots & \ddots & a+b & ab\\
+           0 & \cdots & 0 & 1 & a+b 
+           \end{matrix} \right)
+           \]
+           
+           où \((a, b) \in \mathbb{C}^2\) et \(n \in \mathbb{N}^*\). On note \(d_n = \det(A_n)\).
+           <ol>
+               </li><li class = "lic2"> Trouver une relation de récurrence vérifiée par la suite \((d_n)\).
+               </li><li class = "lic2"> En déduire une expression de \(d_n\) en fonction de \(n\), \(a\), \(b\).
+           </ol> <br>
+            <hr><button class="bouton" onclick="afficher_texte('Corrigé25')"> Corrigé </button><HR>  <span id="Indication25" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé25" style="display:none;"><p>  
+                \[\det(A_n) = 
+           \left| \begin{matrix}
+           a+b & ab & 0 & \cdots & 0\\
+           1 & a+b & \ddots & \ddots & \vdots\\
+           0 & \ddots & \ddots &\ddots & 0\\
+           \vdots & \ddots & \ddots & a+b & ab\\
+           0 & \cdots & 0 & 1 & a+b 
+           \end{matrix} \right|_{(n)}\]
+           \[ =
+           (a+b) \left| \begin{matrix}
+            a+b & ab & \ddots & 0\\
+            ab & \ddots &\ddots & \vdots\\
+            \vdots & \ddots & a+b & ab\\
+            0 & \cdots & 1 & a+b 
+           \end{matrix} \right|_{(n-1)}
+           - 
+           \left| \begin{matrix}
+            ab & 0 & \cdots & 0\\
+           0 & a+b &\ddots & \vdots\\
+           \vdots & \ddots & \ddots & ab\\
+            0 & \cdots & 1 & a+b 
+           \end{matrix} \right|_{(n-1)}\]
+           \[ = (a+b) \det(A_{n-1}) - ab 
+           \left| \begin{matrix}
+            a+b & ab & \ddots & 0\\
+            ab & \ddots &\ddots & \vdots\\
+            \vdots & \ddots & a+b & ab\\
+            0 & \cdots & 1 & a+b 
+           \end{matrix} \right|_{(n-2)}\]
+           \[ = (a+b) \det(A_{n-1}) - ab \det(A_{n-2})\]
+           On établi ainsi la relation de récurrence demandée :
+           \[\boxed{d_{n+2} = (a+b)d_{n+1} - ab\times d_{n}}\]
+           Pour la deuxième question, on se ramène simplement à l'étude d'une suite récurrente linéaire d'ordre 2.<br>
+           Pour le calculs des coefficients, on remarquera que les termes initiaux sont \(d_1 = a+b\) et \(d_2 = a^2 + ab +b^2\).    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise26"><h3>Exercice 26 :</h3><div>Soient \(a\) et \(b\) deux réels distincts. Montrer qu'il existe un unique endomorphisme \(f\) de \(\mathbb{R}_n [X]\) tel que \(f(1) = 1\),
+           \(f (X) = X\) et pour tout autre polynôme \(P\), \((P(a) = P(b) = 0) \Longrightarrow (f(P) = 0)\). <br><br>
+            <hr><button class="bouton" onclick="afficher_texte('Corrigé26')"> Corrigé </button><HR>  <span id="Indication26" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé26" style="display:none;"><p>  Il suffit de remarquer que \(\mathcal{B} = (1, X, (X-a)(X-b), (X-a)^2(X-b), \cdots, (X-a)^{n}(X-b)\) forme une base de \(\mathbb{R}_n [X]\) car est échelonnée en degré est de taille \(n\).
+           On peut alors écrire :
+           \[\left\{ \begin{matrix}
+           f(1) = 1 \\
+           f(X) = X \\
+           f((X-a)(X-b)) = 0 \\
+           \vdots \\
+           f((X-a)^{n}(X-b)) = 0
+           \end{matrix} \right.\]
+           Or, une application linéaire est entièrement déterminée par l'image d'une base. <br>On en déduit que : \[\boxed{\textrm{\(f\) est unique.}}\]    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise27"><h3>Exercice 27 :</h3><div>Soit \((u_n)_{n\in \mathbb{N}}\) la suite définie par : \(u_{n+2} = u_{n+1} + u_n + n\). Déterminer \(u_n\) en fonction de \(n\). <br><br>
+            <hr><button class="bouton" onclick="afficher_texte('Corrigé27')"> Corrigé </button><HR>  <span id="Indication27" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé27" style="display:none;"><p>  On pose \(v_n = u_n + n + 1\). Alors :
+           \[v_{n+2} = u_{n+2} + n + 3 = (u_{n+1} + u_n + n) + n + 3 = v_{n+1} + v_{n}\]
+           On se ramène alors à l'étude d'une suie récurrente linéaire d'ordre 2. <br>
+           \textbf{Remarque :} Si on ne remarque pas immédiatement qu'il faut poser la suite \(v_n =  u_n + n + 1\), on peut aussi poser \(w_n = v_n + P(n)\) où \(P\) est un polynôme de degré 2. On établit alors des conditions sur les coefficients pour trouver \(P(n) = n+1\).    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise28"><h3>Exercice 28 :</h3><div>On considère une suite (\(a_i\))\(_{i \in [0,n]}\) de réels.
+           Montrer l'équivalence entre les propriétés (i) et (ii):
+               <br>
+               (i) \(a_0 \neq 0 \)
+               <br>
+               (ii) \( \forall Q \in K[X]\), il existe un unique \(P\in K[X]\) tel que \(Q = \sum_{k=0}^n a_k P^{(k)} \) <br><br>
+            <hr><button class="bouton" onclick="afficher_texte('Corrigé28')"> Corrigé </button><HR>  <span id="Indication28" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé28" style="display:none;"><p>  Montrons le sens \((ii) \Longrightarrow (i)\) par contraposée :<br>
+           Si on suppose que \( a_0 = 0 \) alors, si \(Q \in \mathbb{K}[X]\) s'il existe un polynôme \(P_1\) vérifiant :
+           \[\sum_{k=1}^n a_k P_1^{(k)} = Q\]
+           Alors, en posant \(P_2 = P_1 + \lambda\), on obtient :
+           \[\sum_{k=1}^n a_k P_2^{(k)} = Q\]
+           Car la constante saute dans toutes les dérivées k-ième si \(k>0\). Ainsi, il n'y a pas unicité du polynôme d'où le résultat par contraposé : 
+           \[\boxed{(ii) \Longrightarrow (i)}\] <br>
+           Montrons la réciproque, supposons que \(a_0 = 0\) : <br>
+           Dans un premier temps, montrons l'unicité. Posons \(Q\) un polynôme quelconque. S'il existe deux polynômes 
+           \(\displaystyle P_1 = \sum_{k=0}^{d_1} p_{1,k} X^k , P_2 = \sum_{k=0}^{d_2} p_{2,k} X^k \) vérifiant l'égalité alors, on établit triviallement l'égalité des degrés \(d_1 = d_2 := d\) :
+           \[\sum_{k=0}^d a_k P_1^{k} = \sum_{k=0}^d a_k P_2^{(k)} \Longrightarrow \sum_{k=0}^d \left( \sum_{i=0}^k p_{1,k} X^k \right)= \sum_{k=0}^d \left(\sum_{i=0}^k p_{2,k} X^k\right)\]    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise29"><h3>Exercice 29 :</h3><div>Soient \(A_1,\dots,A_n\in\mathcal{M}_n(\mathbb{C})\) nilpotentes et telles que, \(\forall(i,j)\in\{1,\dots,n\},\, A_iA_j=A_jA_i\).
+               
+               Montrer que \(A_1\dots A_n=0\). <br><br>
+            <hr><button class="bouton" onclick="afficher_texte('Corrigé29')"> Corrigé </button><HR>  <span id="Indication29" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé29" style="display:none;"><p>  Considérons \(f_1 , ... , f_n \) les endomorphismes associés aux matrices nilpotentes. Posons :
+           \[F_k = Im(f_{k+1}\circ...\circ f_n) \textrm{  et  } d_k = Dim (F_k)\]
+           Il faut alors montrer, par récurrence finie, que : \[\forall k, d_k \leq k\]
+           Initialisation : Si \( k = n+1\) alors :
+           \[F_k = Im(f_n) \subset E \]
+           Or l'inclusion est stricte car \(f_n\) est nilpotente, donc n'est pas bijective.
+           <br>Hérédité :  Si \(k \leq n-1\) :
+           Alors, on a : \(f_k(F_k) = F_{f-1}\) par définition des \((F_k)\). Or :
+           \[f_k\circ f_{k+1}\circ ... \circ f_1(x) = f_{k+1}\circ ... \circ f_1(f_k(x)) \in F_k\]
+           Ainsi, \(F_{k-1}=f_k(F_k) \subset F_k\) et l'inclusion est de nouveau stricte car la restriction de \(f_k\) à \(F_k\) est nilpotentes.
+           On conclut ainsi la récurrence, on en déduit en particulier que le résultat reste vrai pour 0, ce qui donne :
+           \[\boxed{ dim(Im(f_{1}\circ...\circ f_n)) = 0}\]
+           Ce qui est bien le résultat voulu.    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise30"><h3>Exercice 30 :</h3><div>On note \((e_1, e_2, \cdots, e_n)\) la base canonique de \(\mathbb{R}^n\).
+           Soit \(\sigma \in S_n\) ; on note \(f_{\sigma}\) l'unique endomorphisme de \(\mathbb{R}^n\) tel que : 
+           \(\forall i \in [\![1, n]\!], f_{\sigma} (e_i) = e_{\sigma(i)}\)
+           Enfin, on pose :
+           \[p = \frac1{n!}\sum_{\sigma \in S_n} f_{\sigma}\]
+           <ol>
+               </li><li class = "lic2"> Soit \((\sigma, \tau) \in Sn\) ; calculer \(f_{\sigma} \circ f_{\tau}\)
+               </li><li class = "lic2"> Montrer que \(\tau \longmapsto \sigma \circ \tau\) est une bijection de \(S_n\).
+               </li><li class = "lic2"> Montrer que \(p\) est un projecteur.
+           </ol> <br>
+            <hr><button class="bouton" onclick="afficher_texte('Corrigé30')"> Corrigé </button><HR>  <span id="Indication30" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé30" style="display:none;"><p>  <ol>
+               </li><li class = "lic2"> On trouve sans effort que \(f_{\sigma} \circ f_{\tau} = f_{\sigma\circ\tau}\).
+               </li><li class = "lic2"> Tout élément de \(S_n\) est inversible, en particulier \(\sigma\) est inversible et la bijection réciproque de l'application de l'énoncé est alors \(\tau \longmapsto \tau \circ \sigma^{-1}\).
+               </li><li class = "lic2"> On a :
+               \[p^2 = \frac1{n!}\sum_{\sigma \in S_n} f_{\sigma}\left(\frac1{n!}\sum_{\tau \in S_n} f_{\tau}\right) = \frac1{(n!)^2} \sum_{\sigma \in S_n} \sum_{\tau \in S_n} f_{\sigma\circ\tau}\]
+               Or, par la question 2, si \(\tau\) parcours \(S_n\), alors \(\sigma \circ \tau\) aussi, donc :
+               \[p^2 = \frac1{(n!)^2} \sum_{\sigma \in S_n} \sum_{\sigma' \in S_n} f_{\sigma'} = \frac1{(n!)^2}\times Card(S_n)\times\sum_{\sigma \in S_n} f_{\sigma} = p\]
+               \[\boxed{\textrm{\(p\) est un projecteur}}\]
+           </ol>    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise31"><h3>Exercice 31 :</h3><div>Soit \(E\) un \(\mathbb{K}\)-espace vectoriel de dimension \(n\), \((u,v)\in\mathcal{L}(E)^2\).
+               On pose \(A=\{x\in\mathcal{L}(E) ~/~ v\circ x\circ u = 0_{\mathcal{L}(E)} \}\).
+               Montrer que \(A\) est un \(\mathbb{K}\)-espace vectoriel de dimension finie et donner sa dimension en fonction de \(\operatorname{rg}(u)\) et \(\operatorname{rg}(v)\). <br><br>
+            <hr><button class="bouton" onclick="afficher_texte('Corrigé31')"> Corrigé </button><HR>  <span id="Indication31" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé31" style="display:none;"><p>  On peut exprimer l'ensemble \(A\) de la manière suivante :
+           \[A=\{x\in\mathcal{L}(E) ~|~ v\circ x\circ u = 0_{\mathcal{L}(E)} \} = \{x\in\mathcal{L}(E)  ~|~ Im(x\circ u) \subset ker(v) \}\]    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise32"><h3>Exercice 32 :</h3><div><ol>
+               </li><li class = "lic2"> Montrer que si \(H\) est un hyperplan d'un espace vectoriel \(E\), alors il existe \(\phi \in E^* \backslash\{0\}\) tel que \(H = \ker(\phi)\).
+               </li><li class = "lic2"> Soit \(H\) un hyperplan de \(\mathcal{M}_n(\mathbb C)\). Montrer qu'il contient au moins une matrice inversible.
+           </ol> <br>
+            <hr><button class="bouton" onclick="afficher_texte('Corrigé32')"> Corrigé </button><HR>  <span id="Indication32" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé32" style="display:none;"><p>  <ol>
+               </li><li class = "lic2"> Si \(H\) est un hyperplan il admet un supplémentaire de dimension \(1\), autrement dit une droite vectorielle. Notons \(\vec{x_0}\) un vecteur engendrant ce supplémentaire.<br>
+               Notons \(\phi\) l'application qui vérifie : 
+               \(\forall x \in E : f(x) = f(x_1 + \lambda \vec{x_0}) = \lambda\)
+               On montre facilement que cette application est linéaire. Elle est à image dans \(H\), c'est bien une forme linéaire.<br>
+               Soit \(x\in\ker(\phi)\), alors sa composante selon \(\vec{x_0}\) est nulle, il est donc bien dans \(H\). Réciproquement, soit \(x\in H, f(x) = 0\). D'où l'égalité.
+                \[\boxed{\textrm{\(H\) hyperplan de \(E \Longrightarrow \exists \phi \in E^* \backslash\{0\}, H = \ker(\phi)\).}}\]
+                
+                </li><li class = "lic2"> Toute application linéaire de \(L(\mathcal{M}_n(\mathbb C), \mathbb C)\) peut s'écrire sous la forme :
+                \[ \varphi : M \longmapsto Tr(AM) \textrm{ avec } A \in \mathbb C\]
+                Donc, tout hyperplan est de la forme :
+                \[H = \ker(M \longmapsto Tr(AM))\]
+                On cherche donc \(X\in GL_n(\mathbb{K}), Tr(AX) = 0\). Notons \(r = rg(A)\), alors \(A\) est semblable à \(J_r\).
+                \[Tr(AX) = Tr(PJ_rQX) = Tr(J_rQXP^{-1})\]
+                Le problème se réduit donc à trouver une matrice inversible \(P\) telle que \[Tr(J_rP) = 0\]. On pose alors :
+                \[P = 
+               \left( \begin{matrix}
+               0 & 0 & \cdots & 0 & 1\\
+               1 & 0 & \ddots & \ddots & 0 \\
+               0 & \ddots & \ddots &\ddots & \vdots \\
+               \vdots & \ddots & \ddots &  0 & 0 \\
+               0 & \cdots & 0 & 1 & 0
+               \end{matrix} \right)
+               \]
+               On vérifie alors aisément que \(Tr(J_rP) = 0\).
+               Enfin :
+               \[\boxed{\textrm{Tout hyperplan contient au moins une matrice inversible.}}\]
+               
+           </ol>    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise33"><h3>Exercice 33 :</h3><div>Soit :
+            \[ \begin{array}{l|rcl} \varphi: & \mathcal{M}_n(\mathbb R) & \longrightarrow &  L(\mathcal{M}_n(\mathbb R), \mathbb R) \\ & A & \longmapsto & M \longmapsto Tr(AM ) \end{array}\]
+           Montrer que \(\varphi\) est un isomorphisme. <br><br>
+            <hr><button class="bouton" onclick="afficher_texte('Corrigé33')"> Corrigé </button><HR>  <span id="Indication33" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé33" style="display:none;"><p>  Tout d'abord \(\varphi\) est triviallement linéaire, par linéarité de la trace, il suffit de montrer que \(\varphi\) est injective, car \(\dim(\mathcal{M}_n(\mathbb R)) = \dim(L(\mathcal{M}_n(\mathbb R), M))\).<br>
+           Soit \(A\in \ker(\varphi)\), alors :
+           \[\forall M \in \mathcal{M}_n(\mathbb R), Tr(AM) = 0\]
+           Ceci est en particulier vrai pour toute matrice de la base canonique. On en déduit des égalités qui impose que \(A\) est la matrice nulle.
+           
+           \[\boxed{\begin{array}{l|rcl} \varphi: & \mathcal{M}_n(\mathbb R) & \longrightarrow &  L(\mathcal{M}_n(\mathbb R), \mathbb R) \\ & A & \longmapsto & M \longmapsto Tr(AM ) \end{array} \textrm{ est un isomorphisme.}}\]    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise34"><h3>Exercice 34 :</h3><div>Soit \(f \in L(\mathcal{M}_2(\mathbb R))\) tel que :
+           <ol>
+               </li><li class = "lic2"> \(f(N) = 0\) pour toute matrice nilpotente \(N\).
+               </li><li class = "lic2"> \(Tr(f(I_2)) = 0\).
+           </ol> 
+           Montrer que \(f \circ f = 0\). <br><br>
+           <hr><button class="bouton" onclick="afficher_texte('Corrigé34')"> Corrigé </button><HR>  <span id="Indication34" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé34" style="display:none;"><p>  Il suffit de poser une base constitué de trois matrice nilpotente (en général, l'espace des matrice nilpotente est un hyperplan, donc de dimension \(n^2 - 1\)).<br>
+           On pose \(\mathcal{B} = (E_{1,1} + E_{2,2}, E_{1,2}, E_{2,1}, E_{1,1} + E_{1,2} - E_{2,1} - E_{2,2})\). Il est assez facile de montrer que cette famille est une base.<br>
+           La matrice de l'application de l'énoncé dans cette base est donc de la forme :
+           \[Mat_{\mathcal{B}}(f) = 
+           \left( \begin{matrix}
+               0 & 0 & 0 & 0 \\
+               * & 0 & 0 & 0 \\
+               * & 0 & 0 & 0 \\
+               * & 0&  0 & 0
+               \end{matrix} \right)\]
+           Cette matrice est bien nilpotente d'indice 2.
+           Enfin :
+           \[\boxed{f \circ f = 0}\]    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise35"><h3>Exercice 35 :</h3><div>Soit \(E\) un \(\mathbb{R}\)-espace vectoriel de dimension finie et \(f, g \in L (E)\). On suppose \(f\) inversible et \(g\) de rang \(1\).
+           Montrer que \(f + g\) est inversible si et seulement si \(Tr(g \circ f^{-1})\neq -1\). <br><br>
+        <hr><button class="bouton" onclick="afficher_texte('Corrigé35')"> Corrigé </button><HR>  <span id="Indication35" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé35" style="display:none;"><p>  On pose \(M\) la matrice associée à \(g\) dans la base canonique. On sait que \(rg(M) = 1 \Longrightarrow M^2 = Tr(M)M\). Cherchons alors un polynôme annulateur de \((I_n + M)\), admettons dans un premier temps que \(Tr(M) \neq -1\) :
+           \[ (I_n + M)^2 + \alpha(I_n + M) + \beta I_n = 0 \Longrightarrow M^2 + 2M + I_n + \alpha I_n + \alpha M + \beta I_n = 0\]
+           \[\Longrightarrow (Tr(M) + 2  + \alpha) M + (  \alpha + \beta + 1) = 0 \]
+           \[\Longrightarrow \left\{ 
+           \begin{matrix}
+               \alpha = -Tr(M) - 2 \\
+               \beta = Tr(M) + 1
+           \end{matrix}\right.\]
+           Ainsi, on a :
+           \[(M +I_n)^2 - (Tr(M) + 2)(M+ I_n) + (Tr(M) + 1)I_n = 0 \]
+           \[\Longrightarrow \frac1{(Tr(M) + 1)} (M+I_n)(M - (Tr(M) + 1)I_n) = I_n\]
+           Ainsi, \((M + I_n)\) est inversible.
+           \[(M + I_n)^{-1} = I_n + \frac1{(Tr(M) + 1)}M\]
+           Posons maintenant \(N\) la matrice associée à \(f\) dans la base canonique. En effectuant le même raisonnement sur \(MN^{-1}\), qui est de rang \(1\), (car multiplier par une matrice inversible ne change pas le rang), on trouve que \(MN^{-1} + I_n\) est inversible d'inverse :
+           \[(MN^{-1} + I_n)^{-1} = I_n + \frac1{(Tr(MN^{-1}) + 1)}MN^{-1}\]
+           Enfin : 
+           \[\boxed{(M + N)\textrm{ est inversible, d'inverse  }   N^{-1} + \frac1{(Tr(MN^{-1}) + 1)}N^{-1}MN^{-1} }\]    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise36"><h3>Exercice 36 :</h3><div>Soient \(A, B \in \mathcal{M}_2(\mathbb R)\). On suppose que \(B\) est de rang \(1\). Comparer \(\det (A + B)\times \det (A - B) \) et \(\det (A^2)\). <br><br>
+           <hr><button class="bouton" onclick="afficher_texte('Corrigé36')"> Corrigé </button><HR>  <span id="Indication36" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé36" style="display:none;"><p>  On pose \(r = rg(A)\), alors \(A\) est équivalente à \(J_r\) et notons \(P, Q \in GL_n(\mathbb R)\) tel que 
+           \(B = PJ_rQ\). Notons \(C = P^{-1}AP\)    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise37"><h3>Exercice 37 :</h3><div>Trouver les matrices \(B \in \mathcal{M}_2(\mathbb C)\) telles que \(\forall A \in \mathcal{M}_2(\mathbb C), (AB = 0) \Longrightarrow (BA = 0)\). <br><br>
+           <hr><button class="bouton" onclick="afficher_texte('Corrigé37')"> Corrigé </button><HR>  <span id="Indication37" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé37" style="display:none;"><p>  Corrigé indisponible </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise38"><h3>Exercice 38 :</h3><div><ol>
+               </li><li class = "lic2"> Montrer que \(P \longmapsto P + P'\) est un automorphisme de l'espace vectoriel \(\mathbb{R} [X]\).
+               </li><li class = "lic2"> En décrire la réciproque.
+           </ol> <br>
+            <hr><button class="bouton" onclick="afficher_texte('Corrigé38')"> Corrigé </button><HR>  <span id="Indication38" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé38" style="display:none;"><p>  Corrigé indisponible    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise39"><h3>Exercice 39 :</h3><div>Quelles sont les matrices \(A\) de \(\mathcal{M}_2(\mathbb R)\) telles que pour toute matrice \(M\) de \(\mathcal{M}_2(\mathbb R)\), on ait \(Det(A + M) = Det(A) + Det(M).\) <br><br>
+           <hr><button class="bouton" onclick="afficher_texte('Corrigé39')"> Corrigé </button><HR>  <span id="Indication39" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé39" style="display:none;"><p>   Corrigé indisponible   </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise40"><h3>Exercice 40 :</h3><div>Soit \(f\) un endomorphisme d'un \(\mathbb{K}\)-espace vectoriel \(E\) de dimension finie \(n\). Montrer que \(f\) est un projecteur si et seulement si\( rg(f) + rg(Id - f) = n\). <br><br>
+           <hr><button class="bouton" onclick="afficher_texte('Corrigé40')"> Corrigé </button><HR>  <span id="Indication40" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé40" style="display:none;"><p>   Corrigé indisponible   </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise41"><h3>Exercice 41 :</h3><div>Résoudre dans \(Mn (R)\)l'équation \(X + X^{T} = Tr(X)A\). <br><br>
+            <hr><button class="bouton" onclick="afficher_texte('Corrigé41')"> Corrigé </button><HR>  <span id="Indication41" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé41" style="display:none;"><p>  Corrigé indisponible    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise42"><h3>Exercice 42 :</h3><div>Soit \(E\) un \(\mathbb K\)-espace vectoriel et \(u\) un endomorphisme de \(E\).
+           Montrer que : \(u_2 = 0_E \Longleftrightarrow \) Il existe un projecteur \(p\) de \(E\) tel que \(p \circ u - u \circ p = u\). <br><br>
+           <hr><button class="bouton" onclick="afficher_texte('Corrigé42')"> Corrigé </button><HR>  <span id="Indication42" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé42" style="display:none;"><p>  Corrigé indisponible    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise43"><h3>Exercice 43 :</h3><div>Soient \(n \geq 2\) entier et \(\alpha\) réel, on considère la matrice \(A = (\alpha^{|i-j|})_{1\leq i,j \leq n}\). Donner une condition nécessaire et suffisante pour que \(A\) soit inversible ? <br><br>
+        <hr><button class="bouton" onclick="afficher_texte('Corrigé43')"> Corrigé </button><HR>  <span id="Indication43" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé43" style="display:none;"><p>  Corrigé indisponible    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise44"><h3>Exercice 44 :</h3><div>On note :
+               
+               - \(\mathcal H\) l'ensemble des matrices carrées réelles d'ordre \(n\) de trace nulle.
+               
+               - \(\mathcal N\) l'espace vectoriel engendré par les matrices nilpotentes.
+               <ol>
+                   </li><li class = "lic2"> \(\mathcal N\) est-il l'ensemble des matrices nilpotentes ?
+                   </li><li class = "lic2">  Montrer que \(\mathcal N\subset \mathcal H\).
+                   </li><li class = "lic2"> A-t-on \(\mathcal N=\mathcal H\) ? 
+               </ol> <br>
+            <hr><button class="bouton" onclick="afficher_texte('Corrigé44')"> Corrigé </button><HR>  <span id="Indication44" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé44" style="display:none;"><p>  <ol>
+               </li><li class = "lic2"> Non, il suffit de se placer dans les matrice carré d'ordre 2 et de prendre \(E_{1,2}\) et \(E_{2,1}\).
+               </li><li class = "lic2"> L'application trace est linéaire. Une somme de matrice nilpotente est de trace nulle car une matrice nilpotente est de trace nulle. En effet, son polynôme annulateur est de la forme \(P(X) = X^p\), donc \(0\) est sa seule valeur propre. Elle est donc trigonalisable dans \(\mathbb{C}\) avec des \(0\) sur la diagonale.
+               </li><li class = "lic2"> En admettant le résultat démontré à l'exercice 19, notons \(P \in GL_n(\mathbb C)\) et \(\Delta\) de diagonale nulle telle que :
+                \[ M = P\Delta P^{-1}\]
+               0n sait que \(\Delta\) peut s'écrire comme une somme d'une matrice triangulaire supérieure stricte \(T_+\) et d'une matrice triangulaire inférieure stricte \(T_-\) :
+               \[ M = P(T_+ + T_-)P^{-1} = PT_+P^{-1} + P T_-P^{-1}\]
+               Or, \(PT_+P^{-1}\) et \(PT_-P^{-1}\) sont nilpotentes.
+               D'où :
+               \[\boxed{\mathcal N = \mathcal H }\]
+              
+               
+           </ol>    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise45"><h3>Exercice 45 :</h3><div>Soit \(E\) un espace vectoriel de dimension finie sur un corps \(\mathbb{K}\). Soient \(\phi_1, \cdots, \phi_p\) et \(\psi\) des formes linéaires sur
+           \(E\). On suppose \((\phi_1, \cdots, \phi_p)\) libre.
+           <ol>
+               </li><li class = "lic2"> Montrer que \(\psi \in Vect (\phi_1, ..., \phi_p)\) si et seulement si \(\bigcap^p_{k=1} \ker(\psi_k) \subset \ker (\psi)\).
+           </li><li class = "lic2"> On suppose que \(\mathbb{K}=\mathbb{R}\) ou \(\mathbb{C}\). Montrer que les conditions précédentes équivalent à l'existence de \(C > 0\) tel
+           que \(\forall x \in R, |\psi(x)| \leq C. \max_{1\leq k \leq p}, |\phi_k (x)|\).
+           </ol> <br>
+           <hr><button class="bouton" onclick="afficher_texte('Corrigé45')"> Corrigé </button><HR>  <span id="Indication45" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé45" style="display:none;"><p> Corrigé indisponible     </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise46"><h3>Exercice 46 :</h3><div>Soient \(a_1, a_2, \cdots, a_n\) \(n\) réels. On pose :
+           \[A =
+           \left(
+           \begin{matrix}
+           a_1 & a_2 & a_3 & \cdots & a_n \\
+           a_n & a_1 & a_2 & \cdots & a_{n-1} \\
+           \vdots & & & & \vdots \\
+           \vdots & & & &\vdots \\
+           a_2 & a_3 & \cdots & a_n & a_1
+           \end{matrix} 
+           \right)
+           \]
+           On pose \(w = e^{\frac{2i\pi}n}\) et \(M\) la matrice
+           de terme général \(w^{(i-1)(j-1)}\).
+           <ol>
+               </li><li class = "lic2"> Calculer le produit \(AM\).
+               </li><li class = "lic2"> En déduire le déterminant de \(A\). (On utilisera un polynôme dont les coefficients sont les \(a_i\))
+           </ol> <br>
+            <hr><button class="bouton" onclick="afficher_texte('Corrigé46')"> Corrigé </button><HR>  <span id="Indication46" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé46" style="display:none;"><p> Corrigé indisponible     </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise47"><h3>Exercice 47 :</h3><div>Soit \(f : \mathcal{M}_n (\mathbb R) \longrightarrow \mathbb R\) une forme multiplicative, c'est à dire telle que : \(\forall A, B \in \mathcal{M}_n (\mathbb R), f (A.B) = f (A)f (B)\).
+           On suppose \(f\) non constante.
+           <ol>
+               </li><li class = "lic2"> Que vaut \(f(I_n)\)? \(f(0)\) ?
+               </li><li class = "lic2"> Montrer que deux matrices semblables ont même image par \(f\).
+               </li><li class = "lic2"> Si \(A \in \mathcal{M}_n (\mathbb R)\), montrer que \(f(A) \neq 0\) si et seulement si \(A \in GL_n(\mathbb R)\). (On pourra utiliser la notion de matrices équivalentes).
+               </li><li class = "lic2"> Pouvez-vous proposer deux applications \(f\) possibles ?
+               </li><li class = "lic2"> Existe-t-il de telles applications qui soient en outre linéaires ?
+           </ol> <br>
+            <hr><button class="bouton" onclick="afficher_texte('Corrigé47')"> Corrigé </button><HR>  <span id="Indication47" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé47" style="display:none;"><p>  <ol>
+               </li><li class = "lic2"> \(f(I_n) = f(I_n)^2 \longrightarrow f(I_n) \in \{0,1\}\). Or pour tout \(M \notin \ker(f), f(M) = f(M)f(I_n) \neq 0 \Longrightarrow f(I_n) \neq 0\). D'où :
+               \[\boxed{f(I_n) = 0}\]
+               \(f(0) = f(0)^2 \longrightarrow f(0) \in \{0,1\}\). Or pour tout \(M\notin \ker(f), f(0\times M) = f(0)f(M) = 0 \Longrightarrow f(0) = 0\). D'où :
+                \[\boxed{f(0) = 0}\]
+               </li><li class = "lic2"> Soit \(M\) et \(N\) semblables, alors, il existe \(P \in Gl_n(\mathbb R)\) telle que :
+               \(f(M) = f(PNP^{-1}) = f(P)f(N)f(P^{-1}) = f(N)f(P)f(P^{-1}) = f(N)f(I_n) = f(N)\)
+               \[\boxed{\textrm{Deux matrices semblables ont même image par \(f\)}}\]
+               </li><li class = "lic2"> Soit \(A \in GL_n(\mathbb R)\), alors :
+               \[f(A)f(A^{-1}) = f(I_n) = 1 \longrightarrow f(A) \neq 0\]
+               Réciproquement, si \(A\) n'est pas inversible, alors, notons \(r\) son rang. Il existe \(P, Q \in GL_n(\mathbb R)\) telles que :
+               \[A = PJ_rQ \longrightarrow f(A) = f(P)f(J_r)f(Q)\]
+               Montrons alors que pour tout \(r \lt n\), \(f(J_r) = 0\). En  notant \(K_r\) la matrice contenant \(n-r\) fois \(0\) puis \(r\) fois \(1\) sur sa diagonale, on sait que \(J_r\) et \(K_r\) sont semblables, donc ont la même image par \(f\).
+               \(\)f(J_r)^2 = f(J_r)f(K_r) =\begin{pmatrix}
+                   f(0) = 0\textrm{ si \(r \lt n/2\) }//
+                   f(L_{r-E(n/2)}) \textrm{ sinon.}<br>
+               \end{pmatrix} f(0) = 0\(\)
+               Or, \(L_{r-E(n/2)}\) est semblable à \(J_{r-E(n/2)}\) dont on vient de montrer que l'image par \(f\) est nulle, dans tout les cas, \(f(A) = 0\).
+               </li><li class = "lic2"> Le déterminant est l'indicatrice de \(GL_n(\mathbb R)\) conviennent.
+               </li><li class = "lic2"> Non, on se place dans \(\mathcal{M}_2(\mathbb C)\) et on prend les matrices \(E_{1,2}\) et \(E_{2,1}\).
+               
+               </ol>    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise48"><h3>Exercice 48 :</h3><div>Soient \(0 \lt {{t}_{1}} \lt \cdots \lt {{t}_{n}}\) et \({{\alpha }_{1}} \lt {{\alpha }_{2}} \lt \cdots \lt {{\alpha }_{n}}\). Montrer que le déterminant de la matrice de terme général \(\left( t_{i}^{{{\alpha }_{j}}} \right)\) est strictement positif. <br><br>
+           <hr><button class="bouton" onclick="afficher_texte('Corrigé48')"> Corrigé </button><HR>  <span id="Indication48" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé48" style="display:none;"><p>  Corrigé indisponible    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise49"><h3>Exercice 49 :</h3><div>Soient \(A,B\in {{M}_{n}}\left( \mathbb{R} \right)\) telles que A-B soient inversibles et \({{A}^{2}}+{{B}^{2}}=\sqrt{3}\left( AB-BA \right)\). Montrer que \(n\) est un multiple de \(6\). <br><br>
+            <hr><button class="bouton" onclick="afficher_texte('Corrigé49')"> Corrigé </button><HR>  <span id="Indication49" style="display:none; text-align: left;"><p>   ...<HR></p></span>  <span id = "Corrigé49" style="display:none;"><p>  On pose \(M = (A + iB)\)
+               \begin{align*}
+               M \overline{M} &=(A+iB)(A-iB) \\
+               &= A^2 - iAB + iBA + B^2 \\
+               &= (\sqrt{3} - i)(AB-BA)
+               \end{align*}
+               Or \(\sqrt{3} - i = 2e^{\frac{-i\pi}{6}}\)<br>
+               Donc \(M\overline{M} = 2e^{\frac{-i\pi}{6}}(AB - BA)\) <br>
+               On en déduit alors en calculant le déterminant de \(M \overline{M}\) de deux manière différente :<br>
+               D'une part : \(\det{M\overline{M}} = |\det(M)|^2\)<br>
+               D'autre part : \(\det{M\overline{M}} = 2^ne^{\frac{-in\pi}{6}}\det(AB-BA)\)<br>
+               Comme \(AB - BA\) est inversible alors \(\det(AB-BA) \ne 0\)<br>
+               Et \(\det{M\overline{M}}\) est un réel donc on en déduit que \(2^ne^{\frac{-in\pi}{6}}\) doit l'être aussi et donc que \(n\) est un multiple de \(6\)<br>    </p></span></div></div>
+           
+           
+           
+           <div class="exercise hidden" id="exercise50"><h3>Exercice 50 :</h3><div>Soit \(E\) un espace vectoriel de dimension finie et \(f\) un endomorphisme de \(E\). Montrer que :
+           \[\dim(\ker (f)) \leq \dim(\ker(f \circ f)) \leq 2\dim(\ker(f))\] <br>
+           <hr><button class="bouton" onclick="afficher_texte('Corrigé50')"> Corrigé </button><HR>  <span id="Indication50" style="display:none; text-align: left;"><p>   ... <HR></p></span>  <span id = "Corrigé50" style="display:none;"><p>  Corrigé indisponible    </p></span></div></div>
+           
+       
+    </div><br>
+    <div class="arrow arrow-left" onclick="prevExercise(50)">&lt;</div>
+    <div class="arrow arrow-right" onclick="nextExercise(50)">&gt;</div>
+    <script>
+    window.onload = function() {
+        var hash = window.location.hash;
+        if (hash) {
+            var exerciseId = hash.substring(1); // Remove the '#' character
+            var exercise = document.getElementById(exerciseId);
+            if (exercise) {
+                var exerciseIndex = Array.from(exercise.parentElement.children).indexOf(exercise);
+                if (exerciseIndex !== -1) {
+                    showExercise(exerciseIndex);
+                    currentExerciseIndex = exerciseIndex;
+                }
+            }
+        }
+    };
+    </script>
+</div>
+</body>
+</html>
