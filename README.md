@@ -10,6 +10,6 @@ Ces corrigés sont parfois incomplets et peuvent contenir des erreurs.
  
 
 <p align="center">
- sdvf,kd,cd ck
+ ![Menu de l'application:](https://github.com/BehagueQuentin/BehagueQuentin.github.io/blob/main/Images/Icones/favicon.png)
 </p>
-![Menu de l'application:](https://github.com/BehagueQuentin/BehagueQuentin.github.io/blob/main/Images/Icones/favicon.png)
+
