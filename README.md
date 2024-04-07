@@ -8,3 +8,5 @@ Les énoncés de ces exercices proviennent, pour la plupart, des épreuves orale
 Il est demandé à l'étudiant qui traitera les présents exercices d'adopter une démarche de recherche et de mobiliser ses connaissances avant d'accéder aux corrigés proposés.
 Ces corrigés sont parfois incomplets et peuvent contenir des erreurs.
  
+
+![Menu de l'application:](https://github.com/BehagueQuentin/BehagueQuentin.github.io/blob/main/Images/Icones/favicon.png)
