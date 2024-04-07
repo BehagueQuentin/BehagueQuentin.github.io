@@ -7,5 +7,6 @@ Les énoncés de ces exercices proviennent, pour la plupart, des épreuves orale
 
 Il est demandé à l'étudiant qui traitera les présents exercices d'adopter une démarche de recherche et de mobiliser ses connaissances avant d'accéder aux corrigés proposés.
 Ces corrigés sont parfois incomplets et peuvent contenir des erreurs.
- 
-<img style="text-align:center;" width="700" src="https://github.com/BehagueQuentin/BehagueQuentin.github.io/blob/main/Images/PhoenixTransparent.png"/>
+<div style ="text-align:center;">
+<img  width="700" src="https://github.com/BehagueQuentin/BehagueQuentin.github.io/blob/main/Images/PhoenixTransparent.png"/>
+</div>
