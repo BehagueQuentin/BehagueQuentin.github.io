@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../public/icon.ico" rel="icon" type="image/x-icon" >
+    <title>Parten'AI're</title>
+    <link rel="stylesheet" href="../style.css"/>
+    <link rel="stylesheet" href="../src/solutions-demos.css"/>
+</head>
+
+<header>
+    <nav>
+        <img id="logo-line" src="../res/logo_line.png" alt="Logo" loading="lazy">
+        <ul>
+            <li><a href="../index.html">Accueil</a></li>
+            <li><a href="../src/introduction.html">Qui sommes-nous ?</a></li>  
+            <li><a href="../src/solutions-demos.html">Solutions & Démos</a></li>  
+            <li class="drop-down"><a href="../src/sectors.html">Secteurs</a>
+                <ul class="under">
+                    <li><a href="../src/sectors.html#focus-by-sector">Pourquoi un focus par secteur ?</a></li>
+                    <li><a href="../src/sectors.html#industry">Industrie — Notre domaine de prédilection</a></li>
+                    <li><a href="../src/sectors.html#agri-food">Agroalimentaire — Spécialistes processus</a></li>
+                    <li><a href="../src/sectors.html#logistic-&-supply-chain">Logistique & Supply Chain</a></li>
+                    <li><a href="../src/sectors.html#store-&-retail">Magasins & Retail</a></li>
+                    <li><a href="../src/sectors.html#agencies-and-services">Agences & Services (RH, QHSE, Marketing, Support)</a></li>
+                    <li><a href="../src/sectors.html#responsible-&-open-source-AI">Un socle commun : IA responsable & open source</a></li>
+                </ul>
+            </li>
+            <li><a href="../src/offers-services.html">Offres et services</a></li>
+            <li><a href="../src/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <button class="floating">Demander un diagnostic gratuit</button>
+    <section class="page-title">
+        <h1>Accélérez votre productivité industrielle de 30 % grâce à l'IA sur-mesure</h1>
+        <div class="intro-bloc">
+            <div class="intro-bloc-text">
+            <p class="subtitle_p">Réduction des pannes, diminution des rebuts et pilotage en temps réel : découvrez comment nos solutions transforment vos opérations en moins de 6 mois.</p>
+            <div class="button-container">
+                <button class="computeROI" style="font-size: 1vw; margin-top: 5vw;">Obtenir un diagnostic gratuit</button>
+                <p style="margin: 10px auto; width: 40vw; text-align: center; font-size: 0.8vw;">Réponse garantie sous 24 heures</p>
+            </div>
+            </div>
+            <div class="intro-bloc-image">
+                <img src="../res/stonks.png">
+            </div>
+        </div>
+
+        <div class="page-menu">
+            <ul>
+                <li><a href="#maintenance">Maintenance prédictive</a></li>
+                <li><a href="#vision">Vision industrielle</a></li>
+                <li><a href="#dashboard">Dashboard annalytique</a></li>
+                <li><a href="#case">Cas d'usage</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="model" id="maintenance">
+
+        <div class="subsection">
+            <h2 class="model-title">Maintenance Prédictive : -25 % de pannes en  8 semaines</h2>
+
+            <p class="model_subtitle">Anticipez vos arrêts imprévus grâce à la surveillance temps réel et à des modèles de fiabilité avancés.</p>
+
+            <div class="intro-bloc">
+                <div class="intro-bloc-text2">
+                    <p class="p01">
+                        Par définition, la maintenance prédictive consiste à mesurer l'état des équipements en service pour anticiper le moment où une intervention sera nécessaire. 
+                        
+                        Notre démonstrateur montre comment nos algorithmes :
+                    <p>
+                    <ul class="p01">
+                        <li>estiment la durée de vie restante (RUL);</li>
+
+                        <li>détectent les anomalies;</li>
+
+                        <li>calculent des indicateurs comme le MTBF, le MTTR et l'OEE.</li>
+                    </ul>
+                    <p class="p01">
+                        Grâce à des filtres par site, type de machine ou niveau d'alerte, vous priorisez les interventions et optimisez vos ressources.
+                    </p>
+                </div>
+                <div class="intro-bloc-image2">
+                    <img src="../res/maintenance.png" alt="Maintenance predictive">
+                </div>
+            </div>
+        <hr>
+        </div>
+
+        <div class="subsection">
+
+            <div class="app-container">
+                <iframe class="app" src="https://maquette-maintenance-predictive.streamlit.app/~/+/?embed=true" loading="lazy"></iframe>
+            </div>
+
+            <div class="model-link" >
+                <img class="icon-size" src="..\res\link.png" alt="Lien" ><a href="https://maquette-maintenance-predictive.streamlit.app"> Maquette : maintenance prédictive </a>
+            </div>
+        <hr>
+        </div>
+
+        <div class="subsection">
+            
+            <div class="calculator">
+                <h3 class="calculator-title">Simulez votre ROI</h3>
+                <label>Coût moyen d'une panne (€)</label>
+                <input type="number" id="cout" placeholder="Ex : 1000">
+
+                <label>Nombre de pannes / an</label>
+                <input type="number" id="pannes" placeholder="Ex : 10">
+
+                <label>Réduction estimée (%)</label>
+                <input type="number" id="reduction" placeholder="Ex : 10">
+
+                <button class="computeROI" onclick="computeROI()">Calculer</button>
+                <div class="result" id="resultat"></div>
+            </div>
+
+            <h3>Modules complémentaires proposés</h3>
+
+            <ul>
+                <li>Planification des interventions : calendrier intégré permettant d'assigner des tâches aux équipes de maintenance</li>
+
+                <li>Analyse temporelle : graphiques montrant l'évolution de la RUL et du risque de panne</li>
+
+                <li>Estimation des coûts et ROI : simulateur comparant le coût d'une intervention préventive avec celui d'une panne non planifiée</li>
+            </ul>
+        <hr>
+        </div>
+
+        <div class="subsection">
+            <h3>Industrialisation (ce qui suivra la maquette)</h3>
+
+            <ul>
+                <li>Connexion aux équipements : intégration directe avec les capteurs IoT (température, vibration, etc.) et le CMMS pour remplacer les estimations par des données en temps réel</li>
+
+                <li>Surveillance globale : suivi d'actifs connectés sur plusieurs sites, génération automatique d'ordres de travail et planification dynamique des entretiens</li>
+
+                <li>Efficacité terrain : diagnostic et analyse en ligne pour envoyer les techniciens uniquement quand c'est nécessaire, avec toutes les données en main avant leur intervention</li>
+
+                <li>Gestion des stocks optimisée : modules RFID pour tracer pièces de rechange et outillages, réduire les pertes et maîtriser les coûts de stock</li>
+
+                <li>Flexibilité : ajout possible de modules sur-mesure selon vos besoins spécifiques (par exemple, tableaux de bord personnalisés, alertes avancées, intégration avec vos outils internes)</li>
+
+            </ul>
+        </div>
+
+    </section>
+
+
+    <section class="model" id="vision">
+
+        <div class="subsection">
+            <h2>Vision Industrielle : -40 % de rebuts en 3 mois</h2>
+
+            <p class="model_subtitle">Automatisez vos contrôles qualité avec l'IA pour détecter les défauts en temps réel</p>
+
+            <p>
+                La vision industrielle consiste à utiliser des caméras et des algorithmes d'analyse d'images pour réaliser automatiquement des inspections et des contrôles de processus.
+
+                Notre démonstrateur montre comment notre modèle de vision industrielle (GLASS) détecte les défauts grâce à l'exploration des catégories de pièces,
+                 l'affichage d'images (normales ou défectueuses), la superposition des défauts et les indicateurs clés comme AUROC et PRO.
+            </p>
+        <hr>
+        </div>
+
+        <div class="subsection">
+
+            <div class="app-container">
+                <iframe class="app" src="https://partenaire-maquette-detection-defauts.streamlit.app/~/+/?embed=true" loading="lazy"></iframe>
+            </div>
+
+            <div class="model-link">
+                <img class="icon-size"src="..\res\link.png" alt="Lien" ><a href="https://partenaire-maquette-detection-defauts.streamlit.app/"> Maquette : Détection de défauts </a>
+            </div>
+        <hr>
+        </div>
+
+        <div class="subsection">
+            
+            <div class="calculator">
+                <h3 class="calculator-title">Simulez votre ROI</h3>
+                <label>Coût rebus annuel (€)</label>
+                <input type="number" id="cout" placeholder="Ex : 1000">
+
+                <label>Réduction estimée (%)</label>
+                <input type="number" id="reduction" placeholder="Ex : 10">
+
+                <button onclick="computeROI()">Calculer</button>
+                <div class="result" id="resultat"></div>
+            </div>
+
+            <h3>Modules complémentaires proposés</h3>
+
+            <ul>
+                <li>Planification des interventions : calendrier intégré permettant d'assigner des tâches aux équipes de maintenance</li>
+
+                <li>Analyse temporelle : graphiques montrant l'évolution de la RUL et du risque de panne</li>
+
+                <li>Estimation des coûts et ROI : simulateur comparant le coût d'une intervention préventive avec celui d'une panne non planifiée</li>
+            </ul>
+        <hr>
+        </div>
+
+        <div class="subsection">
+            <h3>Industrialisation (ce qui suivra la maquette)</h3>
+
+            <ul>
+                <li>Connexion aux équipements : intégration directe avec les capteurs IoT (température, vibration, etc.) et le CMMS pour remplacer les estimations par des données en temps réel</li>
+
+                <li>Surveillance globale : suivi d'actifs connectés sur plusieurs sites, génération automatique d'ordres de travail et planification dynamique des entretiens</li>
+
+                <li>Efficacité terrain : diagnostic et analyse en ligne pour envoyer les techniciens uniquement quand c'est nécessaire, avec toutes les données en main avant leur intervention</li>
+
+                <li>Gestion des stocks optimisée : modules RFID pour tracer pièces de rechange et outillages, réduire les pertes et maîtriser les coûts de stock</li>
+
+                <li>Flexibilité : ajout possible de modules sur-mesure selon vos besoins spécifiques (par exemple, tableaux de bord personnalisés, alertes avancées, intégration avec vos outils internes)</li>
+
+            </ul>
+        </div>
+
+    </section>
+
+
+    <section class="model" id="maintenance">
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        &copy; 2025 - Parten'AI're
+    </footer>
+</main>

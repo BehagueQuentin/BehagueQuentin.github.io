@@ -1,0 +1,111 @@
+:root{
+    --grid-service-segment-color: rgba(40, 129, 225, 0.8);
+}
+
+
+.service{
+    height:100vh;
+}
+
+.grid-service{
+    position: relative;
+    z-index: 0;              /* crée le contexte d’empilement */
+    border-radius: 2vw;
+    margin: 0vw 4vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+    background-color: rgba(4, 2, 40, 0.089);
+    transition: all 1s ease;
+}
+
+.grid-service::after{
+    content: "";
+    position: absolute;
+    inset: 0;                /* top/right/bottom/left: 0 */
+    background-image: url("../res/blue_print.png");
+    background-position: center;
+    opacity: 0.2;
+    z-index: -1;             /* derrière le contenu mais dans le parent */
+    pointer-events: none;    /* ne bloque pas les interactions */
+    
+}
+
+.service:hover .grid-service {
+    transform: scale(1.05);
+}
+
+
+
+.grid-service> div:nth-child(1) {
+    border-radius : 2vw 0 0 2vw;
+    border-right: 3px solid var(--grid-service-segment-color);
+    border-left: 3px solid var(--grid-service-segment-color);
+}
+
+.grid-service> div:nth-child(2){
+    border-radius : 0 2vw 2vw 0;
+    border-right: 3px solid var(--grid-service-segment-color);
+}
+
+.goal-and-deliverable {
+    display: grid;
+    grid-template-rows: 2fr auto 1fr; /* objectif / hr / livrable */
+}
+
+.subtitle-service{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+    margin: auto;
+    text-align: center; 
+}
+
+.deliverable, .goal, .text-container-service{
+    
+    padding: 1vw 3vw;
+    transition: all 1s ease; 
+}
+
+.text-container-service:hover{
+    background-color: rgba(9, 108, 170, 0.123);
+}
+
+.goal:hover {
+    background-color: rgba(9, 108, 170, 0.123);
+}
+
+.deliverable:hover {
+    background-color: rgba(9, 109, 170, 0.221);
+}
+
+.icon-service{
+    height: 3vw;
+}
+
+.grid-service h3 {
+    margin: auto 2vw;
+    font-size: 1.5vw;
+}
+.grid-service p {
+    font-size: 1.3vw;
+}
+
+.grid-service li {
+    font-size: 1.1vw;
+}
+
+.grid-service hr {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border-top: 3px solid var(--grid-service-segment-color);
+}
+
+.big-ass-text{
+    padding: 3vw 2vw;
+    text-align: center;
+    font-size: 1.3vw;
+}

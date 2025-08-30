@@ -1,0 +1,105 @@
+
+.grid{
+    margin: 4vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 2vw;
+}
+
+.grid> div {
+    padding: 20px;
+}
+
+
+.grid> div:nth-child(1) {
+    border-radius : 2vw 0 0 2vw;
+    border-right: 2px solid rgba(4, 82, 124, 0.4);
+    border-bottom: 2px solid rgba(4, 82, 124, 0.4);
+    width: 40vw;
+    padding: 2vw;
+}
+
+.grid> div:nth-child(2){
+    border-radius : 0 2vw 2vw 0;
+    border-bottom: 2px solid rgba(4, 82, 124, 0.4);
+}
+
+.grid h3 {
+    font-size: 1.3vw;
+    margin-bottom: 8px;
+}
+
+
+.grid-2{
+    border-right: 2px solid rgba(4, 82, 124, 0.4);
+    border-left: 2px solid rgba(4, 82, 124, 0.4);
+    border-radius: 10px;
+    padding:  4vw 2vw;
+    margin: 0 2vw;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 2rem;
+}
+
+.grid-2 > div {
+    background-color: rgba(0, 123, 255, 0.067);
+    border-right: 2px solid rgba(4, 82, 124, 0.4);
+    border-left: 2px solid rgba(4, 82, 124, 0.4);
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    align-items: center;
+    text-align: center;
+    font-size: 0.9em;
+    transition: all 1s ease;
+}
+
+/* effet zigzag */
+.grid-2 > div:nth-child(odd) {
+  transform: translateY(1vw);
+}
+.grid-2 > div:nth-child(even) {
+  transform: translateY(-1vw);
+}
+
+.grid-2 > div:nth-child(even):hover {
+    transform:translateY(-2vw) scale(1.08);
+}
+
+.grid-2 > div:nth-child(odd):hover {
+    transform:translateY(0vw) scale(1.08);
+}
+
+
+
+.grid-table {
+    display: grid;
+    grid-template-columns: 1fr 2fr;   /* 1 colonne principes / 1 colonne bénéfices */
+    max-width: 70%;                  /* largeur max centrée */
+    margin: 0 auto;                  /* centre le tableau */
+    padding: 1vw;
+    border-radius: 1vw;
+}
+
+.grid-table div {
+    display: flex;
+    border: 1px solid #057bc537;
+    padding: 1vw;
+    text-align: center;
+}
+
+.grid-table .header {
+    text-align: center;
+    background-color: #02014027;
+    color: #fff;
+    font-weight: bold;
+}
+
+.table-principle{
+    border: 0px transparent black;
+    margin:auto;
+}
+
+.table-benefit{
+    padding:auto;
+}

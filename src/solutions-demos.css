@@ -1,0 +1,228 @@
+.app-container{
+    text-align: center;
+}
+
+.app{
+    height: 80vh; 
+    width: 90%; 
+    border: 2px solid rgb(18, 22, 30); 
+    outline: none; 
+    border-radius: 2vw;
+}
+
+.subsection{
+    padding: 5vw 0;
+}
+
+p{
+    margin: 1vw 10vw;
+}
+
+.icon-size{
+    margin: auto 0;
+    width : 1.5vw;
+}
+
+.p01{
+  font-size: 1.3vw;
+  text-align: left;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+
+/*______________________________________________________________________________________/ Calculator */
+
+.calculator{
+    transition: all 1s ease;
+    background-color: rgba(0, 123, 255, 0.067);
+    margin: 0 auto;
+    padding: 2vw;
+    border-radius: 1vw;
+    border: 1px solid #010e1e;
+    width: 80vw;
+}
+
+.calculator:hover{
+    transform: scale(1.05);
+
+}
+
+.calculator-title{
+    font-size: 1.7vw;
+}
+
+input {
+    color: black;
+    width: 100%;
+    border: 1px solid #ccc;
+    margin : 0;
+    padding: 0.5vw;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+    background-color: rgb(170, 190, 208);
+}
+
+label {
+      display: block;
+      margin: 0.5vw;
+      font-size: 1.2vw;
+}
+
+/*______________________________________________________________________________*/
+
+.subtitle_p{
+    margin: 0 auto;
+    width: 50vw;
+    text-align: center;
+    font-size: 1.8vw;
+}
+
+.model-title{
+  text-align: center;
+  font-size: 2.5vw;
+  padding: 2vw;
+}
+
+.model_subtitle{
+    text-align: center;
+    font-size: 1.8vw;
+    width: 60vw;
+    margin: 0.5vw auto;
+}
+
+button.floating {
+  position: fixed;
+  bottom: 20px;   /* distance du bas */
+  right: 20px;    /* distance de la droite */
+  padding: 12px 20px;
+  border: 1px solid white;
+  border-radius: 4px;
+  background: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: all 1s ease;
+}
+
+button.floating:hover {
+  background: rgb(239, 155, 59);
+  transform: scale(1.1);
+}
+
+.computeROI{
+    display: block;       /* prend toute la ligne */
+  margin: 1vw auto 0;   /* auto à gauche/droite => centre */
+  padding: 0.8vw 1.5vw;
+  border: 1px solid white;
+  border-radius: 4px;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: all 1s ease;
+}
+.computeROI:hover {
+  background: rgb(239, 155, 59);
+  transform: scale(1.1);
+}
+
+
+section {
+    scroll-margin-top: 4vw;
+    background: linear-gradient( to bottom right,
+        var(--gradient-from),
+        var(--gradient-to),
+        var(--gradient-from),
+        var(--gradient-to),
+        var(--gradient-from)
+    );
+}
+
+
+.intro-bloc {
+  border-radius: 2vw;
+  border: 2px solid rgba(149, 188, 221, 0.464);
+  display: flex;
+  align-items: center;   /* centre verticalement */
+  justify-content: space-between;
+  gap: 2vw;              /* espace entre texte et image */
+  padding: 2vw;
+  margin: 5vw 10vw;
+}
+
+.intro-bloc-text {
+  flex: 0 0 70%;         /* prend 70% */
+}
+
+.intro-bloc-image {
+  flex: 1 1 30%;         /* prend 30% */
+  max-width: 30%; 
+}
+
+.intro-bloc-text2 {
+  flex: 0 0 75%;         /* prend 70% */
+  border-right: 2px solid rgba(149, 188, 221, 0.464);
+}
+
+.intro-bloc-image2 {
+  flex: 0 0 20%;         /* prend 30% */
+}
+
+
+
+.intro-bloc-image img {
+  width: 100%;     /* s’adapte à son parent */
+  max-width: 100%; /* ne déborde jamais */
+  height: auto;
+  display: block;
+  box-sizing: border-box;   
+}
+
+
+/*___________________________________________________________________________/ */
+
+.page-menu {
+    background: rgba(27, 126, 206, 0.201);;
+    padding: 10px 0;
+    top: 0;
+    z-index: 10;
+    margin: 0 2vw;
+}
+
+.page-menu ul {
+    list-style: none;
+    display: flex;          /* ✅ sur une seule ligne */
+    justify-content: center; /* centré horizontalement */
+    margin: 0;
+    padding: 1vw;
+    gap: 20px;              /* espace entre les liens */
+}
+
+.page-menu li {
+  margin: 0;
+  font-size: 1.1vw;
+}
+
+.page-menu a {
+  text-decoration: none;
+  color: rgb(67, 177, 231);
+  font-weight: bold;
+  padding: 0.5vw 2vw;
+  transition: all 0.3s ease;
+}
+
+.page-menu a:hover {
+  color: rgb(239, 155, 59);
+  border-bottom: 2px solid rgb(239, 155, 59);
+  font-size: 1.2vw;
+}
+
+.model-link{
+  text-align: center;
+  margin: 2vw;
+}
+
+.model-link a{
+  margin: 2vw 1vw;
+}

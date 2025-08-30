@@ -1,0 +1,75 @@
+.flexbox-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin: 2vw 0;
+}
+
+.flexbox-item {
+    background: #4273b923;
+    border-radius: 2vw;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.3);
+    transition: transform 0.8s ease, box-shadow 0.2s ease;
+    width: 30vw;
+     border-right: 2px solid rgba(19, 137, 201, 0.486);
+    border-left: 2px solid rgba(19, 137, 201, 0.486);
+}
+
+.flexbox-item:hover {
+    transform: translateY(-15px) scale(1.05); 
+    box-shadow: 10px 15px 20px rgba(0,0,0,0.15); /* ombre plus marquée au hover */
+    
+}
+
+.profile-picture img {
+    width: 15vw;
+    height: 15vw;
+    object-fit: cover;
+    border-radius: 50%;   
+    border: 3px solid rgb(13, 100, 147);
+}
+
+h2{
+    font-size: 3vw;
+}
+
+h3{
+    text-align: center;
+    font-size: 1.6vw;
+}
+
+h4 {
+    font-size: 1.2vw;
+}
+
+
+#section-mainspring{
+    z-index: 2;
+    height:fit-content;
+    background-image:
+        linear-gradient(to bottom left, var(--gradient-from) 20%,
+         var(--gradient-to),
+         var(--gradient-from) 80%);
+    padding-bottom: 10vw;
+}
+
+#section-profil{
+    z-index: 1;
+    background-image:
+        linear-gradient(to bottom left, var(--gradient-to) 20%,
+         var(--gradient-from),
+         var(--gradient-to),
+         var(--gradient-from) 80%);
+    padding: 0 6vw 4vw 6vw;
+    height:fit-content;
+}
+
+#founders-story {
+    font-size: 1.3vw;
+     text-align: center; 
+     background-color: rgba(4, 69, 125, 0.23);
+      padding:2vw; border-radius: 2vw;
+}
