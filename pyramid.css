@@ -1,0 +1,139 @@
+/*_________________________________________________________________/ Pyramid */
+
+
+.pyramid {
+    height: 80vh;
+    max-width: 50%;
+    margin-left: 10vw;
+}
+
+
+.layer-wrapper {
+    height: 9vw;
+}
+
+.layer {
+    z-index: 2;
+    position: relative;
+    text-align: center;
+    cursor: default;
+    height: 9vw;
+    margin: 0.5vw 0;
+    transition: transform 1s ease;
+}
+
+.layer1 {
+    background: #0f4c81;
+    clip-path: polygon(1% 0, 99% 0, 83% 100%, 16% 100%);
+    padding: 0 16%;
+}
+
+.layer2 {
+    background: #1d70b8;
+    clip-path: polygon(16.5% 0, 82.5% 0, 66% 100%, 33% 100%); 
+    padding: 0 25%;
+}
+
+.layer3 {
+    background: #4bb4de;
+    clip-path: polygon(33.5% 0, 65.5% 0, 50% 100%);
+    padding: 0 38%;
+}
+
+.layer h4 {
+    padding-top: 2vw;
+    margin: 0;
+    color: white;
+}
+
+.layer p {
+    margin: 1vw;
+    padding: 0 1%;
+    font-size: 1vw;
+    color: white;
+}
+.layer1 h4 {
+    font-size: 1.5vw;
+}
+
+.layer2 h4 {
+    font-size: 1.2vw;
+    padding-top: 1vw;
+}
+
+.layer3 h4 {
+    font-size: 0.9vw;
+    padding-top: 0.5vw;
+}
+
+.layer3 p {
+    margin-top: 0.5vw;
+    padding: 0 3%;
+}
+
+
+.hidden-panel {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1s ease;
+
+    width: 32vw;
+    height: 85%;
+
+    position: relative;
+    margin-top: -19%;
+    
+    border-radius: 1vw;
+    z-index: 0;
+
+    background: #e6f2fb; /* couleur de fond */
+    
+
+    clip-path: polygon(22% 0%, 100% 0%, 78% 100%, 0 100%);
+    /*overflow: hidden;
+    width: 0;
+    top: 0%;
+    position: relative;
+    margin-top: -10.5vw;
+    margin-left: 50%;
+    z-index: 0;
+    height: 85%;
+    background-color: aliceblue;
+    transition: width 0.6s ease;
+    transition: transform .6s ease;*/
+    
+}
+
+.layer-wrapper:hover .hidden-panel{
+    transform: scaleX(1) ;
+}
+
+.layer-wrapper:hover .layer{
+    transform: translateX(-10%);
+}
+
+
+
+.hidden-panel.open {
+   background-color: rgb(22, 75, 121);
+}
+
+
+.toggle-btn {
+    position :absolute;
+    right :10%;
+    top:40%;
+}
+.hidden-content li{
+    color: rgb(6, 10, 56);
+    font-size: 0.9vw;
+}
+.hidden-content ul{
+    padding-top: 0.8vw;
+}
+
+.hidden-content li:nth-child(1) { margin-left: 5vw; }
+.hidden-content li:nth-child(2) { margin-left: 4vw; }
+.hidden-content li:nth-child(3) { margin-left: 3vw; }
+.hidden-content li:nth-child(4) { margin-left: 2vw; }
+.hidden-content li:nth-child(5) { margin-left: 1vw; }
