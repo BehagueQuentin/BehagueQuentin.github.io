@@ -1,0 +1,60 @@
+/* Contient les variables utilisée dans le code */
+:root {
+    --dark-blue: #0A2C48 ;
+    --very-dark-blue:#031626 ;
+    --nav-hover-color: rgb(239, 155, 59);
+    --nav-color : rgb(67, 177, 231);
+    --text-color : rgb(220, 220, 241);
+    --title-color : lightblue;
+    --gradient-from : #051623;
+    --gradient-to :#0a2842;
+    --nav-ul-background-color: rgb(5, 28, 48);
+    --nav-background-color: rgb(3, 20, 34);
+}
+
+
+
+/* Comportement général de la page */
+
+html{
+    scroll-behavior: smooth;
+    min-height: 100%;
+    background-attachment: scroll;
+    background-color: #071a2a;
+}
+
+
+
+/* S'applique à tout type de balises. (à l'exception des :hover, :after, :before ...) */
+
+* {
+    color : var(--text-color); 
+}
+
+
+main{
+    height: 100vh;          /* Nécessaire pour appliquer les comportements de scroll spécifiques */
+    overflow-y: scroll;     /* Si un élément dépasse en hauteur, on peux scroller */
+    overflow-x: hidden;     /* En largeur, on ne peux pas */
+}
+
+
+header {
+    position:fixed;
+    margin-top: 0;
+    font-family: "Palatino Linotype", sans-serif;           
+    width: 100%;
+    background-color: var(--nav-background-color);
+    top: 0px;
+    z-index: 100;
+}
+
+
+footer {
+    bottom: 0;
+    width: 100%;
+    background: var(--very-dark-blue);
+    color: var(--nav-color);
+    text-align: center;
+    padding: 2vw 0;
+}

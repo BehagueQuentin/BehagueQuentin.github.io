@@ -12,8 +12,11 @@
 
 <header>
     <nav>
-        <img id="logo-line" src="../res/logo_line.png" alt="Logo" loading="lazy">
-        <ul>
+        <img id="logo-nav" src="../res/logo_line.png" alt="Logo" loading="lazy">
+        <button id="menu-toggle">
+            <img src="./res/menu.png" alt="Menu">
+        </button>
+        <ul id="menu">
             <li><a href="../index.html">Accueil</a></li>
             <li><a href="../src/introduction.html">Qui sommes-nous ?</a></li>
             <li><a href="../src/solutions-demos.html">Solutions & Démos</a></li>
@@ -35,7 +38,7 @@
 </header>
 
 <main style="scroll-snap-type: y mandatory;;">
-    <section>
+    <section id="section-title">
         <h1>Une palette complète pour réussir votre parcours IA</h1>
         <p>Du premier diagnostic à la mise à l'échelle, nous couvrons chaque étape — vous choisissez le point d'entrée qui correspond à votre maturité et à vos besoins.</p>
     </section>
@@ -45,7 +48,7 @@
 
     <section class="service">
     <h2> 🧭 Conseil stratégique IA</h2>
-    <div class="grid-service">
+    <div class="grid-service right">
         <div class="text-container-service">
             <div class="big-ass-text">
                 Nous transformons vos idées en une feuille de route concrète et rentable. Avant de se lancer dans un projet IA, il est essentiel de clarifier les priorités.
@@ -96,7 +99,7 @@
 
     <section class="service">
         <h2> 📚 Audit Data & Processus</h2>
-        <div class="grid-service">
+        <div class="grid-service left">
             <div class="goal-and-deliverable">
                 <div class="goal">
                     <div class="subtitle-service"><h3>Objectif</h3><img src="../res/logo_target.png" alt="Cible" class="icon-service" loading="lazy"></div>
@@ -133,7 +136,7 @@
 
     <section class="service">
         <h2>🎓 Formations & Acculturation</h2>
-        <div class="grid-service">
+        <div class="grid-service right">
             <div class="text-container-service">
                 <div class="big-ass-text">
                     L'IA ne se déploie pas sans les femmes et les hommes qui l'utilisent. Nous accompagnons vos équipes pour qu'elles comprennent les usages et gagnent en autonomie. 
@@ -169,7 +172,7 @@
 
     <section class="service">
         <h2>🛠️ PoC IA personnalisé</h2>
-        <div class="grid-service">
+        <div class="grid-service left">
             <div class="goal-and-deliverable">
                 <div class="goal">
                     <div class="subtitle-service"><h3>Objectif</h3><img src="../res/logo_target.png" alt="Cible" class="icon-service" loading="lazy"></div>
@@ -205,7 +208,7 @@
 
     <section class="service">
         <h2>🏭 Industrialisation & MLOps</h2>
-        <div class="grid-service">
+        <div class="grid-service right">
             <div class="text-container-service">
                 <div class="big-ass-text">
                     Passer du prototype à la production est une étape décisive. Nous mettons en place des pipelines robustes, des tests automatisés et un monitoring permanent pour garantir la fiabilité de vos modèles.
@@ -239,7 +242,7 @@
 
     <section class="service">
         <h2>🛡️ Support continu & Upskilling</h2>
-        <div class="grid-service">
+        <div class="grid-service left">
             <div class="goal-and-deliverable">
                 <div class="goal">
                     <div class="subtitle-service"><h3>Objectif</h3><img src="../res/logo_target.png" alt="Cible" class="icon-service" loading="lazy"></div>
@@ -272,14 +275,22 @@
         </div>
     </section>
 
-    <section>
-        <h2>Pack parcours complet</h2>
-        <p>
-            Pour ceux qui souhaitent une démarche clé en main, nous proposons un accompagnement intégral : stratégie, audit, formation, prototypage, industrialisation et support. 
-            <br><br>
-            Avec une équipe unique qui pilote l'ensemble, vous gagnez en cohérence, en efficacité et en sérénité. Chaque étape est alignée sur vos priorités métier, et les résultats sont mesurés tout au long du parcours.
-        </p>
-
+    <section id="section-end">
+        <div class="end-bloc">
+            <h2>Pack parcours complet</h2>
+            <p>
+                Pour ceux qui souhaitent une démarche clé en main, nous proposons un accompagnement intégral : stratégie, audit, formation, prototypage, industrialisation et support. 
+                <br><br>
+                Avec une équipe unique qui pilote l'ensemble, vous gagnez en cohérence, en efficacité et en sérénité. Chaque étape est alignée sur vos priorités métier, et les résultats sont mesurés tout au long du parcours.
+            </p>
+        </div>
+        <div class="end-bloc">
+            <h2> Téléchargez le catalogue détaillé</h2>
+            <p>
+                Un PDF  avec tarifs indicatifs, cas clients et FAQ technique.
+                👉Recevoir le catalogue ou contactez-nous pour une présentation personnalisée.
+            </p>
+        </div>
     </section>
 
 

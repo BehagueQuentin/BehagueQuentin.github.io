@@ -1,3 +1,65 @@
+#section-title, #section-end{
+    scroll-snap-align: start;
+    height: 100vh;
+}
+
+#section-end {
+    height: 93vh;
+    padding-top: 7vh;
+    scroll-margin: 7vh;
+}
+
+
+
+
+#section-title h1, #section-end h1 {
+    font-size: 3rem;
+    padding: 10vh 4vw;
+    padding-right: 20vw;
+}
+
+#section-end h2 {
+    margin: 0 3vw;
+}
+
+#section-end p {
+    margin: 0 auto;
+    max-width: 80%;
+    font-size: x-large;
+}
+
+#section-title p{
+    padding: 0 4vw;
+    max-width: 50%;
+    font-size: x-large;
+}
+@media (max-width: 768px) {
+    #section-title h1 {
+        font-size: 1.8rem;
+    }
+    #section-title p {
+        text-align: left;
+        max-width: 80%;
+        font-size: large;
+    }
+}
+
+
+
+h2 {
+    font-size:xx-large;
+}
+
+
+
+@media (max-width: 768px) {
+    h2 {
+        font-size:large;
+    }
+}
+
+
+
 :root{
     --grid-service-segment-color: rgba(40, 129, 225, 0.8);
 }
@@ -5,11 +67,13 @@
 
 .service{
     height:100vh;
+    scroll-snap-align: start;
+    scroll-margin: 7vh;
 }
 
 .grid-service{
     position: relative;
-    z-index: 0;              /* crée le contexte d’empilement */
+    z-index: 0;
     border-radius: 2vw;
     margin: 0vw 4vw;
     display: grid;
@@ -19,6 +83,83 @@
     background-color: rgba(4, 2, 40, 0.089);
     transition: all 1s ease;
 }
+
+.left{grid-template-areas: "info text";}
+.right{grid-template-areas: "text info";}
+
+.grid-service .goal-and-deliverable { grid-area: info; }
+.grid-service .text-container-service { grid-area: text; }
+
+
+@media (max-width: 768px) {
+  .grid-service {
+    display: grid;                 
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "info"
+      "text";
+  }
+
+  .grid-service > div {
+    border-right: none;
+    border-left: none;
+    border-radius: 0;
+  }
+
+    .grid-service .goal-and-deliverable {
+        border: none;
+        border-bottom: none;
+        border-radius: 2vw 2vw 0 0;    /* arrondi en haut */
+    }
+
+
+    .grid-service> div:nth-child(1){
+        border: none;
+        border-radius : 0 0 2vw 2vw;
+        border-right: 3px solid var(--grid-service-segment-color);
+        border-left: 3px solid var(--grid-service-segment-color);
+        border-top: 3px solid var(--grid-service-segment-color);
+    }
+    .grid-service> div:nth-child(2){
+        border: none;
+        border-radius : 2vw 2vw 0 0;
+        border-right: 3px solid var(--grid-service-segment-color);
+        border-left: 3px solid var(--grid-service-segment-color);
+    }
+
+    .grid-service .text-container-service {
+        border: none;
+        border-top: none;
+        border-radius: 0 0 2vw 2vw;    /* arrondi en bas */
+    }
+
+    /* Lisibilité sur mobile (optionnel) */
+    .grid-service h3 { font-size: 4vw; }
+    .grid-service p,
+    .grid-service li,
+    .big-ass-text { font-size: 3.5vw; }
+    .icon-service { height: 6vw; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .grid-service::after{
     content: "";
@@ -37,7 +178,7 @@
 }
 
 
-
+@media (min-width: 769px) {
 .grid-service> div:nth-child(1) {
     border-radius : 2vw 0 0 2vw;
     border-right: 3px solid var(--grid-service-segment-color);
@@ -48,7 +189,7 @@
     border-radius : 0 2vw 2vw 0;
     border-right: 3px solid var(--grid-service-segment-color);
 }
-
+}
 .goal-and-deliverable {
     display: grid;
     grid-template-rows: 2fr auto 1fr; /* objectif / hr / livrable */
@@ -87,15 +228,35 @@
 
 .grid-service h3 {
     margin: auto 2vw;
-    font-size: 1.5vw;
+    font-size: larger;
 }
 .grid-service p {
-    font-size: 1.3vw;
+    font-size: medium;
 }
 
 .grid-service li {
-    font-size: 1.1vw;
+    font-size:small;
 }
+
+@media (max-width: 768px) {
+    .grid-service h3 {
+    font-size: large;
+    }
+    .grid-service p {
+        font-size: 1rem;
+    }
+
+    .grid-service li {
+        font-size: smaller;
+    }
+}
+
+
+
+
+
+
+
 
 .grid-service hr {
     margin: 0;
@@ -108,4 +269,19 @@
     padding: 3vw 2vw;
     text-align: center;
     font-size: 1.3vw;
+}
+
+.end-bloc h2 {
+    padding : 1vw;
+    text-align: center;
+}
+
+.end-bloc {
+    text-align: center;
+    margin: 1vw auto;
+    width : 90%;
+    padding: 2vw;
+    border-radius: 2vw;
+    border: 2px solid var(--grid-service-segment-color);
+    background-color: rgba(9, 47, 91, 0.271);
 }

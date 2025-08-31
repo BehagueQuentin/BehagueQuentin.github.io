@@ -12,8 +12,11 @@
 
 <header>
     <nav>
-        <img id="logo-line" src="../res/logo_line.png" alt="Logo" loading="lazy">
-        <ul>
+        <img id="logo-nav" src="../res/logo_line.png" alt="Logo" loading="lazy">
+        <button id="menu-toggle">
+            <img src="./res/menu.png" alt="Menu">
+        </button>
+        <ul id="menu">
             <li><a href="../index.html">Accueil</a></li>
             <li><a href="../src/introduction.html">Qui sommes-nous ?</a></li>  
             <li><a href="../src/solutions-demos.html">Solutions & Démos</a></li>  
@@ -34,17 +37,21 @@
     </nav>
 </header>
 
+
+
+
+
 <main>
     <button class="floating">Demander un diagnostic gratuit</button>
     <section class="page-title">
         <h1>Accélérez votre productivité industrielle de 30 % grâce à l'IA sur-mesure</h1>
         <div class="intro-bloc">
             <div class="intro-bloc-text">
-            <p class="subtitle_p">Réduction des pannes, diminution des rebuts et pilotage en temps réel : découvrez comment nos solutions transforment vos opérations en moins de 6 mois.</p>
-            <div class="button-container">
-                <button class="computeROI" style="font-size: 1vw; margin-top: 5vw;">Obtenir un diagnostic gratuit</button>
-                <p style="margin: 10px auto; width: 40vw; text-align: center; font-size: 0.8vw;">Réponse garantie sous 24 heures</p>
-            </div>
+                <p class="subtitle_p">Réduction des pannes, diminution des rebuts et pilotage en temps réel : découvrez comment nos solutions transforment vos opérations en moins de 6 mois.</p>
+                <div class="button-container">
+                    <button class="computeROI" style="font-size: 1vw; margin-top: 5vw;">Obtenir un diagnostic gratuit</button>
+                    <p style="margin: 10px auto; width: 40vw; text-align: center; font-size: 0.8vw;">Réponse garantie sous 24 heures</p>
+                </div>
             </div>
             <div class="intro-bloc-image">
                 <img src="../res/stonks.png">
@@ -69,7 +76,7 @@
             <p class="model_subtitle">Anticipez vos arrêts imprévus grâce à la surveillance temps réel et à des modèles de fiabilité avancés.</p>
 
             <div class="intro-bloc">
-                <div class="intro-bloc-text2">
+                <div class="intro-bloc-text">
                     <p class="p01">
                         Par définition, la maintenance prédictive consiste à mesurer l'état des équipements en service pour anticiper le moment où une intervention sera nécessaire. 
                         
@@ -86,27 +93,162 @@
                         Grâce à des filtres par site, type de machine ou niveau d'alerte, vous priorisez les interventions et optimisez vos ressources.
                     </p>
                 </div>
-                <div class="intro-bloc-image2">
+                <div class="intro-bloc-image">
                     <img src="../res/maintenance.png" alt="Maintenance predictive">
                 </div>
             </div>
-        <hr>
         </div>
+        <hr>
 
         <div class="subsection">
 
             <div class="app-container">
                 <iframe class="app" src="https://maquette-maintenance-predictive.streamlit.app/~/+/?embed=true" loading="lazy"></iframe>
             </div>
-
-            <div class="model-link" >
-                <img class="icon-size" src="..\res\link.png" alt="Lien" ><a href="https://maquette-maintenance-predictive.streamlit.app"> Maquette : maintenance prédictive </a>
-            </div>
-        <hr>
+        
         </div>
 
+        <hr>
         <div class="subsection">
-            
+            <div class="calculator">
+                 <!-- Paramètres -->
+                <div class="grid">
+                    <div class="form-group">
+                        <label>
+                            Heures d'arrêt non planifié / an
+                            <span class="tooltip">
+                            ?
+                            <span class="tooltip-text">Nombre d'heures perdues pour des arrêts non planifiés sur une année.</span>
+                            </span>
+                        </label>
+
+                        <input type="number" value="100">
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            Réduction du downtime (%)
+                            <span class="tooltip">
+                            ?
+                            <span class="tooltip-text">Diminution relative attendue des heures d'arrêt après PdM. Par défaut ici 20 % (standard PME/ETI).</span>
+                            </span>
+                        </label>
+                        <input type="number" value="20">
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            Coût d'arrêt direct (€/h)
+                            <span class="tooltip">
+                            ?
+                            <span class="tooltip-text">Valeur perdue par heure d'arrêt (marge de contribution horaire ou coût d'arrêt/h).</span>
+                            </span>
+                        </label>
+                        <input type="number" value="10000">
+                    </div>
+                </div>
+
+                <!-- Paramètres avancés -->
+                <div class="advanced">
+                    <input type="checkbox" id="advanced" checked>
+                    <label for="advanced">Afficher les paramètres avancés</label>
+
+                    <div class="grid">
+                        <div class="form-group">
+                            <label>
+                                Dépenses maintenance (€/an)
+                                <span class="tooltip">
+                                ?
+                                <span class="tooltip-text">Dépenses annuelles liées à la maintenance (pièces, MO, sous-traitance).</span>
+                                </span>
+                            </label>
+                            <input type="number" value="100000">
+                        </div>
+                        <div class="form-group">
+                            <label>Réduction coûts maintenance (%)
+                                <span class="tooltip">
+                                ?
+                                <span class="tooltip-text">Baisse attendue des coûts de maintenance grâce à la PdM.</span>
+                                </span>
+                            </label>
+                            <input type="number" value="10">
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                Coûts PdM - CAPEX (€/an)
+                                <span class="tooltip">
+                                ?
+                                <span class="tooltip-text">Investissements initiaux (capteurs, intégration, licences au démarrage).</span>
+                                </span>
+                            </label>
+                            <input type="number" value="80000">
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                Coûts PdM - OPEX (€/an)
+                                <span class="tooltip">
+                                ?
+                                <span class="tooltip-text">Abonnements logiciels, cloud, supervision, MCO.</span>
+                                </span>
+                            </label>
+                            <input type="number" value="30000">
+                        </div>
+                        <div class="form-group">
+                            <label>Taux d'actualisation VAN (%)
+                                <span class="tooltip">
+                                ?
+                                <span class="tooltip-text">Taux utilisé pour la Valeur Actuelle Nette (VAN).</span>
+                                </span>
+                            </label>
+                            <input type="number" value="10">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Boutons -->
+                <div class="actions">
+                    <button class="btn primary">Calculer</button>
+                    <button class="btn">Réinitialiser</button>
+                </div>
+
+                <!-- Résultats -->
+                <div class="results">
+                    <div class="result-box">
+                        <p>Économies / an</p>
+                        <strong>—</strong>
+                    </div>
+                    <div class="result-box">
+                        <label>ROI (%)
+                            <span class="tooltip-dark">
+                                ?
+                                <span class="tooltip-text">Retour sur investissement : (Bénéfices - Coûts) / Coûts x 100.</span>
+                            </span>
+                        </label>
+                        <strong>—</strong>
+                    </div>
+                    <div class="result-box">
+                        <p>Délai de retour (mois)</p>
+                        <strong>—</strong>
+                    </div>
+                    <div class="result-box">
+                        <p>VAN (3 ans)</p>
+                        <strong>—</strong>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!--
             <div class="calculator">
                 <h3 class="calculator-title">Simulez votre ROI</h3>
                 <label>Coût moyen d'une panne (€)</label>
@@ -120,7 +262,7 @@
 
                 <button class="computeROI" onclick="computeROI()">Calculer</button>
                 <div class="result" id="resultat"></div>
-            </div>
+            </div>-->
 
             <h3>Modules complémentaires proposés</h3>
 

@@ -41,7 +41,6 @@ header {
 }
 
 footer {
-    scroll-snap-align: start;
     bottom: 0;
     width: 100%;
     background: var(--very-dark-blue);
@@ -62,9 +61,9 @@ body {
 
 
 section {
-    scroll-snap-align: start;
-    scroll-margin-top: 4vw;
-    background: linear-gradient( to bottom,
+    scroll-margin-top: 4vw; /* Permet de prendre en compte la taille du menu lors du scroll par lien */ 
+    background: linear-gradient( 
+        to bottom,
         var(--gradient-from),
         var(--gradient-to) 40%,
         var(--gradient-to) 60%,
@@ -183,10 +182,67 @@ nav > ul li:hover .under{
     transition: opacity 1s ease, transform 1s ease, visibility 1s;
 }
 
+/* Bouton menu caché par défaut */
+#menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+#menu-toggle img {
+    width: 32px;
+    height: 32px;
+}
+
+/* Menu mobile (slide-in) */
+#menu {
+    transition: transform 0.3s ease;
+}
+
+/* Par défaut sur desktop */
+@media (min-width: 985px) {
+    #menu {
+        display: flex;
+        gap: 2rem;
+    }
+}
+
+/* Sur mobile */
+@media (max-width: 984px) {
+    #menu-toggle {
+        display: block;
+    }
+
+    #menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 250px;
+        background-color: var(--nav-background-color);
+        flex-direction: column;
+        padding: 2rem;
+        transform: translateX(100%); /* Caché à droite */
+    }
+
+    #menu.show {
+        transform: translateX(0); /* Visible */
+    }
+
+    #menu li {
+        margin: 1rem 0;
+    }
+}
 
 
+#menu-toggle img {
+  content: url("./res/menu.png");
+}
 
-
+#menu-toggle img:hover {
+  content: url("./res/menu-hover.png");
+}
 
 
 
@@ -203,7 +259,6 @@ nav > ul li:hover .under{
 
 
 #section-title{
-    height: 100vh;
     color: var(--text-color);
     text-align: center;
     background-size: 100%;
@@ -293,8 +348,12 @@ nav > ul li:hover .under{
     text-align: center;
 }
 
-#logo-line {
-    width: 15vw;
+#logo-nav {
+    width: 20vh;
+}
+
+#logo-company {
+    width:20vw;
 }
 
 #img-engineer {
