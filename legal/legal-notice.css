@@ -1,0 +1,98 @@
+:root{
+    --maxw: 900px;
+    --gap: 1.1rem;
+    --muted: #6b7280;
+    --accent: #0f172a;
+    --bg-color: #f7fafc;
+    --nav-hover-color: rgb(239, 155, 59);
+    --nav-color : rgb(67, 177, 231);
+    --nav-ul-background-color: rgb(5, 28, 48);
+    --nav-background-color: rgb(3, 20, 34);
+}
+
+html,body{
+    height:100%;
+    margin:0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: var(--bg-color);
+    color:var(--accent);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height:1.5;
+    font-size:16px;
+}
+
+main{
+    margin: 15vh 10vw;
+    background:white;
+    padding: 28px;
+    border-radius:12px;
+    box-shadow: 0 6px 18px rgba(15,23,42,0.06);
+    border:1px solid rgba(15,23,42,0.04);
+}
+
+h1{
+    text-align:center;
+    margin: 2vh 1vw;
+    font-size:3rem;
+}
+
+h2{
+    font-size:1.8rem;
+    margin:0 0 8px 0;
+}
+
+p{
+    font-size: large;
+}
+
+
+
+
+
+p.lead{
+    margin:0;
+    color:var(--muted);
+    font-size:1.1rem;
+}
+hr.sep{
+    border:0;
+    border-top:1px solid rgba(15,23,42,0.06);
+    margin:18px 0;
+}
+section + section{
+    margin-top:var(--gap);
+}
+
+.meta{
+    color:var(--muted);
+    font-size:1.1rem;
+    margin:0 0 2vw 0;
+}
+address{
+    font-style:normal;
+    color:var(--muted);
+}
+a{
+    color:inherit;
+    text-decoration:underline;
+}
+.note{
+    font-size:0.92rem;
+    color:var(--muted);
+    background: rgba(15,23,42,0.02);
+    padding:10px;
+    border-radius:8px;
+    border:1px dashed rgba(15,23,42,0.04);
+}
+
+@media (max-width:520px){
+    .container{ margin:20px; padding:18px; border-radius:8px; }
+    h1{ font-size:1.15rem; }
+}
+/* Impression propre */
+@media print{
+    body{ background:white; }
+    .container{ box-shadow:none; border:0; }
+    a::after{ content: " (" attr(href) ")"; font-size:0.85em; color: #000; }
+}

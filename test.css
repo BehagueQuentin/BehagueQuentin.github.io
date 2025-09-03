@@ -150,3 +150,72 @@ nav > ul li:hover .under{
         margin: 1rem 0;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/*                    */
+
+/* Assure que la checkbox et le label restent sur la même ligne */
+.advanced {
+  margin-bottom: 1.5rem;
+}
+
+/* la checkbox est juste avant le label dans le DOM :
+   on la laisse visible (à gauche) */
+.advanced > input[type="checkbox"] {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin: 0;            /* évite espaces indésirables */
+  vertical-align: middle;
+}
+
+/* le label est inline-flex pour rester sur la même ligne que la checkbox */
+.advanced-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+/* zone masquée par défaut, animée */
+.advanced-grid {
+  margin-top: 0.75rem;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.35s ease, opacity 0.25s ease;
+}
+
+/* quand la checkbox est cochée, on affiche la grille */
+.advanced > input[type="checkbox"]:checked ~ .advanced-grid {
+  max-height: 1200px; /* assez grand pour contenir le contenu */
+  opacity: 1;
+}
+
+/* Utilise la grille existante pour les champs internes (ta règle .grid fonctionne) */
+
+/* Centrer les boutons */
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* si tu avais .advanced label { display: flex } quelque part, cette règle l'écrase */
+.advanced label { /* conserve le comportement des autres labels */
+  display: inline;
+}

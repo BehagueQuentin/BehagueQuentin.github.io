@@ -1,0 +1,92 @@
+/* Section Contact */
+#section-contact {
+  min-height: 100vh;
+  padding: 5vw 10vw;
+  text-align: left;
+}
+
+#section-contact h2 {
+  font-size: 2vw;
+  margin: 2vw 0 1vw 0;
+  color: var(--title-color);
+}
+
+.contact-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 3vw;
+}
+
+.img-column img{
+  border-radius: 2vw;
+  height: 50vh;
+}
+
+.img-column{
+  text-align: center;
+  border: 1px solid white;
+  border-radius: 2vw;
+}
+
+.info-column{
+  padding : 0 5vw;
+}
+
+
+.contact-block p, 
+.contact-block ul li {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.contact-block a {
+  
+  text-decoration: none;
+}
+
+
+.contact-block a:hover {
+  color: var(--nav-hover-color);
+  text-decoration: underline;
+}
+
+.contact-block ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.contact-block ul li {
+  margin: 0.3em 0;
+}
+
+
+
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 0;
+}
+
+.separator::before,
+.separator::after {
+  content: "";
+  flex: 1;
+  border-bottom: 2px solid #fff; /* ligne blanche */
+}
+
+.separator:not(:empty)::before {
+  margin-right: 1em;
+}
+
+.separator:not(:empty)::after {
+  margin-left: 1em;
+}
+
+.separator span {
+  color: #fff;         /* couleur du texte */
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+

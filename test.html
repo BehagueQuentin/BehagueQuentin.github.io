@@ -38,6 +38,130 @@
         </ul>
     </nav>
 </header>
+<body>
+    <div class="calculator">
+
+  <!-- Paramètres -->
+  <div class="grid">
+    <div class="form-group">
+      <label>
+        Heures d'arrêt non planifié / an
+        <span class="tooltip">
+          ?
+          <span class="tooltip-text">Nombre d'heures perdues pour des arrêts non planifiés sur une année.</span>
+        </span>
+      </label>
+      <input type="number" value="100">
+    </div>
+
+    <div class="form-group">
+      <label>
+        Réduction du downtime (%)
+        <span class="tooltip">
+          ?
+          <span class="tooltip-text">Diminution relative attendue des heures d'arrêt après PdM. Par défaut ici 20 % (standard PME/ETI).</span>
+        </span>
+      </label>
+      <input type="number" value="20">
+    </div>
+
+    <div class="form-group">
+      <label>
+        Coût d'arrêt direct (€/h)
+        <span class="tooltip">
+          ?
+          <span class="tooltip-text">Valeur perdue par heure d'arrêt (marge de contribution horaire ou coût d'arrêt/h).</span>
+        </span>
+      </label>
+      <input type="number" value="10000">
+    </div>
+  </div>
+
+  <!-- Paramètres avancés -->
+  <div class="advanced">
+    <input type="checkbox" id="advanced" checked>
+    <label for="advanced" class="advanced-label">Afficher les paramètres avancés</label>
+
+    <div class="advanced-grid">
+      <div class="grid">
+        <div class="form-group">
+          <label>
+            Dépenses maintenance (€/an)
+            <span class="tooltip">
+              ?
+              <span class="tooltip-text">Dépenses annuelles liées à la maintenance (pièces, MO, sous-traitance).</span>
+            </span>
+          </label>
+          <input type="number" value="100000">
+        </div>
+
+        <div class="form-group">
+          <label>
+            Réduction coûts maintenance (%)
+            <span class="tooltip">
+              ?
+              <span class="tooltip-text">Baisse attendue des coûts de maintenance grâce à la PdM.</span>
+            </span>
+          </label>
+          <input type="number" value="10">
+        </div>
+
+        <div class="form-group">
+          <label>
+            Coûts PdM - CAPEX (€/an)
+            <span class="tooltip">
+              ?
+              <span class="tooltip-text">Investissements initiaux (capteurs, intégration, licences au démarrage).</span>
+            </span>
+          </label>
+          <input type="number" value="80000">
+        </div>
+
+        <div class="form-group">
+          <label>
+            Coûts PdM - OPEX (€/an)
+            <span class="tooltip">
+              ?
+              <span class="tooltip-text">Abonnements logiciels, cloud, supervision, MCO.</span>
+            </span>
+          </label>
+          <input type="number" value="30000">
+        </div>
+
+        <div class="form-group">
+          <label>
+            Taux d'actualisation VAN (%)
+            <span class="tooltip">
+              ?
+              <span class="tooltip-text">Taux utilisé pour la Valeur Actuelle Nette (VAN).</span>
+            </span>
+          </label>
+          <input type="number" value="10">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Boutons -->
+  <div class="actions">
+    <button class="btn primary">Calculer</button>
+    <button class="btn">Réinitialiser</button>
+  </div>
+
+  <!-- Résultats -->
+  <div class="results">
+    <div class="result-box"><p>Économies / an</p><strong>—</strong></div>
+    <div class="result-box">
+      <label>ROI (%) <span class="tooltip-dark">?<span class="tooltip-text">Retour sur investissement : (Bénéfices - Coûts) / Coûts x 100.</span></span></label>
+      <strong>—</strong>
+    </div>
+    <div class="result-box"><p>Délai de retour (mois)</p><strong>—</strong></div>
+    <div class="result-box"><p>VAN (3 ans)</p><strong>—</strong></div>
+  </div>
+
+</div>
+
+</body>
 <script>
     const toggleBtn = document.getElementById("menu-toggle");
 const menu = document.getElementById("menu");

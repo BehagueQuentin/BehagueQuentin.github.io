@@ -10,11 +10,16 @@
     <link rel="stylesheet" href="./pyramid.css"/>
     <link rel="stylesheet" href="./faq.css"/>
     <link rel="stylesheet" href="./grid.css"/>
+    <link rel="stylesheet" href="./legal/nav.css"/>
+    <link rel="stylesheet" href="./legal/footer.css"/>
 </head>
 
 <header>
     <nav>
-        <img id="logo-nav" src="./res/logo_line.png" alt="Logo">
+        <picture>
+            <source srcset="./res/dark/logo_line.png" media="(prefers-color-scheme: dark)">
+            <img id="logo-nav" src="./res/light/logo_line.png" alt="Logo Parten'AI're">
+        </picture>
         <button id="menu-toggle">
             <img src="./res/menu.png" alt="Menu">
         </button>
@@ -44,9 +49,8 @@
 
 
 
-<body style = "background-attachment:fixed;">
-
-    <main style="scroll-snap-type: y mandatory;">
+<body>
+    <main>
         <!------------------------------------------------------------------------------------------------------------------------------->
         <section id="section-title">
                 <div style="margin-left: 0; padding-right: 20vw; padding-bottom: 10vh;">
@@ -70,7 +74,10 @@
                             </div>
                             
                             <div class="right-column" id="logo-container">
-                                <img id="logo-company" src="./res/logo.png" alt="Logo">
+                                <picture>
+                                    <source srcset="./res/dark/logo.png" media="(prefers-color-scheme: dark)">
+                                    <img id="logo-company" src="./res/light/logo.png" alt="Logo Parten'AI're">
+                                </picture>
                             </div>
                         </div>
                     </div>
@@ -82,7 +89,7 @@
 
 
         <!------------------------------------------------------------------------------------------------------------------------------->
-        <section id="section-choice">
+        <section id="section-choice" style="height: 100vh;">
             <div class="column-container" style="height: 100%;">
                 <div class="left-column" id="img-engineer">
                     <img src="./res/engineer.png" alt="ingénieur en IA" style="height: 100%;" class="fade-img" loading="lazy">
@@ -145,7 +152,7 @@
                                 <li>Revue SI : intégrations, cloud/on-prem, sécurité</li>
                                 <li>Conformité RGPD / AI Act (privacy-by-design)</li>
                                 <li>Recommandations « quick wins » + priorités</li>
-                                <li>Livrable : rapport d’audit + plan d’action</li>
+                                <li>Livrable : rapport d'audit + plan d'action</li>
                             </ul>
                         </div>
                     </div>
@@ -216,9 +223,53 @@
                 </p>
             </div>
         </section>
-        <footer>
-            &copy; 2025 - Parten'AI're
+
+
+        <footer class="site-footer" role="contentinfo" aria-label="Pied de page">
+            <div class="footer-container">
+                <div class="footer-item">
+                <h4>Email</h4>
+                <p><a href="mailto:contact@parten-ai-re.com">contact@parten-ai-re.com</a></p>
+                </div>
+
+                <div class="footer-item">
+                <h4>Adresse</h4>
+                <p>1 Square des Etats Généraux<br>35200 Rennes, France</p>
+                </div>
+
+                <div class="footer-item">
+                <h4>Téléphone</h4>
+                <p>06 87 93 77 45</p>
+                </div>
+
+                <div class="footer-item">
+                <h4>Réseaux</h4>
+                <p>
+                    <div class="linkedin">
+                        <div><a href="#"><img src="./res/linkedin.png"></a></div>
+                        <div><a href="#">Linkedin de la boîte</a></div>
+                    </div>
+                </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div><small>&copy;<span id="year"></span> Parten'AI're — Tous droits réservés.</small></div>
+                <div>
+                    <ul class="links-inline">
+                        <li><a href="./legal/legal-notice.html">Mentions légales</a></li>
+                        <li><a href="./legal/privacy-policy.html">Politique de confidentialité</a></li>
+                        <li><a href="./legal/general-conditions.html">Conditions Générales d'Utilisation</a></li>
+                    </ul>
+                </div>
+
+            </div>
         </footer>
+
+
+
+
+    
     </main>
     
     <script>
