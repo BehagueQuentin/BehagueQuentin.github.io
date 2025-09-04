@@ -8,39 +8,49 @@
     <title>Parten'AI're</title>
     <link rel="stylesheet" href="../style.css"/>
     <link rel="stylesheet" href="../src/solutions-demos.css"/>
+    <link rel="stylesheet" href="../legal/nav.css"/>
     <link rel="stylesheet" href="../legal/footer.css"/>
 </head>
 
+
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------/ Valide /-->
+
 <header>
-    <nav>
+    <nav aria-label="Navigation principale">
         <picture>
             <source srcset="../res/dark/logo_line.png" media="(prefers-color-scheme: dark)">
             <img id="logo-nav" src="../res/light/logo_line.png" alt="Logo Parten'AI're">
         </picture>
-        <button id="menu-toggle">
-            <img src="./res/menu.png" alt="Menu">
+        <button id="menu-toggle" aria-controls="menu" aria-label="Ouvrir le menu de navigation">
+            <img src="../res/menu.png" alt="">
         </button>
-        <ul id="menu">
+        
+        <ul id="menu" class="menu">
             <li><a href="../index.html">Accueil</a></li>
-            <li><a href="../src/introduction.html">Qui sommes-nous ?</a></li>  
-            <li><a href="../src/solutions-demos.html">Solutions & Démos</a></li>  
-            <li class="drop-down"><a href="../src/sectors.html">Secteurs</a>
-                <ul class="under">
-                    <li><a href="../src/sectors.html#focus-by-sector">Pourquoi un focus par secteur ?</a></li>
-                    <li><a href="../src/sectors.html#industry">Industrie — Notre domaine de prédilection</a></li>
-                    <li><a href="../src/sectors.html#agri-food">Agroalimentaire — Spécialistes processus</a></li>
-                    <li><a href="../src/sectors.html#logistic-&-supply-chain">Logistique & Supply Chain</a></li>
-                    <li><a href="../src/sectors.html#store-&-retail">Magasins & Retail</a></li>
-                    <li><a href="../src/sectors.html#agencies-and-services">Agences & Services (RH, QHSE, Marketing, Support)</a></li>
-                    <li><a href="../src/sectors.html#responsible-&-open-source-AI">Un socle commun : IA responsable & open source</a></li>
+            <li><a href="../src/introduction.html">Qui sommes-nous&nbsp;?</a></li>
+            <li><a href="../src/solutions-demos.html">Solutions &amp; Démos</a></li>
+            
+            <li class="drop-down">
+                <a href="../src/sectors.html" aria-haspopup="true" aria-expanded="false">Secteurs</a>
+                <ul class="submenu">
+                <li><a href="../src/sectors.html#focus-by-sector">Pourquoi un focus par secteur&nbsp;?</a></li>
+                <li><a href="../src/sectors.html#industry">Industrie — Notre domaine de prédilection</a></li>
+                <li><a href="../src/sectors.html#agri-food">Agroalimentaire — Spécialistes processus</a></li>
+                <li><a href="../src/sectors.html#logistic-&-supply-chain">Logistique &amp; Supply Chain</a></li>
+                <li><a href="../src/sectors.html#store-&-retail">Magasins &amp; Retail</a></li>
+                <li><a href="../src/sectors.html#agencies-and-services">Agences &amp; Services (RH, QHSE, Marketing, Support)</a></li>
+                <li><a href="../src/sectors.html#responsible-&-open-source-AI">Un socle commun&nbsp;: IA responsable &amp; open source</a></li>
                 </ul>
             </li>
-            <li><a href="../src/offers-services.html">Offres et services</a></li>
+            
+            <li><a href="../src/offers-services.html">Offres &amp; Services</a></li>
             <li><a href="../src/contact.html">Contact</a></li>
         </ul>
     </nav>
 </header>
+<script src="../legal/nav.js"></script>
 
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------/ Fin valide /-->
 
 
 
@@ -575,10 +585,12 @@
                 <div class="footer-item">
                 <h4>Réseaux</h4>
                 <p>
-                    <div class="linkedin">
-                        <div><a href="#"><img src="../res/linkedin.png"></a></div>
-                        <div><a href="#">Linkedin de la boîte</a></div>
-                    </div>
+                    <a href="#" style="width: 100%;">
+                        <div class="linkedin">
+                            <div><img src="../res/linkedin.png"></div>
+                            <div>Linkedin de la boîte</div>
+                        </div>
+                    </a>
                 </p>
                 </div>
             </div>
@@ -599,62 +611,56 @@
 
 
 
-
-
-
-
-    
     <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const calcBtn = document.querySelector(".btn.primary");
-  const resetBtn = document.querySelector(".btn:not(.primary)");
-  const results = document.querySelectorAll(".results strong");
-  const inputs = document.querySelectorAll(".calculator input[type='number']");
-  const defaultValues = Array.from(inputs).map(input => input.value);
+        document.addEventListener("DOMContentLoaded", () => {
+        const calcBtn = document.querySelector(".btn.primary");
+        const resetBtn = document.querySelector(".btn:not(.primary)");
+        const results = document.querySelectorAll(".results strong");
+        const inputs = document.querySelectorAll(".calculator input[type='number']");
+        const defaultValues = Array.from(inputs).map(input => input.value);
 
-  calcBtn.addEventListener("click", () => {
-    const [
-      downtimeHours,
-      downtimeReduction,
-      costPerHour,
-      maintenanceCost,
-      maintenanceReduction,
-      capex,
-      opex,
-      discountRate
-    ] = Array.from(inputs).map(i => parseFloat(i.value) || 0);
+        calcBtn.addEventListener("click", () => {
+            const [
+            downtimeHours,
+            downtimeReduction,
+            costPerHour,
+            maintenanceCost,
+            maintenanceReduction,
+            capex,
+            opex,
+            discountRate
+            ] = Array.from(inputs).map(i => parseFloat(i.value) || 0);
 
-    // 1 Economies/an
-    const totalSavings = downtimeHours*(downtimeReduction / 100) * costPerHour + maintenanceCost * (maintenanceReduction / 100);
-    
-    // Coûts PdM (opex + capex annuel)
-    const totalCosts = capex + opex;
+            // 1 Economies/an
+            const totalSavings = downtimeHours*(downtimeReduction / 100) * costPerHour + maintenanceCost * (maintenanceReduction / 100);
+            
+            // Coûts PdM (opex + capex annuel)
+            const totalCosts = capex + opex;
 
-    // 2. ROI (%)
-    const roi = (totalSavings - (capex + opex))/(capex + opex)*100;
+            // 2. ROI (%)
+            const roi = (totalSavings - (capex + opex))/(capex + opex)*100;
 
-    // 3. Délai de retour (mois)
-    const payback = (capex / totalSavings-opex) * 12;
+            // 3. Délai de retour (mois)
+            const payback = (capex / totalSavings-opex) * 12;
 
-    // 4. VAN sur 3 ans
-    const r = discountRate / 100;
-    const npv = -capex 
-        + (totalSavings - opex)/r
-        + (totalSavings - opex)/(r*r)
-        + (totalSavings - opex)/(r*r*r)
+            // 4. VAN sur 3 ans
+            const r = discountRate / 100;
+            const npv = -capex 
+                + (totalSavings - opex)/r
+                + (totalSavings - opex)/(r*r)
+                + (totalSavings - opex)/(r*r*r)
 
-    results[0].textContent = totalSavings.toLocaleString("fr-FR", { maximumFractionDigits: 0 }) + " €";
-    results[1].textContent = roi.toFixed(1) + " %";
-    results[2].textContent = payback.toFixed(1);
-    results[3].textContent = npv.toLocaleString("fr-FR", { maximumFractionDigits: 0 }) + " €";
-  });
+            results[0].textContent = totalSavings.toLocaleString("fr-FR", { maximumFractionDigits: 0 }) + " €";
+            results[1].textContent = roi.toFixed(1) + " %";
+            results[2].textContent = payback.toFixed(1);
+            results[3].textContent = npv.toLocaleString("fr-FR", { maximumFractionDigits: 0 }) + " €";
+        });
 
-  resetBtn.addEventListener("click", () => {
-    inputs.forEach((input, i) => input.value = defaultValues[i]);
+        resetBtn.addEventListener("click", () => {
+            inputs.forEach((input, i) => input.value = defaultValues[i]);
 
-    results.forEach(r => r.textContent = "—");
-  });
-});
-</script>
-
+            results.forEach(r => r.textContent = "—");
+        });
+        });
+    </script>
 </main>

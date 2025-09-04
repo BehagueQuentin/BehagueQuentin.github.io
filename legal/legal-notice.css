@@ -86,13 +86,56 @@ a{
     border:1px dashed rgba(15,23,42,0.04);
 }
 
-@media (max-width:520px){
-    .container{ margin:20px; padding:18px; border-radius:8px; }
-    h1{ font-size:1.15rem; }
+/* Bouton menu caché par défaut */
+#menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none;
 }
-/* Impression propre */
-@media print{
-    body{ background:white; }
-    .container{ box-shadow:none; border:0; }
-    a::after{ content: " (" attr(href) ")"; font-size:0.85em; color: #000; }
+
+#menu-toggle img {
+    width: 32px;
+    height: 32px;
 }
+
+/* Menu mobile (slide-in) */
+#menu {
+    transition: transform 0.3s ease;
+}
+
+/* Par défaut sur desktop */
+@media (min-width: 985px) {
+    #menu {
+        display: flex;
+        gap: 2rem;
+    }
+}
+
+/* Sur mobile */
+@media (max-width: 984px) {
+    #menu-toggle {
+        display: block;
+    }
+
+    #menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 250px;
+        background-color: var(--nav-background-color);
+        flex-direction: column;
+        padding: 2rem;
+        transform: translateX(100%); /* Caché à droite */
+    }
+
+    #menu.show {
+        transform: translateX(0); /* Visible */
+    }
+
+    #menu li {
+        margin: 1rem 0;
+    }
+}
+

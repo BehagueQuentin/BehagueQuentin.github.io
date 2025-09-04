@@ -1,3 +1,10 @@
+:root{
+    --nav-hover-color: rgb(239, 155, 59);
+    --nav-color : rgb(19, 87, 121);
+    --nav-ul-background-color: rgb(238, 238, 239);
+    --nav-background-color: rgb(221, 236, 249);
+}
+
 header {
     position:fixed;
     margin-top: 0;
@@ -56,46 +63,8 @@ nav a:hover {
   font-size: 0.8rem;
 }
 
-.submenu {
-  display: block;
-  width: 100%;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: var(--nav-ul-background-color);
-  /*min-width: 220px;*/
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-10px);
-  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s;
-  z-index: 1000;
-}
-
-.submenu li {
-  width: 100%;
-  text-align: left;
-}
-
-.submenu a {
-  padding: 10px;
-  margin: 0 10px;
-  border-bottom: none;
-  transition: background-color 0.2s ease;
-}
-
-.submenu a:hover {
-  background-color: var(--nav-hover-background, rgba(0,0,0,0.05));
-  border-bottom: none;
-}
-
-nav > ul li:hover > .submenu {
-  opacity: 1;
-  transform: translateY(0);
-  visibility: visible;
-  transition-delay: 0s;
-}
-
 #menu-toggle {
+  z-index : 2000;
   background: none;
   border: none;
   cursor: pointer;
@@ -147,25 +116,37 @@ nav > ul li:hover > .submenu {
     margin: 1rem 0;
   }
 
-  .submenu {
-    position: static;
+
+}
+
+.submenu{
+    left: 0; right: auto; width: max-content; 
+    opacity: 0;
+    transform: translateY(-10px);
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s; ;
+    display: block;
+    background-color: var(--nav-ul-background-color);
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+.submenu li{
+    width: 100%;
+    text-align: left;
+}
+
+.submenu a{
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px 10px 10px;
+    border-bottom: none;
+}
+
+nav > ul li:hover .submenu{
     opacity: 1;
+    transform: translateY(0);
     visibility: visible;
-    transform: none;
-    background: none;
-    min-width: auto;
-    padding-left: 1rem;
-  }
-
-  .submenu a {
-    padding: 0.5rem 0;
-  }
-}
-
-#menu-toggle img {
-  content: url("./res/menu.png");
-}
-
-#menu-toggle:hover img {
-  content: url("./res/menu-hover.png");
+    transition: opacity 1s ease, transform 1s ease, visibility 1s;
 }

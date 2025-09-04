@@ -14,10 +14,12 @@
 
 <header>
     <nav aria-label="Navigation principale">
-        <img id="logo-nav" src="../res/logo_line.png" alt="Logo de l'entreprise">
-        
-        <button id="menu-toggle" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu de navigation">
-        <img src="../res/menu.png" alt="">
+        <picture>
+            <source srcset="../res/dark/logo_line.png" media="(prefers-color-scheme: dark)">
+            <img id="logo-nav" src="../res/light/logo_line.png" alt="Logo Parten'AI're">
+        </picture>
+        <button id="menu-toggle" aria-controls="menu" aria-label="Ouvrir le menu de navigation">
+            <img src="../res/menu.png" alt="">
         </button>
         
         <ul id="menu" class="menu">
@@ -159,5 +161,20 @@
     // Insère l'année courante dans le pied de page
     document.getElementById('year').textContent = new Date().getFullYear();
 </script>
+
+<script>
+        const toggleBtn = document.getElementById("menu-toggle");
+        const menu = document.getElementById("menu");
+        const toggleIcon = toggleBtn.querySelector("img");
+
+        toggleBtn.addEventListener("click", () => {
+            menu.classList.toggle("show");
+            if (menu.classList.contains("show")) {
+                toggleIcon.src = "../res/quit-cross.png";
+            } else {
+                toggleIcon.src = "../res/menu.png";
+            }
+        });
+    </script>
 </body>
 </html>

@@ -7,6 +7,17 @@
     --bg-title-img-path : ./res/dark/
 }
 
+@font-face {
+  font-family: 'IBM Plex Sans';
+  src: url('./font/IBMPlexSans-VariableFont_wdth\,wght.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
 
 @media (prefers-color-scheme: dark) {
 
@@ -53,9 +64,6 @@
     }
 }
 
-* {
-    color : var(--text-color);
-}
 
 html{
     scroll-behavior: smooth;
@@ -134,100 +142,6 @@ hr {
 
 /*_________________________________________________________________/ Navigation bar */
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1vw 2vw;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    align-items: center;
-    /*font-size: 1.2vw;*/
-}
-
-nav a{
-    display: block;
-    text-decoration: none;
-    color: var(--nav-color);
-    border-bottom: 2px solid transparent; 
-    padding: 0.5vw 0;
-}
-
-nav a:hover{
-    color: var(--nav-hover-color);
-    border-bottom: 2px solid var(--nav-hover-color);
-}
-
-nav li {
-    width: auto;
-    float: none; 
-    text-align: center;
-    justify-content: center;
-}
-
-.drop-down > a::after{
-    content:"  ▼";
-    font-size: 1vw;
-}
-
-.under{
-    left: 0; right: auto; width: max-content; 
-    opacity: 0;
-    transform: translateY(-10px);
-    visibility: hidden;
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s; ;
-    display: block;
-    background-color: var(--nav-ul-background-color);
-    position: absolute;
-    width: 100%;
-    z-index: 1;
-}
-
-.under li{
-    width: 100%;
-    text-align: left;
-}
-
-.under a{
-    margin-left: 10px;
-    margin-right: 10px;
-    padding: 10px 10px 10px;
-    border-bottom: none;
-}
-
-nav > ul li:hover > a{
-    color: var(--nav-hover-color);
-    border-bottom: 2px solid var(--nav-hover-color);
-}
-
-nav > ul li:hover .under{
-    opacity: 1;
-    transform: translateY(0);
-    visibility: visible;
-    transition: opacity 1s ease, transform 1s ease, visibility 1s;
-}
-
-/* Bouton menu caché par défaut */
-#menu-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: none;
-}
-
-#menu-toggle img {
-    width: 32px;
-    height: 32px;
-}
-
-/* Menu mobile (slide-in) */
 #menu {
     transition: transform 0.3s ease;
 }
@@ -266,16 +180,6 @@ nav > ul li:hover .under{
         margin: 1rem 0;
     }
 }
-
-
-#menu-toggle img {
-  content: url("./res/menu.png");
-}
-
-#menu-toggle img:hover {
-  content: url("./res/menu-hover.png");
-}
-
 
 
 

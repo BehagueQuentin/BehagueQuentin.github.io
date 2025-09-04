@@ -7,43 +7,49 @@
     <link href="./public/icon.ico" rel="icon" type="image/x-icon" >
     <title>Parten'AI're - Homepage</title>
     <link rel="stylesheet" href="./style.css"/>
+    <link rel="stylesheet" href="./legal/nav.css"/>
+    <link rel="stylesheet" href="./legal/footer.css"/>
     <link rel="stylesheet" href="./pyramid.css"/>
     <link rel="stylesheet" href="./faq.css"/>
     <link rel="stylesheet" href="./grid.css"/>
-    <link rel="stylesheet" href="./legal/nav.css"/>
-    <link rel="stylesheet" href="./legal/footer.css"/>
 </head>
 
+
+
+
 <header>
-    <nav>
+    <nav aria-label="Navigation principale">
         <picture>
             <source srcset="./res/dark/logo_line.png" media="(prefers-color-scheme: dark)">
             <img id="logo-nav" src="./res/light/logo_line.png" alt="Logo Parten'AI're">
         </picture>
-        <button id="menu-toggle">
-            <img src="./res/menu.png" alt="Menu">
+        <button id="menu-toggle" aria-controls="menu" aria-label="Ouvrir le menu de navigation">
+            <img src="./res/menu.png" alt="">
         </button>
-        <ul id="menu">
-            <li><a href="">Accueil</a></li>
-            <li><a href="./src/introduction.html">Qui sommes-nous ?</a></li>
-            <li><a href="./src/solutions-demos.html">Solutions & Démos</a></li>
-            <li class="drop-down"><a href="./src/sectors.html">Secteurs</a>
-                <ul class="under">
-                    <li><a href="./src/sectors.html#focus-by-sector">Pourquoi un focus par secteur ?</a></li>
-                    <li><a href="./src/sectors.html#industry">Industrie — Notre domaine de prédilection</a></li>
-                    <li><a href="./src/sectors.html#agri-food">Agroalimentaire — Spécialistes processus</a></li>
-                    <li><a href="./src/sectors.html#logistic-&-supply-chain">Logistique & Supply Chain</a></li>
-                    <li><a href="./src/sectors.html#store-&-retail">Magasins & Retail</a></li>
-                    <li><a href="./src/sectors.html#agencies-and-services">Agences & Services (RH, QHSE, Marketing, Support)</a></li>
-                    <li><a href="./src/sectors.html#responsible-&-open-source-AI">Un socle commun : IA responsable & open source</a></li>
+        
+        <ul id="menu" class="menu">
+            <li><a href="./index.html">Accueil</a></li>
+            <li><a href="./src/introduction.html">Qui sommes-nous&nbsp;?</a></li>
+            <li><a href="./src/solutions-demos.html">Solutions &amp; Démos</a></li>
+            
+            <li class="drop-down">
+                <a href="./src/sectors.html" aria-haspopup="true" aria-expanded="false">Secteurs</a>
+                <ul class="submenu">
+                <li><a href="./src/sectors.html#focus-by-sector">Pourquoi un focus par secteur&nbsp;?</a></li>
+                <li><a href="./src/sectors.html#industry">Industrie — Notre domaine de prédilection</a></li>
+                <li><a href="./src/sectors.html#agri-food">Agroalimentaire — Spécialistes processus</a></li>
+                <li><a href="./src/sectors.html#logistic-&-supply-chain">Logistique &amp; Supply Chain</a></li>
+                <li><a href="./src/sectors.html#store-&-retail">Magasins &amp; Retail</a></li>
+                <li><a href="./src/sectors.html#agencies-and-services">Agences &amp; Services (RH, QHSE, Marketing, Support)</a></li>
+                <li><a href="./src/sectors.html#responsible-&-open-source-AI">Un socle commun&nbsp;: IA responsable &amp; open source</a></li>
                 </ul>
             </li>
-            <li><a href="./src/offers-services.html">Offres et services</a></li>
+            
+            <li><a href="./src/offers-services.html">Offres &amp; Services</a></li>
             <li><a href="./src/contact.html">Contact</a></li>
         </ul>
     </nav>
 </header>
-
 
 
 
@@ -67,7 +73,11 @@
                             <div>
                             <p class="fade-in" style="font-size: 1.5vw; animation-delay: 0.5s;">
                                 Chez Parten'AI're, nous aidons les PME et ETI françaises à transformer le potentiel de
-                                l'IA en résultats tangibles.
+                                l'IA en résultats tangibles. 
+                            <p class="fade-in" style="font-size: 1.5vw; animation-delay: 0.55s;">
+                                Et parce que rien ne vaut l'expérience directe, nous mettons à votre disposition des démonstrations interactives que vous pouvez essayer en ligne. Voyez par vous-même comment l'IA peut répondre à vos enjeux, avant même d'envisager un projet.
+                            </p>
+                            <p class="fade-in" style="font-size: 1.5vw; animation-delay: 0.6s;">
                                 Pas de promesses floues : uniquement des cas d'usage actionnables, des conseils personnalisés, et
                                 des solutions sur-mesure pensées avec vous.
                             </p>
@@ -262,12 +272,8 @@
                         <li><a href="./legal/general-conditions.html">Conditions Générales d'Utilisation</a></li>
                     </ul>
                 </div>
-
             </div>
         </footer>
-
-
-
 
     
     </main>
@@ -285,12 +291,30 @@
         });
     </script>
     <script>
-    const toggleBtn = document.getElementById("menu-toggle");
-    const menu = document.getElementById("menu");
 
-    toggleBtn.addEventListener("click", () => {
-        menu.classList.toggle("show");
-    });
-</script>
+        
+
+
+
+
+
+        const toggleBtn = document.getElementById("menu-toggle");
+        const menu = document.getElementById("menu");
+        const toggleIcon = toggleBtn.querySelector("img");
+
+        toggleBtn.addEventListener("click", () => {
+            menu.classList.toggle("show");
+            if (menu.classList.contains("show")) {
+                toggleIcon.src = "./res/quit-cross.png";
+            } else {
+                toggleIcon.src = "./res/menu.png";
+            }
+        });
+
+
+
+
+
+    </script>
 </body>
 </html>
