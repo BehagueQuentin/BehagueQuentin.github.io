@@ -2,87 +2,76 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../public/icon.ico" rel="icon" type="image/x-icon" >
     <title>Parten'AI're</title>
-    <link rel="stylesheet" href="../legal/nav.css"/>
-    <link rel="stylesheet" href="../legal/footer.css"/>
-    <link rel="stylesheet" href="../src/profil.css"/>
-    <link rel="stylesheet" href="../src/grid.css"/>
-    <link rel="stylesheet" href="../style.css"/>
+    <link rel="stylesheet" href="../legal/nav.css">
+    <link rel="stylesheet" href="../legal/footer.css">
+    <link rel="stylesheet" href="../src/profil.css">
+    <link rel="stylesheet" href="../src/grid.css">
+    <link rel="stylesheet" href="../style.css">
     
 </head>
 
-
-
-<!-------------------------------------------------------------------------------------------------------------------------------------------------------/ Valide /-->
-
-<header>
-    <nav aria-label="Navigation principale">
-        <picture>
-            <source srcset="../res/dark/logo_line.png" media="(prefers-color-scheme: dark)">
-            <img id="logo-nav" src="../res/light/logo_line.png" alt="Logo Parten'AI're">
-        </picture>
-        <button id="menu-toggle" aria-controls="menu" aria-label="Ouvrir le menu de navigation">
-            <img src="../res/menu.png" alt="">
-        </button>
-        
-        <ul id="menu" class="menu">
-            <li><a href="../index.html" role="menuitem">Accueil</a></li>
-
-            <li><a href="../src/introduction.html" role="menuitem">Qui sommes-nous&nbsp;?</a></li>
-
-            <li class="drop-down">
-                <a href="../src/solutions-demos.html" aria-haspopup="true" aria-expanded="false" role="menuitem">Solutions &amp; Démos</a>
-                <ul class="submenu" role="menu">
-                    <li role="none"><a role="menuitem" href="../src/solutions-demos.html#maintenance"><img class="line-logo" src="../res/light/line-icon/nav-maintenance.png" alt="" role="presentation">Maintenance prédictive</a></li>
-                    <li role="none"><a role="menuitem" href="../src/solutions-demos.html#industry"><img class="line-logo" src="../res/light/line-icon/nav-industry.png" alt="" role="presentation">Vision industrielle</a></li>
-                    <li role="none"><a role="menuitem" href="../src/solutions-demos.html#dashboard"><img class="line-logo" src="../res/light/line-icon/nav-dashboard.png" alt="" role="presentation">Dashboard analytique</a></li>
-                    <li role="none"><a role="menuitem" href="../src/solutions-demos.html#use"><img class="line-logo" src="../res/light/line-icon/nav-use.png" alt="" role="presentation">Cas d'usage</a></li>
-                </ul>
-            </li>
-            
-            <li class="drop-down">
-                <a href="../src/sectors.html" aria-haspopup="true" aria-expanded="false" role="menuitem">Secteurs</a>
-                <ul class="submenu" role="menu">
-                    <li role="none"><a role="menuitem" href="../src/sectors.html#focus-by-sector"><img class="line-logo" src="../res/light/line-icon/nav-sector.png" alt="" role="presentation">Pourquoi un focus par secteur&nbsp;?</a></li>
-                    <li role="none"><a role="menuitem" href="../src/sectors.html#industry"><img class="line-logo" src="../res/light/line-icon/nav-industry.png" alt="" role="presentation">Industrie — Notre domaine de prédilection</a></li>
-                    <li role="none"><a role="menuitem" href="../src/sectors.html#agri-food"><img class="line-logo" src="../res/light/line-icon/nav-agri-food.png" alt="" role="presentation">Agroalimentaire — Spécialistes processus</a></li>
-                    <li role="none"><a role="menuitem" href="../src/sectors.html#logistic-&-supply-chain"><img class="line-logo" src="../res/light/line-icon/nav-logistic.png" alt="" role="presentation">Logistique &amp; Supply Chain</a></li>
-                    <li role="none"><a role="menuitem" href="../src/sectors.html#store-&-retail"><img class="line-logo" src="../res/light/line-icon/nav-store.png" alt="" role="presentation">Magasins &amp; Retail</a></li>
-                    <li role="none"><a role="menuitem" href="../src/sectors.html#agencies-and-services"><img class="line-logo" src="../res/light/line-icon/nav-agencies.png" alt="" role="presentation">Agences &amp; Services (RH, QHSE, Marketing, Support)</a></li>
-                    <li role="none"><a role="menuitem" href="../src/sectors.html#responsible-open-source-AI"><img class="line-logo" src="../res/light/line-icon/nav-ai.png" alt="" role="presentation">Un socle commun&nbsp;: IA responsable &amp; open source</a></li>
-                </ul>
-            </li>
-            
-            <li class="drop-down">
-                <a href="../src/offers-services.html" aria-haspopup="true" aria-expanded="false" role="menuitem">Offres &amp; Services</a>
-                <ul class="submenu" role="menu">
-                    <li role="none"><a role="menuitem" href="../src/offers-services.html#section-title"><img class="line-logo" src="../res/light/line-icon/nav-succeed.png" alt="" role="presentation">Réussir votre parcours IA</a></li>
-                    <li role="none"><a role="menuitem" href="../src/offers-services.html#ai-hint"><img class="line-logo" src="../res/light/line-icon/nav-ai-hint.png" alt="" role="presentation">Conseil stratégique IA</a></li>
-                    <li role="none"><a role="menuitem" href="../src/offers-services.html#audit-data"><img class="line-logo" src="../res/light/line-icon/nav-audit-data.png" alt="" role="presentation">Audit Data & Processus</a></li>
-                    <li role="none"><a role="menuitem" href="../src/offers-services.html#formation"><img class="line-logo" src="../res/light/line-icon/nav-formation.png" alt="" role="presentation">Formations & Acculturation</a></li>
-                    <li role="none"><a role="menuitem" href="../src/offers-services.html#pco"><img class="line-logo" src="../res/light/line-icon/nav-pco.png" alt="" role="presentation">PoC IA personnalisé</a></li>
-                    <li role="none"><a role="menuitem" href="../src/offers-services.html#industry"><img class="line-logo" src="../res/light/line-icon/nav-industry.png" alt="" role="presentation">Industrialisation & MLOps</a></li>
-                    <li role="none"><a role="menuitem" href="../src/offers-services.html#upskilling"><img class="line-logo" src="../res/light/line-icon/nav-upskilling.png" alt="" role="presentation">Support continu & Upskilling</a></li>
-                </ul>
-            </li>
-            <li><a href="../src/contact.html" role="menuitem">Contact</a></li>
-        </ul>
-    </nav>
-</header>
-<script src="../legal/nav.js"></script>
-
-
-<!-------------------------------------------------------------------------------------------------------------------------------------------------------/ Fin valide /-->
-
-
-
-
-
-
 <body>
+    <header>
+        <nav aria-label="Navigation principale" role="menu">
+            <picture>
+                <source srcset="../res/dark/logo_line.png" media="(prefers-color-scheme: dark)">
+                <img id="logo-nav" src="../res/light/logo_line.png" alt="Logo Parten'AI're">
+            </picture>
+            <button id="menu-toggle" aria-controls="menu" aria-label="Ouvrir le menu de navigation">
+                <img src="../res/menu.png" alt="">
+            </button>
+            
+            <ul id="menu" class="menu">
+                <li><a href="../index.html" role="menuitem">Accueil</a></li>
+
+                <li><a href="../src/introduction.html" role="menuitem">Qui sommes-nous&nbsp;?</a></li>
+
+                <li class="drop-down">
+                    <a href="../src/solutions-demos.html" aria-haspopup="true" aria-expanded="false" role="menuitem">Solutions &amp; Démos</a>
+                    <ul class="submenu" role="menu">
+                        <li role="none"><a role="menuitem" href="../src/solutions-demos.html#maintenance"><img class="line-logo" src="../res/light/line-icon/nav-maintenance.png" alt="">Maintenance prédictive</a></li>
+                        <li role="none"><a role="menuitem" href="../src/solutions-demos.html#industry"><img class="line-logo" src="../res/light/line-icon/nav-industry.png" alt="">Vision industrielle</a></li>
+                        <li role="none"><a role="menuitem" href="../src/solutions-demos.html#dashboard"><img class="line-logo" src="../res/light/line-icon/nav-dashboard.png" alt="">Dashboard analytique</a></li>
+                        <li role="none"><a role="menuitem" href="../src/solutions-demos.html#use"><img class="line-logo" src="../res/light/line-icon/nav-use.png" alt="">Cas d'usage</a></li>
+                    </ul>
+                </li>
+                
+                <li class="drop-down">
+                    <a href="../src/sectors.html" aria-haspopup="true" aria-expanded="false" role="menuitem">Secteurs</a>
+                    <ul class="submenu" role="menu">
+                        <li role="none"><a role="menuitem" href="../src/sectors.html#focus-by-sector"><img class="line-logo" src="../res/light/line-icon/nav-sector.png" alt="">Pourquoi un focus par secteur&nbsp;?</a></li>
+                        <li role="none"><a role="menuitem" href="../src/sectors.html#industry"><img class="line-logo" src="../res/light/line-icon/nav-industry.png" alt="">Industrie — Notre domaine de prédilection</a></li>
+                        <li role="none"><a role="menuitem" href="../src/sectors.html#agri-food"><img class="line-logo" src="../res/light/line-icon/nav-agri-food.png" alt="">Agroalimentaire — Spécialistes processus</a></li>
+                        <li role="none"><a role="menuitem" href="../src/sectors.html#logistic-&-supply-chain"><img class="line-logo" src="../res/light/line-icon/nav-logistic.png" alt="">Logistique &amp; Supply Chain</a></li>
+                        <li role="none"><a role="menuitem" href="../src/sectors.html#store-&-retail"><img class="line-logo" src="../res/light/line-icon/nav-store.png" alt="">Magasins &amp; Retail</a></li>
+                        <li role="none"><a role="menuitem" href="../src/sectors.html#agencies-and-services"><img class="line-logo" src="../res/light/line-icon/nav-agencies.png" alt="">Agences &amp; Services (RH, QHSE, Marketing, Support)</a></li>
+                        <li role="none"><a role="menuitem" href="../src/sectors.html#responsible-open-source-AI"><img class="line-logo" src="../res/light/line-icon/nav-ai.png" alt="">Un socle commun&nbsp;: IA responsable &amp; open source</a></li>
+                    </ul>
+                </li>
+                
+                <li class="drop-down">
+                    <a href="../src/offers-services.html" aria-haspopup="true" aria-expanded="false" role="menuitem">Offres &amp; Services</a>
+                    <ul class="submenu" role="menu">
+                        <li role="none"><a role="menuitem" href="../src/offers-services.html#section-title"><img class="line-logo" src="../res/light/line-icon/nav-succeed.png" alt="">Réussir votre parcours IA</a></li>
+                        <li role="none"><a role="menuitem" href="../src/offers-services.html#ai-hint"><img class="line-logo" src="../res/light/line-icon/nav-ai-hint.png" alt="">Conseil stratégique IA</a></li>
+                        <li role="none"><a role="menuitem" href="../src/offers-services.html#audit-data"><img class="line-logo" src="../res/light/line-icon/nav-audit-data.png" alt="">Audit Data & Processus</a></li>
+                        <li role="none"><a role="menuitem" href="../src/offers-services.html#formation"><img class="line-logo" src="../res/light/line-icon/nav-formation.png" alt="">Formations & Acculturation</a></li>
+                        <li role="none"><a role="menuitem" href="../src/offers-services.html#pco"><img class="line-logo" src="../res/light/line-icon/nav-pco.png" alt="">PoC IA personnalisé</a></li>
+                        <li role="none"><a role="menuitem" href="../src/offers-services.html#industry"><img class="line-logo" src="../res/light/line-icon/nav-industry.png" alt="">Industrialisation & MLOps</a></li>
+                        <li role="none"><a role="menuitem" href="../src/offers-services.html#upskilling"><img class="line-logo" src="../res/light/line-icon/nav-upskilling.png" alt="">Support continu & Upskilling</a></li>
+                    </ul>
+                </li>
+                <li><a href="../src/contact.html" role="menuitem">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <script src="../legal/nav.js"></script>
+
     <main>
         <section id="section-mainspring">
             <div class="grid" >
@@ -104,7 +93,7 @@
                     </div>
                 </div>
                 <div style="text-align: center;">
-                    <img src="../res/ai-handshake.png" alt="ai-&-human-alliance" width="80%">
+                    <img id="ai-handshake" src="../res/ai-handshake.png" alt="ai-&-human-alliance">
                 </div>
             </div>
                 <h3>- Notre approche : être votre parten'AI're, pas un simple vendeur -</h3>
@@ -156,10 +145,11 @@
                         <hr>
                         <h5>Savoir-faire</h5>
                         <ul>
-                            <li><strong>Développement de solutions IA :</strong> modèles, intégrations applicatives, APIs et automatisations (au-delà des seuls pipelines)
+                            <li><strong>Développement de solutions IA :</strong> modèles, intégrations applicatives, APIs et automatisations (au-delà des seuls pipelines)</li>
                             <li><strong>Cadrage business-tech :</strong> sélection des cas d'usage, KPI métier, plan PoC > prod</li>
                             <li><strong>Gouvernance & éthique :</strong> privacy-by-design, alignement RGPD / AI Act</li>
                             <li><strong>Formation & adoption :</strong> programmes et ateliers (prompt engineering, usages métier)</li>
+                        </ul>
                     </div>
                 </div>
                 <h3> - Notre direction -</h3>
