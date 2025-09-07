@@ -442,6 +442,9 @@ section {
   margin-bottom: 1.5rem;
 }
 
+.industry li {
+  margin-top: 10px;
+}
 
 .advanced > input[type="checkbox"] {
   display: inline-block;

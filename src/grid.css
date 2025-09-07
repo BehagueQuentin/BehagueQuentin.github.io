@@ -1,10 +1,12 @@
 
 .grid{
-    margin: 4vw;
+    margin: 2vw 4vw;
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding-top: 2vw;
 }
+
+
 
 .grid> div {
     padding: 20px;
@@ -45,7 +47,7 @@
     background-color: rgba(0, 123, 255, 0.067);
     border-right: 2px solid rgba(4, 82, 124, 0.4);
     border-left: 2px solid rgba(4, 82, 124, 0.4);
-    color: white;
+    
     padding: 1rem;
     border-radius: 10px;
     align-items: center;

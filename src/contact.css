@@ -24,7 +24,6 @@
 
 .img-column{
   text-align: center;
-  border: 1px solid white;
   border-radius: 2vw;
 }
 
@@ -40,14 +39,12 @@
 }
 
 .contact-block a {
-  
   text-decoration: none;
 }
 
 
 .contact-block a:hover {
   color: var(--nav-hover-color);
-  text-decoration: underline;
 }
 
 .contact-block ul {
@@ -58,35 +55,3 @@
 .contact-block ul li {
   margin: 0.3em 0;
 }
-
-
-
-
-.separator {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  margin: 0;
-}
-
-.separator::before,
-.separator::after {
-  content: "";
-  flex: 1;
-  border-bottom: 2px solid #fff; /* ligne blanche */
-}
-
-.separator:not(:empty)::before {
-  margin-right: 1em;
-}
-
-.separator:not(:empty)::after {
-  margin-left: 1em;
-}
-
-.separator span {
-  color: #fff;         /* couleur du texte */
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-

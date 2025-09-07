@@ -95,47 +95,10 @@ h5 {
     width:100%;
 }
 
-.linkedin img {
-    width: 30px;
-    transition: 0.2s ease all;
+#section-profil {
+  padding: 18vh 2vw;
 }
 
-.linkedin{
-    display: flex;
-    align-items: center; /* <-- aligne verticalement */
-    gap: 2vw; 
-    transition: 0.2s ease all;
-}
-
-.linkedin:hover{
-    transform: scale(1.1);
-}
-
-
-.separator {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  margin: 0;
-}
-
-.separator::before,
-.separator::after {
-  content: "";
-  flex: 1;
-  border-bottom: 2px solid #fff; /* ligne blanche */
-}
-
-.separator:not(:empty)::before {
-  margin-right: 1em;
-}
-
-.separator:not(:empty)::after {
-  margin-left: 1em;
-}
-
-.separator span {
-  color: #fff;         /* couleur du texte */
-  font-weight: bold;
-  font-size: 1.2rem;
+a {
+  text-decoration: none;
 }

@@ -1,5 +1,4 @@
 #section-title, #section-end{
-    scroll-snap-align: start;
     height: 100vh;
 }
 
@@ -9,13 +8,23 @@
     scroll-margin: 7vh;
 }
 
+.service h2 {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+}
 
+.service h2 img{
+    width: 50px;
+    height: auto;
+    display: block;
+}
 
 
 #section-title h1, #section-end h1 {
     font-size: 3rem;
     padding: 10vh 4vw;
-    padding-right: 20vw;
+    padding-right: 25vw;
 }
 
 #section-end h2 {
@@ -67,7 +76,6 @@ h2 {
 
 .service{
     height:100vh;
-    scroll-snap-align: start;
     scroll-margin: 7vh;
 }
 

@@ -1,9 +1,24 @@
-/*----------------------------------- faq --------------------------------------*/
+@media(prefers-color-scheme: dark){
+    :root{
+        --faq-answer-bg: #2a688d;
+    }
+}
+
+@media(prefers-color-scheme: light){
+    :root{
+        --faq-answer-bg: #82a7bd;
+    }
+    #section-faq {
+        background: none;
+        background-color: #e0eaf1cf;
+    }
+}
 
 #section-faq{
     min-height: 50vw;
     height: fit-content;
     padding-bottom: 3vw;
+    
 }
 
 
@@ -33,7 +48,7 @@
     padding: 0vw 5vw;
     margin: 0vw 10vw;
     margin-bottom: 2vw;
-    background-color: #2a688d ; 
+    background-color: var(--faq-answer-bg); 
     border-radius: 1vw;
     overflow: hidden;
     max-height: 0;

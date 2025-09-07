@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../public/icon.ico" rel="icon" type="image/x-icon" >
     <title>Parten'AI're</title>
-    <link rel="stylesheet" href="../style.css"/>
     <link rel="stylesheet" href="../legal/nav.css"/>
     <link rel="stylesheet" href="../legal/footer.css"/>
     <link rel="stylesheet" href="../src/profil.css"/>
     <link rel="stylesheet" href="../src/grid.css"/>
+    <link rel="stylesheet" href="../style.css"/>
     
 </head>
+
 
 
 <!-------------------------------------------------------------------------------------------------------------------------------------------------------/ Valide /-->
@@ -28,25 +29,46 @@
         </button>
         
         <ul id="menu" class="menu">
-            <li><a href="../index.html">Accueil</a></li>
-            <li><a href="../src/introduction.html">Qui sommes-nous&nbsp;?</a></li>
-            <li><a href="../src/solutions-demos.html">Solutions &amp; Démos</a></li>
-            
+            <li><a href="../index.html" role="menuitem">Accueil</a></li>
+
+            <li><a href="../src/introduction.html" role="menuitem">Qui sommes-nous&nbsp;?</a></li>
+
             <li class="drop-down">
-                <a href="../src/sectors.html" aria-haspopup="true" aria-expanded="false">Secteurs</a>
-                <ul class="submenu">
-                <li><a href="../src/sectors.html#focus-by-sector">Pourquoi un focus par secteur&nbsp;?</a></li>
-                <li><a href="../src/sectors.html#industry">Industrie — Notre domaine de prédilection</a></li>
-                <li><a href="../src/sectors.html#agri-food">Agroalimentaire — Spécialistes processus</a></li>
-                <li><a href="../src/sectors.html#logistic-&-supply-chain">Logistique &amp; Supply Chain</a></li>
-                <li><a href="../src/sectors.html#store-&-retail">Magasins &amp; Retail</a></li>
-                <li><a href="../src/sectors.html#agencies-and-services">Agences &amp; Services (RH, QHSE, Marketing, Support)</a></li>
-                <li><a href="../src/sectors.html#responsible-&-open-source-AI">Un socle commun&nbsp;: IA responsable &amp; open source</a></li>
+                <a href="../src/solutions-demos.html" aria-haspopup="true" aria-expanded="false" role="menuitem">Solutions &amp; Démos</a>
+                <ul class="submenu" role="menu">
+                    <li role="none"><a role="menuitem" href="../src/solutions-demos.html#maintenance"><img class="line-logo" src="../res/light/line-icon/nav-maintenance.png" alt="" role="presentation">Maintenance prédictive</a></li>
+                    <li role="none"><a role="menuitem" href="../src/solutions-demos.html#industry"><img class="line-logo" src="../res/light/line-icon/nav-industry.png" alt="" role="presentation">Vision industrielle</a></li>
+                    <li role="none"><a role="menuitem" href="../src/solutions-demos.html#dashboard"><img class="line-logo" src="../res/light/line-icon/nav-dashboard.png" alt="" role="presentation">Dashboard analytique</a></li>
+                    <li role="none"><a role="menuitem" href="../src/solutions-demos.html#use"><img class="line-logo" src="../res/light/line-icon/nav-use.png" alt="" role="presentation">Cas d'usage</a></li>
                 </ul>
             </li>
             
-            <li><a href="../src/offers-services.html">Offres &amp; Services</a></li>
-            <li><a href="../src/contact.html">Contact</a></li>
+            <li class="drop-down">
+                <a href="../src/sectors.html" aria-haspopup="true" aria-expanded="false" role="menuitem">Secteurs</a>
+                <ul class="submenu" role="menu">
+                    <li role="none"><a role="menuitem" href="../src/sectors.html#focus-by-sector"><img class="line-logo" src="../res/light/line-icon/nav-sector.png" alt="" role="presentation">Pourquoi un focus par secteur&nbsp;?</a></li>
+                    <li role="none"><a role="menuitem" href="../src/sectors.html#industry"><img class="line-logo" src="../res/light/line-icon/nav-industry.png" alt="" role="presentation">Industrie — Notre domaine de prédilection</a></li>
+                    <li role="none"><a role="menuitem" href="../src/sectors.html#agri-food"><img class="line-logo" src="../res/light/line-icon/nav-agri-food.png" alt="" role="presentation">Agroalimentaire — Spécialistes processus</a></li>
+                    <li role="none"><a role="menuitem" href="../src/sectors.html#logistic-&-supply-chain"><img class="line-logo" src="../res/light/line-icon/nav-logistic.png" alt="" role="presentation">Logistique &amp; Supply Chain</a></li>
+                    <li role="none"><a role="menuitem" href="../src/sectors.html#store-&-retail"><img class="line-logo" src="../res/light/line-icon/nav-store.png" alt="" role="presentation">Magasins &amp; Retail</a></li>
+                    <li role="none"><a role="menuitem" href="../src/sectors.html#agencies-and-services"><img class="line-logo" src="../res/light/line-icon/nav-agencies.png" alt="" role="presentation">Agences &amp; Services (RH, QHSE, Marketing, Support)</a></li>
+                    <li role="none"><a role="menuitem" href="../src/sectors.html#responsible-open-source-AI"><img class="line-logo" src="../res/light/line-icon/nav-ai.png" alt="" role="presentation">Un socle commun&nbsp;: IA responsable &amp; open source</a></li>
+                </ul>
+            </li>
+            
+            <li class="drop-down">
+                <a href="../src/offers-services.html" aria-haspopup="true" aria-expanded="false" role="menuitem">Offres &amp; Services</a>
+                <ul class="submenu" role="menu">
+                    <li role="none"><a role="menuitem" href="../src/offers-services.html#section-title"><img class="line-logo" src="../res/light/line-icon/nav-succeed.png" alt="" role="presentation">Réussir votre parcours IA</a></li>
+                    <li role="none"><a role="menuitem" href="../src/offers-services.html#ai-hint"><img class="line-logo" src="../res/light/line-icon/nav-ai-hint.png" alt="" role="presentation">Conseil stratégique IA</a></li>
+                    <li role="none"><a role="menuitem" href="../src/offers-services.html#audit-data"><img class="line-logo" src="../res/light/line-icon/nav-audit-data.png" alt="" role="presentation">Audit Data & Processus</a></li>
+                    <li role="none"><a role="menuitem" href="../src/offers-services.html#formation"><img class="line-logo" src="../res/light/line-icon/nav-formation.png" alt="" role="presentation">Formations & Acculturation</a></li>
+                    <li role="none"><a role="menuitem" href="../src/offers-services.html#pco"><img class="line-logo" src="../res/light/line-icon/nav-pco.png" alt="" role="presentation">PoC IA personnalisé</a></li>
+                    <li role="none"><a role="menuitem" href="../src/offers-services.html#industry"><img class="line-logo" src="../res/light/line-icon/nav-industry.png" alt="" role="presentation">Industrialisation & MLOps</a></li>
+                    <li role="none"><a role="menuitem" href="../src/offers-services.html#upskilling"><img class="line-logo" src="../res/light/line-icon/nav-upskilling.png" alt="" role="presentation">Support continu & Upskilling</a></li>
+                </ul>
+            </li>
+            <li><a href="../src/contact.html" role="menuitem">Contact</a></li>
         </ul>
     </nav>
 </header>
@@ -63,14 +85,20 @@
 <body>
     <main>
         <section id="section-mainspring">
-            <div class="grid">
-                <div style="width: 50vw;">
+            <div class="grid" >
+                <div style="width: 50vw; ">
                     <h2>Notre raison d'être</h2>
                         <div style="display: flex; margin-bottom: 2vw;">
-                            <img src="../res/logo_target.png" alt="logo-mission" style="height:3vw; padding: 0 2vw;" >
+                            <picture>
+                                <source srcset="../res/logo_target.png" media="(prefers-color-scheme: dark)">
+                                <img class="icon-introduction" src="../res/light/logo_target.png" alt="Cible" loading="lazy">
+                            </picture>   
                             <p style="font-size: 1.2vw; margin: 0 auto;;"><strong>Mission :</strong> Aider les PME et ETI françaises à convertir le potentiel de l'IA en valeur opérationnelle mesurable, durable et responsable.</p></div>
                         <div style="display: flex;">
-                            <img src="../res/logo_vision.png" alt="logo-vision" style="height:3vw; padding: 0 2vw;" >
+                            <picture>
+                                <source srcset="../res/logo_vision.png" media="(prefers-color-scheme: dark)">
+                                <img class="icon-introduction" src="../res/light/logo_vision.png" alt="Vision" loading="lazy">
+                            </picture>  
                             <p style="font-size: 1.2vw; margin-top: 0;"><strong>Vision :</strong> Devenir, d'ici 2030, le partenaire de référence en France pour l'industrialisation éthique de l'IA à l'échelle.
                             « Nous ne vendons pas de techno : nous co-construisons des solutions qui font gagner du temps, de l'argent et de la sérénité. »</p>
                     </div>
@@ -104,10 +132,9 @@
                         </div>
                         <h3>Florian Pechieras</h3>
                         <h4>Directeur Général & Responsable Technique</h4>
-                        <div class="linkedin">
-                            <div><a href="https://www.linkedin.com/in/florian-pechieras/" target="_blank"><img src="../res/linkedin.png"></a></div>
-                            <div><a href="https://www.linkedin.com/in/florian-pechieras/" target="_blank">Compte LinkedIn</a></div>
-                        </div>
+                        <a href="https://www.linkedin.com/in/florian-pechieras/" target="_blank" rel="noopener noreferrer">
+                        <div class="linkedin"><img src="../res/linkedin.png" alt="LinkedIn" style="display: block;">Compte LinkedIn</div>
+                        </a>
                     </div>
                     <div class="profile-text">
                         
@@ -158,10 +185,11 @@
                         <div class="profile-picture"><img src="../res/thomas-riche.png" alt="Thomas Riche"></div>
                         <h3>Thomas Riche</h3>
                         <p>Président et directeur commercial</p>
+                        <a href="https://www.linkedin.com/in/thomas-riche-a1a0b0293/" target="_blank" rel="noopener noreferrer">
                         <div class="linkedin">
-                            <div><a href="https://www.linkedin.com/in/thomas-riche-a1a0b0293/" target="_blank"><img src="../res/linkedin.png"></a></div>
-                            <div><a href="https://www.linkedin.com/in/thomas-riche-a1a0b0293/" target="_blank">Compte LinkedIn</a></div>
+                            <img src="../res/linkedin.png" alt="LinkedIn" style="display: block;"> Compte LinkedIn
                         </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -171,7 +199,7 @@
 
 
                     
-        <footer class="site-footer">
+        <footer class="site-footer" role="contentinfo" aria-label="Pied de page">
             <div class="footer-container">
                 <div class="footer-item">
                 <h4>Email</h4>
@@ -180,32 +208,29 @@
 
                 <div class="footer-item">
                 <h4>Adresse</h4>
-                <p>1 Square des Etats Généraux<br>35200 Rennes, France</p>
+                <p><address>1 Square des Etats Généraux<br>35200 Rennes, France</address></p>
                 </div>
 
                 <div class="footer-item">
                 <h4>Téléphone</h4>
-                <p>06 87 93 77 45</p>
+                <p><a href="tel:+33687937745">06 87 93 77 45</a></p>
                 </div>
 
                 <div class="footer-item">
                 <h4>Réseaux</h4>
-                    <div class="linkedin">
-                            <div><a href="https://www.linkedin.com/company/parten-ai-re/" target="_blank"><img src="../res/linkedin.png"></a></div>
-                            <div><a href="https://www.linkedin.com/company/parten-ai-re/" target="_blank">Linkedin de la boîte</a></div>
-                        </div>
+                    <a href="https://www.linkedin.com/company/parten-ai-re" target="_blank" rel="noopener noreferrer">
+                    <div class="linkedin"><img src="../res/linkedin.png" alt="LinkedIn">LinkedIn Parten'AI're</div>
+                    </a>
                 </div>
             </div>
 
-            <div class="footer-bottom">
-                <div><small>&copy;<span id="year"></span> Parten'AI're — Tous droits réservés.</small></div>
-                <div>
-                    <ul class="links-inline">
-                        <li><a href="../legal/legal-notice.html">Mentions légales</a></li>
-                        <li><a href="../legal/privacy-policy.html">Politique de confidentialité</a></li>
-                        <li><a href="../legal/general-conditions.html">Conditions Générales d'Utilisation</a></li>
-                    </ul>
-                </div>
+            <div class="footer-bottom" aria-label="Liens légaux">
+                <small>&copy;<span id="year"></span> Parten'AI're — Tous droits réservés.</small>
+                <ul class="links-inline">
+                    <li><a href="../legal/legal-notice.html">Mentions légales</a></li>
+                    <li><a href="../legal/privacy-policy.html">Politique de confidentialité</a></li>
+                    <li><a href="../legal/general-conditions.html">Conditions Générales d'Utilisation</a></li>
+                </ul>
             </div>
         </footer>
 

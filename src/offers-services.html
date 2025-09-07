@@ -6,48 +6,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../public/icon.ico" rel="icon" type="image/x-icon" >
     <title>Parten'AI're</title>
-    <link rel="stylesheet" href="../style.css"/>
     <link rel="stylesheet" href="../src/offer-services.css"/>
+    <link rel="stylesheet" href="../legal/nav.css"/>
+    <link rel="stylesheet" href="../legal/footer.css"/>
+    <link rel="stylesheet" href="../style.css"/>
 </head>
 
+
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------/ Valide /-->
+
+
 <header>
-    <nav>
-        <img id="logo-nav" src="../res/logo_line.png" alt="Logo" loading="lazy">
-        <button id="menu-toggle">
-            <img src="./res/menu.png" alt="Menu">
+    <nav aria-label="Navigation principale">
+        <picture>
+            <source srcset="../res/dark/logo_line.png" media="(prefers-color-scheme: dark)">
+            <img id="logo-nav" src="../res/light/logo_line.png" alt="Logo Parten'AI're">
+        </picture>
+        <button id="menu-toggle" aria-controls="menu" aria-label="Ouvrir le menu de navigation">
+            <img src="../res/menu.png" alt="">
         </button>
-        <ul id="menu">
-            <li><a href="../index.html">Accueil</a></li>
-            <li><a href="../src/introduction.html">Qui sommes-nous ?</a></li>
-            <li><a href="../src/solutions-demos.html">Solutions & Démos</a></li>
-            <li class="drop-down"><a href="../src/sectors.html">Secteurs</a>
-                <ul class="under">
-                    <li><a href="../src/sectors.html#focus-by-sector">Pourquoi un focus par secteur ?</a></li>
-                    <li><a href="../src/sectors.html#industry">Industrie — Notre domaine de prédilection</a></li>
-                    <li><a href="../src/sectors.html#agri-food">Agroalimentaire — Spécialistes processus</a></li>
-                    <li><a href="../src/sectors.html#logistic-&-supply-chain">Logistique & Supply Chain</a></li>
-                    <li><a href="../src/sectors.html#store-&-retail">Magasins & Retail</a></li>
-                    <li><a href="../src/sectors.html#agencies-and-services">Agences & Services (RH, QHSE, Marketing, Support)</a></li>
-                    <li><a href="../src/sectors.html#responsible-&-open-source-AI">Un socle commun : IA responsable & open source</a></li>
+        
+        <ul id="menu" class="menu">
+            <li><a href="../index.html" role="menuitem">Accueil</a></li>
+
+            <li><a href="../src/introduction.html" role="menuitem">Qui sommes-nous&nbsp;?</a></li>
+
+            <li class="drop-down">
+                <a href="../src/solutions-demos.html" aria-haspopup="true" aria-expanded="false" role="menuitem">Solutions &amp; Démos</a>
+                <ul class="submenu" role="menu">
+                    <li role="none"><a role="menuitem" href="../src/solutions-demos.html#maintenance"><img class="line-logo" src="../res/light/line-icon/nav-maintenance.png" alt="" role="presentation">Maintenance prédictive</a></li>
+                    <li role="none"><a role="menuitem" href="../src/solutions-demos.html#industry"><img class="line-logo" src="../res/light/line-icon/nav-industry.png" alt="" role="presentation">Vision industrielle</a></li>
+                    <li role="none"><a role="menuitem" href="../src/solutions-demos.html#dashboard"><img class="line-logo" src="../res/light/line-icon/nav-dashboard.png" alt="" role="presentation">Dashboard analytique</a></li>
+                    <li role="none"><a role="menuitem" href="../src/solutions-demos.html#use"><img class="line-logo" src="../res/light/line-icon/nav-use.png" alt="" role="presentation">Cas d'usage</a></li>
                 </ul>
             </li>
-            <li><a href="../src/offers-services.html">Offres et services</a></li>
-            <li><a href="../src/contact.html">Contact</a></li>
+            
+            <li class="drop-down">
+                <a href="../src/sectors.html" aria-haspopup="true" aria-expanded="false" role="menuitem">Secteurs</a>
+                <ul class="submenu" role="menu">
+                    <li role="none"><a role="menuitem" href="../src/sectors.html#focus-by-sector"><img class="line-logo" src="../res/light/line-icon/nav-sector.png" alt="" role="presentation">Pourquoi un focus par secteur&nbsp;?</a></li>
+                    <li role="none"><a role="menuitem" href="../src/sectors.html#industry"><img class="line-logo" src="../res/light/line-icon/nav-industry.png" alt="" role="presentation">Industrie — Notre domaine de prédilection</a></li>
+                    <li role="none"><a role="menuitem" href="../src/sectors.html#agri-food"><img class="line-logo" src="../res/light/line-icon/nav-agri-food.png" alt="" role="presentation">Agroalimentaire — Spécialistes processus</a></li>
+                    <li role="none"><a role="menuitem" href="../src/sectors.html#logistic-&-supply-chain"><img class="line-logo" src="../res/light/line-icon/nav-logistic.png" alt="" role="presentation">Logistique &amp; Supply Chain</a></li>
+                    <li role="none"><a role="menuitem" href="../src/sectors.html#store-&-retail"><img class="line-logo" src="../res/light/line-icon/nav-store.png" alt="" role="presentation">Magasins &amp; Retail</a></li>
+                    <li role="none"><a role="menuitem" href="../src/sectors.html#agencies-and-services"><img class="line-logo" src="../res/light/line-icon/nav-agencies.png" alt="" role="presentation">Agences &amp; Services (RH, QHSE, Marketing, Support)</a></li>
+                    <li role="none"><a role="menuitem" href="../src/sectors.html#responsible-&-open-source-AI"><img class="line-logo" src="../res/light/line-icon/nav-ai.png" alt="" role="presentation">Un socle commun&nbsp;: IA responsable &amp; open source</a></li>
+                </ul>
+            </li>
+            
+            <li class="drop-down">
+                <a href="../src/offers-services.html" aria-haspopup="true" aria-expanded="false" role="menuitem">Offres &amp; Services</a>
+                <ul class="submenu" role="menu">
+                    <li role="none"><a role="menuitem" href="../src/offers-services.html#section-title"><img class="line-logo" src="../res/light/line-icon/nav-succeed.png" alt="" role="presentation">Réussir votre parcours IA</a></li>
+                    <li role="none"><a role="menuitem" href="../src/offers-services.html#ai-hint"><img class="line-logo" src="../res/light/line-icon/nav-ai-hint.png" alt="" role="presentation">Conseil stratégique IA</a></li>
+                    <li role="none"><a role="menuitem" href="../src/offers-services.html#audit-data"><img class="line-logo" src="../res/light/line-icon/nav-audit-data.png" alt="" role="presentation">Audit Data & Processus</a></li>
+                    <li role="none"><a role="menuitem" href="../src/offers-services.html#formation"><img class="line-logo" src="../res/light/line-icon/nav-formation.png" alt="" role="presentation">Formations & Acculturation</a></li>
+                    <li role="none"><a role="menuitem" href="../src/offers-services.html#pco"><img class="line-logo" src="../res/light/line-icon/nav-pco.png" alt="" role="presentation">PoC IA personnalisé</a></li>
+                    <li role="none"><a role="menuitem" href="../src/offers-services.html#industry"><img class="line-logo" src="../res/light/line-icon/nav-industry.png" alt="" role="presentation">Industrialisation & MLOps</a></li>
+                    <li role="none"><a role="menuitem" href="../src/offers-services.html#upskilling"><img class="line-logo" src="../res/light/line-icon/nav-upskilling.png" alt="" role="presentation">Support continu & Upskilling</a></li>
+                </ul>
+            </li>
+            <li><a href="../src/contact.html" role="menuitem">Contact</a></li>
         </ul>
     </nav>
 </header>
 
-<main style="scroll-snap-type: y mandatory;;">
+
+<script src="../legal/nav.js"></script>
+
+
+<!-------------------------------------------------------------------------------------------------------------------------------------------------------/ Fin valide /-->
+
+
+
+<main>
     <section id="section-title">
         <h1>Une palette complète pour réussir votre parcours IA</h1>
-        <p>Du premier diagnostic à la mise à l'échelle, nous couvrons chaque étape — vous choisissez le point d'entrée qui correspond à votre maturité et à vos besoins.</p>
+        <p class="text-align-left">Du premier diagnostic à la mise à l'échelle, nous couvrons chaque étape — vous choisissez le point d'entrée qui correspond à votre maturité et à vos besoins.</p>
     </section>
 
 
 
 
-    <section class="service">
-    <h2> 🧭 Conseil stratégique IA</h2>
+    <section class="service" id="ai-hint">
+    <h2><img class="line-logo" src="../res/light/line-icon/nav-succeed.png">Conseil stratégique IA</h2>
     <div class="grid-service right">
         <div class="text-container-service">
             <div class="big-ass-text">
@@ -61,7 +103,10 @@
         </div>
         <div class="goal-and-deliverable">
             <div class="goal">
-                <div class="subtitle-service"><h3>Objectif</h3><img src="../res/logo_target.png" alt="Cible" class="icon-service" loading="lazy"></div>
+                <div class="subtitle-service"><h3>Objectif</h3><picture>
+                            <source srcset="../res/logo_target.png" media="(prefers-color-scheme: dark)">
+                            <img class="icon-service" src="../res/light/logo_target.png" alt="Cible" loading="lazy">
+                        </picture></div>
                 <p>
                     Valider rapidement la valeur sur vos données.
                     <ul>
@@ -73,7 +118,12 @@
             </div>
             <hr>
             <div class="deliverable">
-                <div class="subtitle-service"><h3>Livrable</h3><img src="../res/logo_paper.png" alt="Notice" class="icon-service" loading="lazy"></div>
+                <div class="subtitle-service"><h3>Livrable</h3>
+                <picture>
+                    <source srcset="../res/logo_paper.png" media="(prefers-color-scheme: dark)">
+                    <img class="icon-service" src="../res/light/logo_paper.png" alt="Notice" loading="lazy">
+                </picture>
+                </div>
                 <p>
                     Prototype fonctionnel + mémo ROI pour décision go/no-go.
                 </p>
@@ -98,11 +148,14 @@
 
 
     <section class="service">
-        <h2> 📚 Audit Data & Processus</h2>
+        <h2><img class="line-logo" src="../res/light/line-icon/nav-audit-data.png"> Audit Data & Processus</h2>
         <div class="grid-service left">
             <div class="goal-and-deliverable">
                 <div class="goal">
-                    <div class="subtitle-service"><h3>Objectif</h3><img src="../res/logo_target.png" alt="Cible" class="icon-service" loading="lazy"></div>
+                    <div class="subtitle-service"><h3>Objectif</h3><picture>
+                            <source srcset="../res/logo_target.png" media="(prefers-color-scheme: dark)">
+                            <img class="icon-service" src="../res/light/logo_target.png" alt="Cible" loading="lazy">
+                        </picture></div>
                     <p>
                         Savoir si vos données et votre architecture sont prêtes.
                         <ul>
@@ -114,7 +167,10 @@
                 </div>
                 <hr>
                 <div class="deliverable">
-                    <div class="subtitle-service"><h3>Livrable</h3><img src="../res/logo_paper.png" alt="Notice" class="icon-service" loading="lazy"></div>
+                    <div class="subtitle-service"><h3>Livrable</h3><picture>
+                    <source srcset="../res/logo_paper.png" media="(prefers-color-scheme: dark)">
+                    <img class="icon-service" src="../res/light/logo_paper.png" alt="Notice" loading="lazy">
+                </picture></div>
                     <p>
                         Rapport clair + plan de mise à niveau technique & organisationnel.
                     </p>
@@ -135,7 +191,7 @@
 
 
     <section class="service">
-        <h2>🎓 Formations & Acculturation</h2>
+        <h2><img class="line-logo" src="../res/light/line-icon/nav-formation.png"> Formations & Acculturation</h2>
         <div class="grid-service right">
             <div class="text-container-service">
                 <div class="big-ass-text">
@@ -148,7 +204,10 @@
             </div>
             <div class="goal-and-deliverable">
                 <div class="goal">
-                    <div class="subtitle-service"><h3>Objectif</h3><img src="../res/logo_target.png" alt="Cible" class="icon-service" loading="lazy"></div>
+                    <div class="subtitle-service"><h3>Objectif</h3><picture>
+                            <source srcset="../res/logo_target.png" media="(prefers-color-scheme: dark)">
+                            <img class="icon-service" src="../res/light/logo_target.png" alt="Cible" loading="lazy">
+                        </picture></div>
                     <p>
                         Rendre vos équipes autonomes et engagées.
                         <ul>
@@ -160,7 +219,10 @@
                 </div>
                 <hr>
                 <div class="deliverable">
-                    <div class="subtitle-service"><h3>Livrable</h3><img src="../res/logo_paper.png" alt="Notice" class="icon-service" loading="lazy"></div>
+                    <div class="subtitle-service"><h3>Livrable</h3><picture>
+                    <source srcset="../res/logo_paper.png" media="(prefers-color-scheme: dark)">
+                    <img class="icon-service" src="../res/light/logo_paper.png" alt="Notice" loading="lazy">
+                </picture></div>
                     <p>
                         Rapport clair + plan de mise à niveau technique & organisationnel.
                     </p>
@@ -171,11 +233,14 @@
 
 
     <section class="service">
-        <h2>🛠️ PoC IA personnalisé</h2>
+        <h2><img class="line-logo" src="../res/light/line-icon/nav-pco.png"> PoC IA personnalisé</h2>
         <div class="grid-service left">
             <div class="goal-and-deliverable">
                 <div class="goal">
-                    <div class="subtitle-service"><h3>Objectif</h3><img src="../res/logo_target.png" alt="Cible" class="icon-service" loading="lazy"></div>
+                    <div class="subtitle-service"><h3>Objectif</h3><picture>
+                            <source srcset="../res/logo_target.png" media="(prefers-color-scheme: dark)">
+                            <img class="icon-service" src="../res/light/logo_target.png" alt="Cible" loading="lazy">
+                        </picture></div>
                     <p>
                         Valider rapidement la valeur sur vos données.
                         <ul>
@@ -187,7 +252,10 @@
                 </div>
                 <hr>
                 <div class="deliverable">
-                    <div class="subtitle-service"><h3>Livrable</h3><img src="../res/logo_gear.png" alt="Notice" class="icon-service" loading="lazy"></div>
+                    <div class="subtitle-service"><h3>Livrable</h3><picture>
+                            <source srcset="../res/logo_gear.png" media="(prefers-color-scheme: dark)">
+                            <img class="icon-service" src="../res/light/logo_gear.png" alt="Engrenage" loading="lazy">
+                        </picture></div>
                     <p>
                         Prototype fonctionnel + mémo ROI pour décision go/no-go.
                     </p>
@@ -207,7 +275,7 @@
 
 
     <section class="service">
-        <h2>🏭 Industrialisation & MLOps</h2>
+        <h2><img class="line-logo" src="../res/light/line-icon/nav-industry.png"> Industrialisation & MLOps</h2>
         <div class="grid-service right">
             <div class="text-container-service">
                 <div class="big-ass-text">
@@ -218,7 +286,10 @@
             </div>
             <div class="goal-and-deliverable">
                 <div class="goal">
-                    <div class="subtitle-service"><h3>Objectif</h3><img src="../res/logo_target.png" alt="Cible" class="icon-service" loading="lazy"></div>
+                    <div class="subtitle-service"><h3>Objectif</h3><picture>
+                            <source srcset="../res/logo_target.png" media="(prefers-color-scheme: dark)">
+                            <img class="icon-service" src="../res/light/logo_target.png" alt="Cible" loading="lazy">
+                        </picture></div>
                     <p>
                         Passer du prototype à la production en toute confiance.
                         <ul>
@@ -230,7 +301,12 @@
                 </div>
                 <hr>
                 <div class="deliverable">
-                    <div class="subtitle-service"><h3>Livrable</h3><img src="../res/logo_gear.png" alt="Notice" class="icon-service" loading="lazy"></div>
+                    <div class="subtitle-service"><h3>Livrable</h3>
+                        <picture>
+                            <source srcset="../res/logo_gear.png" media="(prefers-color-scheme: dark)">
+                            <img class="icon-service" src="../res/light/logo_gear.png" alt="Engrenage" loading="lazy">
+                        </picture> 
+                    </div>
                     <p>
                         solution industrialisée + tableau de bord valeur temps-réel.
                     </p>
@@ -241,11 +317,16 @@
 
 
     <section class="service">
-        <h2>🛡️ Support continu & Upskilling</h2>
+        <h2><img class="line-logo" src="../res/light/line-icon/nav-upskilling.png"> Support continu & Upskilling</h2>
         <div class="grid-service left">
             <div class="goal-and-deliverable">
                 <div class="goal">
-                    <div class="subtitle-service"><h3>Objectif</h3><img src="../res/logo_target.png" alt="Cible" class="icon-service" loading="lazy"></div>
+                    <div class="subtitle-service"><h3>Objectif</h3>
+                        <picture>
+                            <source srcset="../res/logo_target.png" media="(prefers-color-scheme: dark)">
+                            <img class="icon-service" src="../res/light/logo_target.png" alt="Cible" loading="lazy">
+                        </picture>       
+                    </div>
                     <p>
                         Garantir la performance et l'adoption long terme.
                         <ul>
@@ -257,7 +338,13 @@
                 </div>
                 <hr>
                 <div class="deliverable">
-                    <div class="subtitle-service"><h3>Livrable</h3><img src="../res/logo_cycle.png" alt="Notice" class="icon-service" loading="lazy"></div>
+                    <div class="subtitle-service"><h3>Livrable</h3>
+
+                        <picture>
+                            <source srcset="../res/logo_cycle.png" media="(prefers-color-scheme: dark)">
+                            <img class="icon-service" src="../res/light/logo_cycle.png" alt="Cycle" loading="lazy">
+                        </picture>                    
+                    </div>
                     <p>
                         Rapport trimestriel de valeur + plan compétences actualisé.
                     </p>
@@ -311,9 +398,40 @@
     
 
 
-    <footer>
+    <footer class="site-footer" role="contentinfo" aria-label="Pied de page">
+            <div class="footer-container">
+                <div class="footer-item">
+                <h4>Email</h4>
+                <p><a href="mailto:contact@parten-ai-re.com">contact@parten-ai-re.com</a></p>
+                </div>
 
-    </footer>
+                <div class="footer-item">
+                <h4>Adresse</h4>
+                <p><address>1 Square des Etats Généraux<br>35200 Rennes, France</address></p>
+                </div>
+
+                <div class="footer-item">
+                <h4>Téléphone</h4>
+                <p><a href="tel:+33687937745">06 87 93 77 45</a></p>
+                </div>
+
+                <div class="footer-item">
+                <h4>Réseaux</h4>
+                    <a href="https://www.linkedin.com/company/parten-ai-re" target="_blank" rel="noopener noreferrer">
+                    <div class="linkedin"><img src="../res/linkedin.png" alt="LinkedIn">LinkedIn Parten'AI're</div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom" aria-label="Liens légaux">
+                <small>&copy;<span id="year"></span> Parten'AI're — Tous droits réservés.</small>
+                <ul class="links-inline">
+                    <li><a href="../legal/legal-notice.html">Mentions légales</a></li>
+                    <li><a href="../legal/privacy-policy.html">Politique de confidentialité</a></li>
+                    <li><a href="../legal/general-conditions.html">Conditions Générales d'Utilisation</a></li>
+                </ul>
+            </div>
+        </footer>
 </main>
 
 
